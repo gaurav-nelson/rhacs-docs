@@ -1,0 +1,3 @@
+* Backup and restore
+** xref:backing-up-acs.adoc[Backing up Red Hat Advanced Cluster Security for Kubernetes]
+** xref:restore-acs.adoc[Restoring from a backup]

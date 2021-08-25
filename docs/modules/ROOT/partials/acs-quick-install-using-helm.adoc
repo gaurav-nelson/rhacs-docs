@@ -1,0 +1,45 @@
+// Module included in the following assemblies:
+//
+// * installing/installing_helm/install-helm-quick.adoc
+:_module-type: PROCEDURE
+[id="installing-quickly_{context}"]
+= Installing the central-services Helm chart without customization
+
+Use the following instructions to install the `central-services` Helm chart to deploy the centralized components (Central and Scanner).
+
+.Procedure
+
+* Run the following command to install Central services and expose Central using a route:
++
+[source,terminal]
+----
+$ helm install -n stackrox \
+  --create-namespace stackrox-central-services rhacs/central-services \
+  --set imagePullSecrets.allowNone=true \
+  --set central.exposure.route.enabled=true
+----
+
+* Or, run the following command to install Central services and expose Central using a load balancer:
++
+[source,terminal]
+----
+$ helm install -n stackrox \
+  --create-namespace stackrox-central-services rhacs/central-services \
+  --set imagePullSecrets.allowNone=true \
+  --set central.exposure.loadBalancer.enabled=true
+----
+
+* Or, run the following command to install Central services and expose Central using port forward:
++
+[source,terminal]
+----
+$ helm install -n stackrox \
+  --create-namespace stackrox-central-services rhacs/central-services \
+  --set imagePullSecrets.allowNone=true
+----
+
+The output of the installation command includes:
+
+* An automatically generated administrator password.
+* Instructions on storing all the configuration values.
+* Any warnings that Helm generates.

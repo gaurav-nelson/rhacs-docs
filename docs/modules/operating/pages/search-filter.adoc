@@ -1,0 +1,21 @@
+[id="search-filter"]
+= Searching and filtering
+include::ROOT:partial$common-attributes.adoc[]
+:context: search-filter
+
+toc::[]
+
+[role="_abstract"]
+The ability to instantly find resources is important to safeguard your cluster. Use {product-title} search feature to find relevant resources faster. For example, you can use it to find deployments that are exposed to a newly published CVE or find all deployments that have external network exposure.
+
+include::ROOT:partial$search-syntax.adoc[leveloffset=+1]
+
+include::ROOT:partial$search-autocomplete.adoc[leveloffset=+1]
+
+include::ROOT:partial$use-global-search.adoc[leveloffset=+1]
+
+include::ROOT:partial$use-local-page-filtering.adoc[leveloffset=+1]
+
+include::ROOT:partial$common-search-queries.adoc[leveloffset=+1]
+
+include::ROOT:partial$search-attributes.adoc[leveloffset=+1]

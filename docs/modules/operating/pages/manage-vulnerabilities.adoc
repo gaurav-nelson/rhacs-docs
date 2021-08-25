@@ -1,0 +1,90 @@
+[id="managing-vulnerabilities"]
+= Managing vulnerabilities
+include::ROOT:partial$common-attributes.adoc[]
+:context: acs-operating-manage-vulnerabilities
+
+toc::[]
+
+[role="_abstract"]
+Security vulnerabilities in your environment may allow attackers to gain unauthorized access or perform unauthorized actions.
+Therefore, managing vulnerabilities is a critical step in protecting your environment.
+It involves identifying, classifying, reporting, prioritizing, remediating, and mitigating security vulnerabilities.
+
+{product-title} (RHACS) enables you to identify and prioritize vulnerabilities for quick remediation.
+
+include::ROOT:partial$vulnerability-management-view.adoc[leveloffset=+1]
+
+include::ROOT:partial$navigate-vulnerability-management-view.adoc[leveloffset=+2]
+
+include::ROOT:partial$vulnerability-management-other-views.adoc[leveloffset=+2]
+
+include::ROOT:partial$identify-top-risky-objects.adoc[leveloffset=+1]
+
+include::ROOT:partial$top-risky-images-components.adoc[leveloffset=+2]
+
+include::ROOT:partial$view-dockerfile-for-image.adoc[leveloffset=+1]
+
+include::ROOT:partial$view-freq-violated-policies.adoc[leveloffset=+1]
+
+[id="using-comments-and-tags"]
+== Using comments and tags
+
+You can use tags and comments to specify what is happening with violations to keep your team up to date.
+Comments allow you to add text notes to violations and tags allow you to categorize your violations.
+
+:smallporv: violation
+:smallpluralporv: violations
+:capsporv: Violation
+:capspluralporv: Violations
+
+include::ROOT:partial$adding-comments.adoc[leveloffset=+2]
+
+include::ROOT:partial$adding-tags.adoc[leveloffset=+2]
+
+include::ROOT:partial$view-recently-detected-vulnerabilities.adoc[leveloffset=+1]
+
+include::ROOT:partial$view-most-common-vulnerabilities.adoc[leveloffset=+1]
+
+include::ROOT:partial$identify-deployments-with-most-severe-policy-violations.adoc[leveloffset=+1]
+
+include::ROOT:partial$find-clusters-with-most-kubernetes-and-istio-vulnerabilities.adoc[leveloffset=+1]
+
+include::ROOT:partial$create-policies-to-block-specific-cves.adoc[leveloffset=+1]
+
+[id="snooze-and-unsnooze-cves"]
+== Snoozing and unsnoozing CVEs
+
+If you determine that certain CVEs do not relate to your infrastructure for the moment, you can snooze those CVEs.
+Later, when the CVEs are relevant, you can unsnooze those CVEs.
+You can also snooze CVEs for a certain amount of time, such as a day, a week, two weeks, a month, or indefinitely (until you unsnooze).
+
+When you snooze a CVE, {product-title} stops showing that CVE in widgets and other views and ignores its impact on your environment.
+If the snoozed CVE is part of a policy and if all the CVEs in that policy are snoozed, the policy does not generate a violation.
+When you unsnooze or the specified time lapses,  the CVEs start showing up again as usual, and the policy violations resume.
+
+include::ROOT:partial$snooze-cves.adoc[leveloffset=+2]
+
+include::ROOT:partial$view-snoozed-cves.adoc[leveloffset=+2]
+
+include::ROOT:partial$unsnooze-cves.adoc[leveloffset=+2]
+
+include::ROOT:partial$identify-vulnerabilities-in-nodes.adoc[leveloffset=+1]
+
+include::ROOT:partial$disable-identify-vulnerabilities-in-nodes.adoc[leveloffset=+2]
+
+include::ROOT:partial$scan-inactive-images.adoc[leveloffset=+1]
+
+[id="common-tasks"]
+== Common tasks
+
+This section lists some common tasks you can perform from the *Vulnerability Management* view.
+
+include::ROOT:partial$find-critical-cves-impacting-your-infrastructure.adoc[leveloffset=+2]
+
+include::ROOT:partial$find-the-most-vulnerable-image-components.adoc[leveloffset=+2]
+
+include::ROOT:partial$identify-container-image-layer-that-introduces-vulnerabilities.adoc[leveloffset=+2]
+
+include::ROOT:partial$view-details-only-for-fixable-cves.adoc[leveloffset=+2]
+
+include::ROOT:partial$identify-operating-system-of-the-base-image.adoc[leveloffset=+2]

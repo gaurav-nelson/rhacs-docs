@@ -1,0 +1,3 @@
+* Support
+** xref:getting-support.adoc[Getting support for Red Hat Advanced Cluster Security for Kubernetes]
+** xref:getting-support-stackrox.adoc[Getting support for the StackRox Kubernetes Security Platform]

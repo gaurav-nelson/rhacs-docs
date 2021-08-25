@@ -1,0 +1,24 @@
+[id="integrate-with-sumologic"]
+= Integrating with Sumo Logic
+include::ROOT:partial$common-attributes.adoc[]
+:context: integrate-with-sumologic
+
+toc::[]
+
+[role="_abstract"]
+If you are using link:https://www.sumologic.com/[Sumo Logic], you can forward alerts from {product-title} to Sumo Logic.
+
+The following steps represent a high-level workflow for integrating {product-title} with Sumo Logic:
+
+. Add a new Custom App in Sumo Logic, set the HTTP source, and get the HTTP URL.
+. Use the HTTP URL to integrate Sumo Logic with {product-title}.
+. Identify the policies you want to send notifications for, and update the notification settings for those policies.
+
+include::ROOT:partial$configure-sumologic.adoc[leveloffset=+1]
+
+include::ROOT:partial$sumologic-configuring-acs.adoc[leveloffset=+1]
+
+:toolname: Sumo Logic
+include::ROOT:partial$configure-policy-notifications.adoc[leveloffset=+1]
+
+include::ROOT:partial$view-alerts-in-sumo-logic.adoc[leveloffset=+1]

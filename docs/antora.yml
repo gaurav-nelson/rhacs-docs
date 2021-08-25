@@ -1,0 +1,15 @@
+name: rhacs
+title: Red Hat Advance Cluster Security for Kubernetes
+version: 64.0
+nav:
+- modules/ROOT/nav.adoc
+- modules/release_notes/nav.adoc
+- modules/architecture/nav.adoc
+- modules/installing/nav.adoc
+- modules/configuration/nav.adoc
+- modules/operating/nav.adoc
+- modules/integrating/nav.adoc
+- modules/backup_and_restore/nav.adoc
+- modules/upgrading/nav.adoc
+- modules/cli/nav.adoc
+- modules/support/nav.adoc

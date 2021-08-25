@@ -1,0 +1,18 @@
+[id="acs-prerequisites"]
+= Prerequisites for installing {product-title}
+include::ROOT:partial$common-attributes.adoc[]
+:context: acs-prerequisites
+
+toc::[]
+
+include::ROOT:partial$acs-requirements.adoc[leveloffset=+1]
+
+include::ROOT:partial$central-requirements.adoc[leveloffset=+1]
+
+include::ROOT:partial$scanner-requirements.adoc[leveloffset=+1]
+
+include::ROOT:partial$sensor-requirements.adoc[leveloffset=+1]
+
+include::ROOT:partial$admission-controller-requirements.adoc[leveloffset=+1]
+
+include::ROOT:partial$collector-requirements.adoc[leveloffset=+1]

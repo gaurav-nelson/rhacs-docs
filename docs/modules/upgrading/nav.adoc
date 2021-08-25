@@ -1,0 +1,4 @@
+* Upgrading
+** xref:upgrade-helm.adoc[Upgrading using Helm charts]
+** Upgrading using the roxctl CLI
+*** xref:upgrading_roxctl/upgrade-from-44[Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher]

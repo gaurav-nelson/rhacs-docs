@@ -1,0 +1,10 @@
+[id="acs-architecture"]
+= {product-title} architecture
+include::ROOT:partial$common-attributes.adoc[]
+:context: acs-architecture
+
+toc::[]
+
+Discover {product-title} architecture and concepts.
+
+include::ROOT:partial$acs-architecture-overview.adoc[leveloffset=+1]

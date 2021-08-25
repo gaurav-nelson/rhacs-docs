@@ -1,0 +1,36 @@
+[id="cli-getting-started"]
+= Getting started with the roxctl CLI
+include::ROOT:partial$common-attributes.adoc[]
+:context: cli-getting-started
+
+toc::[]
+
+[role="_abstract"]
+`roxctl` is a command-line interface (CLI) for running commands on {product-title}.
+This topic describes `roxctl` syntax, operations, and provides some common examples.
+
+[id="installing-roxctl-cli"]
+== Installing the roxctl CLI
+
+You can install the `roxctl` CLI by downloading the binary.
+Or, you can run the `roxctl` CLI from a container image.
+
+[id="install-roxctl-cli-binary"]
+=== Installing the roxctl CLI by downloading the binary
+
+You can install the `roxctl` CLI to interact with {product-title} from a
+command-line interface. You can install `roxctl` on Linux, Windows, or macOS.
+
+// Installing the CLI by downloading the binary
+include::ROOT:partial$install-roxctl-cli-linux.adoc[leveloffset=+3]
+include::ROOT:partial$install-roxctl-cli-macos.adoc[leveloffset=+3]
+include::ROOT:partial$install-roxctl-cli-windows.adoc[leveloffset=+3]
+
+// Running the CLI by using a container image
+include::ROOT:partial$run-roxctl-from-container.adoc[leveloffset=+2]
+
+// Authenticating using CLI
+include::ROOT:partial$cli-authentication.adoc[leveloffset=+1]
+
+// Using the CLI
+include::ROOT:partial$using-cli.adoc[leveloffset=+1]
