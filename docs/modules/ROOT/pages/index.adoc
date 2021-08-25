@@ -14,8 +14,8 @@ To navigate the {product-title} documentation, you can use one of the following 
 == Installation activities
 Explore the following {product-title} installation tasks:
 
-- *xref:../installing/install-ocp-operator.adoc#installing-using-an-operator[Installing by using an Operator]*: Learn how to install {product-title} on {ocp} by using the {product-title} Operator.
-- *xref:../installing/installing_helm/install-helm-quick.adoc#install-helm-quick[Installing quickly using Helm charts]*: Learn how to install {product-title} by using Helm charts.
+- *xref:64.0@rhacs:installing:install-ocp-operator.adoc#installing-using-an-operator[Installing by using an Operator]*: Learn how to install {product-title} on {ocp} by using the {product-title} Operator.
+- *xref:64.0@rhacs:installing:installing_helm/install-helm-quick.adoc#install-helm-quick[Installing quickly using Helm charts]*: Learn how to install {product-title} by using Helm charts.
 - *xref:../installing/install-quick-roxctl.adoc#install-quick-roxctl[Installing quickly by using the `roxctl` CLI]*: Learn how to install {product-title} by using the `roxctl` command-line interface (CLI). `roxctl` is a CLI for running commands on {product-title}.
 
 == Operating {product-title}

@@ -3,7 +3,7 @@ site:
   start_page: rhacs::index.adoc
 content:
   sources:
-  - url: git@github.com:gaurav-nelson/antora-build-test.git
+  - url: git@github.com:gaurav-nelson/rhacs-docs.git
     branches: main
     start_path: docs
 ui:
