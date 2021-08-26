@@ -4,7 +4,6 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: install-ocp-operator
 :topic-operator:
 
-toc::[]
 
 [role="_abstract"]
 {product-title} (RHACS) installs a set of services on your {ocp} cluster. This section describes the installation procedure for installing {product-title} on your {ocp} cluster by using an Operator.

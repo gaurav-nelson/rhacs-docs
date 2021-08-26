@@ -3,7 +3,6 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: upgrade-from-44
 
-toc::[]
 
 [role="_abstract"]
 Upgrade to the latest version of {product-title} from version 3.0.44 or higher.

@@ -3,7 +3,6 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: acs-operating-manage-vulnerabilities
 
-toc::[]
 
 [role="_abstract"]
 Security vulnerabilities in your environment may allow attackers to gain unauthorized access or perform unauthorized actions.

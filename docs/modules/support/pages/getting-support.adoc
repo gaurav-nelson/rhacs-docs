@@ -3,7 +3,6 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: getting-support
 
-toc::[]
 
 This topic provides information about the technical support for {product-title}.
 

@@ -3,7 +3,6 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: view-dashboard
 
-toc::[]
 
 [role="_abstract"]
 The {product-title} (RHACS) dashboard enables you to visually track and analyze key metrics such as risk across your environment, compliance status, and policy violations.

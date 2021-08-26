@@ -3,7 +3,6 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-using-syslog-protocol
 
-toc::[]
 
 [role="_abstract"]
 

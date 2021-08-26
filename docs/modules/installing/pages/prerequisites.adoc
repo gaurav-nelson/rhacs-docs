@@ -3,7 +3,6 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: acs-prerequisites
 
-toc::[]
 
 include::ROOT:partial$acs-requirements.adoc[leveloffset=+1]
 

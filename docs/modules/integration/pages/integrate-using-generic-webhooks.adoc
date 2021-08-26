@@ -3,7 +3,6 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-using-generic-webhooks
 
-toc::[]
 
 [role="_abstract"]
 With {product-title}, you can send alert notifications as JSON messages to any webhook receiver.

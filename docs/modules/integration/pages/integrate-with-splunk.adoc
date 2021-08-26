@@ -3,7 +3,6 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-with-splunk
 
-toc::[]
 
 [role="_abstract"]
 If you are using link:https://www.splunk.com/[Splunk], you can forward alerts from {product-title} to Splunk and view vulnerability and compliance related data from within Splunk.
