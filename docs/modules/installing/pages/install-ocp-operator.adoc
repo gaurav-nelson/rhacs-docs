@@ -12,7 +12,7 @@ toc::[]
 Before you install:
 
 * Understand xref:../architecture/index.adoc#acs-architecture_acs-architecture[{product-title} architecture].
-* Review the xref:../installing/prerequisites.adoc#acs-general-requirements_acs-prerequisites[prerequisites for installing {product-title}].
+* Review the xref:installing:prerequisites.adoc#acs-general-requirements_acs-prerequisites[prerequisites for installing {product-title}].
 
 The {product-title} Operator includes the following two custom resources:
 
@@ -55,7 +55,7 @@ include::ROOT:partial$roxctl-generate-init-bundle.adoc[leveloffset=+2]
 
 [role="_additional-resources"]
 .Additional resources
-* xref:../cli/getting-started-cli.adoc#installing-roxctl-cli[Installing the roxctl CLI]
+* xref:cli:getting-started-cli.adoc#installing-roxctl-cli[Installing the roxctl CLI]
 
 include::ROOT:partial$create-resource-init-bundle.adoc[leveloffset=+1]
 

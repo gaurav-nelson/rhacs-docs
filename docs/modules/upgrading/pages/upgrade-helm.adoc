@@ -18,7 +18,7 @@ include::ROOT:partial$updating-helm-repository.adoc[leveloffset=+1]
 
 [role="_additional-resources"]
 .Additional resources
-* xref:../installing/installing_helm/install-helm-customization.adoc#configure-central-services-helm-chart[Configuring the central-services Helm chart]
+* xref:installing:installing_helm/install-helm-customization.adoc#configure-central-services-helm-chart[Configuring the central-services Helm chart]
 
 include::ROOT:partial$change-config-options-after-deployment-central-service.adoc[leveloffset=+1]
 

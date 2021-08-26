@@ -10,9 +10,9 @@ If you are using link:https://www.splunk.com/[Splunk], you can forward alerts fr
 
 Depending on your use case, you can integrate {product-title} with Splunk by using the following ways:
 
-* By xref:../integration/integrate-with-splunk.adoc#integrate-splunk-http-event-collector[using an HTTP event collector] in Splunk
+* By xref:integration:integrate-with-splunk.adoc#integrate-splunk-http-event-collector[using an HTTP event collector] in Splunk
 ** Use the event collector option to forward alerts and audit log data
-* By xref:../integration/integrate-with-splunk.adoc#integrate-splunk-add-on[using the StackRox Kubernetes Security Platform add-on]
+* By xref:integration:integrate-with-splunk.adoc#integrate-splunk-add-on[using the StackRox Kubernetes Security Platform add-on]
 ** Use the add-on to pull vulnerability detection and compliance data into Splunk
 +
 [NOTE]

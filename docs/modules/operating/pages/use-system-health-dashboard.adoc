@@ -19,4 +19,4 @@ include::ROOT:partial$generate-diagnostic-bundle-using-acs-portal.adoc[leveloffs
 
 [role="_additional-resources"]
 .Additional resources
-* xref:../configuration/generate-diagnostic-bundle.adoc#generating-a-diagnostic-bundle[Generating a diagnostic bundle]
+* xref:configuration:generate-diagnostic-bundle.adoc#generating-a-diagnostic-bundle[Generating a diagnostic bundle]

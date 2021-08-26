@@ -11,7 +11,7 @@ This topic describes the installation procedure for installing {product-title} o
 
 [NOTE]
 ====
-For production environments, Red Hat recommends xref:../installing/installing_helm/install-helm-customization.adoc#installing-with-customizations-using-helm-charts[Installing {product-title} by using Helm charts].
+For production environments, Red Hat recommends xref:installing:installing_helm/install-helm-customization.adoc#installing-with-customizations-using-helm-charts[Installing {product-title} by using Helm charts].
 ====
 
 High-level installation flow:
@@ -23,7 +23,7 @@ High-level installation flow:
 Before you install:
 
 * Understand xref:../architecture/index.adoc#acs-architecture_acs-architecture[{product-title} architecture].
-* Review the xref:../installing/prerequisites.adoc#acs-general-requirements_acs-prerequisites[prerequisites for installing {product-title}].
+* Review the xref:installing:prerequisites.adoc#acs-general-requirements_acs-prerequisites[prerequisites for installing {product-title}].
 
 [id="installing-roxctl-cli"]
 == Installing the roxctl CLI
@@ -54,4 +54,4 @@ include::ROOT:partial$verify-acs-installation.adoc[leveloffset=+1]
 [id="additional-resources"]
 [role="_additional-resources"]
 == Additional resources
-* xref:../installing/installing_helm/install-helm-customization.adoc#installing-with-customizations-using-helm-charts[Installing {product-title} with customizations using Helm charts]
+* xref:installing:installing_helm/install-helm-customization.adoc#installing-with-customizations-using-helm-charts[Installing {product-title} with customizations using Helm charts]

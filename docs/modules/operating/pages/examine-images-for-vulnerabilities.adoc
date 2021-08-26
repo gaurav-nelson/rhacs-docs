@@ -11,9 +11,9 @@ Scanner analyzes all image layers to check for known vulnerabilities by comparin
 
 When Scanner finds any vulnerabilities, it:
 
-* Shows them in the xref:../operating/manage-vulnerabilities.adoc#vulnerability-management-view_acs-operating-manage-vulnerabilities[*Vulnerability Management*] view for detailed analysis.
+* Shows them in the xref:operating:manage-vulnerabilities.adoc#vulnerability-management-view_acs-operating-manage-vulnerabilities[*Vulnerability Management*] view for detailed analysis.
 * Ranks vulnerabilities according to risk and highlights them in the RHACS portal for risk assessment.
-* Checks them against enabled xref:../operating/manage-security-policies.adoc#manage-security-policies[security policies].
+* Checks them against enabled xref:operating:manage-security-policies.adoc#manage-security-policies[security policies].
 
 Scanner inspects the images and identifies the installed components based on the files in the images.
 It may fail to identify installed components or vulnerabilities if the final images are modified to remove the following files:
@@ -56,8 +56,8 @@ include::ROOT:partial$understanding-vulnerability-scores.adoc[leveloffset=+1]
 
 [role="_additional-resources"]
 .Additional resources
-* xref:../operating/examine-images-for-vulnerabilities.adoc#scan-inactive-images_examine-images-for-vulnerabilities[Scanning inactive images]
-* xref:../cli/getting-started-cli.adoc#getting-started-with-the-roxctl-cli[Getting started with the roxctl CLI]
+* xref:operating:examine-images-for-vulnerabilities.adoc#scan-inactive-images_examine-images-for-vulnerabilities[Scanning inactive images]
+* xref:cli:getting-started-cli.adoc#getting-started-with-the-roxctl-cli[Getting started with the roxctl CLI]
 //Add link to integrate image scanners topic
 
 include::ROOT:partial$view-images-in-your-environment.adoc[leveloffset=+1]

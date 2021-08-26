@@ -45,8 +45,8 @@ include::ROOT:partial$enable-offline-mode-helm.adoc[leveloffset=+2]
 
 [role="_additional-resources"]
 .Additional resources
-* xref:../installing/installing_helm/install-helm-customization.adoc#configure-central-services-helm-chart[Configuring the central-services Helm chart]
-* xref:../installing/installing_helm/install-helm-customization.adoc#configure-secured-cluster-services-helm-chart[Configuring the secured-cluster-services Helm chart]
+* xref:installing:installing_helm/install-helm-customization.adoc#configure-central-services-helm-chart[Configuring the central-services Helm chart]
+* xref:installing:installing_helm/install-helm-customization.adoc#configure-secured-cluster-services-helm-chart[Configuring the secured-cluster-services Helm chart]
 
 include::ROOT:partial$enable-offline-mode-roxctl.adoc[leveloffset=+2]
 
@@ -80,7 +80,7 @@ include::ROOT:partial$upload-definitions-to-central-api-token.adoc[leveloffset=+
 
 [role="_additional-resources"]
 .Additional resources
-* xref:../cli/getting-started-cli.html#cli-authentication_cli-getting-started[Authenticating using the roxctl CLI]
+* xref:cli:getting-started-cli.adoc#cli-authentication_cli-getting-started[Authenticating using the roxctl CLI]
 
 //Upload the definitions to Central (admin password)
 include::ROOT:partial$upload-definitions-to-central-admin-pass.adoc[leveloffset=+3]
