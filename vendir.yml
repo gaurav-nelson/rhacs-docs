@@ -1,12 +1,107 @@
+# PS: https://carvel.dev/vendir/docs/latest/vendir-spec/
+# Running `vendir sync` syncs the listed directories.
+# IMPORTNANT: Running the sync command will delete all other directories not listed in this vendir.yml file.
+
 apiVersion: vendir.k14s.io/v1alpha1
 kind: Config
 directories:
 - path: docs/modules
   contents:
-  - path: architecture
+  - path: ROOT/partials
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - modules/*
+    newRootPath: modules/
+  - path: ROOT/images
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - images/*
+    newRootPath: images/
+  - path: ROOT/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - welcome/*
+    newRootPath: welcome/
+  - path: _files
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - files/*
+    newRootPath: files/
+  - path: architecture/pages
     git:
       url: https://github.com/openshift/openshift-docs
       ref: rhacs-docs
     includePaths:
     - architecture/*
-    newRootPath: architecture/pages
+    newRootPath: architecture/
+  - path: backup_and_restore/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - backup_and_restore/*
+    newRootPath: backup_and_restore/
+  - path: cli/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - cli/*
+    newRootPath: cli/
+  - path: configuration/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - configuration/*
+    newRootPath: configuration/
+  - path: installing/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - installing/*
+    newRootPath: installing/
+  - path: integration/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - integration/*
+    newRootPath: integration/
+  - path: operating/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - operating/*
+    newRootPath: operating/
+  - path: release_notes/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - release_notes/*
+    newRootPath: release_notes/
+  - path: support/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - support/*
+    newRootPath: support/
+  - path: upgrading/pages
+    git:
+      url: https://github.com/openshift/openshift-docs
+      ref: rhacs-docs
+    includePaths:
+    - upgrading/*
+    newRootPath: upgrading/
