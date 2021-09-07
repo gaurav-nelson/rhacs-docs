@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: add-security-notices
 
-toc::[]
+
 
 [role="_abstract"]
 With {product-title}, you can add security notices that users see when they log in.

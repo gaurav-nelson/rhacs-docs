@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: acs-install-helm-quick
 
-toc::[]
+
 
 [role="_abstract"]
 {product-title} installs a set services on your {ocp} cluster. This topic describes the installation procedure for installing {product-title} on your {ocp} cluster without any customizations.

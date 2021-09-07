@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: use-admission-controller-enforcement
 
-toc::[]
+
 
 [role="_abstract"]
 {product-title} works with https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/[Kubernetes admission controllers] and https://docs.openshift.com/container-platform/4.5/architecture/admission-plug-ins.html[{ocp} admission plug-ins] to allow you to enforce security policies before Kubernetes or {ocp} creates workloads, for example, deployments, daemon sets or jobs.

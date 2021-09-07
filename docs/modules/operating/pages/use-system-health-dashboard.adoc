@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: use-system-health-dashboard
 
-toc::[]
+
 
 [role="_abstract"]
 The {product-title} system health dashboard provides a single interface for viewing health related information about {product-title} components.

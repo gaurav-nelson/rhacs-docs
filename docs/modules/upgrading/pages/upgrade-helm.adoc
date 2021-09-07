@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: upgrade-helm
 
-toc::[]
+
 
 [role="_abstract"]
 If you have installed {product-title} by using Helm charts, to upgrade to the latest version of {product-title} you must perform the following:

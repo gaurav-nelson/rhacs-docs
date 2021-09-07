@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-with-pagerduty
 
-toc::[]
+
 
 [role="_abstract"]
 If you are using link:https://www.pagerduty.com/[PagerDuty], you can forward alerts from {product-title} to PagerDuty.

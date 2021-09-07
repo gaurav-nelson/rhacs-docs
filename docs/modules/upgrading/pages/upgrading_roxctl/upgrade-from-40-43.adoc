@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: upgrade-from-40-43
 
-toc::[]
+
 
 [role="_abstract"]
 

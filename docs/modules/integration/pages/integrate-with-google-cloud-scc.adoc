@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-with-google-cloud-scc
 
-toc::[]
+
 
 [role="_abstract"]
 If you are using link:https://cloud.google.com/security-command-center/[Google Cloud Security Command Center] (Cloud SCC), you can forward alerts from {product-title} to Cloud SCC.

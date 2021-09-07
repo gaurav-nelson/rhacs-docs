@@ -63,6 +63,10 @@ echo -e "${BLUE}Updating include paths ...${NC}"
 
 grep -rl include::modules\/ . | xargs sed -i "" 's+include::ROOT:partial$+include::ROOT:partial$+g'
 
+echo -e "${BLUE}Removing TOC from pages ...${NC}"
+
+grep -rl 'toc::\[\]' . | xargs sed -i "" 's+toc::\[\]++g'
+
 echo -e "${BLUE}Updating xrefs ...${NC}"
 # TBD: Use regex to convert the xrefs to the Antora format
 # Doesn't cater for xrefs with ../../ in them

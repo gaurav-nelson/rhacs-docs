@@ -4,7 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: acs-install-helm-customization
 :topic-helm:
 
-toc::[]
+
 
 High-level installation flow:
 
