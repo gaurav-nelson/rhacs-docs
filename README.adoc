@@ -1,4 +1,28 @@
 = Red Hat Advance Cluster Security for Kubernetes (RHACS) documentation
 This is a repository for testing the RHACS documentation build by using Antora.
 
-For published docs, see https://gaurav-nelson.github.io/rhacs-docs/ 
+For published docs, see https://gaurav-nelson.github.io/rhacs-docs/
+
+== Building docs
+
+. Install the following packages:
++
+[source,terminal]
+----
+npm i -g @antora/cli @antora/site-generator-default @antora/site-generator-gitbook antora-site-generator-lunr <1>
+----
+<1> `antora-site-generator-lunr` is required to generate the Lunr search index.
+. Run the `sync-docs` script to update the docs:
++
+[source,terminal]
+----
+./sync-docs.sh <1>
+----
+<1> Before running this script, update the RHACS version number (line 101) in the `sync-docs.sh` script.
+. Run the following command to build the stactic site:
++
+[source,terminal]
+----
+DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" antora --generator antora-site-generator-lunr antora-playbook.yml
+----
+Site is generated in the `build/site/` directory.

@@ -1,5 +1,5 @@
 site:
-  title: RHACS Docs
+  title: RHACS documentation
   start_page: rhacs::index.adoc
 content:
   sources:
