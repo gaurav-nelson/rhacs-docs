@@ -51,3 +51,6 @@ endif::[]
 :smallpluralporv: processes
 :capsporv: Process
 :capspluralporv: Processes
+:product-title: Red Hat Advance Cluster Security for Kuberenetes
+:product-version: 3.64
+:product-title-short: RHACS

@@ -95,4 +95,10 @@ echo -e "${BLUE}Updating image paths ...${NC}"
 
 grep -rl image::ROOT: . | xargs sed -i "" 's+image::ROOT:+image::ROOT:ROOT:+g'
 
+echo -e "${BLUE}Adding product name and version ...${NC}"
+
+echo ":product-title: Red Hat Advance Cluster Security for Kuberenetes" >> ./docs/modules/ROOT/partials/common-attributes.adoc
+echo ":product-version: 3.64" >> ./docs/modules/ROOT/partials/common-attributes.adoc
+echo ":product-title-short: RHACS" >> ./docs/modules/ROOT/partials/common-attributes.adoc
+
 echo -e "${GREEN}Done!${NC}"
