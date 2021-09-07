@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Enabling alert data retention :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Configuring</li>
+    <li><a href="enable-alert-data-retention.html">Enabling alert data retention</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/configuration/pages/enable-alert-data-retention.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Enabling alert data retention</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Learn how to configure a retention period for Red Hat Advance Cluster Security for Kuberenetes alerts.</p>
+</div>
+<div class="paragraph">
+<p>With Red Hat Advance Cluster Security for Kuberenetes, you can configure the time to keep historical alerts stored.
+Red Hat Advance Cluster Security for Kuberenetes then deletes the older alerts after the specified time.</p>
+</div>
+<div class="paragraph">
+<p>By automatically deleting alerts that are no longer needed, you can save storage costs.</p>
+</div>
+<div class="paragraph">
+<p>The alerts for which you can configure the retention period include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Runtime alerts, both unresolved (active) and resolved.</p>
+</li>
+<li>
+<p>Stale deploy-time alerts that do not apply to the current deployment.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Data retention settings are enabled by default. You can change these settings after the installation.</p>
+</li>
+<li>
+<p>When you upgrade Red Hat Advance Cluster Security for Kuberenetes, data retention settings are not applied unless you have enabled them before.</p>
+</li>
+<li>
+<p>You can configure alert retention settings by using the RHACS portal or the API.</p>
+</li>
+<li>
+<p>The deletion process runs every hour.
+Currently, you cannot change this.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-alert-data-retention_enable-alert-data-retention"><a class="anchor" href="#configure-alert-data-retention_enable-alert-data-retention"></a>Configuring alert data retention</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can configure alert retention settings by using the RHACS portal.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have the <code>Config</code> role with <code>read</code> and <code>write</code> permissions to configure data retention.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>System Configuration</strong>.</p>
+</li>
+<li>
+<p>On the <strong>System Configuration</strong> view header, click <strong>Edit</strong>.</p>
+</li>
+<li>
+<p>Under the <strong>Data Retention Configuration</strong> section, update the number of days for each type of data:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>All Runtime Violations</strong></p>
+</li>
+<li>
+<p><strong>Resolved Deploy-Phase Violations</strong></p>
+</li>
+<li>
+<p><strong>Runtime Violations For Deleted Deployments</strong></p>
+</li>
+<li>
+<p><strong>Images No Longer Deployed</strong></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To save a type of data forever, set the retention period to <code>0</code> days.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To configure alert data retention by using Red Hat Advance Cluster Security for Kuberenetes API, view the <code>PutConfig</code> API and related APIs in the <code>ConfigService</code> group in the API reference documentation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Integrating with Sumo Logic :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li><a href="integrate-with-sumologic.html">Integrating with Sumo Logic</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/integration/pages/integrate-with-sumologic.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Integrating with Sumo Logic</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>If you are using <a href="https://www.sumologic.com/">Sumo Logic</a>, you can forward alerts from Red Hat Advance Cluster Security for Kuberenetes to Sumo Logic.</p>
+</div>
+<div class="paragraph">
+<p>The following steps represent a high-level workflow for integrating Red Hat Advance Cluster Security for Kuberenetes with Sumo Logic:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add a new Custom App in Sumo Logic, set the HTTP source, and get the HTTP URL.</p>
+</li>
+<li>
+<p>Use the HTTP URL to integrate Sumo Logic with Red Hat Advance Cluster Security for Kuberenetes.</p>
+</li>
+<li>
+<p>Identify the policies you want to send notifications for, and update the notification settings for those policies.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-sumologic_integrate-with-sumologic"><a class="anchor" href="#configure-sumologic_integrate-with-sumologic"></a>Configuring Sumo Logic</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>Setup Wizard</strong> to set up <strong>Streaming Data</strong> and get the HTTP URL.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to your Sumo Logic Home page and select <strong>Setup Wizard</strong>.</p>
+</li>
+<li>
+<p>Move your cursor over to <strong>Set Up Streaming Data</strong> and select <strong>Get Started</strong>.</p>
+</li>
+<li>
+<p>On the Select Data Type page, select <strong>Your Custom App</strong>.</p>
+</li>
+<li>
+<p>On the Set Up Collection page, select <strong>HTTP Source</strong>.</p>
+</li>
+<li>
+<p>Enter a name for <strong>Source Category</strong>, for example, <code>rhacs</code> and click <strong>Continue</strong>.</p>
+</li>
+<li>
+<p><strong>Copy</strong> the generated URL.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sumologic-configuring-acs_integrate-with-sumologic"><a class="anchor" href="#sumologic-configuring-acs_integrate-with-sumologic"></a>Configuring Red Hat Advance Cluster Security for Kuberenetes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a new integration in Red Hat Advance Cluster Security for Kuberenetes by using the HTTP URL.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Integrations</strong>.</p>
+</li>
+<li>
+<p>Scroll down to the <strong>Notifier Integrations</strong> section and select <strong>Sumo Logic</strong>.</p>
+</li>
+<li>
+<p>Click <strong>New Integration</strong> (<code><strong>add</strong></code> icon).</p>
+</li>
+<li>
+<p>Enter a name for <strong>Integration Name</strong>.</p>
+</li>
+<li>
+<p>Enter the generated HTTP URL in the <strong>HTTP Collector Source Address</strong> field.</p>
+</li>
+<li>
+<p>Click <strong>Test</strong> (<code><strong>checkmark</strong></code> icon) to test that the integration with Sumo Logic is working.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong> (<code><strong>save</strong></code> icon) to create the configuration.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-policy-notifications_integrate-with-sumologic"><a class="anchor" href="#configure-policy-notifications_integrate-with-sumologic"></a>Configuring policy notifications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Enable alert notifications for system policies.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>System policies</strong>.</p>
+</li>
+<li>
+<p>Select the check boxes for one or more policies that you want to send alerts for.</p>
+</li>
+<li>
+<p>Select <strong>Actions</strong> &#8594; <strong>Enable Notification</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Enable Notifications</strong> dialog box, select the check box for the Sumo Logic notifier.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you have not configured any other integrations, you will see <strong>No notifiers configured!</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Enable</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes sends notifications on an opt-in basis.
+To receive notifications, you must first assign a notifier to the policy.</p>
+</li>
+<li>
+<p>Notifications are only sent once for a given alert.
+If you have assigned a notifier to a policy, you will not receive a notification unless a violation generates a new alert.</p>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes creates a  new alert when:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A policy violation occurs for the first time in a deployment.</p>
+</li>
+<li>
+<p>A runtime-phase policy violation occurs in a deployment after you resolved the previous runtime alert for a policy in that deployment.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="view-alerts-in-sumo-logic_integrate-with-sumologic"><a class="anchor" href="#view-alerts-in-sumo-logic_integrate-with-sumologic"></a>Viewing alerts in Sumo Logic</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can view alerts from Red Hat Advance Cluster Security for Kuberenetes in Sumo Logic.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to your Sumo Logic Home page and click <strong>Log Search</strong>.</p>
+</li>
+<li>
+<p>In the search box, enter <code>_sourceCategory=rhacs</code>.
+Make sure to use the same <strong>Source Category</strong> name that you entered while configuring Sumo Logic.</p>
+</li>
+<li>
+<p>Select the time and then click <strong>Start</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

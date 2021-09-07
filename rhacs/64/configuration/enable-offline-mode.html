@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Enabling offline mode :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Configuring</li>
+    <li><a href="enable-offline-mode.html">Enabling offline mode</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/configuration/pages/enable-offline-mode.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Enabling offline mode</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can use Red Hat Advance Cluster Security for Kuberenetes for clusters that are not connected to the internet by enabling the offline mode. In offline mode, Red Hat Advance Cluster Security for Kuberenetes components do not connect to addresses or hosts on the internet.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes does not determine if the user-supplied hostnames, IP addresses, or other resources are on the internet. For example, if you try to integrate with a Docker registry hosted on the internet, Red Hat Advance Cluster Security for Kuberenetes will not block this request.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To deploy and operate Red Hat Advance Cluster Security for Kuberenetes in offline mode:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download Red Hat Advance Cluster Security for Kuberenetes images in a tarball (<code>.tgz</code>) format. These files are easy to transfer across network air gaps or other boundaries.</p>
+</li>
+<li>
+<p>Enable offline mode during installation.</p>
+</li>
+<li>
+<p>(Optional) Routinely update Scanner’s vulnerability list by uploading a new definitions file.</p>
+</li>
+<li>
+<p>(Optional) When required, add support for runtime collection on more kernel versions by uploading new kernel support packages.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can only enable offline mode during the installation, and not during an upgrade.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="download-images-for-offline-use"><a class="anchor" href="#download-images-for-offline-use"></a>Downloading images for offline use</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can download Red Hat Advance Cluster Security for Kuberenetes images by using an offline bundle, or you can download the images directly.</p>
+</div>
+<div class="sect2">
+<h3 id="download-images-using-offline-bundle_enable-offline-mode"><a class="anchor" href="#download-images-using-offline-bundle_enable-offline-mode"></a>Downloading images using an offline bundle</h3>
+<div class="paragraph">
+<p>You can download Red Hat Advance Cluster Security for Kuberenetes images by using an offline bundle.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Download the following image bundles:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Images for all Red Hat Advance Cluster Security for Kuberenetes components (except Collector) and the roxctl CLI: <a href="https://install.stackrox.io/3.64.0/image-bundle.tgz">https://install.stackrox.io/3.64.0/image-bundle.tgz</a></p>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes Collector image: <a href="https://install.stackrox.io/3.2.0-latest/image-collector-bundle.tgz">https://install.stackrox.io/3.2.0-latest/image-collector-bundle.tgz</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Copy the image bundles to the network where you want to deploy Red Hat Advance Cluster Security for Kuberenetes.</p>
+</li>
+<li>
+<p>Extract the images and upload them to your registry.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Decompress the archives:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ tar xzvf image-bundle.tgz</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ tar xzvf image-bundle-collector.tgz</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Read the <code>README.txt</code> files:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ cat image-bundle/README.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ cat image-collector-bundle/README.txt</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the <code>import.sh</code> script for each bundle.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ ./image-bundle/import.sh</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ ./image-collector-bundle/import.sh</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If you want to push the image to a registry, provide the registry prefix when answering the prompts.</p>
+</li>
+<li>
+<p>If you do not provide a registry prefix, the images are only uploaded to the local Docker host. You must then manually run the <code>docker tag</code> and <code>docker push</code> commands to push the images to your registry.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="download-images-directly_enable-offline-mode"><a class="anchor" href="#download-images-directly_enable-offline-mode"></a>Downloading images directly</h3>
+<div class="paragraph">
+<p>If you do not want to use an image bundle, you can manually pull, retag, and push Red Hat Advance Cluster Security for Kuberenetes images to your registry. The images included in the current version of the image bundles are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>registry.redhat.io/rh-acs/main:3.64.0</code></p>
+</li>
+<li>
+<p><code>registry.redhat.io/rh-acs/scanner:2.18.0</code></p>
+</li>
+<li>
+<p><code>registry.redhat.io/rh-acs/scanner-db:2.18.0</code></p>
+</li>
+<li>
+<p><code>registry.redhat.io/rh-acs/collector:3.2.0-latest</code></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="topic-name_enable-offline-mode"><a class="anchor" href="#topic-name_enable-offline-mode"></a>Retagging images</h4>
+<div class="paragraph">
+<p>You can download and retag images using the Docker command-line interface.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you retag an image, you must maintain the name of the image and the tag. For example, use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker tag registry.redhat.io/rh-acs/main:3.64.0 &lt;your_registry&gt;/main:3.64.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and do not retag like the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker tag registry.redhat.io/rh-acs/main:3.64.0 &lt;your_registry&gt;/other-name:latest</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the registry:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker login stackrox.io <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The Collector image is distributed from a separate registry. To retag the Collector image, use the <code>collector.stackrox.io</code> registry instead of <code>stackrox.io</code>.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Pull the image:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker pull &lt;image&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Retag the image:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker tag &lt;image&gt; &lt;new_image&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Push the updated image to your registry:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker push &lt;new_image&gt;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enable-offline-mode-during-installation"><a class="anchor" href="#enable-offline-mode-during-installation"></a>Enabling offline mode during installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can enable offline mode during the installation of Red Hat Advance Cluster Security for Kuberenetes.</p>
+</div>
+<div class="sect2">
+<h3 id="enable-offline-mode-helm_enable-offline-mode"><a class="anchor" href="#enable-offline-mode-helm_enable-offline-mode"></a>Enabling offline mode by using Helm configuration</h3>
+<div class="paragraph">
+<p>You can enable offline mode during the installation when you are installing Red Hat Advance Cluster Security for Kuberenetes by using a Helm chart.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>When installing the central-services Helm chart, set the value of the <code>env.offlineMode</code> environmental variable to <code>true</code> in the <code>values-public.yaml</code> configuration file.</p>
+</li>
+<li>
+<p>When installing the secured-cluster-services Helm chart, set the value of the <code>config.offlineMode</code> parameter to <code>true</code> in the <code>values-public.yaml</code> configuration file.</p>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="../installing/installing_helm/install-helm-customization.html#configure-central-services-helm-chart" class="page">Configuring the central-services Helm chart</a></p>
+</li>
+<li>
+<p><a href="../installing/installing_helm/install-helm-customization.html#configure-secured-cluster-services-helm-chart" class="page">Configuring the secured-cluster-services Helm chart</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enable-offline-mode-roxctl_enable-offline-mode"><a class="anchor" href="#enable-offline-mode-roxctl_enable-offline-mode"></a>Enabling offline mode by using the roxctl CLI</h3>
+<div class="paragraph">
+<p>You can enable offline mode when you are installing Red Hat Advance Cluster Security for Kuberenetes by using the roxctl CLI.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>If you are using a registry other than the default internet-connected registry (<code>stackrox.io</code>), provide the locations where you have pushed the Red Hat Advance Cluster Security for Kuberenetes images when answering the <code>image to use</code> prompts:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">Enter main image to use (default: "registry.redhat.io/rh-acs/main:3.64.0"): &lt;your_registry&gt;/stackrox/main:3.64.0</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">Enter Scanner DB image to use (default: "registry.redhat.io/rh-acs/scanner-db:2.18.0"): &lt;your_registry&gt;/stackrox/scanner-db:2.18.0</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">Enter Scanner image to use (default: "registry.redhat.io/rh-acs/scanner:2.18.0"): &lt;your_registry&gt;/stackrox/scanner:2.18.0</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>To enable the offline mode, enter <code>true</code> when answering the <code>Enter whether to run StackRox in offline mode</code> prompt:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">Enter whether to run StackRox in offline mode, which avoids reaching out to the internet (default: "false"): true</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Later, when you add Sensor to a remote cluster in the <strong>Platform Configuration</strong> &#8594; <strong>Clusters</strong> view in the RHACS portal, you must specify your the Collector image name in the <strong>Collector Image Repository</strong> field.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="update-scanner-definitions-in-offline-mode"><a class="anchor" href="#update-scanner-definitions-in-offline-mode"></a>Updating Scanner definitions in offline mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Scanner contains a local vulnerability definitions database. When Red Hat Advance Cluster Security for Kuberenetes runs in normal mode (connected to the internet), Scanner fetches new vulnerability definitions from the internet and updates its database.</p>
+</div>
+<div class="paragraph">
+<p>However, when you are using Red Hat Advance Cluster Security for Kuberenetes in offline mode, you must manually update Scanner definitions by uploading them to Central.</p>
+</div>
+<div class="paragraph">
+<p>When Red Hat Advance Cluster Security for Kuberenetes runs in offline mode, Scanner checks for new definitions from Central. If new definitions are available, Scanner downloads the new definitions from Central, marks them as default, and then uses the updated definitions for scanning images.</p>
+</div>
+<div class="paragraph">
+<p>To update the definitions in offline mode:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download the definitions.</p>
+</li>
+<li>
+<p>Upload the definitions to Central.</p>
+</li>
+<li>
+<p>Restart Scanner.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="download-scanner-definitions_enable-offline-mode"><a class="anchor" href="#download-scanner-definitions_enable-offline-mode"></a>Downloading Scanner definitions</h3>
+<div class="paragraph">
+<p>If you are running Red Hat Advance Cluster Security for Kuberenetes in offline mode, you can download the vulnerability definitions database that Scanner uses and then upload it to Central.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>To download Scanner definitions, you need a system with internet access.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Navigate to <a href="https://install.stackrox.io/scanner/scanner-vuln-updates.zip">https://install.stackrox.io/scanner/scanner-vuln-updates.zip</a> to download the definitions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="upload-definitions-to-central"><a class="anchor" href="#upload-definitions-to-central"></a>Uploading definitions to Central</h3>
+<div class="paragraph">
+<p>To upload Scanner definitions to Central, you can either use an API token or your administrator password. Red Hat recommends using an authentication token in a production environment because each token is assigned specific access control permissions.</p>
+</div>
+<div class="sect3">
+<h4 id="upload-definitions-to-central-api-token_enable-offline-mode"><a class="anchor" href="#upload-definitions-to-central-api-token_enable-offline-mode"></a>Uploading definitions to Central by using an API token</h4>
+<div class="paragraph">
+<p>You can upload the vulnerability definitions database that Scanner uses to Central by using an API token.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have an API token with the administrator role.</p>
+</li>
+<li>
+<p>You must have installed the <code>roxctl</code> command-line interface (CLI).</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Set the <code>ROX_API_TOKEN</code> and the <code>CENTRAL_ADDRESS</code> environment variables:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ export ROX_API_TOKEN=&lt;api_token&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ export CENTRAL_ADDRESS=&lt;address&gt;:&lt;port_number&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the following command to upload the definitions file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl scanner upload-db \
+  -e "$CENTRAL_ADDRESS" \
+  --scanner-db-file=&lt;compressed_scanner_definitions.zip&gt;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="../cli/getting-started-cli.html#cli-authentication_cli-getting-started" class="page">Authenticating using the roxctl CLI</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="upload-definitions-to-central-admin-pass_enable-offline-mode"><a class="anchor" href="#upload-definitions-to-central-admin-pass_enable-offline-mode"></a>Uploading definitions to Central by using the administrator password</h4>
+<div class="paragraph">
+<p>You can upload the vulnerability definitions database that Scanner uses to Central by using your Red Hat Advance Cluster Security for Kuberenetes administrator password.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have the administrator password.</p>
+</li>
+<li>
+<p>You must have installed the <code>roxctl</code> command-line interface (CLI).</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Set the <code>CENTRAL_ADDRESS</code> environment variable:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ export CENTRAL_ADDRESS=&lt;address&gt;:&lt;port_number&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the following command to upload the definitions file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl scanner upload-db \
+  -p &lt;your_administrator_password&gt; \
+  -e "$CENTRAL_ADDRESS" \
+  --scanner-db-file=&lt;compressed_scanner_definitions.zip&gt;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="restart-scanner_enable-offline-mode"><a class="anchor" href="#restart-scanner_enable-offline-mode"></a>Restarting the Scanner container</h3>
+<div class="paragraph _abstract">
+<p>You can restart the Scanner container by deleting the pod.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Run the following command to delete the Scanner pod:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On OpenShift Container Platform:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc delete pod -n stackrox -l app=scanner</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>On Kubernetes:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ kubectl delete pod -n stackrox -l app=scanner</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="update-kernel-support-packages_enable-offline-mode"><a class="anchor" href="#update-kernel-support-packages_enable-offline-mode"></a>Updating kernel support packages in offline mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Collector monitors the runtime activity for each node in your secured clusters.
+To monitor the activities, Collector requires probes.
+These probes are kernel modules or eBPF programs specific to the Linux kernel version installed on the host.
+The Collector image contains a set of built-in probes.</p>
+</div>
+<div class="paragraph">
+<p>When Red Hat Advance Cluster Security for Kuberenetes runs in normal mode (connected to the internet), Collector automatically downloads a new probe if the required probe is not built in.</p>
+</div>
+<div class="paragraph">
+<p>In offline mode, you can manually download packages containing probes for all recent and supported Linux kernel versions and upload them to Central.
+Collectors then download these probes from Central.</p>
+</div>
+<div class="paragraph">
+<p>Collector checks for the new probes in the following order. It checks:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The existing Collector image.</p>
+</li>
+<li>
+<p>The kernel support package (if you have uploaded one to Central).</p>
+</li>
+<li>
+<p>A Red Hat-operated server available on the internet.
+Collector uses Central&#8217;s network connection to check and download the probes.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If Collector does not get new probes after checking, it reports a <code>CrashLoopBackoff</code> event.</p>
+</div>
+<div class="paragraph">
+<p>If your network configuration restricts outbound traffic, you can manually download packages containing probes for all recent and supported Linux kernel versions and upload them to Central. Collectors then download these probes from Central, thus avoiding any outbound internet access.</p>
+</div>
+<div class="sect2">
+<h3 id="download-kernel-support-package_enable-offline-mode"><a class="anchor" href="#download-kernel-support-package_enable-offline-mode"></a>Downloading kernel support packages</h3>
+<div class="paragraph">
+<p>If you are running Red Hat Advance Cluster Security for Kuberenetes in offline mode, you can download packages containing probes for all recent and supported Linux kernel versions and then upload them to Central.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>View and download available support packages from <a href="https://install.stackrox.io/collector/support-packages/index.html">https://install.stackrox.io/collector/support-packages/index.html</a>.
+The kernel support packages list categorizes support packages based on Red Hat Advance Cluster Security for Kuberenetes version.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="upload-kernel-support-package-to-central_enable-offline-mode"><a class="anchor" href="#upload-kernel-support-package-to-central_enable-offline-mode"></a>Uploading kernel support packages to Central</h3>
+<div class="paragraph">
+<p>You can upload the kernel support packages containing probes for all recent and supported Linux kernel versions to Central.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have an API token with the administrator role.</p>
+</li>
+<li>
+<p>You must have installed the <code>roxctl</code> command-line interface (CLI).</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Set the <code>ROX_API_TOKEN</code> and the <code>CENTRAL_ADDRESS</code> environment variables:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ export ROX_API_TOKEN=&lt;api_token&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ export CENTRAL_ADDRESS=&lt;address&gt;:&lt;port_number&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the following command to upload the kernel support packages:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl collector support-packages upload &lt;package_file&gt; \
+  -e "$ROX_CENTRAL_ADDRESS"</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>When you upload a new support package that includes content uploaded to Central previously, only new files are uploaded.</p>
+</li>
+<li>
+<p>When you upload a new support package that includes files with the same name but different contents than those present on the Central, <code>roxctl</code> shows a warning message and does not overwrite files.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can use the <code>--overwrite</code> option with the upload command to overwrite the files.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When you upload a support package that contains a required probe, Central does not make any outbound requests (to the internet) for downloading this probe. Central uses the probe from the support package.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

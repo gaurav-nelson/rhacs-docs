@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Prerequisites for installing Red Hat Advance Cluster Security for Kuberenetes :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Installing</li>
+    <li><a href="prerequisites.html">Installation prerequisites</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/installing/pages/prerequisites.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Prerequisites for installing Red Hat Advance Cluster Security for Kuberenetes</h1>
+<div class="sect1">
+<h2 id="acs-general-requirements_acs-prerequisites"><a class="anchor" href="#acs-general-requirements_acs-prerequisites"></a>General requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To install Red Hat Advance Cluster Security for Kuberenetes, you must have:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Container Platform version 4.5 or later.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must not install Red Hat Advance Cluster Security for Kuberenetes on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon Elastic File System (Amazon EFS). Use the Amazon Elastic Block Store (Amazon EBS) with the default <strong>gp2</strong> volume type instead.</p>
+</li>
+<li>
+<p>Older CPUs that do not have the Streaming SIMD Extensions (SSE) 4.2 instruction set.
+For example, Intel processors older than <em>Sandy Bridge</em> and AMD processors older than <em>Bulldozer</em>.
+(These processors were released in 2011.)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Cluster nodes with a supported operating system.
+See the <a href="https://access.redhat.com/node/5822721">Red Hat Advance Cluster Security for Kuberenetes Support Policy</a> for additional information.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Operating system</strong>: Amazon Linux, CentOS, Container-Optimized OS from Google, CoreOS, Debian, Red Hat Enterprise Linux, or Ubuntu.</p>
+</li>
+<li>
+<p><strong>Processor and memory</strong>: 2 CPU cores and at least 3GiB of RAM.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For deploying Central, use a machine type with 4 or more cores and apply scheduling policies to launch Central on such nodes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Persistent storage by using persistent volume claim (PVC).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use Solid-State Drives (SSDs) for best performance.
+However, you can use another storage type if you do not have SSDs available.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Helm command-line interface (CLI) v3.2 or newer.
+Use the <code>helm version</code> command to verify the version of Helm you have installed.</p>
+</li>
+<li>
+<p>The OpenShift Container Platform CLI (<code>oc</code>).</p>
+</li>
+<li>
+<p>You must have the required permissions to configure deployments in the Central cluster.</p>
+</li>
+<li>
+<p>You must have access to the Red Hat Container Registry. See <a href="https://access.redhat.com/RegistryAuthentication">Red Hat Container Registry Authentication</a> for information about downloading images from <code>registry.redhat.io</code>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are not a Red Hat customer and purchased the Stackrox Kubernetes Security Platform before the acquisition, you can use StackRox’s container registry at <code>stackrox.io</code>. Contact <a href="mailto:support@stackrox.com">support@stackrox.com</a> to enable access to the registry.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="central-prerequisites_acs-prerequisites"><a class="anchor" href="#central-prerequisites_acs-prerequisites"></a>Prerequisites for installing Central</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A single containerized service called Central handles data persistence, API interactions, and user interface (Portal) access.</p>
+</div>
+<div class="paragraph">
+<p>Central requires persistent storage:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can provide storage with a persistent volume claim (PVC).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can use a hostPath volume for storage only if all your hosts (or a group of hosts) mount a shared file system, such as an NFS share or a storage appliance.
+Otherwise, your data is only saved on a single node. Red Hat does not
+recommend using a hostPath volume.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Use Solid-State Drives (SSD) for best performance.
+However, you can use another storage type if you do not have SSDs available.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For security reasons, you should deploy Central in a cluster with limited administrative access.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="_memory_and_storage_requirements" class="discrete">Memory and storage requirements</h3>
+<div class="paragraph">
+<p>The following table lists the minimum memory and storage values required to install and run Central.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Central</th>
+<th class="tableblock halign-left valign-top">CPU</th>
+<th class="tableblock halign-left valign-top">Memory</th>
+<th class="tableblock halign-left valign-top">Storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Request</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.5 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GiB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GiB</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_sizing_guidelines" class="discrete">Sizing guidelines</h3>
+<div class="paragraph">
+<p>Use the following compute resources and storage values depending upon the number of nodes in your cluster.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nodes</th>
+<th class="tableblock halign-left valign-top">Deployments</th>
+<th class="tableblock halign-left valign-top">CPU</th>
+<th class="tableblock halign-left valign-top">Memory</th>
+<th class="tableblock halign-left valign-top">Storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Up to 100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Up to 1000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GiB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Up to 500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Up to 2000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GiB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">More than 500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">More than 2000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12 - 16 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 - 200 GiB</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="scanner-prerequisites_acs-prerequisites"><a class="anchor" href="#scanner-prerequisites_acs-prerequisites"></a>Prerequisites for installing Scanner</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes includes an image vulnerability scanner called Scanner.
+This service scans images that are not already scanned by scanners integrated into image registries.</p>
+</div>
+<h3 id="_memory_and_storage_requirements_2" class="discrete">Memory and storage requirements</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Scanner</th>
+<th class="tableblock halign-left valign-top">CPU</th>
+<th class="tableblock halign-left valign-top">Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Request</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2700 MiB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8000 MiB</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sensor-prerequisites_acs-prerequisites"><a class="anchor" href="#sensor-prerequisites_acs-prerequisites"></a>Prerequisites for installing Sensor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sensor monitors your Kubernetes and OpenShift Container Platform clusters.
+These services currently deploy in a single deployment, which handles interactions with the Kubernetes API and coordinates with Collector.</p>
+</div>
+<h3 id="_memory_and_storage_requirements_3" class="discrete">Memory and storage requirements</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sensor</th>
+<th class="tableblock halign-left valign-top">CPU</th>
+<th class="tableblock halign-left valign-top">Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Request</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 GiB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 GiB</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="addmission-controller-prerequisites_acs-prerequisites"><a class="anchor" href="#addmission-controller-prerequisites_acs-prerequisites"></a>Prerequisites for installing Admission Controller</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Admission controller prevents users from creating workloads that violate policies you configure.</p>
+</div>
+<h3 id="_memory_and_storage_requirements_4" class="discrete">Memory and storage requirements</h3>
+<div class="paragraph">
+<p>By default, the admission control service runs 3 replicas.
+The following table lists the request and limits for each replica.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Admission controller</th>
+<th class="tableblock halign-left valign-top">CPU</th>
+<th class="tableblock halign-left valign-top">Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Request</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.05 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 MiB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.5 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500 MiB</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="collector-prerequisites_acs-prerequisites"><a class="anchor" href="#collector-prerequisites_acs-prerequisites"></a>Prerequisites for installing Collector</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Collector monitors runtime activity on each node in your secured clusters.
+It connects to Sensor to report this information.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To install Collector on systems configured with Unified Extensible Firmware Interface (UEFI) boot, you must use eBPF probes because kernel modules are unsigned, and the UEFI firmware cannot load unsigned packages.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="_memory_and_storage_requirements_5" class="discrete">Memory and storage requirements</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Collector</th>
+<th class="tableblock halign-left valign-top">CPU</th>
+<th class="tableblock halign-left valign-top">Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Request</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.05 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">320 MiB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.75 cores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 GiB</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Collector uses a mutable image tag (<code>&lt;version&gt;-latest</code>), so you get support for newer Linux kernel versions more easily.
+There is no change in code, pre-existing kernel modules, or eBPF programs for image updates.
+Updates only add a single image layer with support for new kernel versions published after the initial release.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

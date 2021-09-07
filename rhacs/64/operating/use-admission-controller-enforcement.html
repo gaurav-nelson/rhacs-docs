@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Using admission controller enforcement :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Operating</li>
+    <li><a href="use-admission-controller-enforcement.html">Using admission controller enforcement</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/operating/pages/use-admission-controller-enforcement.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Using admission controller enforcement</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat Advance Cluster Security for Kuberenetes works with <a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/">Kubernetes admission controllers</a> and <a href="https://docs.openshift.com/container-platform/4.5/architecture/admission-plug-ins.html">OpenShift Container Platform admission plug-ins</a> to allow you to enforce security policies before Kubernetes or OpenShift Container Platform creates workloads, for example, deployments, daemon sets or jobs.
+The Red Hat Advance Cluster Security for Kuberenetes admission controller prevents users from creating workloads that violate policies you configure in Red Hat Advance Cluster Security for Kuberenetes.
+Beginning from the Red Hat Advance Cluster Security for Kuberenetes version 3.0.41, you can also configure the admission controller to prevent updates to workloads that violate policies.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes uses the <code>ValidatingAdmissionWebhook</code> controller to verify that the resource being provisioned complies with the specified security policies.
+To handle this, Red Hat Advance Cluster Security for Kuberenetes creates a <code>ValidatingWebhookConfiguration</code> which contains multiple webhook rules.
+When the Kubernetes or OpenShift Container Platform API server receives a request that matches one of the webhook rules, the API server sends an <code>AdmissionReview</code> request to Red Hat Advance Cluster Security for Kuberenetes.
+Red Hat Advance Cluster Security for Kuberenetes then accepts or rejects the request based on the configured security policies.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To use admission controller enforcement on OpenShift Container Platform, you need the Red Hat Advance Cluster Security for Kuberenetes  version 3.0.49 or newer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enable-admission-controller-enforcement"><a class="anchor" href="#enable-admission-controller-enforcement"></a>Enabling admission controller enforcement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you intend to use admission controller enforcement, consider the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>API latency</strong>: Using admission controller enforcement increases Kubernetes  or OpenShift Container Platform API latency because it involves additional API validation requests.
+Many standard Kubernetes libraries, such as fabric8, have short Kubernetes or OpenShift Container Platform API timeouts by default.
+Also, consider API timeouts in any custom automation you might be using.</p>
+</li>
+<li>
+<p><strong>Image scanning</strong>: You can choose whether the admission controller scans images while reviewing requests by setting the <strong>Contact Image Scanners</strong> option in the cluster configuration panel.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you enable this setting, Red Hat Advance Cluster Security for Kuberenetes contacts image scanners if scan results are not already available, which adds considerable latency.</p>
+</li>
+<li>
+<p>If you disable this setting, the enforcement decision only considers image scan criteria if cached scan results are available.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Red Hat Advance Cluster Security for Kuberenetes version 3.0.41 and newer, the cached scan results are only available for images referenced by their image digest (<code>@sha256:...</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You can use admission controller enforcement for:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Options in the pod <code>securityContext</code>.</p>
+</li>
+<li>
+<p>Deployment configurations.</p>
+</li>
+<li>
+<p>Image components and vulnerabilities.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You cannot use admission controller enforcement for:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Any runtime behavior, such as processes.</p>
+</li>
+<li>
+<p>Any policies based on port exposure.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The admission controller might fail if there are connectivity issues between the Kubernetes or OpenShift Container Platform API server and Red Hat Advance Cluster Security for Kuberenetes Sensor.
+To resolve this issue, delete the <code>ValidatingWebhookConfiguration</code> object as described in the disabling admission controller enforcement section.</p>
+</li>
+<li>
+<p>If you have deploy-time enforcement enabled for a policy and you enable the admission controller, Red Hat Advance Cluster Security for Kuberenetes attempts to block deployments that violate the policy.
+If a noncompliant deployment slips past the admission controller, for example, in case of a timeout, Red Hat Advance Cluster Security for Kuberenetes still applies other deploy-time enforcement mechanisms, such as scaling to zero replicas.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="enable-admission-controller-enforcement-55_use-admission-controller-enforcement"><a class="anchor" href="#enable-admission-controller-enforcement-55_use-admission-controller-enforcement"></a>Enabling admission controller enforcement in Red Hat Advance Cluster Security for Kuberenetes version 3.0.55 and newer</h3>
+<div class="paragraph _abstract">
+<p>You can enable admission controller enforcement from the <strong>Clusters</strong> view when you install Sensor or edit an existing cluster configuration.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Beginning from Red Hat Advance Cluster Security for Kuberenetes version 3.0.55.0, the admission controller webhook is deployed into the cluster by default.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Clusters</strong>.</p>
+</li>
+<li>
+<p>Select an existing cluster from the list or select <strong>+ New Cluster</strong>.</p>
+</li>
+<li>
+<p>In the cluster configuration panel, enter the details for your cluster.</p>
+</li>
+<li>
+<p>Red Hat recommends that you only turn on the <strong>Configure Admission Controller Webhook to listen on creates</strong> toggle if you are planning to use the admission controller to enforce on object create events.</p>
+</li>
+<li>
+<p>Red Hat recommends that you only turn on the <strong>Configure Admission Controller Webhook to listen on updates</strong> toggle if you are planning to use the admission controller to enforce on update events.</p>
+</li>
+<li>
+<p>Red Hat recommends that you only turn on the <strong>Enable Admission Controller Webhook to listen on exec and port-forward events</strong> toggle if you are planning to use the admission controller to enforce on pod execution and pod port forwards events.</p>
+</li>
+<li>
+<p>Configure the following options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Enforce on Object Creates</strong>: This toggle controls the behavior of the admission control service.
+You must have the <strong>Configure Admission Controller Webhook to listen on creates</strong> toggle turned on for this to work.</p>
+</li>
+<li>
+<p><strong>Enforce on Object Updates</strong>: This toggle controls the behavior of the admission control service.
+You must have the <strong>Configure Admission Controller Webhook to listen on updates</strong> toggle turned on for this to work.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select <strong>Next</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Download files</strong> section, select <strong>Download YAML Files and Keys</strong>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When enabling admission controller for an existing cluster, if you make any changes in the:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Static Configuration</strong> section, you must download the YAML files and redeploy the Sensor.</p>
+</li>
+<li>
+<p><strong>Dynamic Configuration</strong> section, you can skip downloading the files and deployment, as Red Hat Advance Cluster Security for Kuberenetes automatically syncs the Sensor and applies the changes.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Select <strong>Finish</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>After you provision a new cluster with the generated YAML, run the following command to verify if admission controller enforcement is configured correctly:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get ValidatingWebhookConfiguration <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Use <code>kubectl</code> instead of <code>oc</code> if you are using Kubernetes.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">NAME       CREATED AT
+stackrox   2019-09-24T06:07:34Z</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enable-admission-controller-enforcement-54_use-admission-controller-enforcement"><a class="anchor" href="#enable-admission-controller-enforcement-54_use-admission-controller-enforcement"></a>Enabling admission controller enforcement in Red Hat Advance Cluster Security for Kuberenetes version 3.0.54 and older</h3>
+<div class="paragraph _abstract">
+<p>You can enable admission controller enforcement from the <strong>Clusters</strong> view when you install Sensor or edit an existing cluster configuration.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Clusters</strong>.</p>
+</li>
+<li>
+<p>Select an existing cluster from the list or select <strong>+ New Cluster</strong>.</p>
+</li>
+<li>
+<p>In the cluster configuration panel, fill in the details for your cluster.</p>
+</li>
+<li>
+<p>Turn on the <strong>Create Admission Controller Webhook</strong> toggle in the <strong>Static Configuration</strong> section.
+This setting controls whether Kubernetes or OpenShift Container Platform is configured to contact Red Hat Advance Cluster Security for Kuberenetes with <code>AdmissionReview</code> requests.</p>
+</li>
+<li>
+<p>Red Hat recommends that you only turn on the <strong>Configure Admission Controller Webhook to listen on updates</strong> toggle if you are planning to use the admission controller to enforce on updates.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <strong>Configure Admission Controller Webhook to listen on updates</strong> option is only available in Red Hat Advance Cluster Security for Kuberenetes version 3.0.41 and newer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When you keep it turned off, Red Hat Advance Cluster Security for Kuberenetes creates the <code>ValidatingWebhookConfiguration</code> in a way that causes the Kubernetes or OpenShift Container Platform API server not to send object update events.
+Since the volume of object updates is usually higher than the object creates, leaving this turned off limits the load on the admission control service.</p>
+</div>
+</li>
+<li>
+<p>Turn on the <strong>Enable Admission Controller</strong> toggle in the <strong>Dynamic Configuration</strong> section.
+This setting controls whether Red Hat Advance Cluster Security for Kuberenetes evaluates policies;
+if it is disabled, all <code>AdmissionReview</code> requests are automatically accepted.</p>
+</li>
+<li>
+<p>Configure the following options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Enforce on Updates</strong>: This toggle controls the behavior of the admission control service.
+You must have the <strong>Configure Admission Controller Webhook to listen on updates</strong> toggle turned on for this to work.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <strong>Enforce on Updates</strong> option is only available in Red Hat Advance Cluster Security for Kuberenetes version 3.0.41 and newer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Timeout</strong>: The maximum time in seconds, Red Hat Advance Cluster Security for Kuberenetes should wait while evaluating admission review requests.
+Use it to set request timeouts when you enable image scanning.
+If the image scan runs longer than the specified time, the  Red Hat Advance Cluster Security for Kuberenetes accepts the request.
+Other enforcement options, such as scaling the deployment to zero replicas, are still applied later if the image violates applicable policies.</p>
+</li>
+<li>
+<p><strong>Contact Image Scanners</strong>: Turn on this toggle to enable image scanning.
+See information about image scanning before you enable this toggle.</p>
+</li>
+<li>
+<p><strong>Disable Use of Bypass Annotation</strong>: Turn on this toggle to disable bypassing the admission controller.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select <strong>Next</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Download files</strong> section, select <strong>Download YAML Files and Keys</strong>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When enabling admission controller for an existing cluster, if you make any changes in the:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Static Configuration</strong> section, you must download the YAML files and redeploy the Sensor.</p>
+</li>
+<li>
+<p><strong>Dynamic Configuration</strong> section, you can skip downloading the files and deployment, because Red Hat Advance Cluster Security for Kuberenetes automatically syncs the Sensor and applies the changes.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Select <strong>Finish</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>After you provision a new cluster with the generated YAML, run the following command to verify if admission controller enforcement is set up:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get ValidatingWebhookConfiguration <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Use <code>kubectl</code> instead of <code>oc</code> if you are using Kubernetes.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">NAME       CREATED AT
+stackrox   2019-09-24T06:07:34Z</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bypass-admission-controller-enforcement_use-admission-controller-enforcement"><a class="anchor" href="#bypass-admission-controller-enforcement_use-admission-controller-enforcement"></a>Bypassing admission controller enforcement</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To bypass the admission controller, add the <code>admission.stackrox.io/break-glass</code> annotation to your configuration YAML.
+Bypassing the admission controller triggers a policy violation which includes deployment details.
+Red Hat recommends providing an issue-tracker link or some other reference as the value of this annotation so that others can understand why you bypassed the admission controller.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="disable-admission-controller-enforcement"><a class="anchor" href="#disable-admission-controller-enforcement"></a>Disabling admission controller enforcement</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="disable-admission-controller-enforcement-55_use-admission-controller-enforcement"><a class="anchor" href="#disable-admission-controller-enforcement-55_use-admission-controller-enforcement"></a>Disabling admission controller enforcement in Red Hat Advance Cluster Security for Kuberenetes version 3.0.55 and newer</h3>
+<div class="paragraph _abstract">
+<p>You can disable admission controller enforcement from the <strong>Clusters</strong> view on the RHACS portal.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Clusters</strong>.</p>
+</li>
+<li>
+<p>Select an existing cluster from the list.</p>
+</li>
+<li>
+<p>Turn off the <strong>Enforce on Object Creates</strong> and <strong>Enforce on Object Updates</strong> toggles in the <strong>Dynamic Configuration</strong> section.</p>
+</li>
+<li>
+<p>Select <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Finish</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="disable-admission-controller-enforcement-54_use-admission-controller-enforcement"><a class="anchor" href="#disable-admission-controller-enforcement-54_use-admission-controller-enforcement"></a>Disabling admission controller enforcement in Red Hat Advance Cluster Security for Kuberenetes version 3.0.54 and older</h3>
+<div class="paragraph _abstract">
+<p>You can disable admission controller enforcement from the <strong>Clusters</strong> view on the RHACS portal.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Clusters</strong>.</p>
+</li>
+<li>
+<p>Select an existing cluster from the list.</p>
+</li>
+<li>
+<p>Turn off the <strong>Enforce on Object Creates</strong> and <strong>Enforce on Object Updates</strong> toggles in the <strong>Dynamic Configuration</strong> section.</p>
+</li>
+<li>
+<p>Select <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Finish</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To disable the admission controller enforcement on pod executions and pod port forwards, you can either disable the system policies associated with the admission controller or you can disable the webhook.</p>
+</div>
+<div class="sect3">
+<h4 id="disable-associated-policies_use-admission-controller-enforcement"><a class="anchor" href="#disable-associated-policies_use-admission-controller-enforcement"></a>Disabling associated policies</h4>
+<div class="paragraph _abstract">
+<p>You can turn off the enforcement on relevant policies, which in turn instructs the admission controller to skip enforcements.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>System Policies</strong>.</p>
+</li>
+<li>
+<p>Disable enforcement on the default policies:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the policies view, scroll down and select the power icon next to the <strong>Kubernetes Actions: Exec into Pod</strong> policy to disable that policy.</p>
+</li>
+<li>
+<p>In the policies view, scroll down and select the power icon next to the <strong>Kubernetes Actions: Port Forward to Pod</strong> policy to disable that policy.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Disable enforcement on any other custom policies that you have created by using criteria from the default <strong>Kubernetes Actions: Port Forward to Pod</strong> and <strong>Kubernetes Actions: Exec into Pod</strong> policies.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="disable-the-webhook_use-admission-controller-enforcement"><a class="anchor" href="#disable-the-webhook_use-admission-controller-enforcement"></a>Disabling the webhook</h4>
+<div class="paragraph">
+<p>You can disable admission controller enforcement from the <strong>Clusters</strong> view on the RHACS portal.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you disable the admission controller by turning off the webhook, you must redeploy the Sensor bundle.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Clusters</strong>.</p>
+</li>
+<li>
+<p>Select an existing cluster from the list.</p>
+</li>
+<li>
+<p>Turn off the <strong>Enable Admission Controller Webhook to listen on exec and port-forward events</strong> toggle in the <strong>Static Configuration</strong> section.</p>
+</li>
+<li>
+<p>Select <strong>Next</strong> to continue with Sensor setup.</p>
+</li>
+<li>
+<p>Click <strong>Download YAML File and Keys</strong>.</p>
+</li>
+<li>
+<p>From a system that has access to the monitored cluster, unzip and run the <code>sensor</code> script:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ unzip -d sensor sensor-&lt;cluster_name&gt;.zip</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ ./sensor/sensor.sh</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you get a warning that you do not have the required permissions to deploy the sensor, follow the on-screen instructions, or contact your cluster administrator for assistance.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After the sensor is deployed, it contacts Central and provides cluster information.</p>
+</div>
+</li>
+<li>
+<p>Return to the RHACS portal and check if the deployment is successful.
+If it is successful, a green checkmark appears under section #2.
+If you do not see a green checkmark, use the following command to check for problems:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On OpenShift Container Platform:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get pod -n stackrox -w</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>On Kubernetes:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ kubectl get pod -n stackrox -w</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select <strong>Finish</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you disable the admission controller, Red Hat Advance Cluster Security for Kuberenetes does not delete the <code>ValidatingWebhookConfiguration</code>.
+However, instead of checking requests for violations, it accepts all <code>AdmissionReview</code> requests.</p>
+</div>
+<div class="paragraph">
+<p>To remove the <code>ValidatingWebhookConfiguration</code> object, run the following command in the secured cluster:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>On OpenShift Container Platform:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc delete ValidatingWebhookConfiguration/stackrox</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>On Kubernetes:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ kubectl delete ValidatingWebhookConfiguration/stackrox</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="validatingwebhookconfiguration-yaml-changes_use-admission-controller-enforcement"><a class="anchor" href="#validatingwebhookconfiguration-yaml-changes_use-admission-controller-enforcement"></a>ValidatingWebhookConfiguration YAML file changes</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This section is only applicable if you are using Red Hat Advance Cluster Security for Kuberenetes version 3.0.41 or newer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The webhook is not the part of Sensor anymore, and the reference service changed from Sensor to a dedicated admission control service.
+When you upgrade Red Hat Advance Cluster Security for Kuberenetes to version 3.0.41 or newer, the upgrade instructions handle this change.</p>
+</li>
+<li>
+<p>With the new configuration, you can enforce security policies on object updates as well, in addition to enforcing on object creation.</p>
+</li>
+<li>
+<p>Beginning from Red Hat Advance Cluster Security for Kuberenetes version 3.0.55, you can enforce security policies on pod execution and pod port forward events.</p>
+</li>
+</ul>
+</div>
+<h3 id="_if_central_or_sensor_is_unavailable" class="discrete">If Central or Sensor is unavailable</h3>
+<div class="paragraph">
+<p>The admission controller requires an initial configuration from Sensor to work.
+Kubernetes or OpenShift Container Platform saves this configuration, and it remains accessible even if all admission control service replicas are rescheduled onto other nodes.
+If this initial configuration exists, the admission controller enforces all configured deploy-time policies.</p>
+</div>
+<div class="paragraph">
+<p>If Sensor or Central becomes unavailable later:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>you will not be able to run image scans, or query information about cached image scans.
+However, admission controller enforcement still functions based on the available information gathered before the timeout expires, even if the gathered information is incomplete.</p>
+</li>
+<li>
+<p>you will not be able to disable the admission controller from the RHACS portal or modify enforcement for an existing policy as the changes will not get propagated to the admission control service.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you need to disable admission control enforcement, you can delete the validating webhook configuration by running the following command:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>On OpenShift Container Platform:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc delete ValidatingWebhookConfiguration/stackrox</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>On Kubernetes:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ kubectl delete ValidatingWebhookConfiguration/stackrox</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="_make_the_admission_controller_more_reliable" class="discrete">Make the admission controller more reliable</h3>
+<div class="paragraph">
+<p>Red Hat recommends that you schedule the admission control service on the control plane and not on worker nodes.
+The deployment YAML file includes a soft preference for running on the control plane, however it is not enforced.</p>
+</div>
+<div class="paragraph">
+<p>By default, the admission control service runs 3 replicas.
+To increase reliability, you can increase the replicas by running the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox scale deploy/admission-control --replicas=&lt;number_of_replicas&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Use <code>kubectl</code> instead of <code>oc</code> if you are using Kubernetes.</td>
+</tr>
+</table>
+</div>
+<h3 id="_using_with_the_roxctl_cli" class="discrete">Using with the roxctl CLI</h3>
+<div class="paragraph">
+<p>You can use the following options when you generate a Sensor deployment YAML file:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>--admission-controller-listen-on-updates</code>: If you use this option, Red Hat Advance Cluster Security for Kuberenetes generates a Sensor bundle with a <code>ValidatingWebhookConfiguration</code> pre-configured to receive update events from the Kubernetes or OpenShift Container Platform API server.</p>
+</li>
+<li>
+<p><code>--admission-controller-enforce-on-updates</code>: If you use this option, Red Hat Advance Cluster Security for Kuberenetes configures Central such that the admission controller also enforces security policies object updates.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both these options are optional, and are <code>false</code> by default.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

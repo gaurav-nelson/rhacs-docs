@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Managing vulnerabilities :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Operating</li>
+    <li><a href="manage-vulnerabilities.html">Managing vulnerabilities</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/operating/pages/manage-vulnerabilities.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Managing vulnerabilities</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Security vulnerabilities in your environment may allow attackers to gain unauthorized access or perform unauthorized actions.
+Therefore, managing vulnerabilities is a critical step in protecting your environment.
+It involves identifying, classifying, reporting, prioritizing, remediating, and mitigating security vulnerabilities.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes (RHACS) enables you to identify and prioritize vulnerabilities for quick remediation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vulnerability-management-view_acs-operating-manage-vulnerabilities"><a class="anchor" href="#vulnerability-management-view_acs-operating-manage-vulnerabilities"></a>Vulnerability Management view</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The <strong>Vulnerability Management</strong> view displays information you can act on in multiple widgets.
+For example, you can identify the riskiest deployments in your infrastructure from the <strong>Top Risky Deployments</strong> widget.</p>
+</div>
+<div class="paragraph">
+<p>To open the <strong>Vulnerability Management</strong> view:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong>  from the navigation menu.
+The <strong>Vulnerability Management</strong> view presents information in multiple interactive widgets.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <strong>Vulnerability Management</strong> view presents information using various user interface components, including widgets, headers, views, panels, tabs, and sidebar.
+Using all these components gives you a complete view of the vulnerabilities and their relation to other entities, such as deployments, images, and components.</p>
+</div>
+<div class="sect2">
+<h3 id="navigate-vulnerability-management-view_acs-operating-manage-vulnerabilities"><a class="anchor" href="#navigate-vulnerability-management-view_acs-operating-manage-vulnerabilities"></a>Navigating the Vulnerability Management view</h3>
+<div class="paragraph">
+<p>Use the following instructions to understand various user interface components of the <strong>Vulnerability Management</strong> view and their usage.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong>  from the navigation menu.</p>
+</li>
+<li>
+<p>Click <strong>View All</strong> for the <strong>Top Risky Deployments by CVE Count and CVSS score</strong> widget to open the <strong>Deployments</strong> view.
+This view lists detailed information about all deployments in your infrastructure.
+The <strong>Deployments</strong> view header includes options to export and switch between different entity views.
+You can also filter the list of deployments.</p>
+</li>
+<li>
+<p>On the <strong>Deployments</strong> view, click on a deployment row from the list to open the <strong>Deployment</strong> details panel.
+The <strong>Deployment</strong> details panel includes deployment <strong>Summary</strong> and <strong>Findings</strong> sections, and the <strong>Related entities</strong> sidebar.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Summary</strong> section shows detailed information about the deployment in multiple interactive widgets.</p>
+</li>
+<li>
+<p>The <strong>Findings</strong> section shows failing policies and fixable CVEs for the deployment.</p>
+</li>
+<li>
+<p>The <strong>Related entities</strong> sidebar shows the number of related entities under <strong>Matches</strong> and <strong>Contains</strong> sections.
+For deployment details, it shows the number of policies, images, components, and CVEs for the selected deployment.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Under the <strong>Deployment Findings</strong> section, click the <strong>Fixable CVEs</strong> tab to  view the list of all the fixable CVEs for the selected deployment.</p>
+</li>
+<li>
+<p>Click on a CVE from the fixable CVEs list to view the <strong>CVE Summary</strong>.
+CVE summary opens in the same panel.</p>
+</li>
+<li>
+<p>Click <strong>Components</strong> in the <strong>Related entities</strong> sidebar to view a list of components affected by the selected CVE. Notice the panel header, it shows a list of all panels you viewed as breadcrumbs.</p>
+</li>
+<li>
+<p>You can click on the <strong>Back</strong> icon to go back to the previous panel.
+Click on the <strong>Deployment</strong> name from the panel header breadcrumbs to open the <strong>Deployment</strong> details panel.</p>
+</li>
+<li>
+<p>Click on the <strong>Open view</strong> icon in the panel header (near the close panel icon) to open the <strong>Deployment</strong> details view.
+You can then select different tabs to view information about images, components, policies, and CVEs for the selected deployment.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="vulnerability-management-other-views_acs-operating-manage-vulnerabilities"><a class="anchor" href="#vulnerability-management-other-views_acs-operating-manage-vulnerabilities"></a>Other views</h3>
+<div class="paragraph">
+<p>The <strong>Vulnerability Management</strong> view also includes multiple other views that all provide information in the context of vulnerabilities.</p>
+</div>
+<div class="paragraph">
+<p>The available views are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Clusters</p>
+</li>
+<li>
+<p>Namespaces</p>
+</li>
+<li>
+<p>Deployments</p>
+</li>
+<li>
+<p>Images</p>
+</li>
+<li>
+<p>Components</p>
+</li>
+<li>
+<p>CVEs</p>
+</li>
+<li>
+<p>Policies</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All these views show a list of items for the selected entity type.
+You can select the column heading to sort the items and also use local page filtering.</p>
+</div>
+<div class="paragraph">
+<p>You can easily switch between different views. For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To switch to the <strong>Clusters</strong> view, from the <strong>Vulnerability Management</strong> view:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>Application &amp; Infrastructure</strong> &#8594; <strong>Clusters</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>To switch to the <strong>Clusters</strong> view, from a different view:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>All Entities</strong> &#8594; <strong>Clusters</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="top-risky-objects_acs-operating-manage-vulnerabilities"><a class="anchor" href="#top-risky-objects_acs-operating-manage-vulnerabilities"></a>Identifying top risky objects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>Vulnerability Management</strong> view for identifying the top risky objects in your environment.
+The <strong>Top Risky</strong> widget displays information about the top risky images, deployments, clusters, and namespaces in your environment.
+The risk is determined based on the number of vulnerabilities and their CVSS scores.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Select the <strong>Top Risky</strong> widget header to choose between riskiest images, deployments, clusters, and namespaces.</p>
+<div class="paragraph">
+<p>The small circles on the chart represent the chosen object (image, deployment, cluster, namespace).
+Hover over the circles to see an overview of the object they represent.
+And select a circle to view detailed information about the selected object, its related entities, and the connections between them.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you are viewing <strong>Top Risky Deployments by CVE Count and CVSS score</strong>, each circle on the chart represents a deployment.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you hover over a deployment, you see an overview of the deployment, which includes deployment name, name of the cluster and namespace, severity, risk priority, CVSS, and CVE count (including fixable).</p>
+</li>
+<li>
+<p>When you select a deployment, the <strong>Deployment</strong> view opens for the selected deployment.
+The <strong>Deployment</strong> view shows in-depth details of the deployment and includes information about policy violations, common vulnerabilities, CVEs, and riskiest images for that deployment.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select <strong>View All</strong> on the widget header to view all objects of the chosen type.
+For example, if you chose <strong>Top Risky Deployments by CVE Count and CVSS score</strong>, you can select <strong>View All</strong> to view detailed information about all deployments in your infrastructure.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="top-risky-images-components_acs-operating-manage-vulnerabilities"><a class="anchor" href="#top-risky-images-components_acs-operating-manage-vulnerabilities"></a>Identifying top riskiest images and components</h3>
+<div class="paragraph">
+<p>Similar to the <strong>Top Risky</strong>, the <strong>Top Riskiest</strong> widget lists the names of the top riskiest images and components.
+This widget also includes the total number of CVEs and the number of fixable CVEs in the listed images.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Select the <strong>Top Riskiest Images</strong> widget header to choose between the riskiest images and components.
+If you are viewing <strong>Top Riskiest Images</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>When you hover over an image in the list, you see an overview of the image, which includes image name, scan time, and the number of CVEs along with severity (critical, high, medium, and low).</p>
+</li>
+<li>
+<p>When you select an image, the <strong>Image</strong> view opens for the selected image.
+The <strong>Image</strong> view shows in-depth details of the image and includes information about CVEs by CVSS score, top riskiest components, fixable CVEs, and Dockerfile for the image.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select <strong>View All</strong> on the widget header to view all objects of the chosen type.
+For example, if you chose <strong>Top Riskiest Components</strong>, you can select <strong>View All</strong> to view detailed information about all components in your infrastructure.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="viewing-dockerfile-for-image_acs-operating-manage-vulnerabilities"><a class="anchor" href="#viewing-dockerfile-for-image_acs-operating-manage-vulnerabilities"></a>Viewing the Dockerfile for an image</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>Vulnerability Management</strong> view to find the root cause of vulnerabilities in an image.
+You can view the Dockerfile and find exactly which command in the Dockerfile introduced the vulnerabilities and all components that are associated with that single command.</p>
+</div>
+<div class="paragraph">
+<p>The Dockerfile tab shows information about:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All the layers in the Dockerfile</p>
+</li>
+<li>
+<p>The instructions and their value for each layer</p>
+</li>
+<li>
+<p>The components included in each layer</p>
+</li>
+<li>
+<p>The number of CVEs in components for each layer</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When there are components introduced by a specific layer, you can select the expand icon to see a summary of its components.
+If there are any CVEs in those components, you can select the expand icon for an individual component to get more details about the CVEs affecting that component.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Select an image from the <strong>Top Riskiest Images</strong> widget.</p>
+</li>
+<li>
+<p>In the <strong>Image</strong> details view, select the <strong>Dockerfile</strong> tab under the <strong>Image Findings</strong> section.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="viewing-frequently-violated-policies_acs-operating-manage-vulnerabilities"><a class="anchor" href="#viewing-frequently-violated-policies_acs-operating-manage-vulnerabilities"></a>Viewing frequently violated policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>Frequently Violated Policies</strong> widget on the <strong>Vulnerability Management</strong> view to identify the most frequently violated policies in your clusters.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Hover over the policies listed in the <strong>Frequently Violated Policies</strong> widget to see an overview of the policy.
+The overview includes policy name, policy category, policy description, and date and time when the policy was last violated.</p>
+</li>
+<li>
+<p>Select <strong>View All</strong> on the widget header to open the <strong>Policies</strong> view, which lists all policies in your infrastructure.
+It includes information about policy description, policy status, last updated date and time, latest violation date and time, severity, deployments, policy life-cycle, and enforcement.</p>
+</li>
+<li>
+<p>In the <strong>Policies</strong> view, select a policy to view additional details about a specific policy, including policy scope, excluded images and deployment for the policy, and list of all deployments where this policy is failing.
+This information appears in the <strong>Policy</strong> details panel on the right.</p>
+</li>
+<li>
+<p>In the <strong>Policy</strong> details panel, select a deployment under the <strong>Policy Findings</strong> section.
+Deployment details open in the same panel for the selected deployment.
+Violation comments and tags appear under the <strong>Deployment Findings</strong> section.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using-comments-and-tags"><a class="anchor" href="#using-comments-and-tags"></a>Using comments and tags</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use tags and comments to specify what is happening with violations to keep your team up to date.
+Comments allow you to add text notes to violations and tags allow you to categorize your violations.</p>
+</div>
+<div class="sect2">
+<h3 id="adding-comments_acs-operating-manage-vulnerabilities"><a class="anchor" href="#adding-comments_acs-operating-manage-vulnerabilities"></a>Adding comments</h3>
+<div class="paragraph">
+<p>Comments allow you to add text notes to violations, so that everyone in the team can check what is happening with a violation.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>To add and remove comments, you need a role with <code>write</code> permission for the resource you are modifying. For example, to add comments on violations, your role must have <code>write</code> permission for the <code>Alert</code> resource.</p>
+</li>
+<li>
+<p>To delete comments from other users, you need a role with <code>write</code> permission for the <code>AllComments</code> resource.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can edit and delete your own comments.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>New</strong> in the <strong>Violations Comments</strong> section header.</p>
+</li>
+<li>
+<p>Enter your comment in the comment editor. You can also add links in the comment editor. When someone clicks on the link in a comment, the linked resource opens in a new tab in their browser.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>All comments are visible under the <strong>Violations Comments</strong> section, and you can edit and delete comments by selecting <strong>Edit</strong> or <strong>Delete</strong> icon for a specific comment.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-tags_acs-operating-manage-vulnerabilities"><a class="anchor" href="#adding-tags_acs-operating-manage-vulnerabilities"></a>Adding tags</h3>
+<div class="paragraph">
+<p>You can use custom tags to categorize your violations. Then you can filter the <strong>Violations</strong> view to show violations for selected tags (<code>Tag</code> attribute).</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>To add and remove tags, you need a role with <code>write</code> permission for the resource you are modifying. For example, to add tags on violations, your role must have <code>write</code> permission for the <code>Alert</code> resource.</p>
+</li>
+<li>
+<p>To delete tags from other users, you need a role with <code>write</code> permission for the <code>AllComments</code> resource.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can edit and delete your own tags.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Select the drop-down menu in the <strong>Violation Tags</strong> section. Existing tags appear as a list (up to 10).</p>
+</li>
+<li>
+<p>Click on an existing tag or enter a new tag and then press <strong>Enter</strong>. As you enter your query, Red Hat Advance Cluster Security for Kuberenetes automatically displays relevant suggestions for the existing tags that match.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can add more than one tag for a violation. All tags are visible under the <strong>Violation Tags</strong> section and you can remove tags by clicking on the <strong>Remove</strong> icon for a specific tag.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="view-recently-detected-vulnerabilities_acs-operating-manage-vulnerabilities"><a class="anchor" href="#view-recently-detected-vulnerabilities_acs-operating-manage-vulnerabilities"></a>Viewing recently detected vulnerabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Recently Detected Vulnerabilities</strong> widget on the <strong>Vulnerability Management</strong> view shows a list of recently discovered vulnerabilities in your scanned images, based on the scan time and CVSS score.
+It also includes information about the number of images affected by the CVE and its impact (percentage) on your environment.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you hover over a CVE in the list, you see an overview of the CVE, which includes scan time, CVSS score, description, impact, and whether it&#8217;s scored by using CVSS v2 or v3.</p>
+</li>
+<li>
+<p>When you select a CVE, the <strong>CVE</strong> details view opens for the selected CVE.
+The <strong>CVE</strong> details view shows in-depth details of the CVE and the components, images, and deployments and deployments in which it appears.</p>
+</li>
+<li>
+<p>Select <strong>View All</strong> on the <strong>Recently Detected Vulnerabilities</strong> widget header to view a list of all the CVEs in your infrastructure.
+You can also filter the list of CVEs.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="view-most-common-vulnerabilities_acs-operating-manage-vulnerabilities"><a class="anchor" href="#view-most-common-vulnerabilities_acs-operating-manage-vulnerabilities"></a>Viewing the most common vulnerabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Most Common Vulnerabilities</strong> widget on the <strong>Vulnerability Management</strong> view shows a list of vulnerabilities that affect the largest number of deployments and images arranged by their CVSS score.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you hover over a CVE in the list, you see an overview of the CVE which includes, scan time, CVSS score, description, impact, and whether it is scored by using CVSS v2 or v3.</p>
+</li>
+<li>
+<p>When you select a CVE, the <strong>CVE</strong> details view opens for the selected CVE.
+The <strong>CVE</strong> details view shows in-depth details of the CVE and the components, images, and deployments and deployments in which it appears.</p>
+</li>
+<li>
+<p>Select <strong>View All</strong> on the <strong>Most Common Vulnerabilities</strong> widget header to view a list of all the CVEs in your infrastructure.
+You can also filter the list of CVEs.
+To export the CVEs as a CSV file, select <strong>Export</strong> &#8594; <strong>Download CVES as CSV</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="identify-deployments-with-most-severe-policy-violations_acs-operating-manage-vulnerabilities"><a class="anchor" href="#identify-deployments-with-most-severe-policy-violations_acs-operating-manage-vulnerabilities"></a>Identifying deployments with most severe policy violations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Deployments with most severe policy violations</strong> widget on the <strong>Vulnerability Management</strong> view shows a list of deployments and severity of vulnerabilities affecting that deployment.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you hover over a deployment in the list, you see an overview of the deployment, which includes the deployment name, the name of the cluster and the namespace in which the deployment exists, and the number of failing policies and their severity.</p>
+</li>
+<li>
+<p>When you select a deployment, the <strong>Deployment</strong> view opens for the selected deployment.
+The <strong>Deployment</strong> view shows in-depth details of the deployment and includes information about policy violations, common vulnerabilities, CVEs, and riskiest images for that deployment.</p>
+</li>
+<li>
+<p>Select <strong>View All</strong> on the <strong>Most Common Vulnerabilities</strong> widget header to view a list of all the CVEs in your infrastructure.
+You can also filter the list of CVEs.
+To export the CVEs as a CSV file, select <strong>Export</strong> &#8594; <strong>Download CVES as CSV</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="find-clusters-with-most-kubernetes-and-istio-vulnerabilities_acs-operating-manage-vulnerabilities"><a class="anchor" href="#find-clusters-with-most-kubernetes-and-istio-vulnerabilities_acs-operating-manage-vulnerabilities"></a>Finding clusters with most Kubernetes and Istio vulnerabilities</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Use the <strong>Vulnerability Management</strong> view for identifying the clusters with most Kubernetes and Istio vulnerabilities in your environment.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Clusters with most K8S &amp; Istio Vulnerabilities</strong>  widget shows a list of clusters, ranked by the number of Kubernetes and Istio vulnerabilities in each cluster.
+The cluster on top of the list is the cluster with the highest number of vulnerabilities.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click on one of the clusters from the list to view details about the cluster.
+The <strong>Cluster</strong> view includes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cluster Details</strong> section, which shows cluster details and metadata, top risky objects (deployments, namespaces, and images), recently detected vulnerabilities, riskiest images, and deployments with the most severe policy violations.</p>
+</li>
+<li>
+<p><strong>Cluster Findings</strong> section, which includes a list of failing policies and list of fixable CVEs.</p>
+</li>
+<li>
+<p><strong>Related Entities</strong> section, which shows the number of namespaces, deployments, policies, images, components, and CVEs the cluster contains.
+You can select these entities to view more details.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>View All</strong> on the widget header to view the list of all clusters.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-policies-to-block-specific-cves_acs-operating-manage-vulnerabilities"><a class="anchor" href="#create-policies-to-block-specific-cves_acs-operating-manage-vulnerabilities"></a>Creating policies to block specific CVEs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can create new policies or add specific CVEs to an existing policy from the <strong>Vulnerability Management</strong> view.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>CVEs</strong> from the <strong>Vulnerability Management</strong> view header.</p>
+</li>
+<li>
+<p>Select the checkboxes (leftmost column) for one or more CVEs and then click <strong>Add selected CVEs to Policy</strong> (<strong><code>add</code></strong> icon).
+Or, move the mouse over a CVE in the list, and select the <strong>Add</strong> icon on the right side.</p>
+</li>
+<li>
+<p>For <strong>Policy Name</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To add the CVE to an existing policy, select an existing policy from the drop-down list box.</p>
+</li>
+<li>
+<p>To create a new policy, enter the name for the new policy, and select <strong>Create  &lt;policy_name&gt;</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select a value for <strong>Severity</strong>, either <strong>Critical</strong>, <strong>High</strong>, <strong>Medium</strong>, or <strong>Low</strong>.</p>
+</li>
+<li>
+<p>Choose the <strong>Lifecycle Stage</strong> to which your policy is applicable, from <strong>Build</strong>, or <strong>Deploy</strong>.
+You can also select both life-cycle stages.</p>
+</li>
+<li>
+<p>Enter details about the policy in the <strong>Description</strong> box.</p>
+</li>
+<li>
+<p>Turn off the <strong>Enable Policy</strong> toggle if you want to create the policy but enable it later.
+The <strong>Enable Policy</strong> toggle is on by default.</p>
+</li>
+<li>
+<p>Verify the listed CVEs which are included in this policy.</p>
+</li>
+<li>
+<p>Click <strong>Save Policy</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="snooze-and-unsnooze-cves"><a class="anchor" href="#snooze-and-unsnooze-cves"></a>Snoozing and unsnoozing CVEs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you determine that certain CVEs do not relate to your infrastructure for the moment, you can snooze those CVEs.
+Later, when the CVEs are relevant, you can unsnooze those CVEs.
+You can also snooze CVEs for a certain amount of time, such as a day, a week, two weeks, a month, or indefinitely (until you unsnooze).</p>
+</div>
+<div class="paragraph">
+<p>When you snooze a CVE, Red Hat Advance Cluster Security for Kuberenetes stops showing that CVE in widgets and other views and ignores its impact on your environment.
+If the snoozed CVE is part of a policy and if all the CVEs in that policy are snoozed, the policy does not generate a violation.
+When you unsnooze or the specified time lapses,  the CVEs start showing up again as usual, and the policy violations resume.</p>
+</div>
+<div class="sect2">
+<h3 id="snooze-cves_acs-operating-manage-vulnerabilities"><a class="anchor" href="#snooze-cves_acs-operating-manage-vulnerabilities"></a>Snoozing CVEs</h3>
+<div class="paragraph _abstract">
+<p>Use the <strong>Vulnerability Management</strong> view to snooze CVEs that do not relate to your infrastructure. You can snooze CVEs for a day, a week, two weeks, a month, or indefinitely (until you unsnooze).</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>From the <strong>Vulnerability Management</strong> view header, select <strong>CVEs</strong>.</p>
+</li>
+<li>
+<p>Select the checkboxes (leftmost column) for one or more CVEs and then select <strong>Snooze CVE</strong> (<strong><code>bell</code></strong> icon).
+Or, move the mouse over a CVE in the list and select the <strong>Bell</strong> icon on the right side.</p>
+</li>
+<li>
+<p>Select the time such as a day, a week, two weeks, a month, or indefinitely (until you unsnooze).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-snoozed-cves_acs-operating-manage-vulnerabilities"><a class="anchor" href="#view-snoozed-cves_acs-operating-manage-vulnerabilities"></a>Viewing snoozed CVEs</h3>
+<div class="paragraph _abstract">
+<p>Use the <strong>Vulnerability Management</strong> view to see the list of all snoozed CVEs.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>From the <strong>Vulnerability Management</strong> view header, click <strong>CVEs</strong>.</p>
+</li>
+<li>
+<p>On the <strong>CVEs</strong> view, click on the <strong>View Snoozed CVEs</strong> icon on the right side of the filter bar.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsnooze-cves_acs-operating-manage-vulnerabilities"><a class="anchor" href="#unsnooze-cves_acs-operating-manage-vulnerabilities"></a>Unsnoozing CVEs</h3>
+<div class="paragraph _abstract">
+<p>Use the <strong>Vulnerability Management</strong> view to unsnooze CVEs that you have previously snoozed.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>From the <strong>Vulnerability Management</strong> view header, click <strong>CVEs</strong>.</p>
+</li>
+<li>
+<p>On the <strong>CVEs</strong> view, click on the <strong>View Snoozed CVEs</strong> icon on the right side of the filter bar.</p>
+</li>
+<li>
+<p>Select the checkboxes (leftmost column) for one or more CVEs and then select <strong>Unsnooze CVE</strong> (<strong><code>bell</code></strong> icon).
+Or, move the mouse over a CVE in the list, and select the <strong>Bell</strong> icon on the right side.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="identify-vulnerabilities-in-nodes_acs-operating-manage-vulnerabilities"><a class="anchor" href="#identify-vulnerabilities-in-nodes_acs-operating-manage-vulnerabilities"></a>Identifying vulnerabilities in nodes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use the <strong>Vulnerability Management</strong> view to identify vulnerabilities in your nodes.
+The identified vulnerabilities include vulnerabilities in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Core Kubernetes components.</p>
+</li>
+<li>
+<p>Container runtimes (Docker, CRI-O, runC, and containerd).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes does not support identifying vulnerabilities in nodes on OpenShift Container Platform.</p>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes can identify vulnerabilities in the following Linux kernels:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon Linux 2</p>
+</li>
+<li>
+<p>CentOS</p>
+</li>
+<li>
+<p>Debian</p>
+</li>
+<li>
+<p>Garden Linux (Debian 11)</p>
+</li>
+<li>
+<p>Red Hat Enterprise Linux</p>
+</li>
+<li>
+<p>Ubuntu (AWS, Azure, GCP, and GKE specific versions)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Select <strong>Nodes</strong> on the <strong>Vulnerability Management</strong> view header to view a list of all the CVEs affecting your nodes.</p>
+</li>
+<li>
+<p>Select a node from the list to view details of all CVEs affecting that node.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>When you select a node, the <strong>Node</strong> details panel opens for the selected node.
+The <strong>Node</strong> view shows in-depth details of the node and includes information about CVEs by CVSS score and fixable CVEs for that node.</p>
+</li>
+<li>
+<p>Select <strong>View All</strong> on the <strong>CVEs by CVSS score</strong> widget header to view a list of all the CVEs in the selected node.
+You can also filter the list of CVEs.</p>
+</li>
+<li>
+<p>To export the fixable CVEs as a CSV file, select <strong>Export as CSV</strong> under the <strong>Node Findings</strong> section.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="disable-identify-vulnerabilities-in-nodes_acs-operating-manage-vulnerabilities"><a class="anchor" href="#disable-identify-vulnerabilities-in-nodes_acs-operating-manage-vulnerabilities"></a>Disabling identifying vulnerabilities in nodes</h3>
+<div class="paragraph">
+<p>Identifying vulnerabilities in nodes is enabled by default. You can disable it from the RHACS portal.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Integrations</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Image Integrations</strong>, select <strong>StackRox Scanner</strong>.</p>
+</li>
+<li>
+<p>From the list of scanners, select <strong>StackRox Scanner</strong> to view its details.</p>
+</li>
+<li>
+<p>Remove the <strong>Node Scanner</strong> option from <strong>Types</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="scan-inactive-images_acs-operating-manage-vulnerabilities"><a class="anchor" href="#scan-inactive-images_acs-operating-manage-vulnerabilities"></a>Scanning inactive images</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes scans all active (deployed) images every 4 hours and updates the image scan results to reflect the latest vulnerability definitions.</p>
+</div>
+<div class="paragraph">
+<p>You can also configure Red Hat Advance Cluster Security for Kuberenetes to scan inactive (not deployed) images automatically.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Select <strong>Images</strong> on the <strong>Vulnerability Management</strong> view header to view a list of all the images.</p>
+</li>
+<li>
+<p>On the <strong>Images</strong> view header, select <strong>Watch Images</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Manage Inactive Images</strong> dialog, enter the inactive image&#8217;s name (and not the image <code>id</code>) for which you want to enable scanning.</p>
+</li>
+<li>
+<p>Select <strong>Add Image</strong>.
+Red Hat Advance Cluster Security for Kuberenetes then scans the image and shows the error or success message.</p>
+</li>
+<li>
+<p>Select <strong>Return to Image list</strong> to view the <strong>Images</strong> view.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="common-tasks"><a class="anchor" href="#common-tasks"></a>Common tasks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section lists some common tasks you can perform from the <strong>Vulnerability Management</strong> view.</p>
+</div>
+<div class="sect2">
+<h3 id="find-critical-cves-impacting-your-infrastructure_acs-operating-manage-vulnerabilities"><a class="anchor" href="#find-critical-cves-impacting-your-infrastructure_acs-operating-manage-vulnerabilities"></a>Finding critical CVEs impacting your infrastructure</h3>
+<div class="paragraph _abstract">
+<p>Use the <strong>Vulnerability Management</strong> view for identifying CVEs that are impacting your platform the most.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Select CVEs on the <strong>Vulnerability Management</strong> view header.</p>
+</li>
+<li>
+<p>In the <strong>CVEs</strong> view, select the <strong>Env Impact</strong> column header to arrange the CVEs in descending order (highest first) based on the environment impact.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-the-most-vulnerable-image-components_acs-operating-manage-vulnerabilities"><a class="anchor" href="#find-the-most-vulnerable-image-components_acs-operating-manage-vulnerabilities"></a>Finding the most vulnerable image components</h3>
+<div class="paragraph _abstract">
+<p>Use the <strong>Vulnerability Management</strong> view for identifying highly vulnerable image components.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>From the <strong>Vulnerability Management</strong> view header, select <strong>Application &amp; Infrastructure</strong> &#8594; <strong>Components</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Components</strong> view, select the <strong>CVEs</strong> column header to arrange the components in descending order (highest first) based on the CVEs count.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="identify-container-image-layer-that-introduces-vulnerabilities_acs-operating-manage-vulnerabilities"><a class="anchor" href="#identify-container-image-layer-that-introduces-vulnerabilities_acs-operating-manage-vulnerabilities"></a>Identifying the container image layer that introduces vulnerabilities</h3>
+<div class="paragraph _abstract">
+<p>Use the <strong>Vulnerability Management</strong> view to identify vulnerable components and the image layer they appear in.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Select an image from the <strong>Top Riskiest Images</strong> widget.</p>
+</li>
+<li>
+<p>In the <strong>Image</strong> details view, select the <strong>Dockerfile</strong> tab under the <strong>Image Findings</strong> section.</p>
+</li>
+<li>
+<p>In the <strong>Dockerfile</strong> tab under the <strong>Image Findings</strong> section, select the expand icon to see a summary of image components.</p>
+</li>
+<li>
+<p>Select the expand icon for specific components to get more details about the CVEs affecting the selected component.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-details-only-for-fixable-cves_acs-operating-manage-vulnerabilities"><a class="anchor" href="#view-details-only-for-fixable-cves_acs-operating-manage-vulnerabilities"></a>Viewing details only for fixable CVEs</h3>
+<div class="paragraph _abstract">
+<p>Use the <strong>Vulnerability Management</strong> view to filter and show only the fixable CVEs.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>From the <strong>Vulnerability Management</strong> view header, select <strong>Filter CVEs</strong> &#8594; <strong>Fixable</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="identify-operating-system-of-the-base-image_acs-operating-manage-vulnerabilities"><a class="anchor" href="#identify-operating-system-of-the-base-image_acs-operating-manage-vulnerabilities"></a>Identifying the operating system of the base image</h3>
+<div class="paragraph _abstract">
+<p>Use the <strong>Vulnerability Management</strong> view to identify the operating system of the base image.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and click <strong>Vulnerability Management</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>From the <strong>Vulnerability Management</strong> view header, select <strong>Images</strong>.</p>
+</li>
+<li>
+<p>View the base operating system (OS) and OS version for all images under the <strong>Image OS</strong> column.</p>
+</li>
+<li>
+<p>Select an image to view its details.
+The base operating system is also available under the <strong>Image Summary</strong> &#8594; <strong>Details and Metadata</strong> section.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes lists the <strong>Image OS</strong> as <strong>unknown</strong> when either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The operating system information is not available, or</p>
+</li>
+<li>
+<p>If the image scanner in use does not provide this information.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Docker Trusted Registry, Google Container Registry, and Anchore do not provide this information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

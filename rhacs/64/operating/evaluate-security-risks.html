@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Evaluating security risks :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Operating</li>
+    <li><a href="evaluate-security-risks.html">Evaluating security risks</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/operating/pages/evaluate-security-risks.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Evaluating security risks</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat Advance Cluster Security for Kuberenetes assesses risk across your entire environment and ranks your running deployments according to their security risk.
+It also provides details about vulnerabilities, configurations, and runtime activities that require immediate attention.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="risk-view-details_evaluate-security-risks"><a class="anchor" href="#risk-view-details_evaluate-security-risks"></a>Risk view</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The <strong>Risk</strong> view lists all deployments from all clusters, sorted by a multi-factor risk metric based on policy violations, image contents, deployment configuration, and other similar factors.
+Deployments at the top of the list present the most risk.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Risk</strong> view shows list of deployments with following attributes for each row:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong>: The name of the deployment.</p>
+</li>
+<li>
+<p><strong>Created</strong>: The creation time of the deployment.</p>
+</li>
+<li>
+<p><strong>Cluster</strong>: The name of the cluster where the deployment is running.</p>
+</li>
+<li>
+<p><strong>Namespace</strong>: The namespace in which the deployment exists.</p>
+</li>
+<li>
+<p><strong>Priority</strong>: A priority ranking based on severity and risk metrics.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the <strong>Risk</strong> view, you can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select a column heading to sort the violations in ascending or descending order.</p>
+</li>
+<li>
+<p>Use the filter bar to filter violations.</p>
+</li>
+<li>
+<p>Create a new policy based on the filtered criteria.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To view more details about the risks for a deployment, select a deployment in the <strong>Risk</strong> view.</p>
+</div>
+<div class="sect2">
+<h3 id="open-risk-view_evaluate-security-risks"><a class="anchor" href="#open-risk-view_evaluate-security-risks"></a>Opening the risk view</h3>
+<div class="paragraph">
+<p>You can analyze all risks in the <strong>Risk</strong> view and take corrective action.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Navigate to the RHACS portal and select <strong>Risk</strong> from the navigation menu.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-policy-from-risk-view_evaluate-security-risks"><a class="anchor" href="#create-policy-from-risk-view_evaluate-security-risks"></a>Creating a security policy from the risk view</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>While evaluating risks in your deployments in the <strong>Risk</strong> view, when you apply local page filtering, you can create new security policies based on the filtering criteria you are using.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal and select <strong>Risk</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Apply local page filtering criteria that you want to create a policy.</p>
+</li>
+<li>
+<p>Select <strong>New Policy</strong> and fill in the required fields to create a new policy.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="understanding-filtering-to-policy-mapping_evaluate-security-risks"><a class="anchor" href="#understanding-filtering-to-policy-mapping_evaluate-security-risks"></a>Understanding how Red Hat Advance Cluster Security for Kuberenetes transforms the filtering criteria into policy criteria</h3>
+<div class="paragraph">
+<p>When you create new security policies from the <strong>Risk</strong> view, based on the filtering criteria you use, not all criteria are directly applied to the new policy.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes converts the <strong>Cluster</strong>, <strong>Namespace</strong>, and <strong>Deployment</strong> filters to equivalent policy scopes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Local page filtering on the <strong>Risk</strong> view combines the search terms by using the following methods:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Combines the search terms within the same category with an <code>OR</code> operator.
+For example, if the search query is <code>Cluster:A,B</code>, the filter matches deployments in <code>cluster A</code> or <code>cluster B</code>.</p>
+</li>
+<li>
+<p>Combines the search terms from different categories with an <code>AND</code> operator.
+For example, if the search query is <code>Cluster:A+Namespace:Z</code>, the filter matches deployments in <code>cluster A</code> and in <code>namespace Z</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When you add multiple scopes to a policy, the policy matches violations from any of the scopes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For example, if you search for <code>(Cluster A OR Cluster B) AND (Namespace Z)</code> it results in two policy scopes, <code>(Cluster=A AND Namespace=Z)</code> OR <code>(Cluster=B AND Namespace=Z)</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes drops or modifies filters that do not directly map to policy criteria and reports the dropped filters.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following table lists how the filtering search attributes map to the policy criteria:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Search attribute</th>
+<th class="tableblock halign-left valign-top">Policy criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add Capabilities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add Capabilities</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disallowed Annotation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPU Cores Limit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Container CPU Limit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPU Cores Request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Container CPU Request</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CVE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CVE Published On</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CVE Snoozed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CVSS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CVSS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⟳ Converted to scope</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Component (name)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Component Version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Component (version)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deployment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⟳ Converted to scope</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deployment Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dockerfile Instruction Keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dockerfile Line (key)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dockerfile Instruction Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dockerfile Line (value)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Drop Capabilities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Variable (key)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Variable (value)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Variable Source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Variable (source)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposed Node Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposing Service</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposing Service Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposure Level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port Exposure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External Hostname</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Created Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Days since image was created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Entrypoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disallowed Image Label</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image OS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image OS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Pull Secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Registry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Registry</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Remote</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Remote</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Scan Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Days since image was last scanned</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Tag</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Top CVSS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image User</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Volumes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⟳ Converted to scope</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max Exposure Level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memory Limit (MB)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Container Memory Limit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memory Request (MB)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Container Memory Request</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⟳ Converted to scope</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namespace ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pod Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port Protocol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Protocol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Privileged</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Privileged</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Ancestor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Ancestor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Arguments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Arguments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process UID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process UID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read Only Root Filesystem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read-Only Root Filesystem</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secret Path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Account Permission Level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum RBAC Permission Level</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toleration Key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toleration Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✕ Dropped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Destination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Destination</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume ReadOnly</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Writable Volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Source</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Type</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="view-risk-details"><a class="anchor" href="#view-risk-details"></a>Viewing risk details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you select a deployment in the <strong>Risk</strong> view, the <strong>Risk Details</strong> open in a panel on the right.
+The <strong>Risk Details</strong> panel shows detailed information grouped by multiple tabs.</p>
+</div>
+<div class="sect2">
+<h3 id="risk-indicators-tab_evaluate-security-risks"><a class="anchor" href="#risk-indicators-tab_evaluate-security-risks"></a>Risk Indicators tab</h3>
+<div class="paragraph _abstract">
+<p>The <strong>Risk Indicators</strong> tab of the <strong>Risk Details</strong> panel explains the discovered risks.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Risk Indicators</strong> tab includes the following sections:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Policy Violations</strong>: The names of the policies that are violated for the selected deployment.</p>
+</li>
+<li>
+<p><strong>Suspicious Process Executions</strong>: Suspicious processes, arguments, and container names that the process ran in.</p>
+</li>
+<li>
+<p><strong>Image Vulnerabilities</strong>: Images including total CVEs with their CVSS scores.</p>
+</li>
+<li>
+<p><strong>Service Configurations</strong>: Aspects of the configurations that are often problematic, such as read-write (RW) capability, whether capabilities are dropped, and the presence of privileged containers.</p>
+</li>
+<li>
+<p><strong>Service Reachability</strong>: Container ports exposed inside or outside the cluster.</p>
+</li>
+<li>
+<p><strong>Components Useful for Attackers</strong>: Discovered software tools that are often used by attackers.</p>
+</li>
+<li>
+<p><strong>Number of Components in Image</strong>: The number of packages found in each image.</p>
+</li>
+<li>
+<p><strong>Image Freshness</strong>: Image names and age, for example, <code>285 days old</code>.</p>
+</li>
+<li>
+<p><strong>RBAC Configuration</strong>: The level of permissions granted to the deployment in Kubernetes role-based access control (RBAC).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Not all sections are visible in the <strong>Risk Indicators</strong> tab.
+Red Hat Advance Cluster Security for Kuberenetes displays only relevant sections that affect the selected deployment.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="risk-deployment-details-tab"><a class="anchor" href="#risk-deployment-details-tab"></a>Deployment Details tab</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The sections in the <strong>Deployment Details</strong> tab of the <strong>Deployment Risk</strong> panel provide more information so you can make appropriate decisions on how to address the discovered risk.</p>
+</div>
+<div class="sect2">
+<h3 id="risk-deployment-details-overview_evaluate-security-risks"><a class="anchor" href="#risk-deployment-details-overview_evaluate-security-risks"></a>Overview section</h3>
+<div class="paragraph">
+<p>The <strong>Overview</strong> section shows details about the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Deployment ID</strong>: An alphanumeric identifier for the deployment.</p>
+</li>
+<li>
+<p><strong>Namespace</strong>: The Kubernetes or OpenShift Container Platform namespace in which the deployment exists.</p>
+</li>
+<li>
+<p><strong>Updated</strong>: A timestamp with date for when the deployment was updated.</p>
+</li>
+<li>
+<p><strong>Deployment Type</strong>: The type of deployment, for example, <code>Deployment</code> or <code>DaemonSet</code>.</p>
+</li>
+<li>
+<p><strong>Replicas</strong>: The number of pods deployed for this deployment.</p>
+</li>
+<li>
+<p><strong>Labels</strong>: The key-value labels attached to the Kubernetes or OpenShift Container Platform application.</p>
+</li>
+<li>
+<p><strong>Cluster</strong>: The name of the cluster where the deployment is running.</p>
+</li>
+<li>
+<p><strong>Annotations</strong>: The Kubernetes annotations for the deployment.</p>
+</li>
+<li>
+<p><strong>Service Account</strong>: Represents an identity for processes that run in a pod.
+When a process is authenticated through a service account, it can contact the Kubernetes API server and access cluster resources.
+If a pod does not have an assigned service account, it gets the default service account.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="risk-deployment-details-container-configuration_evaluate-security-risks"><a class="anchor" href="#risk-deployment-details-container-configuration_evaluate-security-risks"></a>Container configuration section</h3>
+<div class="paragraph">
+<p>The container configuration section shows details about the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Image Name</strong>: The name of the image that is deployed.</p>
+</li>
+<li>
+<p><strong>Resources</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>CPU Request (cores)</strong>: The number of CPUs requested by the container.</p>
+</li>
+<li>
+<p><strong>CPU Limit (cores)</strong>: The maximum number of CPUs the container can use.</p>
+</li>
+<li>
+<p><strong>Memory Request (MB)</strong>: The memory size requested by the container.</p>
+</li>
+<li>
+<p><strong>Memory Limit (MB)</strong>: The maximum amount of memory the container can use without being killed.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Mounts</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong>: The name of the mount.</p>
+</li>
+<li>
+<p><strong>Source</strong>: The path from where the data for the mount comes.</p>
+</li>
+<li>
+<p><strong>Destination</strong>: The path to which the data for the mount goes.</p>
+</li>
+<li>
+<p><strong>Type</strong>: The type of the mount.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Secrets</strong>: The names of Kubernetes secrets used in the deployment, and basic details for secret values that are X.509 certificates.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="risk-deployment-details-security-context_evaluate-security-risks"><a class="anchor" href="#risk-deployment-details-security-context_evaluate-security-risks"></a>Security context section</h3>
+<div class="paragraph">
+<p>The <strong>Security Context</strong> section shows details about the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Privileged</strong>: Lists <code>true</code> if the container is privileged.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="process-discovery-tab_evaluate-security-risks"><a class="anchor" href="#process-discovery-tab_evaluate-security-risks"></a>Process discovery tab</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The <strong>Process Discovery</strong> tab provides a comprehensive list of all binaries that have been executed in each container in your environment, summarized by deployment.</p>
+</div>
+<div class="paragraph">
+<p>The process discovery tab shows details about the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Binary Name</strong>: The name of the binary that was executed.</p>
+</li>
+<li>
+<p><strong>Container</strong>: The container in the deployment in which the process executed.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>: The specific arguments that were passed with the binary.</p>
+</li>
+<li>
+<p><strong>Time</strong>: The date and time of the most recent time the binary was executed in a given container.</p>
+</li>
+<li>
+<p><strong>Pod ID</strong>: The identifier of the pod in which the container resides.</p>
+</li>
+<li>
+<p><strong>UID</strong>: The Linux user identity under which the process executed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use the <code>Process Name:&lt;name&gt;</code> query in the filter bar to find specific processes.</p>
+</div>
+<div class="sect2">
+<h3 id="process-discovery-event-timeline_evaluate-security-risks"><a class="anchor" href="#process-discovery-event-timeline_evaluate-security-risks"></a>Event timeline section</h3>
+<div class="paragraph _abstract">
+<p>The <strong>Event Timeline</strong> section in the <strong>Process Discovery</strong> tab provides an overview of events for the selected deployment.
+It shows the number of policy violations, process activities, and container termination or restart events.</p>
+</div>
+<div class="paragraph">
+<p>You can select <strong>Event Timeline</strong> to view more details.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Event Timeline</strong> modal box shows events for all pods for the selected deployment.</p>
+</div>
+<div class="paragraph">
+<p>The events on the timeline are categorized as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Process activities</p>
+</li>
+<li>
+<p>Policy violations</p>
+</li>
+<li>
+<p>Container restarts</p>
+</li>
+<li>
+<p>Container terminations</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The events appear as icons on a timeline.
+To see more details about an event, hold your mouse pointer over the event icon.
+The details appear in a tooltip.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Show Legend</strong> to see which icon corresponds to which type of event.</p>
+</li>
+<li>
+<p>Select <strong>Export</strong> &#8594; <strong>Download PDF</strong> or <strong>Export</strong> &#8594; <strong>Download CSV</strong> to download the event timeline information.</p>
+</li>
+<li>
+<p>Select the <strong>Show All</strong> drop-down menu to filter which type of events are visible on the timeline.</p>
+</li>
+<li>
+<p>Click on the expand icon to see events separately for each container in the selected pod.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All events in the timeline are also visible in the minimap control at the bottom.
+The minimap controls the number of events visible in the event timeline.
+You can change the events shown in the timeline by modifying the highlighted area on the minimap.
+To do this, decrease the highlighted area from left or right sides (or both), and then drag the highlighted area.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>When containers restart, Red Hat Advance Cluster Security for Kuberenetes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows information about container termination and restart events for up to 10 inactive container instances for each container in a pod.
+For example, for a pod with two containers <code>app</code> and <code>sidecar</code>, Red Hat Advance Cluster Security for Kuberenetes keeps activity for up to 10 <code>app</code> instances and up to 10 <code>sidecar</code> instances.</p>
+</li>
+<li>
+<p>Does not track process activities associated with the previous instances of the container.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes only shows the most recent execution of each (process name, process arguments, UID) tuple for each pod.</p>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes shows events only for the active pods.</p>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes adjusts the reported timestamps based on time reported by Kubernetes and the Collector.
+Kubernetes timestamps use second-based precision, and it rounds off the time to the nearest second.
+However, the Collector uses more precise timestamps.
+For example, if Kubernetes reports the container start time as <code>10:54:48</code>, and the Collector reports a process in that container started at <code>10:54:47.5349823</code>, Red Hat Advance Cluster Security for Kuberenetes adjusts the container start time to <code>10:54:47.5349823</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-comments-and-tags"><a class="anchor" href="#using-comments-and-tags"></a>Using comments and tags</h3>
+<div class="paragraph">
+<p>You can use tags and comments to specify what is happening with processes to keep your team up to date.
+Comments enable you to add text notes to processes, and tags allow you to categorize your processes.</p>
+</div>
+<div class="sect3">
+<h4 id="adding-comments_evaluate-security-risks"><a class="anchor" href="#adding-comments_evaluate-security-risks"></a>Adding comments</h4>
+<div class="paragraph">
+<p>Comments allow you to add text notes to processes, so that everyone in the team can check what is happening with a process.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>To add and remove comments, you need a role with <code>write</code> permission for the resource you are modifying. For example, to add comments on processes, your role must have <code>write</code> permission for the <code>Alert</code> resource.</p>
+</li>
+<li>
+<p>To delete comments from other users, you need a role with <code>write</code> permission for the <code>AllComments</code> resource.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can edit and delete your own comments.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>New</strong> in the <strong>Processes Comments</strong> section header.</p>
+</li>
+<li>
+<p>Enter your comment in the comment editor. You can also add links in the comment editor. When someone clicks on the link in a comment, the linked resource opens in a new tab in their browser.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>All comments are visible under the <strong>Processes Comments</strong> section, and you can edit and delete comments by selecting <strong>Edit</strong> or <strong>Delete</strong> icon for a specific comment.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-tags_evaluate-security-risks"><a class="anchor" href="#adding-tags_evaluate-security-risks"></a>Adding tags</h4>
+<div class="paragraph">
+<p>You can use custom tags to categorize your processes. Then you can filter the <strong>Processes</strong> view to show processes for selected tags (<code>Tag</code> attribute).</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>To add and remove tags, you need a role with <code>write</code> permission for the resource you are modifying. For example, to add tags on processes, your role must have <code>write</code> permission for the <code>Alert</code> resource.</p>
+</li>
+<li>
+<p>To delete tags from other users, you need a role with <code>write</code> permission for the <code>AllComments</code> resource.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can edit and delete your own tags.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Select the drop-down menu in the <strong>Process Tags</strong> section. Existing tags appear as a list (up to 10).</p>
+</li>
+<li>
+<p>Click on an existing tag or enter a new tag and then press <strong>Enter</strong>. As you enter your query, Red Hat Advance Cluster Security for Kuberenetes automatically displays relevant suggestions for the existing tags that match.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can add more than one tag for a process. All tags are visible under the <strong>Process Tags</strong> section and you can remove tags by clicking on the <strong>Remove</strong> icon for a specific tag.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-process-baselines_evaluate-security-risks"><a class="anchor" href="#use-process-baselines_evaluate-security-risks"></a>Using process baselines</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can minimize risk by using process baselining for infrastructure security. With this approach, Red Hat Advance Cluster Security for Kuberenetes first discovers existing processes and creates a baseline.
+Then it operates in the default deny-all mode and only allows processes listed in the baseline to run.</p>
+</div>
+<div class="sect2">
+<h3 id="_process_baselines"><a class="anchor" href="#_process_baselines"></a>Process baselines</h3>
+<div class="paragraph">
+<p>When you install Red Hat Advance Cluster Security for Kuberenetes, there is no default process baseline.
+As Red Hat Advance Cluster Security for Kuberenetes discovers deployments, it creates a process baseline for every container type in a deployment.
+Then it adds all discovered processes to their own process baselines.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_process_baseline_states"><a class="anchor" href="#_process_baseline_states"></a>Process baseline states</h3>
+<div class="paragraph">
+<p>During the process discovery phase, all baselines are in an unlocked state.</p>
+</div>
+<div class="paragraph">
+<p>In an <strong>unlocked</strong> state:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When Red Hat Advance Cluster Security for Kuberenetes discovers a new process, it adds that process to the process baseline.</p>
+</li>
+<li>
+<p>Processes do not show up as risks and do not trigger any violations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After an hour from when Red Hat Advance Cluster Security for Kuberenetes receives the first process indicator from a container in a deployment, it finishes the process discovery phase.
+At this point:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes stops adding processes to the process baselines.</p>
+</li>
+<li>
+<p>New processes that are not in the process baseline show up as risks, but they do not trigger any violations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To generate violations, you must manually lock the process baseline.</p>
+</div>
+<div class="paragraph">
+<p>In a <strong>locked</strong> state:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes stops adding processes to the process baselines.</p>
+</li>
+<li>
+<p>New processes that are not in the process baseline trigger violations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Independent of the locked or unlocked baseline state, you can always add or remove processes from the baseline.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For a deployment, if each pod has multiple containers in it, Red Hat Advance Cluster Security for Kuberenetes creates a process baseline for each container type.
+For such a deployment, if some baselines are locked and some are unlocked, the baseline status for that deployment shows up as <strong>Mixed</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-process-baselines_evaluate-security-risks"><a class="anchor" href="#view-process-baselines_evaluate-security-risks"></a>Viewing the process baselines</h3>
+<div class="paragraph">
+<p>You can view process baselines from the <strong>Risk</strong> view.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the RHACS portal, select <strong>Risk</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Select a deployment from the list of deployments in the default <strong>Risk</strong> view.
+Deployment details open in a panel on the right.</p>
+</li>
+<li>
+<p>In the <strong>Deployment</strong> details panel, select the <strong>Process Discovery</strong> tab.</p>
+</li>
+<li>
+<p>The process baselines are visible under the <strong>Spec Container Baselines</strong> section.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-process-to-baseline_evaluate-security-risks"><a class="anchor" href="#add-process-to-baseline_evaluate-security-risks"></a>Adding a process to the baseline</h3>
+<div class="paragraph">
+<p>You can add a process to the baseline.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the RHACS portal, select <strong>Risk</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Select a deployment from the list of deployments in the default <strong>Risk</strong> view.
+Deployment details open in a panel on the right.</p>
+</li>
+<li>
+<p>In the <strong>Deployment</strong> details panel, select the <strong>Process Discovery</strong> tab.</p>
+</li>
+<li>
+<p>Under the <strong>Running Processes</strong> section, click the <strong>Add</strong> icon for the process you want to add to the process baseline.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <strong>Add</strong> icon is available only for the processes that are not in the process baseline.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remove-process-from-baseline_evaluate-security-risks"><a class="anchor" href="#remove-process-from-baseline_evaluate-security-risks"></a>Removing a process from the baseline</h3>
+<div class="paragraph">
+<p>You can remove a process from the baseline.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the RHACS portal, select <strong>Risk</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Select a deployment from the list of deployments in the default <strong>Risk</strong> view.
+Deployment details open in a panel on the right.</p>
+</li>
+<li>
+<p>In the <strong>Deployment</strong> details panel, select the <strong>Process Discovery</strong> tab.</p>
+</li>
+<li>
+<p>Under the <strong>Spec Container baselines</strong> section,  click the <strong>Remove</strong> icon for the process you want to remove from the process baseline.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lock-and-unlock-process-baselines_evaluate-security-risks"><a class="anchor" href="#lock-and-unlock-process-baselines_evaluate-security-risks"></a>Locking and unlocking the process baselines</h3>
+<div class="paragraph _abstract">
+<p>You can <strong>Lock</strong> the baseline to trigger violations for all processes not listed in the baseline and <strong>Unlock</strong> the baseline to stop triggering violations.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the RHACS portal, select <strong>Risk</strong> from the navigation menu.</p>
+</li>
+<li>
+<p>Select a deployment from the list of deployments in the default <strong>Risk</strong> view.
+Deployment details open in a panel on the right.</p>
+</li>
+<li>
+<p>In the <strong>Deployment</strong> details panel, select the <strong>Process Discovery</strong> tab.</p>
+</li>
+<li>
+<p>Under the <strong>Spec Container baselines</strong> section:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the <strong>Lock</strong> icon to trigger violations for processes that are not in the baseline.</p>
+</li>
+<li>
+<p>Click the <strong>Unlock</strong> icon to stop triggering violations for processes that are not in the baseline.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
