@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: 363-release-notes
 
 
+
 {product-title} 3.63 includes feature enhancements, bug fixes, scale improvements, and other changes.
 
 //To upgrade to this release from a previous version, see the link:/docs/upgrade-stackrox/[Upgrade]section.

@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: examine-images-for-vulnerabilities
 
 
+
 [role="_abstract"]
 With {product-title} you can analyze images for vulnerabilities.
 Scanner analyzes all image layers to check for known vulnerabilities by comparing them with the Common Vulnerabilities and Exposures (CVEs) list.

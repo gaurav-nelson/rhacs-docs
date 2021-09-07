@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: enable-offline-mode
 
 
+
 [role="_abstract"]
 You can use {product-title} for clusters that are not connected to the internet by enabling the offline mode. In offline mode, {product-title} components do not connect to addresses or hosts on the internet.
 
@@ -79,7 +80,7 @@ include::ROOT:partial$upload-definitions-to-central-api-token.adoc[leveloffset=+
 
 [role="_additional-resources"]
 .Additional resources
-* xref:cli:getting-started-cli.adoc#cli-authentication_cli-getting-started[Authenticating using the roxctl CLI]
+* xref:cli:getting-started-cli.html#cli-authentication_cli-getting-started[Authenticating using the roxctl CLI]
 
 //Upload the definitions to Central (admin password)
 include::ROOT:partial$upload-definitions-to-central-admin-pass.adoc[leveloffset=+3]

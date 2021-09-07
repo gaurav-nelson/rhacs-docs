@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: configure-automatic-upgrades
 
 
+
 [role="_abstract"]
 You can automate the upgrade process for each secured cluster and view the upgrade status from the RHACS portal.
 

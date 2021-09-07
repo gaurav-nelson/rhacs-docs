@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: manage-security-policies
 
 
+
 [role="_abstract"]
 {product-title} allows you to use out-of-the-box security policies and define custom multi-factor policies for your container environment.
 Configuring these policies enables you to automatically prevent high-risk service deployments in your environment and respond to runtime security incidents.

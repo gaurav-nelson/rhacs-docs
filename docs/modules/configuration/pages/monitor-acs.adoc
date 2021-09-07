@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: monitor-acs
 
 
+
 [role="_abstract"]
 link:https://prometheus.io/[Prometheus] is an open-source monitoring and alerting platform.
 You can use it to monitor health and availability of Central and Sensor components of {product-title}.

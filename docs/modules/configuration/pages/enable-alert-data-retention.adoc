@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: enable-alert-data-retention
 
 
+
 [role="_abstract"]
 Learn how to configure a retention period for {product-title} alerts.
 

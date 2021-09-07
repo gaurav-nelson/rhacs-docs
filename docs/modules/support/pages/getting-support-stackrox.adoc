@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: getting-support-stackrox
 
 
+
 [role="_abstract"]
 This topic provides information about the technical support for the StackRox Kubernetes Security Platform and details about other supported software and infrastructure.
 

@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: configure-audit-logging
 
 
+
 [role="_abstract"]
 {product-title} provides audit logging features that you can use to check all the changes made in {product-title}.
 The audit log captures all the `PUT` and `POST` events, which are modifications to {product-title}.

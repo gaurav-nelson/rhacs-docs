@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-with-slack
 
 
+
 [role="_abstract"]
 If you are using Slack, you can forward alerts from {product-title} to Slack.
 

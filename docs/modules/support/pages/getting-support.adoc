@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: getting-support
 
 
+
 This topic provides information about the technical support for {product-title}.
 
 [IMPORTANT]

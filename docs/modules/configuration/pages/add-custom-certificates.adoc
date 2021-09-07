@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: add-custom-cert
 
 
+
 [role="_abstract"]
 Learn how to use a custom TLS certificate with {product-title}. After you set up a certificate, users and API clients do not have to bypass the certificate security warnings when connecting to Central.
 

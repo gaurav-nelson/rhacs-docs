@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: respond-to-violations
 
 
+
 [role="_abstract"]
 Using {product-title} you can view policy violations, drill down to the actual cause of the violation, and take corrective actions.
 

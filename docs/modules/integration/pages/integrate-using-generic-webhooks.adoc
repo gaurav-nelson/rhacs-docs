@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-using-generic-webhooks
 
 
+
 [role="_abstract"]
 With {product-title}, you can send alert notifications as JSON messages to any webhook receiver.
 When a violation occurs, {product-title} makes an HTTP POST request on the configured URL.

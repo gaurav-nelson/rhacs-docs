@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: restore-acs
 
 
+
 [role="_abstract"]
 You can restore {product-title} from an existing backup by using the `roxctl` command-line interface (CLI).
 

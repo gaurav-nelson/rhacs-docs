@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: configure-google-workspace-identity
 
 
+
 [role="_abstract"]
 You can use link:https://workspace.google.com/[Google Workspace] as a single sign-on (SSO) provider for {product-title}.
 

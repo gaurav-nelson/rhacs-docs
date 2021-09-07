@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: configure-endpoints
 
 
+
 [role="_abstract"]
 Learn how to configure endpoints for {product-title} (RHACS) by using a YAML configuration file.
 

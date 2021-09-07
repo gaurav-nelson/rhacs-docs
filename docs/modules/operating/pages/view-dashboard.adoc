@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: view-dashboard
 
 
+
 [role="_abstract"]
 The {product-title} (RHACS) dashboard enables you to visually track and analyze key metrics such as risk across your environment, compliance status, and policy violations.
 The *Dashboard* view helps you to understand your cloud-native infrastructure, including images, containers, pods, namespaces, clusters, and their configurations.

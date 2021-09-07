@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: manage-compliance
 
 
+
 [role="_abstract"]
 By using {product-title} you can assess, check, and report on the compliance status of your containerized infrastructure.
 You can run out-of-the-box compliance scans based on industry standards including:

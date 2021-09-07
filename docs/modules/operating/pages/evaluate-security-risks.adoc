@@ -4,6 +4,7 @@ include::ROOT:partial$common-attributes.adoc[]
 :context: evaluate-security-risks
 
 
+
 [role="_abstract"]
 {product-title} assesses risk across your entire environment and ranks your running deployments according to their security risk.
 It also provides details about vulnerabilities, configurations, and runtime activities that require immediate attention.
