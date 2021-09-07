@@ -362,10 +362,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>If you are using <a href="https://www.splunk.com/">Splunk</a>, you can forward alerts from Red Hat Advance Cluster Security for Kuberenetes to Splunk and view vulnerability and compliance related data from within Splunk.</p>
+<p>If you are using <a href="https://www.splunk.com/">Splunk</a>, you can forward alerts from {product-title} to Splunk and view vulnerability and compliance related data from within Splunk.</p>
 </div>
 <div class="paragraph">
-<p>Depending on your use case, you can integrate Red Hat Advance Cluster Security for Kuberenetes with Splunk by using the following ways:</p>
+<p>Depending on your use case, you can integrate {product-title} with Splunk by using the following ways:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -393,7 +393,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The StackRox Kubernetes Security Platform add-on is only available if you are using Red Hat Advance Cluster Security for Kuberenetes version 3.0.51.0 or newer.</p>
+<p>The StackRox Kubernetes Security Platform add-on is only available if you are using {product-title} version 3.0.51.0 or newer.</p>
 </div>
 </td>
 </tr>
@@ -406,7 +406,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>You can use one or both of these integration options to integrate the Red Hat Advance Cluster Security for Kuberenetes with Splunk.</p>
+<p>You can use one or both of these integration options to integrate the {product-title} with Splunk.</p>
 </div>
 </div>
 </div>
@@ -414,10 +414,10 @@
 <h2 id="integrate-splunk-http-event-collector"><a class="anchor" href="#integrate-splunk-http-event-collector"></a>Using the HTTP event collector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can forward alerts from Red Hat Advance Cluster Security for Kuberenetes to Splunk by using an HTTP event collector.</p>
+<p>You can forward alerts from {product-title} to Splunk by using an HTTP event collector.</p>
 </div>
 <div class="paragraph">
-<p>To integrate Red Hat Advance Cluster Security for Kuberenetes with Splunk by using the HTTP event collector, follow these steps:</p>
+<p>To integrate {product-title} with Splunk by using the HTTP event collector, follow these steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -425,7 +425,7 @@
 <p>Add a new HTTP event collector in Splunk and get the token value.</p>
 </li>
 <li>
-<p>Use the token value to set up notifications in Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>Use the token value to set up notifications in {product-title}.</p>
 </li>
 <li>
 <p>Identify policies for which you want to send notifications, and update the notification settings for those policies.</p>
@@ -459,7 +459,7 @@
 <p>Review the event collector properties and click <strong>Submit &gt;</strong>.</p>
 </li>
 <li>
-<p>Copy the <strong>Token Value</strong> for the event collector. You need this token value to configure integration with Splunk in Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>Copy the <strong>Token Value</strong> for the event collector. You need this token value to configure integration with Splunk in {product-title}.</p>
 </li>
 </ol>
 </div>
@@ -488,9 +488,9 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="splunk-configuring-acs_integrate-with-splunk"><a class="anchor" href="#splunk-configuring-acs_integrate-with-splunk"></a>Configuring Splunk integration in Red Hat Advance Cluster Security for Kuberenetes</h3>
+<h3 id="splunk-configuring-acs_integrate-with-splunk"><a class="anchor" href="#splunk-configuring-acs_integrate-with-splunk"></a>Configuring Splunk integration in {product-title}</h3>
 <div class="paragraph _abstract">
-<p>Create a new Splunk integration in Red Hat Advance Cluster Security for Kuberenetes by using the token value.</p>
+<p>Create a new Splunk integration in {product-title} by using the token value.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -523,7 +523,7 @@ For example, <code>https://&lt;splunk-server-path&gt;:8088/services/collector/ev
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are using Red Hat Advance Cluster Security for Kuberenetes version 3.0.57 or newer, you can specify custom <strong>Source Type for Alert</strong> events and <strong>Source Type for Audit</strong> events.</p>
+<p>If you are using {product-title} version 3.0.57 or newer, you can specify custom <strong>Source Type for Alert</strong> events and <strong>Source Type for Audit</strong> events.</p>
 </div>
 </td>
 </tr>
@@ -588,7 +588,7 @@ For example, <code>https://&lt;splunk-server-path&gt;:8088/services/collector/ev
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes sends notifications on an opt-in basis.
+<p>{product-title} sends notifications on an opt-in basis.
 To receive notifications, you must first assign a notifier to the policy.</p>
 </li>
 <li>
@@ -596,7 +596,7 @@ To receive notifications, you must first assign a notifier to the policy.</p>
 If you have assigned a notifier to a policy, you will not receive a notification unless a violation generates a new alert.</p>
 </li>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes creates a  new alert when:</p>
+<p>{product-title} creates a  new alert when:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -621,10 +621,10 @@ If you have assigned a notifier to a policy, you will not receive a notification
 <h2 id="integrate-splunk-add-on"><a class="anchor" href="#integrate-splunk-add-on"></a>Using the StackRox Kubernetes Security Platform add-on</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use the StackRox Kubernetes Security Platform add-on to forward the vulnerability detection and compliance related data from the Red Hat Advance Cluster Security for Kuberenetes to Splunk.</p>
+<p>You can use the StackRox Kubernetes Security Platform add-on to forward the vulnerability detection and compliance related data from the {product-title} to Splunk.</p>
 </div>
 <div class="paragraph">
-<p>Begin by generating an API token with read permission for all resources in Red Hat Advance Cluster Security for Kuberenetes and then use that token to install and configure the add-on.</p>
+<p>Begin by generating an API token with read permission for all resources in {product-title} and then use that token to install and configure the add-on.</p>
 </div>
 <div class="sect2">
 <h3 id="install-and-configure-the-splunk-add-on_integrate-with-splunk"><a class="anchor" href="#install-and-configure-the-splunk-add-on_integrate-with-splunk"></a>Installing and configuring the Splunk add-on</h3>
@@ -635,7 +635,7 @@ If you have assigned a notifier to a policy, you will not receive a notification
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must have an API token with <code>read</code> permission for all resources of Red Hat Advance Cluster Security for Kuberenetes. You can assign the <strong>Analyst</strong> system role to grant this level of access. The <strong>Analyst</strong> role has read permissions for all resources.</p>
+<p>You must have an API token with <code>read</code> permission for all resources of {product-title}. You can assign the <strong>Analyst</strong> system role to grant this level of access. The <strong>Analyst</strong> role has read permissions for all resources.</p>
 </li>
 </ul>
 </div>
@@ -676,7 +676,7 @@ If you have assigned a notifier to a policy, you will not receive a notification
 <p>Enter a <strong>Name</strong> for the input.</p>
 </li>
 <li>
-<p>Select an <strong>Interval</strong> to pull data from Red Hat Advance Cluster Security for Kuberenetes.
+<p>Select an <strong>Interval</strong> to pull data from {product-title}.
 For example, every 14400 seconds.</p>
 </li>
 <li>

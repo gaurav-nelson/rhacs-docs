@@ -364,24 +364,24 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat Advance Cluster Security for Kuberenetes installs a set services on your OpenShift Container Platform cluster. This topic describes the installation procedure for installing Red Hat Advance Cluster Security for Kuberenetes on your OpenShift Container Platform cluster without any customizations.</p>
+<p>{product-title} installs a set services on your OpenShift Container Platform cluster. This topic describes the installation procedure for installing {product-title} on your OpenShift Container Platform cluster without any customizations.</p>
 </div>
 <div class="paragraph">
-<p>The following steps represent the high-level installation flow for quickly installing Red Hat Advance Cluster Security for Kuberenetes:</p>
+<p>The following steps represent the high-level installation flow for quickly installing {product-title}:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add the Red Hat Advance Cluster Security for Kuberenetes Helm chart repository.</p>
+<p>Add the {product-title} Helm chart repository.</p>
 </li>
 <li>
-<p>Install the <code>central-services</code> Helm chart to install the <a href="../../architecture/index.html#centralized-components_acs-architecture" class="page">centralized components</a> (Central and Scanner).</p>
+<p>Install the <code>central-services</code> Helm chart to install the <a href="#../../architecture/index.adoc#centralized-components_acs-architecture" class="page unresolved">centralized components</a> (Central and Scanner).</p>
 </li>
 <li>
 <p>Generate an init bundle.</p>
 </li>
 <li>
-<p>Install the <code>secured-cluster-services</code> Helm chart to install the <a href="../../architecture/index.html#per-cluster-components_acs-architecture" class="page">per-cluster</a> and <a href="../../architecture/index.html#per-node-components_acs-architecture" class="page">per-node</a> components (Sensor, Admission Controller, and Collector).</p>
+<p>Install the <code>secured-cluster-services</code> Helm chart to install the <a href="#../../architecture/index.adoc#per-cluster-components_acs-architecture" class="page unresolved">per-cluster</a> and <a href="#../../architecture/index.adoc#per-node-components_acs-architecture" class="page unresolved">per-node</a> components (Sensor, Admission Controller, and Collector).</p>
 </li>
 </ol>
 </div>
@@ -391,10 +391,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Understand <a href="../../architecture/index.html#acs-architecture_acs-architecture" class="page">Red Hat Advance Cluster Security for Kuberenetes architecture</a>.</p>
+<p>Understand <a href="#../../architecture/index.adoc#acs-architecture_acs-architecture" class="page unresolved">{product-title} architecture</a>.</p>
 </li>
 <li>
-<p>Review the <a href="../prerequisites.html#acs-general-requirements_acs-prerequisites" class="page">prerequisites for installing Red Hat Advance Cluster Security for Kuberenetes</a>.</p>
+<p>Review the <a href="../prerequisites.html#acs-general-requirements_acs-prerequisites" class="page">prerequisites for installing {product-title}</a>.</p>
 </li>
 </ul>
 </div>
@@ -407,14 +407,14 @@
 <div class="title">Procedure</div>
 <ul>
 <li>
-<p>Add Red Hat Advance Cluster Security for Kuberenetes charts repository.</p>
+<p>Add {product-title} charts repository.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ helm repo add stackrox  https://mirror.openshift.com/pub/rhacs/charts/</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The Helm repository for Red Hat Advance Cluster Security for Kuberenetes includes two Helm charts for installing different components.</p>
+<p>The Helm repository for {product-title} includes two Helm charts for installing different components.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -579,10 +579,10 @@ You can use the same bundle to set up multiple secured clusters.</p>
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="../../cli/getting-started-cli.html#installing-roxctl-cli" class="page">Installing the roxctl CLI</a></p>
+<p><a href="#../../cli/getting-started-cli.adoc#installing-roxctl-cli" class="page unresolved">Installing the roxctl CLI</a></p>
 </li>
 <li>
-<p><a href="install-helm-customization.html#portal-generate-init-bundle_acs-install-helm-customization" class="page">Generating an init bundle by using the RHACS portal</a></p>
+<p><a href="#../../installing/installing_helm/install-helm-customization.adoc#portal-generate-init-bundle_acs-install-helm-customization" class="page unresolved">Generating an init bundle by using the RHACS portal</a></p>
 </li>
 </ul>
 </div>
@@ -639,7 +639,7 @@ You can use the same bundle to set up multiple secured clusters.</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Specify the address and port number for Central. For example, <code>central.stackrox:443</code>.</td>
+<td>Specify the address and port number for Central.</td>
 </tr>
 </table>
 </div>
@@ -662,7 +662,7 @@ You can use the same bundle to set up multiple secured clusters.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The sample applications listed in the following section contain critical vulnerabilities and they are specifically designed to verify the build and deploy-time assessment features of Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>The sample applications listed in the following section contain critical vulnerabilities and they are specifically designed to verify the build and deploy-time assessment features of {product-title}.</p>
 </div>
 </td>
 </tr>
@@ -734,7 +734,7 @@ You can use the same bundle to set up multiple secured clusters.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes automatically scans these deployments for security risk and policy violations as soon as they are submitted to the cluster.</p>
+<p>{product-title} automatically scans these deployments for security risk and policy violations as soon as they are submitted to the cluster.</p>
 </div>
 </li>
 <li>

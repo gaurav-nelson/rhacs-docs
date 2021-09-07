@@ -368,10 +368,10 @@ These network policies are configured as YAML files.
 By looking at these files alone, it is often hard to identify whether the applied network policies achieve the desired network topology.</p>
 </div>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes gathers all defined network policies from your orchestrator and provides functionality to make these policies easier to use.</p>
+<p>{product-title} gathers all defined network policies from your orchestrator and provides functionality to make these policies easier to use.</p>
 </div>
 <div class="paragraph">
-<p>To support network policy enforcement, Red Hat Advance Cluster Security for Kuberenetes provides:</p>
+<p>To support network policy enforcement, {product-title} provides:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -449,7 +449,7 @@ You can hover over these items to view more details.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You need Red Hat Advance Cluster Security for Kuberenetes version 3.0.47 or newer to see information about ingress and egress connections, protocols, port numbers, and the direction of the network traffic.</p>
+<p>You need {product-title} version 3.0.47 or newer to see information about ingress and egress connections, protocols, port numbers, and the direction of the network traffic.</p>
 </div>
 </td>
 </tr>
@@ -457,19 +457,19 @@ You can hover over these items to view more details.</p>
 </div>
 <h3 id="_allowed_network_connections" class="discrete">Allowed network connections</h3>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes processes all network policies in each secured cluster to show you which deployments can contact each other, and which can reach external networks.</p>
+<p>{product-title} processes all network policies in each secured cluster to show you which deployments can contact each other, and which can reach external networks.</p>
 </div>
 <div class="paragraph">
 <p>The network graph shows possible network connections as dashed lines.</p>
 </div>
 <h3 id="_actual_network_flows" class="discrete">Actual network flows</h3>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes monitors running deployments and tracks traffic between them.
+<p>{product-title} monitors running deployments and tracks traffic between them.
 The network graph shows observed network flows as solid lines.</p>
 </div>
 <h3 id="_network_baseline" class="discrete">Network baseline</h3>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes discovers existing network flows and creates a baseline.</p>
+<p>{product-title} discovers existing network flows and creates a baseline.</p>
 </div>
 <div class="paragraph">
 <p>To view the network baseline for a deployment, select that deployment in the <strong>Network Graph</strong> view.
@@ -494,7 +494,7 @@ From this panel, you can:</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>To use the <strong>Network baseline</strong> feature, you must use Red Hat Advance Cluster Security for Kuberenetes version 3.0.54 or newer.</p>
+<p>To use the <strong>Network baseline</strong> feature, you must use {product-title} version 3.0.54 or newer.</p>
 </div>
 </td>
 </tr>
@@ -503,7 +503,7 @@ From this panel, you can:</p>
 <h3 id="_external_entities_and_connections" class="discrete">External entities and connections</h3>
 <div class="paragraph">
 <p>The <strong>Network Graph</strong> view shows information about network connections between managed clusters and external sources.
-Red Hat Advance Cluster Security for Kuberenetes also automatically discovers and highlights public CIDR (Classless Inter-Domain	Routing) addresses blocks, such as Google Cloud, AWS, Azure, Oracle Cloud, and Cloudflare.
+{product-title} also automatically discovers and highlights public CIDR (Classless Inter-Domain	Routing) addresses blocks, such as Google Cloud, AWS, Azure, Oracle Cloud, and Cloudflare.
 Using this information, you can identify deployments with active external connections and if they are making or receiving unauthorized connections from outside of your network.</p>
 </div>
 <div class="admonitionblock note">
@@ -514,7 +514,7 @@ Using this information, you can identify deployments with active external connec
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You need Red Hat Advance Cluster Security for Kuberenetes version 3.0.52 or newer to see information about active external connections.</p>
+<p>You need {product-title} version 3.0.52 or newer to see information about active external connections.</p>
 </div>
 </td>
 </tr>
@@ -525,7 +525,7 @@ Using this information, you can identify deployments with active external connec
 However, you can choose not to show auto-discovered CIDR blocks.</p>
 </div>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes includes IP ranges for the following cloud providers:</p>
+<p>{product-title} includes IP ranges for the following cloud providers:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -547,7 +547,7 @@ However, you can choose not to show auto-discovered CIDR blocks.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes fetches and updates the cloud providers' IP ranges every 7 days.
+<p>{product-title} fetches and updates the cloud providers' IP ranges every 7 days.
 If you are using offline mode,  you can update these ranges by installing new support packages.</p>
 </div>
 <div class="sect2">
@@ -555,7 +555,7 @@ If you are using offline mode,  you can update these ranges by installing new su
 <div class="paragraph _abstract">
 <p>Network policies specify how groups of pods are allowed to communicate with each other and with other network endpoints.
 Kubernetes <code>NetworkPolicy</code> resources use labels to select pods and define rules that specify what traffic is allowed to or from the selected pods.
-Red Hat Advance Cluster Security for Kuberenetes discovers and displays network policy information for all your Kubernetes clusters, namespaces, deployments, and pods, in the <strong>Network Graph</strong> view.</p>
+{product-title} discovers and displays network policy information for all your Kubernetes clusters, namespaces, deployments, and pods, in the <strong>Network Graph</strong> view.</p>
 </div>
 <div class="paragraph">
 <p>To view network policies and other related details for deployments in a namespace, you can select the namespace in <strong>Network Graph</strong> view.</p>
@@ -592,7 +592,7 @@ The deployment details panel includes the <strong>Network Flows</strong>, <stron
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You need Red Hat Advance Cluster Security for Kuberenetes version 3.0.47 or newer to see information about ingress and egress connections, protocols, port numbers, and the direction of the network traffic.</p>
+<p>You need {product-title} version 3.0.47 or newer to see information about ingress and egress connections, protocols, port numbers, and the direction of the network traffic.</p>
 </div>
 </td>
 </tr>
@@ -692,7 +692,7 @@ By using network policies to enable and disable traffic to or from pods, you can
 <div class="paragraph">
 <p>These network policies are YAML configuration files.
 It is often difficult to gain insights into the network flow and manually create these files.
-Red Hat Advance Cluster Security for Kuberenetes allows you to autogenerate these network policies based on the actual observed network communication flows in your environment.</p>
+{product-title} allows you to autogenerate these network policies based on the actual observed network communication flows in your environment.</p>
 </div>
 <div class="paragraph">
 <p>You can generate network policies from the network graph view.</p>
@@ -711,7 +711,7 @@ Red Hat Advance Cluster Security for Kuberenetes allows you to autogenerate thes
 </li>
 <li>
 <p>If you want to generate policies for only some deployments, use the filter box to filter the deployments you want.
-If you do not add a filter, Red Hat Advance Cluster Security for Kuberenetes generates policies for all deployments in the cluster.</p>
+If you do not add a filter, {product-title} generates policies for all deployments in the cluster.</p>
 </li>
 <li>
 <p>Select an appropriate time from the menu on the top bar.
@@ -721,7 +721,7 @@ If the selected time is too short it leaves out periodic or infrequent network c
 <p>Select <strong>Network Policy Simulator</strong>.</p>
 </li>
 <li>
-<p>In the panel that opens, select <strong>Exclude ports &amp; protocols</strong> if you do not want ports and protocols to be scoped in Red Hat Advance Cluster Security for Kuberenetes generated policies.</p>
+<p>In the panel that opens, select <strong>Exclude ports &amp; protocols</strong> if you do not want ports and protocols to be scoped in {product-title} generated policies.</p>
 </li>
 <li>
 <p>Select <strong>Generate and simulate network policies</strong>.
@@ -732,7 +732,7 @@ The generated network policy configuration  YAML opens in the same panel, and th
 <div class="sect2">
 <h3 id="save-generated-policies_manage-network-policies"><a class="anchor" href="#save-generated-policies_manage-network-policies"></a>Saving generated policies</h3>
 <div class="paragraph _abstract">
-<p>You can download and save the generated network policies from Red Hat Advance Cluster Security for Kuberenetes.
+<p>You can download and save the generated network policies from {product-title}.
 Use this option to commit the policies into a version control system like Git.</p>
 </div>
 <div class="ulist">
@@ -747,7 +747,7 @@ Use this option to commit the policies into a version control system like Git.</
 <div class="sect2">
 <h3 id="test-generated-policies_manage-network-policies"><a class="anchor" href="#test-generated-policies_manage-network-policies"></a>Testing generated policies</h3>
 <div class="paragraph">
-<p>After you download the network policies that Red Hat Advance Cluster Security for Kuberenetes generates, you can test them by applying them to your cluster.</p>
+<p>After you download the network policies that {product-title} generates, you can test them by applying them to your cluster.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -796,7 +796,7 @@ Use this option to commit the policies into a version control system like Git.</
 <div class="title">Procedure</div>
 <ul>
 <li>
-<p>To directly apply the generated policies in the cluster from within Red Hat Advance Cluster Security for Kuberenetes, select <strong>Apply Network Policies</strong>.</p>
+<p>To directly apply the generated policies in the cluster from within {product-title}, select <strong>Apply Network Policies</strong>.</p>
 </li>
 </ul>
 </div>
@@ -845,7 +845,7 @@ Always download and test the network policies in a development environment or te
 <div class="sect2">
 <h3 id="delete-all-autogenerated-policies_manage-network-policies"><a class="anchor" href="#delete-all-autogenerated-policies_manage-network-policies"></a>Deleting all autogenerated policies</h3>
 <div class="paragraph _abstract">
-<p>You can delete all generated policies from your cluster that you have created by using Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>You can delete all generated policies from your cluster that you have created by using {product-title}.</p>
 </div>
 <div class="ulist">
 <div class="title">Procedure</div>
@@ -884,12 +884,12 @@ Always download and test the network policies in a development environment or te
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes generates a single network policy for each deployment in the namespace.
+<p>{product-title} generates a single network policy for each deployment in the namespace.
 The pod selector for the policy is the pod selector of the deployment.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If a deployment already has a network policy, Red Hat Advance Cluster Security for Kuberenetes does not generate new policies or delete existing policies.</p>
+<p>If a deployment already has a network policy, {product-title} does not generate new policies or delete existing policies.</p>
 </li>
 </ul>
 </div>
@@ -913,20 +913,20 @@ For example, the policy name for the deployment <code>depABC</code> in the gener
 All generated policies also have an identifying label.</p>
 </li>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes generates a single rule allowing traffic from any IP address if:</p>
+<p>{product-title} generates a single rule allowing traffic from any IP address if:</p>
 <div class="ulist">
 <ul>
 <li>
 <p>The deployment has an incoming connection from outside the cluster within the selected time, or</p>
 </li>
 <li>
-<p>The deployment is exposed through a <code>NodePort</code> or <code>LoadBalancer</code> service.</p>
+<p>The deployment is exposed through a node port or load balancer service.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes generates one <code>ingress</code> rule for every deployment from which there is an incoming connection.</p>
+<p>{product-title} generates one <code>ingress</code> rule for every deployment from which there is an incoming connection.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -934,7 +934,7 @@ All generated policies also have an identifying label.</p>
 </li>
 <li>
 <p>For deployments in different namespaces, this rule uses a namespace selector.
-To make this possible, Red Hat Advance Cluster Security for Kuberenetes automatically adds a label, <code>namespace.metadata.stackrox.io/name</code>, to each namespace.</p>
+To make this possible, {product-title} automatically adds a label, <code>namespace.metadata.stackrox.io/name</code>, to each namespace.</p>
 </li>
 </ul>
 </div>
@@ -962,9 +962,9 @@ To make this possible, Red Hat Advance Cluster Security for Kuberenetes automati
 <h2 id="use-network-baselining_manage-network-policies"><a class="anchor" href="#use-network-baselining_manage-network-policies"></a>Using network baselining</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>In Red Hat Advance Cluster Security for Kuberenetes, you can minimize your risks by using network baselining.
+<p>In {product-title}, you can minimize your risks by using network baselining.
 It is a proactive approach to keep your infrastructure secure.
-Red Hat Advance Cluster Security for Kuberenetes first discovers existing network flows and creates a baseline, and then it treats network flows outside of this baseline as anomalous.</p>
+{product-title} first discovers existing network flows and creates a baseline, and then it treats network flows outside of this baseline as anomalous.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -976,10 +976,10 @@ Red Hat Advance Cluster Security for Kuberenetes first discovers existing networ
 <div class="ulist">
 <ul>
 <li>
-<p>To use the <strong>Network baseline</strong> feature, you must use the Red Hat Advance Cluster Security for Kuberenetes version 3.0.54 or newer.</p>
+<p>To use the <strong>Network baseline</strong> feature, you must use the {product-title} version 3.0.54 or newer.</p>
 </li>
 <li>
-<p>To enable alerts on baseline violations, you must use Red Hat Advance Cluster Security for Kuberenetes version 3.0.56 or newer.</p>
+<p>To enable alerts on baseline violations, you must use {product-title} version 3.0.56 or newer.</p>
 </li>
 </ul>
 </div>
@@ -988,13 +988,13 @@ Red Hat Advance Cluster Security for Kuberenetes first discovers existing networ
 </table>
 </div>
 <div class="paragraph">
-<p>When you install Red Hat Advance Cluster Security for Kuberenetes, there is no default network baseline.
-As Red Hat Advance Cluster Security for Kuberenetes discovers network flows, it creates a baseline and then it adds all discovered network flows to it.</p>
+<p>When you install {product-title}, there is no default network baseline.
+As {product-title} discovers network flows, it creates a baseline and then it adds all discovered network flows to it.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>When Red Hat Advance Cluster Security for Kuberenetes discovers new network activity, it adds that network flow to the network baseline.</p>
+<p>When {product-title} discovers new network activity, it adds that network flow to the network baseline.</p>
 </li>
 <li>
 <p>Network flows do not show up as anomalous flows and do not trigger any violations.</p>
@@ -1007,7 +1007,7 @@ As Red Hat Advance Cluster Security for Kuberenetes discovers network flows, it 
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes stops adding network flows to the network baselines.</p>
+<p>{product-title} stops adding network flows to the network baselines.</p>
 </li>
 <li>
 <p>New network flows (which are not in the network baseline) show up as anomalous flows but they do not trigger any violations.</p>
@@ -1045,7 +1045,7 @@ From this panel, you can:</p>
 <div class="sect2">
 <h3 id="enable-alert-on-baseline-violations_manage-network-policies"><a class="anchor" href="#enable-alert-on-baseline-violations_manage-network-policies"></a>Enabling alerts on baseline violations</h3>
 <div class="paragraph">
-<p>You can configure Red Hat Advance Cluster Security for Kuberenetes to detect anomalous network flows and trigger violations.</p>
+<p>You can configure {product-title} to detect anomalous network flows and trigger violations.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1055,7 +1055,7 @@ From this panel, you can:</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You need Red Hat Advance Cluster Security for Kuberenetes version 3.0.56 or newer to enable alerts on baseline violations.</p>
+<p>You need {product-title} version 3.0.56 or newer to enable alerts on baseline violations.</p>
 </div>
 </td>
 </tr>

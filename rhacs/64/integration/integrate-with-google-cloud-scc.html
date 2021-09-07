@@ -362,11 +362,11 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>If you are using <a href="https://cloud.google.com/security-command-center/">Google Cloud Security Command Center</a> (Cloud SCC), you can forward alerts from Red Hat Advance Cluster Security for Kuberenetes to Cloud SCC.
-This guide explains how to integrate Red Hat Advance Cluster Security for Kuberenetes with Cloud SCC.</p>
+<p>If you are using <a href="https://cloud.google.com/security-command-center/">Google Cloud Security Command Center</a> (Cloud SCC), you can forward alerts from {product-title} to Cloud SCC.
+This guide explains how to integrate {product-title} with Cloud SCC.</p>
 </div>
 <div class="paragraph">
-<p>The following steps represent a high-level workflow for integrating Red Hat Advance Cluster Security for Kuberenetes with Cloud SCC.</p>
+<p>The following steps represent a high-level workflow for integrating {product-title} with Cloud SCC.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -374,7 +374,7 @@ This guide explains how to integrate Red Hat Advance Cluster Security for Kubere
 <p>Register a new security source with Google Cloud.</p>
 </li>
 <li>
-<p>Provide the source ID and service account key to Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>Provide the source ID and service account key to {product-title}.</p>
 </li>
 <li>
 <p>Identify the policies you want to send notifications for, and update the notification settings for those policies.</p>
@@ -387,14 +387,14 @@ This guide explains how to integrate Red Hat Advance Cluster Security for Kubere
 <h2 id="configure-google-cloud-scc_integrate-with-google-cloud-scc"><a class="anchor" href="#configure-google-cloud-scc_integrate-with-google-cloud-scc"></a>Configuring Google Cloud SCC</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Start by adding Red Hat Advance Cluster Security for Kuberenetes as a trusted Cloud SCC source.</p>
+<p>Start by adding {product-title} as a trusted Cloud SCC source.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Follow the <a href="https://cloud.google.com/security-command-center/docs/how-to-security-sources">Adding vulnerability and threat sources to Cloud Security Command Center</a> guide and add Red Hat Advance Cluster Security for Kuberenetes as a trusted Cloud SCC source.
-Make a note of the <strong>Source ID</strong> that Google Cloud creates for your Red Hat Advance Cluster Security for Kuberenetes integration.
+<p>Follow the <a href="https://cloud.google.com/security-command-center/docs/how-to-security-sources">Adding vulnerability and threat sources to Cloud Security Command Center</a> guide and add {product-title} as a trusted Cloud SCC source.
+Make a note of the <strong>Source ID</strong> that Google Cloud creates for your {product-title} integration.
 If you do not see a source ID after registering, you can find it on the <a href="https://console.cloud.google.com/security/command-center/settings/source-management">Cloud SCC Security Sources page</a>.</p>
 </li>
 <li>
@@ -406,10 +406,10 @@ See Google Cloud&#8217;s guide to <a href="https://cloud.google.com/iam/docs/cre
 </div>
 </div>
 <div class="sect1">
-<h2 id="google-cloud-scc-configuring-acs_integrate-with-google-cloud-scc"><a class="anchor" href="#google-cloud-scc-configuring-acs_integrate-with-google-cloud-scc"></a>Configuring Red Hat Advance Cluster Security for Kuberenetes for integrating with Google Cloud SCC</h2>
+<h2 id="google-cloud-scc-configuring-acs_integrate-with-google-cloud-scc"><a class="anchor" href="#google-cloud-scc-configuring-acs_integrate-with-google-cloud-scc"></a>Configuring {product-title} for integrating with Google Cloud SCC</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create a new Google Cloud SCC integration in Red Hat Advance Cluster Security for Kuberenetes by using the <strong>Source ID</strong> and <strong>service account key</strong>.</p>
+<p>Create a new Google Cloud SCC integration in {product-title} by using the <strong>Source ID</strong> and <strong>service account key</strong>.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -486,7 +486,7 @@ See Google Cloud&#8217;s guide to <a href="https://cloud.google.com/iam/docs/cre
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes sends notifications on an opt-in basis.
+<p>{product-title} sends notifications on an opt-in basis.
 To receive notifications, you must first assign a notifier to the policy.</p>
 </li>
 <li>
@@ -494,7 +494,7 @@ To receive notifications, you must first assign a notifier to the policy.</p>
 If you have assigned a notifier to a policy, you will not receive a notification unless a violation generates a new alert.</p>
 </li>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes creates a  new alert when:</p>
+<p>{product-title} creates a  new alert when:</p>
 <div class="ulist">
 <ul>
 <li>

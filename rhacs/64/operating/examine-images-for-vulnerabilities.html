@@ -363,7 +363,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>With Red Hat Advance Cluster Security for Kuberenetes you can analyze images for vulnerabilities.
+<p>With {product-title} you can analyze images for vulnerabilities.
 Scanner analyzes all image layers to check for known vulnerabilities by comparing them with the Common Vulnerabilities and Exposures (CVEs) list.</p>
 </div>
 <div class="paragraph">
@@ -465,7 +465,7 @@ Upon receiving these requests, Scanner pulls the image layers from the relevant 
 Then it compares the identified packages and programming language-specific dependencies with the vulnerability lists and sends information back to Central.</p>
 </div>
 <div class="paragraph">
-<p>You can also integrate Red Hat Advance Cluster Security for Kuberenetes with another vulnerability scanner.</p>
+<p>You can also integrate {product-title} with another vulnerability scanner.</p>
 </div>
 <div class="paragraph">
 <p>Scanner identifies the vulnerabilities in the:</p>
@@ -534,7 +534,7 @@ Then it compares the identified packages and programming language-specific depen
 </div>
 <h3 id="_supported_runtimes_and_frameworks" class="discrete">Supported runtimes and frameworks</h3>
 <div class="paragraph">
-<p>Beginning from Red Hat Advance Cluster Security for Kuberenetes 3.0.50 (Scanner version 2.5.0), Scanner identifies vulnerabilities in the following developer platforms:</p>
+<p>Beginning from {product-title} 3.0.50 (Scanner version 2.5.0), Scanner identifies vulnerabilities in the following developer platforms:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -548,7 +548,7 @@ Then it compares the identified packages and programming language-specific depen
 </div>
 <h3 id="_supported_operating_systems" class="discrete">Supported operating systems</h3>
 <div class="paragraph">
-<p>The supported platforms listed in this section are the distributions in which Scanner identifies vulnerabilities, and it is different from the supported platforms on which you can install Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>The supported platforms listed in this section are the distributions in which Scanner identifies vulnerabilities, and it is different from the supported platforms on which you can install {product-title}.</p>
 </div>
 <div class="paragraph">
 <p>Scanner identifies vulnerabilities in images that contain the following Linux distributions:</p>
@@ -612,7 +612,7 @@ However, Scanner still detects language-specific vulnerabilities in Fedora-based
 <h2 id="pereodic-scanning-of-images_examine-images-for-vulnerabilities"><a class="anchor" href="#pereodic-scanning-of-images_examine-images-for-vulnerabilities"></a>Pereodic scanning of images</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat Advance Cluster Security for Kuberenetes periodically scans all active images and updates the image scan results to reflect the latest vulnerability definitions. Active images are the images you have deployed in your environment.</p>
+<p>{product-title} periodically scans all active images and updates the image scan results to reflect the latest vulnerability definitions. Active images are the images you have deployed in your environment.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -622,7 +622,7 @@ However, Scanner still detects language-specific vulnerabilities in Fedora-based
 </td>
 <td class="content">
 <div class="paragraph">
-<p>From Red Hat Advance Cluster Security for Kuberenetes 3.0.57, you can enable automatic scanning of inactive images by configuring the <strong>Watch</strong> setting for images.</p>
+<p>From {product-title} 3.0.57, you can enable automatic scanning of inactive images by configuring the <strong>Watch</strong> setting for images.</p>
 </div>
 </td>
 </tr>
@@ -640,10 +640,10 @@ However, Scanner still detects language-specific vulnerabilities in Fedora-based
 <h2 id="scan-inactive-images_examine-images-for-vulnerabilities"><a class="anchor" href="#scan-inactive-images_examine-images-for-vulnerabilities"></a>Scanning inactive images</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes scans all active (deployed) images every 4 hours and updates the image scan results to reflect the latest vulnerability definitions.</p>
+<p>{product-title} scans all active (deployed) images every 4 hours and updates the image scan results to reflect the latest vulnerability definitions.</p>
 </div>
 <div class="paragraph">
-<p>You can also configure Red Hat Advance Cluster Security for Kuberenetes to scan inactive (not deployed) images automatically.</p>
+<p>You can also configure {product-title} to scan inactive (not deployed) images automatically.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -659,7 +659,7 @@ However, Scanner still detects language-specific vulnerabilities in Fedora-based
 </li>
 <li>
 <p>Select <strong>Add Image</strong>.
-Red Hat Advance Cluster Security for Kuberenetes then scans the image and shows the error or success message.</p>
+{product-title} then scans the image and shows the error or success message.</p>
 </li>
 <li>
 <p>Select <strong>Return to Image list</strong> to view the <strong>Images</strong> view.</p>
@@ -689,12 +689,12 @@ This feed combines vulnerability definitions from upstream sources that include 
 <div class="sectionbody">
 <div class="paragraph _abstract">
 <p>In the RHACS portal shows a single Common Vulnerability Scoring System (CVSS) base score for each vulnerability.
-Red Hat Advance Cluster Security for Kuberenetes shows the CVSS score based on the following criteria:</p>
+{product-title} shows the CVSS score based on the following criteria:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If a CVSS v3 score is available, Red Hat Advance Cluster Security for Kuberenetes shows the score and lists <code>v3</code> along with it.
+<p>If a CVSS v3 score is available, {product-title} shows the score and lists <code>v3</code> along with it.
 For example, <code>6.5 (v3)</code>.</p>
 <div class="admonitionblock note">
 <table>
@@ -712,7 +712,7 @@ For example, <code>6.5 (v3)</code>.</p>
 </div>
 </li>
 <li>
-<p>If a CVSS v3 score is not available, Red Hat Advance Cluster Security for Kuberenetes shows only the CVSS v2 score.
+<p>If a CVSS v3 score is not available, {product-title} shows only the CVSS v2 score.
 For example, <code>6.5</code>.</p>
 </li>
 </ul>
@@ -726,7 +726,7 @@ If CVSS v3 information is available for a Common Vulnerabilities and Exposures (
 This difference is because one RHSA can contain multiple CVEs, and Red Hat sometimes assigns a different score based on how a vulnerability affects other Red Hat products.</p>
 </div>
 <div class="paragraph">
-<p>In such cases, Red Hat Advance Cluster Security for Kuberenetes:</p>
+<p>In such cases, {product-title}:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -755,7 +755,7 @@ This difference is because one RHSA can contain multiple CVEs, and Red Hat somet
 <h2 id="view-images-in-your-environment_examine-images-for-vulnerabilities"><a class="anchor" href="#view-images-in-your-environment_examine-images-for-vulnerabilities"></a>Viewing images in your environment</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>With Red Hat Advance Cluster Security for Kuberenetes you can view the details for all container images in your clusters.</p>
+<p>With {product-title} you can view the details for all container images in your clusters.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -876,7 +876,7 @@ The base operating system is also available under the <strong>Image Summary</str
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes lists the <strong>Image OS</strong> as <strong>unknown</strong> when either:</p>
+<p>{product-title} lists the <strong>Image OS</strong> as <strong>unknown</strong> when either:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -922,7 +922,7 @@ The base operating system is also available under the <strong>Image Summary</str
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>If you are using Red Hat Advance Cluster Security for Kuberenetes version 3.0.47 or older, replace the environment variable name <code>ROX_LANGUAGE_VULNS</code> with <code>LANGUAGE_VULNS</code>.</td>
+<td>If you are using {product-title} version 3.0.47 or older, replace the environment variable name <code>ROX_LANGUAGE_VULNS</code> with <code>LANGUAGE_VULNS</code>.</td>
 </tr>
 </table>
 </div>

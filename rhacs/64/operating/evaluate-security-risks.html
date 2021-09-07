@@ -363,7 +363,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat Advance Cluster Security for Kuberenetes assesses risk across your entire environment and ranks your running deployments according to their security risk.
+<p>{product-title} assesses risk across your entire environment and ranks your running deployments according to their security risk.
 It also provides details about vulnerabilities, configurations, and runtime activities that require immediate attention.</p>
 </div>
 </div>
@@ -453,14 +453,14 @@ Deployments at the top of the list present the most risk.</p>
 </ol>
 </div>
 <div class="sect2">
-<h3 id="understanding-filtering-to-policy-mapping_evaluate-security-risks"><a class="anchor" href="#understanding-filtering-to-policy-mapping_evaluate-security-risks"></a>Understanding how Red Hat Advance Cluster Security for Kuberenetes transforms the filtering criteria into policy criteria</h3>
+<h3 id="understanding-filtering-to-policy-mapping_evaluate-security-risks"><a class="anchor" href="#understanding-filtering-to-policy-mapping_evaluate-security-risks"></a>Understanding how {product-title} transforms the filtering criteria into policy criteria</h3>
 <div class="paragraph">
 <p>When you create new security policies from the <strong>Risk</strong> view, based on the filtering criteria you use, not all criteria are directly applied to the new policy.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes converts the <strong>Cluster</strong>, <strong>Namespace</strong>, and <strong>Deployment</strong> filters to equivalent policy scopes.</p>
+<p>{product-title} converts the <strong>Cluster</strong>, <strong>Namespace</strong>, and <strong>Deployment</strong> filters to equivalent policy scopes.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -492,7 +492,7 @@ For example, if the search query is <code>Cluster:A+Namespace:Z</code>, the filt
 </div>
 </li>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes drops or modifies filters that do not directly map to policy criteria and reports the dropped filters.</p>
+<p>{product-title} drops or modifies filters that do not directly map to policy criteria and reports the dropped filters.</p>
 </li>
 </ul>
 </div>
@@ -843,7 +843,7 @@ The <strong>Risk Details</strong> panel shows detailed information grouped by mu
 <td class="content">
 <div class="paragraph">
 <p>Not all sections are visible in the <strong>Risk Indicators</strong> tab.
-Red Hat Advance Cluster Security for Kuberenetes displays only relevant sections that affect the selected deployment.</p>
+{product-title} displays only relevant sections that affect the selected deployment.</p>
 </div>
 </td>
 </tr>
@@ -1068,12 +1068,12 @@ To do this, decrease the highlighted area from left or right sides (or both), an
 <div class="ulist">
 <ul>
 <li>
-<p>When containers restart, Red Hat Advance Cluster Security for Kuberenetes:</p>
+<p>When containers restart, {product-title}:</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Shows information about container termination and restart events for up to 10 inactive container instances for each container in a pod.
-For example, for a pod with two containers <code>app</code> and <code>sidecar</code>, Red Hat Advance Cluster Security for Kuberenetes keeps activity for up to 10 <code>app</code> instances and up to 10 <code>sidecar</code> instances.</p>
+For example, for a pod with two containers <code>app</code> and <code>sidecar</code>, {product-title} keeps activity for up to 10 <code>app</code> instances and up to 10 <code>sidecar</code> instances.</p>
 </li>
 <li>
 <p>Does not track process activities associated with the previous instances of the container.</p>
@@ -1082,16 +1082,16 @@ For example, for a pod with two containers <code>app</code> and <code>sidecar</c
 </div>
 </li>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes only shows the most recent execution of each (process name, process arguments, UID) tuple for each pod.</p>
+<p>{product-title} only shows the most recent execution of each (process name, process arguments, UID) tuple for each pod.</p>
 </li>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes shows events only for the active pods.</p>
+<p>{product-title} shows events only for the active pods.</p>
 </li>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes adjusts the reported timestamps based on time reported by Kubernetes and the Collector.
+<p>{product-title} adjusts the reported timestamps based on time reported by Kubernetes and the Collector.
 Kubernetes timestamps use second-based precision, and it rounds off the time to the nearest second.
 However, the Collector uses more precise timestamps.
-For example, if Kubernetes reports the container start time as <code>10:54:48</code>, and the Collector reports a process in that container started at <code>10:54:47.5349823</code>, Red Hat Advance Cluster Security for Kuberenetes adjusts the container start time to <code>10:54:47.5349823</code>.</p>
+For example, if Kubernetes reports the container start time as <code>10:54:48</code>, and the Collector reports a process in that container started at <code>10:54:47.5349823</code>, {product-title} adjusts the container start time to <code>10:54:47.5349823</code>.</p>
 </li>
 </ul>
 </div>
@@ -1191,7 +1191,7 @@ Comments enable you to add text notes to processes, and tags allow you to catego
 <p>Select the drop-down menu in the <strong>Process Tags</strong> section. Existing tags appear as a list (up to 10).</p>
 </li>
 <li>
-<p>Click on an existing tag or enter a new tag and then press <strong>Enter</strong>. As you enter your query, Red Hat Advance Cluster Security for Kuberenetes automatically displays relevant suggestions for the existing tags that match.</p>
+<p>Click on an existing tag or enter a new tag and then press <strong>Enter</strong>. As you enter your query, {product-title} automatically displays relevant suggestions for the existing tags that match.</p>
 </li>
 </ol>
 </div>
@@ -1206,14 +1206,14 @@ Comments enable you to add text notes to processes, and tags allow you to catego
 <h2 id="use-process-baselines_evaluate-security-risks"><a class="anchor" href="#use-process-baselines_evaluate-security-risks"></a>Using process baselines</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>You can minimize risk by using process baselining for infrastructure security. With this approach, Red Hat Advance Cluster Security for Kuberenetes first discovers existing processes and creates a baseline.
+<p>You can minimize risk by using process baselining for infrastructure security. With this approach, {product-title} first discovers existing processes and creates a baseline.
 Then it operates in the default deny-all mode and only allows processes listed in the baseline to run.</p>
 </div>
 <div class="sect2">
 <h3 id="_process_baselines"><a class="anchor" href="#_process_baselines"></a>Process baselines</h3>
 <div class="paragraph">
-<p>When you install Red Hat Advance Cluster Security for Kuberenetes, there is no default process baseline.
-As Red Hat Advance Cluster Security for Kuberenetes discovers deployments, it creates a process baseline for every container type in a deployment.
+<p>When you install {product-title}, there is no default process baseline.
+As {product-title} discovers deployments, it creates a process baseline for every container type in a deployment.
 Then it adds all discovered processes to their own process baselines.</p>
 </div>
 </div>
@@ -1228,7 +1228,7 @@ Then it adds all discovered processes to their own process baselines.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>When Red Hat Advance Cluster Security for Kuberenetes discovers a new process, it adds that process to the process baseline.</p>
+<p>When {product-title} discovers a new process, it adds that process to the process baseline.</p>
 </li>
 <li>
 <p>Processes do not show up as risks and do not trigger any violations.</p>
@@ -1236,13 +1236,13 @@ Then it adds all discovered processes to their own process baselines.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>After an hour from when Red Hat Advance Cluster Security for Kuberenetes receives the first process indicator from a container in a deployment, it finishes the process discovery phase.
+<p>After an hour from when {product-title} receives the first process indicator from a container in a deployment, it finishes the process discovery phase.
 At this point:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes stops adding processes to the process baselines.</p>
+<p>{product-title} stops adding processes to the process baselines.</p>
 </li>
 <li>
 <p>New processes that are not in the process baseline show up as risks, but they do not trigger any violations.</p>
@@ -1258,7 +1258,7 @@ At this point:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes stops adding processes to the process baselines.</p>
+<p>{product-title} stops adding processes to the process baselines.</p>
 </li>
 <li>
 <p>New processes that are not in the process baseline trigger violations.</p>
@@ -1276,7 +1276,7 @@ At this point:</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For a deployment, if each pod has multiple containers in it, Red Hat Advance Cluster Security for Kuberenetes creates a process baseline for each container type.
+<p>For a deployment, if each pod has multiple containers in it, {product-title} creates a process baseline for each container type.
 For such a deployment, if some baselines are locked and some are unlocked, the baseline status for that deployment shows up as <strong>Mixed</strong>.</p>
 </div>
 </td>

@@ -363,7 +363,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat Advance Cluster Security for Kuberenetes (RHACS) installs a set of services on your OpenShift Container Platform cluster. This section describes the installation procedure for installing Red Hat Advance Cluster Security for Kuberenetes on your OpenShift Container Platform cluster by using an Operator.</p>
+<p>{product-title} (RHACS) installs a set of services on your OpenShift Container Platform cluster. This section describes the installation procedure for installing {product-title} on your OpenShift Container Platform cluster by using an Operator.</p>
 </div>
 <div class="paragraph">
 <p>Before you install:</p>
@@ -371,15 +371,15 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Understand <a href="#../architecture/index.adoc#acs-architecture_acs-architecture" class="page unresolved">Red Hat Advance Cluster Security for Kuberenetes architecture</a>.</p>
+<p>Understand <a href="../architecture/index.html#acs-architecture_acs-architecture" class="page">{product-title} architecture</a>.</p>
 </li>
 <li>
-<p>Review the <a href="prerequisites.html#acs-general-requirements_acs-prerequisites" class="page">prerequisites for installing Red Hat Advance Cluster Security for Kuberenetes</a>.</p>
+<p>Review the <a href="prerequisites.html#acs-general-requirements_acs-prerequisites" class="page">prerequisites for installing {product-title}</a>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Red Hat Advance Cluster Security for Kuberenetes Operator includes the following two custom resources:</p>
+<p>The {product-title} Operator includes the following two custom resources:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -388,7 +388,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Central</strong>: Central is the Red Hat Advance Cluster Security for Kuberenetes application management interface and services. It handles data persistence, API interactions, and user interface (RHACS Portal) access. You can use the same Central instance to secure multiple OpenShift Container Platform or Kubernetes clusters.</p>
+<p><strong>Central</strong>: Central is the {product-title} application management interface and services. It handles data persistence, API interactions, and user interface (RHACS Portal) access. You can use the same Central instance to secure multiple OpenShift Container Platform or Kubernetes clusters.</p>
 </li>
 <li>
 <p><strong>Scanner</strong>: Scanner is a Red Hat-developed and certified vulnerability scanner for scanning container images and their associated database. It analyzes all image layers to check known vulnerabilities from the Common Vulnerabilities and Exposures (CVEs) list. Scanner also identifies vulnerabilities in packages installed by package managers and in dependencies for multiple programming languages.</p>
@@ -407,7 +407,7 @@
 <p><strong>Collector</strong>: Collector analyzes and monitors container activity on cluster nodes. It collects information about container runtime and network activity. It then sends the collected data to Sensor.</p>
 </li>
 <li>
-<p><strong>Admission Control</strong>: The admission controller prevents users from creating workloads that violate security policies in Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p><strong>Admission Control</strong>: The admission controller prevents users from creating workloads that violate security policies in {product-title}.</p>
 </li>
 </ul>
 </div>
@@ -415,12 +415,12 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>The following steps represent a high-level workflow for installing Red Hat Advance Cluster Security for Kuberenetes by using an Operator:</p>
+<p>The following steps represent a high-level workflow for installing {product-title} by using an Operator:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Install the Red Hat Advance Cluster Security for Kuberenetes Operator from OperatorHub in the cluster where you want to install Central.</p>
+<p>Install the {product-title} Operator from OperatorHub in the cluster where you want to install Central.</p>
 </li>
 <li>
 <p>Configure and deploy the <code>Central</code> custom resource.</p>
@@ -429,7 +429,7 @@
 <p>Generate and apply an init bundle.</p>
 </li>
 <li>
-<p>Install the Red Hat Advance Cluster Security for Kuberenetes Operator in all clusters that you want to monitor.</p>
+<p>Install the {product-title} Operator in all clusters that you want to monitor.</p>
 </li>
 <li>
 <p>Configure and deploy the <code>SecuredCluster</code> custom resource in all clusters that you want to monitor.</p>
@@ -439,10 +439,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="install-acs-operator_install-ocp-operator"><a class="anchor" href="#install-acs-operator_install-ocp-operator"></a>Installing the Red Hat Advance Cluster Security for Kuberenetes Operator</h2>
+<h2 id="install-acs-operator_install-ocp-operator"><a class="anchor" href="#install-acs-operator_install-ocp-operator"></a>Installing the {product-title} Operator</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Using the OperatorHub provided with OpenShift Container Platform is the easiest way to install Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>Using the OperatorHub provided with OpenShift Container Platform is the easiest way to install {product-title}.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -462,10 +462,10 @@
 <p>Navigate in the web console to the <strong>Operators</strong> &#8594; <strong>OperatorHub</strong> page.</p>
 </li>
 <li>
-<p>Enter <strong>Advanced Cluster Security</strong> into the <strong>Filter by keyword</strong> box to find the Red Hat Advance Cluster Security for Kuberenetes Operator.</p>
+<p>Enter <strong>Advanced Cluster Security</strong> into the <strong>Filter by keyword</strong> box to find the {product-title} Operator.</p>
 </li>
 <li>
-<p>Select the <strong>Red Hat Advance Cluster Security for Kuberenetes Operator</strong> to view the details page.</p>
+<p>Select the <strong>{product-title} Operator</strong> to view the details page.</p>
 </li>
 <li>
 <p>Read the information about the Operator and click <strong>Install</strong>.</p>
@@ -482,7 +482,7 @@
 <div class="title">Verification</div>
 <ul>
 <li>
-<p>After the installation completes, navigate to <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> to verify that the Red Hat Advance Cluster Security for Kuberenetes Operator is listed with the status of <strong>Succeeded</strong>.</p>
+<p>After the installation completes, navigate to <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> to verify that the {product-title} Operator is listed with the status of <strong>Succeeded</strong>.</p>
 </li>
 </ul>
 </div>
@@ -492,7 +492,7 @@
 <h2 id="install-central-operator_install-ocp-operator"><a class="anchor" href="#install-central-operator_install-ocp-operator"></a>Installing Central</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>The main component of Red Hat Advance Cluster Security for Kuberenetes is called Central. You can install Central on OpenShift Container Platform by using the <code>Central</code> custom resource. You deploy Central only once, and you can monitor multiple separate clusters by using the same Central installation.</p>
+<p>The main component of {product-title} is called Central. You can install Central on OpenShift Container Platform by using the <code>Central</code> custom resource. You deploy Central only once, and you can monitor multiple separate clusters by using the same Central installation.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -502,7 +502,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>When you install Red Hat Advance Cluster Security for Kuberenetes for the first time, you must first install the <code>Central</code> custom resource because the <code>SecuredCluster</code> custom resource installation is dependent on certificates that Central generates.</p>
+<p>When you install {product-title} for the first time, you must first install the <code>Central</code> custom resource because the <code>SecuredCluster</code> custom resource installation is dependent on certificates that Central generates.</p>
 </div>
 </td>
 </tr>
@@ -523,7 +523,7 @@
 <p>On the OpenShift Container Platform web console, navigate to the <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> page.</p>
 </li>
 <li>
-<p>Select the Red Hat Advance Cluster Security for Kuberenetes Operator from the list of installed Operators.</p>
+<p>Select the {product-title} Operator from the list of installed Operators.</p>
 </li>
 <li>
 <p>By default, OpenShift Container Platform lists the project as <code>openshift-operator</code>. Select <strong>Project: openshift-operator</strong> &#8594; <strong>Create project</strong>.</p>
@@ -535,7 +535,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You must install the Red Hat Advance Cluster Security for Kuberenetes <code>Central</code> custom resource in its own project and not in the default <code>openshift-operators</code> project.</p>
+<p>You must install the {product-title} <code>Central</code> custom resource in its own project and not in the default <code>openshift-operators</code> project.</p>
 </div>
 </td>
 </tr>
@@ -571,7 +571,7 @@
 <p>On the OpenShift Container Platform web console, navigate to the <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> page.</p>
 </li>
 <li>
-<p>Select the Red Hat Advance Cluster Security for Kuberenetes Operator from the list of installed Operators.</p>
+<p>Select the {product-title} Operator from the list of installed Operators.</p>
 </li>
 <li>
 <p>Select the <strong>Central</strong> tab.</p>
@@ -641,7 +641,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.nodeport.enabled</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Set this to <code>true</code> to expose Central through a NodePort. The default value is <code>false</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set this to <code>true</code> to expose Central through a node port. The default value is <code>false</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.nodeport.port</code></p></td>
@@ -739,7 +739,7 @@ If no PVC with the given name exists, it will be created. The default value is <
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.scannerComponent</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you do not want to deploy Scanner, you can disable it by using this parameter. If you disable Scanner, all other settings in this section have no effect. Red Hat does not recommend disabling Red Hat Advance Cluster Security for Kuberenetes Scanner.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you do not want to deploy Scanner, you can disable it by using this parameter. If you disable Scanner, all other settings in this section have no effect. Red Hat does not recommend disabling {product-title} Scanner.</p></td>
 </tr>
 </tbody>
 </table>
@@ -998,7 +998,7 @@ You can use the same bundle to set up multiple secured clusters.</p>
 <p>On the OpenShift Container Platform web console, navigate to the <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> page.</p>
 </li>
 <li>
-<p>Select the Red Hat Advance Cluster Security for Kuberenetes Operator form the list of installed operators.</p>
+<p>Select the {product-title} Operator form the list of installed operators.</p>
 </li>
 <li>
 <p>By default, OpenShift Container Platform lists the project as <code>openshift-operator</code>. Select <strong>Project: openshift-operator</strong> &#8594; <strong>Create project</strong>.</p>
@@ -1010,7 +1010,7 @@ You can use the same bundle to set up multiple secured clusters.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You must install Red Hat Advance Cluster Security for Kuberenetes <code>SecuredCluster</code> resource in its own project and not the default <code>openshift-operators</code> project.</p>
+<p>You must install {product-title} <code>SecuredCluster</code> resource in its own project and not the default <code>openshift-operators</code> project.</p>
 </div>
 </td>
 </tr>
@@ -1027,7 +1027,9 @@ You can use the same bundle to set up multiple secured clusters.</p>
 <p>Enter a name for your <code>SecuredCluster</code> custom resource.</p>
 </li>
 <li>
-<p>For <strong>Central Endpoint</strong>, enter the address and port number of your Central instance. For example, if Central is available at <code>https://central.example.com</code>, then specify the central endpoint as <code>central.example.com:443</code>. The default value of <code>central.stackrox:443</code> only works if you are installing secured cluster services in the same cluster that Central is installed in.</p>
+<p>For <strong>Central Endpoint</strong>, enter the address and port number of your Central instance.
+For example, if Central is available at <code>https://central.example.com</code>, then specify the central endpoint as <code>central.example.com:443</code>.
+The default value of <code>central.stackrox.svc:443</code> only works when you install secured cluster services and Central in the same cluster.</p>
 </li>
 <li>
 <p>Accept the default values or configure custom values for the avilable options.</p>
@@ -1209,7 +1211,7 @@ If you use the <code>Slim</code> image type, you must ensure that your Central i
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>taintToleration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To ensure comprehensive monitoring of your cluster activity, Red Hat Advance Cluster Security for Kuberenetes  runs services on every node in the cluster, including tainted nodes by default.
+<td class="tableblock halign-left valign-top"><p class="tableblock">To ensure comprehensive monitoring of your cluster activity, {product-title}  runs services on every node in the cluster, including tainted nodes by default.
 If you do not want this behavior, specify <code>AvoidTaints</code> for this parameter.</p></td>
 </tr>
 </tbody>
@@ -1281,7 +1283,7 @@ It may cause issues in some environments.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>egress.connectivityPolicy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configures whether Red Hat Advance Cluster Security for Kuberenetes should run in online or offline mode.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configures whether {product-title} should run in online or offline mode.
 In offline mode, automatic updates of vulnerability definitions and kernel modules are disabled.</p></td>
 </tr>
 </tbody>
@@ -1303,7 +1305,7 @@ In offline mode, automatic updates of vulnerability definitions and kernel modul
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The sample applications listed in the following section contain critical vulnerabilities and they are specifically designed to verify the build and deploy-time assessment features of Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>The sample applications listed in the following section contain critical vulnerabilities and they are specifically designed to verify the build and deploy-time assessment features of {product-title}.</p>
 </div>
 </td>
 </tr>
@@ -1375,7 +1377,7 @@ In offline mode, automatic updates of vulnerability definitions and kernel modul
 </div>
 </div>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes automatically scans these deployments for security risk and policy violations as soon as they are submitted to the cluster.</p>
+<p>{product-title} automatically scans these deployments for security risk and policy violations as soon as they are submitted to the cluster.</p>
 </div>
 </li>
 <li>

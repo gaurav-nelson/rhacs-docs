@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Red Hat Advance Cluster Security for Kuberenetes architecture :: RHACS Docs</title>
+    <title>{product-title} architecture :: RHACS Docs</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -358,19 +358,19 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Red Hat Advance Cluster Security for Kuberenetes architecture</h1>
+<h1 class="page">{product-title} architecture</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Discover Red Hat Advance Cluster Security for Kuberenetes architecture and concepts.</p>
+<p>Discover {product-title} architecture and concepts.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="acs-architecture_acs-architecture"><a class="anchor" href="#acs-architecture_acs-architecture"></a>Red Hat Advance Cluster Security for Kuberenetes architecture</h2>
+<h2 id="acs-architecture_acs-architecture"><a class="anchor" href="#acs-architecture_acs-architecture"></a>{product-title} architecture</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes installs as a set of containers in your OpenShift Container Platform cluster and it includes multiple components.
+<p>{product-title} installs as a set of containers in your OpenShift Container Platform cluster and it includes multiple components.
 You can categorize these components as follows:</p>
 </div>
 <div class="ulist">
@@ -425,14 +425,14 @@ You can categorize these components as follows:</p>
 </table>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/acs-architecture.png" alt="Red Hat Advance Cluster Security for Kuberenetes architecture overview">
+<img src="../_images/acs-architecture.png" alt="{product-title} architecture overview">
 </div>
 </div>
 <div class="sect2">
 <h3 id="centralized-components_acs-architecture"><a class="anchor" href="#centralized-components_acs-architecture"></a>Centralized components</h3>
 <div class="paragraph">
 <p>You deploy centralized components only once and you can monitor multiple separate clusters by using the same installation.
-Red Hat Advance Cluster Security for Kuberenetes includes the following centralized components:</p>
+{product-title} includes the following centralized components:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -446,13 +446,13 @@ Red Hat Advance Cluster Security for Kuberenetes includes the following centrali
 </div>
 <h4 id="_central" class="discrete">Central</h4>
 <div class="paragraph">
-<p>Central is the main component of Red Hat Advance Cluster Security for Kuberenetes and it is installed as a Kubernetes deployment.
+<p>Central is the main component of {product-title} and it is installed as a Kubernetes deployment.
 It handles data persistence, API interactions, and user interface (Portal) access.
 You can use the same Central instance to secure multiple OpenShift Container Platform or Kubernetes clusters.</p>
 </div>
 <h4 id="_scanner" class="discrete">Scanner</h4>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes includes an image vulnerability scanning component called Scanner.
+<p>{product-title} includes an image vulnerability scanning component called Scanner.
 It analyzes all image layers to check for known vulnerabilities from the Common Vulnerabilities and Exposures (CVEs) list.
 Scanner also identifies vulnerabilities in packages installed by package managers and in dependencies for multiple programming languages.</p>
 </div>
@@ -465,7 +465,7 @@ Scanner also identifies vulnerabilities in packages installed by package manager
 <td class="content">
 <div class="paragraph">
 <p>Scanner only scans those images that are not already scanned by other integrated vulnerability scanners.
-It means that if you have integrated Red Hat Advance Cluster Security for Kuberenetes with other vulnerability scanners, Scanner checks and uses the scanning results from the integrated scanner if available.</p>
+It means that if you have integrated {product-title} with other vulnerability scanners, Scanner checks and uses the scanning results from the integrated scanner if available.</p>
 </div>
 </td>
 </tr>
@@ -476,7 +476,7 @@ It means that if you have integrated Red Hat Advance Cluster Security for Kubere
 <h3 id="per-cluster-components_acs-architecture"><a class="anchor" href="#per-cluster-components_acs-architecture"></a>Per-cluster components</h3>
 <div class="paragraph">
 <p>You deploy the per-cluster components into each cluster that you want to monitor.
-Red Hat Advance Cluster Security for Kuberenetes includes the following per-cluster components:</p>
+{product-title} includes the following per-cluster components:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -490,19 +490,19 @@ Red Hat Advance Cluster Security for Kuberenetes includes the following per-clus
 </div>
 <h4 id="_sensor" class="discrete">Sensor</h4>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes uses the Sensor component to monitor Kubernetes and OpenShfit clusters.
+<p>{product-title} uses the Sensor component to monitor Kubernetes and OpenShfit clusters.
 It handles interactions with the OpenShift Container Platform or Kubernetes API server for policy detection and enforcement, and it coordinates with Collector.</p>
 </div>
 <h4 id="_admission_controller" class="discrete">Admission controller</h4>
 <div class="paragraph">
-<p>The admission controller prevents users from creating workloads that violate security policies in Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>The admission controller prevents users from creating workloads that violate security policies in {product-title}.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="per-node-components_acs-architecture"><a class="anchor" href="#per-node-components_acs-architecture"></a>Per-node components</h3>
 <div class="paragraph">
 <p>You deploy the per-node components in all nodes that you want to monitor.
-Red Hat Advance Cluster Security for Kuberenetes includes the following per-cluster components:</p>
+{product-title} includes the following per-cluster components:</p>
 </div>
 <div class="ulist">
 <ul>

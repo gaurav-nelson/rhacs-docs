@@ -369,13 +369,13 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add Red Hat Advance Cluster Security for Kuberenetes Helm chart repository.</p>
+<p>Add {product-title} Helm chart repository.</p>
 </li>
 <li>
 <p>Configure the <code>central-services</code> Helm chart.</p>
 </li>
 <li>
-<p>Install the <code>central-services</code> Helm chart to install the <a href="../../architecture/index.html#centralized-components_acs-architecture" class="page">centralized components</a> (Central and Scanner).</p>
+<p>Install the <code>central-services</code> Helm chart to install the <a href="#../../architecture/index.adoc#centralized-components_acs-architecture" class="page unresolved">centralized components</a> (Central and Scanner).</p>
 </li>
 <li>
 <p>Generate an init bundle.</p>
@@ -384,7 +384,7 @@
 <p>Configure the <code>secured-cluster-services</code> Helm chart.</p>
 </li>
 <li>
-<p>Install the <code>secured-cluster-services</code> Helm chart to install the <a href="../../architecture/index.html#per-cluster-components_acs-architecture" class="page">per-cluster</a> and <a href="../../architecture/index.html#per-node-components_acs-architecture" class="page">per-node</a> components (Sensor, Admission Controller, and Collector).</p>
+<p>Install the <code>secured-cluster-services</code> Helm chart to install the <a href="#../../architecture/index.adoc#per-cluster-components_acs-architecture" class="page unresolved">per-cluster</a> and <a href="#../../architecture/index.adoc#per-node-components_acs-architecture" class="page unresolved">per-node</a> components (Sensor, Admission Controller, and Collector).</p>
 </li>
 </ol>
 </div>
@@ -394,10 +394,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Understand <a href="../../architecture/index.html" class="page">Red Hat Advance Cluster Security for Kuberenetes architecture</a>.</p>
+<p>Understand <a href="#../../architecture/index.adoc" class="page unresolved">{product-title} architecture</a>.</p>
 </li>
 <li>
-<p>Review the <a href="../prerequisites.html#acs-general-requirements_acs-prerequisites" class="page">prerequisites for installing Red Hat Advance Cluster Security for Kuberenetes</a>.</p>
+<p>Review the <a href="../prerequisites.html#acs-general-requirements_acs-prerequisites" class="page">prerequisites for installing {product-title}</a>.</p>
 </li>
 </ul>
 </div>
@@ -410,14 +410,14 @@
 <div class="title">Procedure</div>
 <ul>
 <li>
-<p>Add Red Hat Advance Cluster Security for Kuberenetes charts repository.</p>
+<p>Add {product-title} charts repository.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ helm repo add stackrox  https://mirror.openshift.com/pub/rhacs/charts/</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The Helm repository for Red Hat Advance Cluster Security for Kuberenetes includes two Helm charts for installing different components.</p>
+<p>The Helm repository for {product-title} includes two Helm charts for installing different components.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -483,7 +483,7 @@
 You can specify these parameters by using the <code>--set</code> option or by creating YAML configuration files.</p>
 </div>
 <div class="paragraph">
-<p>Create the following files for configuring the Helm chart for installing Red Hat Advance Cluster Security for Kuberenetes:</p>
+<p>Create the following files for configuring the Helm chart for installing {product-title}:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -582,7 +582,7 @@ For example, <code>secret1, secret2, secretN</code>. Use this option if you have
 <div class="sect3">
 <h4 id="central-services-private-configuration-file-proxy-config_acs-install-helm-customization"><a class="anchor" href="#central-services-private-configuration-file-proxy-config_acs-install-helm-customization"></a>Proxy configuration</h4>
 <div class="paragraph">
-<p>If you are installing Red Hat Advance Cluster Security for Kuberenetes in a cluster that requires a proxy  to connect to external services, you must specify your proxy configuration by using the <code>proxyConfig</code> parameter.
+<p>If you are installing {product-title} in a cluster that requires a proxy  to connect to external services, you must specify your proxy configuration by using the <code>proxyConfig</code> parameter.
 For example:</p>
 </div>
 <div class="listingblock">
@@ -676,28 +676,28 @@ For example:</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.jwtSigner.key</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A private key which Red Hat Advance Cluster Security for Kuberenetes should use for signing JSON web tokens (JWTs) for authentication.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A private key which {product-title} should use for signing JSON web tokens (JWTs) for authentication.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.serviceTLS.cert</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An internal certificate that the <code>central.stackrox</code> service should use for deploying Central.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An internal certificate that the Central service should use for deploying Central.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.serviceTLS.key</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The internal certificate key that the <code>central.stackrox</code> service should use.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The private key of the internal certificate that the Central service should use.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.defaultTLS.cert</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The user-facing certificate that Central should use. Red Hat Advance Cluster Security for Kuberenetes uses this certificate for RHACS portal.</p>
+<p>The user-facing certificate that Central should use. {product-title} uses this certificate for RHACS portal.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>For a new installation, you must provide a certificate, otherwise, Red Hat Advance Cluster Security for Kuberenetes installs Central by using a self-signed certificate.</p>
+<p>For a new installation, you must provide a certificate, otherwise, {product-title} installs Central by using a self-signed certificate.</p>
 </li>
 <li>
-<p>If you are upgrading, Red Hat Advance Cluster Security for Kuberenetes uses the existing certificate and its key.</p>
+<p>If you are upgrading, {product-title} uses the existing certificate and its key.</p>
 </li>
 </ul>
 </div></div></td>
@@ -705,26 +705,26 @@ For example:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.defaultTLS.key</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The user-facing certificate key that Central should use.</p>
+<p>The private key of the user-facing certificate that Central should use.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>For a new installation, you must provide a certificate key, otherwise, Red Hat Advance Cluster Security for Kuberenetes installs Central by using a self-signed certificate.</p>
+<p>For a new installation, you must provide the private key, otherwise, {product-title} installs Central by using a self-signed certificate.</p>
 </li>
 <li>
-<p>If you are upgrading, Red Hat Advance Cluster Security for Kuberenetes uses the existing certificate and its key.</p>
+<p>If you are upgrading, {product-title} uses the existing certificate and its key.</p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.adminPassword.value</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator password for logging into Red Hat Advance Cluster Security for Kuberenetes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator password for logging into {product-title}.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.adminPassword.htpasswd</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator password for logging into Red Hat Advance Cluster Security for Kuberenetes.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator password for logging into {product-title}.
 This password is stored in hashed format using bcrypt.</p></td>
 </tr>
 </tbody>
@@ -795,23 +795,23 @@ Otherwise, if you are upgrading to a new version, specify the values for the fol
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.dbPassword.value</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The password to use for authentication with Scanner database.
-Do not modify this parameter because Red Hat Advance Cluster Security for Kuberenetes automatically creates and uses its value internally.</p></td>
+Do not modify this parameter because {product-title} automatically creates and uses its value internally.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.serviceTLS.cert</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An internal certificate that the <code>scanner.stackrox</code> service should use for deploying Scanner.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An internal certificate that the Scanner service should use for deploying Scanner.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.serviceTLS.key</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The internal certificate key that the <code>scanner.stackrox</code> service should use.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The private key of the internal certificate that the Scanner service should use.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.dbServiceTLS.cert</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An internal certificate that the <code>scanner-db.stackrox</code> service should use for deploying Scanner database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An internal certificate that the Scanner-db service should use for deploying Scanner database.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.dbServiceTLS.key</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The internal certificate key that the <code>scanner-db.stackrox</code> service should use.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The private key of the internal certificate that the Scanner-db service should use.</p></td>
 </tr>
 </tbody>
 </table>
@@ -884,7 +884,7 @@ Either use a hostname, such as <code>stackrox.io</code>, or a remote registry ho
 <div class="sect3">
 <h4 id="central-services-public-configuration-file-environment-variables_acs-install-helm-customization"><a class="anchor" href="#central-services-public-configuration-file-environment-variables_acs-install-helm-customization"></a>Environment variables</h4>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes automatically detects your cluster environment and sets values for <code>env.openshift</code>, <code>env.istio</code>, and <code>env.platform</code>.
+<p>{product-title} automatically detects your cluster environment and sets values for <code>env.openshift</code>, <code>env.istio</code>, and <code>env.platform</code>.
 Only set these values to override the automatic cluster environment detection.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -909,12 +909,12 @@ Only set these values to override the automatic cluster environment detection.</
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>env.platform</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The platform on which you are installing Red Hat Advance Cluster Security for Kuberenetes.
+<td class="tableblock halign-left valign-top"><p class="tableblock">The platform on which you are installing {product-title}.
 Set its value to <code>default</code> or <code>gke</code> to specify cluster platform and override automatic cluster environment detection.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>env.offlineMode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to use Red Hat Advance Cluster Security for Kuberenetes in offline mode.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to use {product-title} in offline mode.</p></td>
 </tr>
 </tbody>
 </table>
@@ -997,7 +997,7 @@ Setting a value for this parameter overrides the <code>central.image.registry</c
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.persistence.hostPath</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The path on the node where Red Hat Advance Cluster Security for Kuberenetes should create a database volume.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path on the node where {product-title} should create a database volume.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.persistence.persistentVolumeClaim.claimName</code></p></td>
@@ -1022,13 +1022,13 @@ The default port number is 443.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.nodePort.enabled</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to expose Central by using the NodePort service.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to expose Central by using the node port service.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.nodePort.port</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The port number on which to expose Central.
 When you skip this parameter, OpenShift Container Platform automatically assigns a port number.
-Red Hat recommends that you do not specify a port number if you are exposing Red Hat Advance Cluster Security for Kuberenetes by using a node port.</p></td>
+Red Hat recommends that you do not specify a port number if you are exposing {product-title} by using a node port.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.route.enabled</code></p></td>
@@ -1057,7 +1057,7 @@ This parameter is only available for OpenShift Container Platform clusters.</p><
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.disable</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to install Red Hat Advance Cluster Security for Kuberenetes without Scanner.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to install {product-title} without Scanner.
 When you use it with the <code>helm upgrade</code> command, Helm removes existing Scanner deployment.</p></td>
 </tr>
 <tr>
@@ -1137,7 +1137,7 @@ When you disable autoscaling, the <code>minReplicas</code> and <code>maxReplicas
 <div class="sect3">
 <h4 id="central-services-public-configuration-file-customizations_acs-install-helm-customization"><a class="anchor" href="#central-services-public-configuration-file-customizations_acs-install-helm-customization"></a>Customization</h4>
 <div class="paragraph">
-<p>Use these parameters to specify additional attributes for all objects that Red Hat Advance Cluster Security for Kuberenetes creates.</p>
+<p>Use these parameters to specify additional attributes for all objects that {product-title} creates.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1258,7 +1258,7 @@ When you disable autoscaling, the <code>minReplicas</code> and <code>maxReplicas
 <td class="content">
 <div class="paragraph">
 <p>The parameters specified in this section are for information only.
-Red Hat does not support Red Hat Advance Cluster Security for Kuberenetes instances with modified namespace and release names.</p>
+Red Hat does not support {product-title} instances with modified namespace and release names.</p>
 </div>
 </td>
 </tr>
@@ -1278,11 +1278,11 @@ Red Hat does not support Red Hat Advance Cluster Security for Kuberenetes instan
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>allowNonstandardNamespace</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to deploy Red Hat Advance Cluster Security for Kuberenetes into a namespace other than the default namespace <code>stackrox</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to deploy {product-title} into a namespace other than the default namespace <code>stackrox</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>allowNonstandardReleaseName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to deploy Red Hat Advance Cluster Security for Kuberenetes with a release name other than the default <code>stackrox-central-services</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to deploy {product-title} with a release name other than the default <code>stackrox-central-services</code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1417,7 +1417,7 @@ You can use the same bundle to set up multiple secured clusters.</p>
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="../../cli/getting-started-cli.html#installing-roxctl-cli" class="page">Installing the roxctl CLI</a></p>
+<p><a href="#../../cli/getting-started-cli.adoc#installing-roxctl-cli" class="page unresolved">Installing the roxctl CLI</a></p>
 </li>
 </ul>
 </div>
@@ -1514,7 +1514,7 @@ You can use the same bundle to set up multiple secured clusters.</p>
 You can specify these parameters by using the <code>--set</code> option or by creating YAML configuration files.</p>
 </div>
 <div class="paragraph">
-<p>Create the following files for configuring the Helm chart for installing Red Hat Advance Cluster Security for Kuberenetes:</p>
+<p>Create the following files for configuring the Helm chart for installing {product-title}:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1561,7 +1561,7 @@ You can specify these parameters by using the <code>--set</code> option or by cr
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>centralEndpoint</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Address of the Central endpoint, including the port number.
-If you are using a non-gRPC capable LoadBalancer, use the WebSocket protocol by prefixing the endpoint address with <code>wss://</code>.</p></td>
+If you are using a non-gRPC capable load balancer, use the WebSocket protocol by prefixing the endpoint address with <code>wss://</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sensor.endpoint</code></p></td>
@@ -1605,21 +1605,21 @@ If you are using a non-gRPC capable LoadBalancer, use the WebSocket protocol by 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.listenOnCreates</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This setting controls whether Kubernetes is configured to contact Red Hat Advance Cluster Security for Kuberenetes with <code>AdmissionReview</code> requests for workload creation events.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This setting controls whether Kubernetes is configured to contact {product-title} with <code>AdmissionReview</code> requests for workload creation events.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.listenOnUpdates</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">When you keep it as <code>false</code>, Red Hat Advance Cluster Security for Kuberenetes creates the <code>ValidatingWebhookConfiguration</code> in a way that causes the Kubernetes API server not to send object update events.
+<td class="tableblock halign-left valign-top"><p class="tableblock">When you keep it as <code>false</code>, {product-title} creates the <code>ValidatingWebhookConfiguration</code> in a way that causes the Kubernetes API server not to send object update events.
 Since the volume of object updates is usually higher than the object creates, leaving this as <code>false</code> limits the load on the admission control service and decreases the chances of a malfunctioning admission control service.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.listenOnEvents</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This setting controls whether the cluster is configured to contact Red Hat Advance Cluster Security for Kuberenetes with <code>AdmissionReview</code> requests for Kubernetes <code>exec</code> and <code>portforward</code> events.
-Red Hat Advance Cluster Security for Kuberenetes does not support this feature on OpenShift Container Platform.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This setting controls whether the cluster is configured to contact {product-title} with <code>AdmissionReview</code> requests for Kubernetes <code>exec</code> and <code>portforward</code> events.
+{product-title} does not support this feature on OpenShift Container Platform.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.dynamic.enforceOnCreates</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This setting controls whether Red Hat Advance Cluster Security for Kuberenetes evaluates policies;
+<td class="tableblock halign-left valign-top"><p class="tableblock">This setting controls whether {product-title} evaluates policies;
 if it is disabled, all AdmissionReview requests are automatically accepted.</p></td>
 </tr>
 <tr>
@@ -1639,9 +1639,9 @@ This option corresponds to the <strong>Contact image scanners</strong> option in
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.dynamic.timeout</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum time, in seconds, Red Hat Advance Cluster Security for Kuberenetes should wait while evaluating admission review requests.
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum time, in seconds, {product-title} should wait while evaluating admission review requests.
 Use this to set request timeouts when you enable image scanning.
-If the image scan runs longer than the specified time, Red Hat Advance Cluster Security for Kuberenetes accepts the request.</p></td>
+If the image scan runs longer than the specified time, {product-title} accepts the request.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>registryOverride</code></p></td>
@@ -1656,7 +1656,7 @@ If you specify it as <code>true</code>, no tolerations are applied, and the Coll
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>createUpgraderServiceAccount</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specify <code>true</code> to create the <code>sensor-upgrader</code> account.
-By default, Red Hat Advance Cluster Security for Kuberenetes creates a service account called <code>sensor-upgrader</code> in each secured cluster.
+By default, {product-title} creates a service account called <code>sensor-upgrader</code> in each secured cluster.
 This account is highly privileged but is only used during upgrades.
 If you do not create this account, you must complete future upgrades manually if the Sensor does not have enough permissions.</p></td>
 </tr>
@@ -1668,7 +1668,7 @@ If you do not create this account, you must complete future upgrades manually if
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>collector.slimMode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specify <code>true</code> if you want to use a slim Collector image for deploying Collector.
 Using slim Collector images requires Central to provide the matching kernel module or eBPF probe.
-If you are running Red Hat Advance Cluster Security for Kuberenetes in offline mode, you must download a kernel support package from <a href="https://install.stackrox.io/collector/support-packages/index.html">stackrox.io</a> and upload it to Central for slim Collectors to function.
+If you are running {product-title} in offline mode, you must download a kernel support package from <a href="https://install.stackrox.io/collector/support-packages/index.html">stackrox.io</a> and upload it to Central for slim Collectors to function.
 Otherwise, you must ensure that Central can access the online probe repository hosted at <a href="https://collector-modules.stackrox.io/">https://collector-modules.stackrox.io/</a>.</p></td>
 </tr>
 <tr>
@@ -1689,7 +1689,7 @@ Otherwise, you must ensure that Central can access the online probe repository h
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exposeMonitoring</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you set this option to <code>true</code>,  Red Hat Advance Cluster Security for Kuberenetes exposes Prometheus metrics endpoints on port number 9090 for the Sensor, Collector, and the Admission Controller.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you set this option to <code>true</code>,  {product-title} exposes Prometheus metrics endpoints on port number 9090 for the Sensor, Collector, and the Admission Controller.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1852,7 +1852,7 @@ However, these options are not saved, and it requires you to manually specify al
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The sample applications listed in the following section contain critical vulnerabilities and they are specifically designed to verify the build and deploy-time assessment features of Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>The sample applications listed in the following section contain critical vulnerabilities and they are specifically designed to verify the build and deploy-time assessment features of {product-title}.</p>
 </div>
 </td>
 </tr>
@@ -1924,7 +1924,7 @@ However, these options are not saved, and it requires you to manually specify al
 </div>
 </div>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes automatically scans these deployments for security risk and policy violations as soon as they are submitted to the cluster.</p>
+<p>{product-title} automatically scans these deployments for security risk and policy violations as soon as they are submitted to the cluster.</p>
 </div>
 </li>
 <li>

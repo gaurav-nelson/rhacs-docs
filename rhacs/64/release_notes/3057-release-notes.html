@@ -362,7 +362,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat Advance Cluster Security for Kuberenetes 3.0.57 includes feature enhancements, bug fixes, scale improvements, and other changes.</p>
+<p>{product-title} 3.0.57 includes feature enhancements, bug fixes, scale improvements, and other changes.</p>
 </div>
 <div class="paragraph">
 <p><strong>Release date:</strong> March 18, 2021</p>
@@ -375,7 +375,7 @@
 <div class="sect2">
 <h3 id="scan-inactive-images"><a class="anchor" href="#scan-inactive-images"></a>Scan inactive images</h3>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes scans all active (deployed) images every 4 hours and updates the image scan results to reflect the latest vulnerability definitions.
+<p>{product-title} scans all active (deployed) images every 4 hours and updates the image scan results to reflect the latest vulnerability definitions.
 You can now add inactive (undeployed) images for automatic scanning.</p>
 </div>
 </div>
@@ -395,13 +395,13 @@ You could also set unacceptable values for log level (for example, <code>Trace</
 </li>
 <li>
 <p><strong>ROX-6627</strong>: Previously, on OpenShift Container Platform, when creating new builds, the OpenShift Container Platform web console would show the error message  <strong>admission webhook "policyeval.stackrox.io" does not support dry run</strong>.
-Red Hat Advance Cluster Security for Kuberenetes now includes dry run support for the admission controller webhook.</p>
+{product-title} now includes dry run support for the admission controller webhook.</p>
 </li>
 <li>
 <p><strong>ROX-6640</strong>: The RHACS portal would not display the full description for RHSA CVEs in the <strong>CVE</strong> details view.</p>
 </li>
 <li>
-<p><strong>ROX-6723</strong>: Previously, if you were using the default CA certificate for Central, and you configured an additional CA certificate for Sensor, Red Hat Advance Cluster Security for Kuberenetes would overwrite Sensor&#8217;s additional certificate.</p>
+<p><strong>ROX-6723</strong>: Previously, if you were using the default CA certificate for Central, and you configured an additional CA certificate for Sensor, {product-title} would overwrite Sensor&#8217;s additional certificate.</p>
 </li>
 <li>
 <p><strong>ROX-6736</strong>: Previously, sometimes the RHACS portal did not show allowed connections between Sensor and non-isolated deployments in the <strong>Network Graph</strong>  view.</p>
@@ -416,7 +416,7 @@ Red Hat Advance Cluster Security for Kuberenetes now includes dry run support fo
 <div class="ulist">
 <ul>
 <li>
-<p><strong>ROX-6832</strong>: Previously, if you were using the RHEL base image, upgrading Red Hat Advance Cluster Security for Kuberenetes to version 3.0.57.0 would fail.</p>
+<p><strong>ROX-6832</strong>: Previously, if you were using the RHEL base image, upgrading {product-title} to version 3.0.57.0 would fail.</p>
 </li>
 </ul>
 </div>
@@ -429,12 +429,12 @@ Red Hat Advance Cluster Security for Kuberenetes now includes dry run support fo
 <div class="ulist">
 <ul>
 <li>
-<p><strong>ROX-6834</strong>:  Previously, in Red Hat Advance Cluster Security for Kuberenetes 3.0.57.0, you could not install Sensor using the RHACS portal because downloading the Sensor bundle would fail.</p>
+<p><strong>ROX-6834</strong>:  Previously, in {product-title} 3.0.57.0, you could not install Sensor using the RHACS portal because downloading the Sensor bundle would fail.</p>
 </li>
 <li>
-<p><strong>ROX-6805</strong>: Previously, if you were using Red Hat Advance Cluster Security for Kuberenetes on OpenShift Container Platform, the security context constraint <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1824800">conflicted with the Authentication Operator</a>.
-Red Hat Advance Cluster Security for Kuberenetes now includes an updated security context constraint which fixes this issue.
-To upgrade to Red Hat Advance Cluster Security for Kuberenetes 3.0.57.2, you must also update the security context constraint.</p>
+<p><strong>ROX-6805</strong>: Previously, if you were using {product-title} on OpenShift Container Platform, the security context constraint <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1824800">conflicted with the Authentication Operator</a>.
+{product-title} now includes an updated security context constraint which fixes this issue.
+To upgrade to {product-title} 3.0.57.2, you must also update the security context constraint.</p>
 </li>
 </ul>
 </div>
@@ -475,7 +475,7 @@ You can set it to:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>When you do not specify this option, Red Hat Advance Cluster Security for Kuberenetes generates deployment bundles in a compatibility mode that works on OpenShift Container Platform version <code>3.11</code> and version <code>4.x</code>.
+<p>When you do not specify this option, {product-title} generates deployment bundles in a compatibility mode that works on OpenShift Container Platform version <code>3.11</code> and version <code>4.x</code>.
 However, if you are using OpenShift Container Platform version <code>4.x</code>, Red Hat recommends that you specify this options as <code>4</code> to take advantage of additional features that are not available for earlier OpenShift Container Platform versions.</p>
 </div>
 </div>
@@ -485,7 +485,7 @@ However, if you are using OpenShift Container Platform version <code>4.x</code>,
 <h2 id="security-updates"><a class="anchor" href="#security-updates"></a>Security updates</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes includes an updated Collector image which resolve the following fixable CVEs:</p>
+<p>{product-title} includes an updated Collector image which resolve the following fixable CVEs:</p>
 </div>
 <div class="ulist">
 <ul>

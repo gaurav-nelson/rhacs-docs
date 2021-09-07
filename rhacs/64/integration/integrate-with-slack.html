@@ -362,10 +362,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>If you are using Slack, you can forward alerts from Red Hat Advance Cluster Security for Kuberenetes to Slack.</p>
+<p>If you are using Slack, you can forward alerts from {product-title} to Slack.</p>
 </div>
 <div class="paragraph">
-<p>The following steps represent a high-level workflow for integrating Red Hat Advance Cluster Security for Kuberenetes with Slack:</p>
+<p>The following steps represent a high-level workflow for integrating {product-title} with Slack:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -373,7 +373,7 @@
 <p>Create a new Slack app, enable incoming webhooks, and get a webhook URL.</p>
 </li>
 <li>
-<p>Use the webhook URL to integrate Slack with Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>Use the webhook URL to integrate Slack with {product-title}.</p>
 </li>
 <li>
 <p>Identify policies for which you want to send notifications, and update the notification settings for those policies.</p>
@@ -453,7 +453,7 @@ The page refreshes and you are sent back to your app settings page.</p>
 <div class="sect2">
 <h3 id="send-alerts-to-different-slack-channels_integrate-with-slack"><a class="anchor" href="#send-alerts-to-different-slack-channels_integrate-with-slack"></a>Sending alerts to different Slack channels</h3>
 <div class="paragraph _abstract">
-<p>You can configure Red Hat Advance Cluster Security for Kuberenetes to send notifications to different Slack channels so that they directly go to the right team.</p>
+<p>You can configure {product-title} to send notifications to different Slack channels so that they directly go to the right team.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -467,21 +467,21 @@ The page refreshes and you are sent back to your app settings page.</p>
 </div>
 </li>
 <li>
-<p>Use the annotation key <code>example.com/slack-webhook</code> in the <strong>Label/Annotation Key For Slack Webhook</strong> field when you configure Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>Use the annotation key <code>example.com/slack-webhook</code> in the <strong>Label/Annotation Key For Slack Webhook</strong> field when you configure {product-title}.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>After the configuration is complete, if a deployment has the annotation that you configured in the YAML file, Red Hat Advance Cluster Security for Kuberenetes sends the alert to the webhook URL you specified for that annotation. Otherwise, it sends the alert to the default webhook URL.</p>
+<p>After the configuration is complete, if a deployment has the annotation that you configured in the YAML file, {product-title} sends the alert to the webhook URL you specified for that annotation. Otherwise, it sends the alert to the default webhook URL.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="slack-configuring-acs_integrate-with-slack"><a class="anchor" href="#slack-configuring-acs_integrate-with-slack"></a>Configuring Red Hat Advance Cluster Security for Kuberenetes</h2>
+<h2 id="slack-configuring-acs_integrate-with-slack"><a class="anchor" href="#slack-configuring-acs_integrate-with-slack"></a>Configuring {product-title}</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create a new integration in Red Hat Advance Cluster Security for Kuberenetes by using the webhook URL.</p>
+<p>Create a new integration in {product-title} by using the webhook URL.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -561,7 +561,7 @@ The page refreshes and you are sent back to your app settings page.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes sends notifications on an opt-in basis.
+<p>{product-title} sends notifications on an opt-in basis.
 To receive notifications, you must first assign a notifier to the policy.</p>
 </li>
 <li>
@@ -569,7 +569,7 @@ To receive notifications, you must first assign a notifier to the policy.</p>
 If you have assigned a notifier to a policy, you will not receive a notification unless a violation generates a new alert.</p>
 </li>
 <li>
-<p>Red Hat Advance Cluster Security for Kuberenetes creates a  new alert when:</p>
+<p>{product-title} creates a  new alert when:</p>
 <div class="ulist">
 <ul>
 <li>

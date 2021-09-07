@@ -362,23 +362,23 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Red Hat Advance Cluster Security for Kuberenetes (RHACS) integrates with a variety of continuous integration (CI) products and allows you to apply build-time and deploy-time security rules before you deploy images.</p>
+<p>{product-title} (RHACS) integrates with a variety of continuous integration (CI) products and allows you to apply build-time and deploy-time security rules before you deploy images.</p>
 </div>
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes integrates into CI pipelines after images are built and pushed to a registry.
+<p>{product-title} integrates into CI pipelines after images are built and pushed to a registry.
 Pushing the image first allows developers to continue testing their artifacts while dealing with any policy violations alongside any other CI test failures, linter violations, or other problems.</p>
 </div>
 <div class="paragraph">
-<p>If possible, you should configure the version control system to block pull or merge requests from being merged if the build stage, which includes Red Hat Advance Cluster Security for Kuberenetes checks, fails.</p>
+<p>If possible, you should configure the version control system to block pull or merge requests from being merged if the build stage, which includes {product-title} checks, fails.</p>
 </div>
 <div class="paragraph">
-<p>The integration with your CI product functions by contacting your Red Hat Advance Cluster Security for Kuberenetes installation to check whether the image complies with build-phase policies you have configured.
+<p>The integration with your CI product functions by contacting your {product-title} installation to check whether the image complies with build-phase policies you have configured.
 If there are policy violations, a detailed message is displayed on the console log, including the policy description, rationale, and remediation instructions.
 Each policy includes an optional enforcement setting;
 if you mark a policy for build-phase enforcement, failure of that policy causes the client to exit with a nonzero error code.</p>
 </div>
 <div class="paragraph">
-<p>To integrate Red Hat Advance Cluster Security for Kuberenetes with your CI system, follow these steps:</p>
+<p>To integrate {product-title} with your CI system, follow these steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -389,7 +389,7 @@ if you mark a policy for build-phase enforcement, failure of that policy causes 
 <p><a href="#configure-registry-integration">Configure a registry integration</a>.</p>
 </li>
 <li>
-<p><a href="#configure-access">Configure access</a> to your Red Hat Advance Cluster Security for Kuberenetes instance.</p>
+<p><a href="#configure-access">Configure access</a> to your {product-title} instance.</p>
 </li>
 <li>
 <p><a href="#integrate-with-your-ci-pipeline">Integrate with your CI pipeline</a>.</p>
@@ -402,12 +402,12 @@ if you mark a policy for build-phase enforcement, failure of that policy causes 
 <h2 id="configure-build-policies"><a class="anchor" href="#configure-build-policies"></a>Configuring build policies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To check Red Hat Advance Cluster Security for Kuberenetes policies during builds, you must first configure policies that apply to the build phase of the container lifecycle. And then you must integrate with the registry that images are pushed to during the build.</p>
+<p>To check {product-title} policies during builds, you must first configure policies that apply to the build phase of the container lifecycle. And then you must integrate with the registry that images are pushed to during the build.</p>
 </div>
 <div class="sect2">
 <h3 id="integrate-ci-check-existing-build-phase-policies_integrate-with-ci-systems"><a class="anchor" href="#integrate-ci-check-existing-build-phase-policies_integrate-with-ci-systems"></a>Checking existing build-phase policies</h3>
 <div class="paragraph">
-<p>Use the RHACS portal to check any existing build-phase policies that you have configured in Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>Use the RHACS portal to check any existing build-phase policies that you have configured in {product-title}.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -424,7 +424,7 @@ if you mark a policy for build-phase enforcement, failure of that policy causes 
 <div class="sect2">
 <h3 id="create-new-system-policy_integrate-with-ci-systems"><a class="anchor" href="#create-new-system-policy_integrate-with-ci-systems"></a>Creating a new system policy</h3>
 <div class="paragraph">
-<p>In addition to using the default policies, you can also create custom policies in Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>In addition to using the default policies, you can also create custom policies in {product-title}.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -489,7 +489,7 @@ Therefore, include all information explaining the policy.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You must integrate Red Hat Advance Cluster Security for Kuberenetes with your notification providers, such as webhooks, Jira, or PagerDuty, to receive alert notifications. Notifiers only show up if you have integrated any notification providers with Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p>You must integrate {product-title} with your notification providers, such as webhooks, Jira, or PagerDuty, to receive alert notifications. Notifiers only show up if you have integrated any notification providers with {product-title}.</p>
 </div>
 </td>
 </tr>
@@ -553,13 +553,13 @@ Select <strong>ON</strong> to enforce policy and report a violation. Select <str
 <div class="ulist">
 <ul>
 <li>
-<p>For the <strong>Build</strong> stage, Red Hat Advance Cluster Security for Kuberenetes fails your CI builds when images match the conditions of the policy.</p>
+<p>For the <strong>Build</strong> stage, {product-title} fails your CI builds when images match the conditions of the policy.</p>
 </li>
 <li>
-<p>For the <strong>Deploy</strong> stage, Red Hat Advance Cluster Security for Kuberenetes blocks the creation of deployments that match the conditions of the policy. In clusters with admission controller enforcement, the Kubernetes or OpenShift Container Platform API server blocks all noncompliant deployments. In other clusters, Red Hat Advance Cluster Security for Kuberenetes edits noncompliant deployments to prevent pods from being scheduled.</p>
+<p>For the <strong>Deploy</strong> stage, {product-title} blocks the creation of deployments that match the conditions of the policy. In clusters with admission controller enforcement, the Kubernetes or OpenShift Container Platform API server blocks all noncompliant deployments. In other clusters, {product-title} edits noncompliant deployments to prevent pods from being scheduled.</p>
 </li>
 <li>
-<p>For the <strong>Runtime</strong> stage, Red Hat Advance Cluster Security for Kuberenetes stops all pods that match the conditions of the policy.</p>
+<p>For the <strong>Runtime</strong> stage, {product-title} stops all pods that match the conditions of the policy.</p>
 </li>
 </ul>
 </div>
@@ -591,7 +591,7 @@ Select <strong>ON</strong> to enforce policy and report a violation. Select <str
 <h2 id="configure-registry-integration"><a class="anchor" href="#configure-registry-integration"></a>Configuring registry integration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To scan images, you must provide Red Hat Advance Cluster Security for Kuberenetes with access to the image registry you are using in your build pipeline.</p>
+<p>To scan images, you must provide {product-title} with access to the image registry you are using in your build pipeline.</p>
 </div>
 <div class="sect2">
 <h3 id="check-for-existing-registry-integration_integrate-with-ci-systems"><a class="anchor" href="#check-for-existing-registry-integration_integrate-with-ci-systems"></a>Checking for existing registry integration</h3>
@@ -628,11 +628,11 @@ The tiles also list the number of items already configured for that tile.</p>
 <h2 id="configure-access"><a class="anchor" href="#configure-access"></a>Configuring access</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat Advance Cluster Security for Kuberenetes provides a command-line interface (CLI) <code>roxctl</code> to make it easy to integrate Red Hat Advance Cluster Security for Kuberenetes policies into your build pipeline.
+<p>{product-title} provides a command-line interface (CLI) <code>roxctl</code> to make it easy to integrate {product-title} policies into your build pipeline.
 The <code>roxctl</code> CLI prints detailed information about problems and how to fix them so that developers can maintain high standards in the early phases of the container lifecycle.</p>
 </div>
 <div class="paragraph">
-<p>To securely authenticate to the Red Hat Advance Cluster Security for Kuberenetes API server, you must create an API token.</p>
+<p>To securely authenticate to the {product-title} API server, you must create an API token.</p>
 </div>
 <div class="sect2">
 <h3 id="cli-authentication_integrate-with-ci-systems"><a class="anchor" href="#cli-authentication_integrate-with-ci-systems"></a>Authenticating using the roxctl CLI</h3>
@@ -726,7 +726,7 @@ For example:</p>
 <div class="sect2">
 <h3 id="install-roxctl-cli-binary"><a class="anchor" href="#install-roxctl-cli-binary"></a>Installing the roxctl CLI by downloading the binary</h3>
 <div class="paragraph">
-<p>You can install the <code>roxctl</code> CLI to interact with Red Hat Advance Cluster Security for Kuberenetes from a
+<p>You can install the <code>roxctl</code> CLI to interact with {product-title} from a
 command-line interface. You can install <code>roxctl</code> on Linux, Windows, or macOS.</p>
 </div>
 <div class="sect3">
@@ -741,7 +741,7 @@ command-line interface. You can install <code>roxctl</code> on Linux, Windows, o
 <p>Download the latest version of the <code>roxctl</code> CLI:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.64.0/bin/Linux/roxctl</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.64.1/bin/Linux/roxctl</code></pre>
 </div>
 </div>
 </li>
@@ -792,7 +792,7 @@ command-line interface. You can install <code>roxctl</code> on Linux, Windows, o
 <p>Download the latest version of the <code>roxctl</code> CLI:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.64.0/bin/Darwin/roxctl</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.64.1/bin/Darwin/roxctl</code></pre>
 </div>
 </div>
 </li>
@@ -851,7 +851,7 @@ command-line interface. You can install <code>roxctl</code> on Linux, Windows, o
 <p>Download the latest version of the <code>roxctl</code> CLI:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.64.0/bin/Windows/roxctl.exe</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.64.1/bin/Windows/roxctl.exe</code></pre>
 </div>
 </div>
 </li>
@@ -875,7 +875,7 @@ command-line interface. You can install <code>roxctl</code> on Linux, Windows, o
 <div class="sect2">
 <h3 id="run-roxctl-from-container_integrate-with-ci-systems"><a class="anchor" href="#run-roxctl-from-container_integrate-with-ci-systems"></a>Running the roxctl CLI from a container</h3>
 <div class="paragraph">
-<p>The <code>roxctl</code> client is the default entry point in Red Hat Advance Cluster Security for Kuberenetes <code>roxctl</code> image.
+<p>The <code>roxctl</code> client is the default entry point in {product-title} <code>roxctl</code> image.
 To run the <code>roxctl</code> client in a container image:</p>
 </div>
 <div class="olist arabic">
@@ -893,7 +893,7 @@ To run the <code>roxctl</code> client in a container image:</p>
 <p>Pull the latest container image for the <code>roxctl</code> CLI.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker pull registry.redhat.io/rh-acs/roxctl:3.64.0</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker pull registry.redhat.io/rh-acs/roxctl:3.64.1</code></pre>
 </div>
 </div>
 </li>
@@ -905,7 +905,7 @@ To run the <code>roxctl</code> client in a container image:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker run -e ROX_API_TOKEN=$ROX_API_TOKEN \
-  -it registry.redhat.io/rh-acs/roxctl:3.64.0 \
+  -it registry.redhat.io/rh-acs/roxctl:3.64.1 \
   -e $ROX_CENTRAL_ADDRESS &lt;command&gt;</code></pre>
 </div>
 </div>
@@ -916,7 +916,7 @@ To run the <code>roxctl</code> client in a container image:</p>
 <p>Verify the roxctl version you have installed.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker run -it registry.redhat.io/rh-acs/roxctl:3.64.0 version</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker run -it registry.redhat.io/rh-acs/roxctl:3.64.1 version</code></pre>
 </div>
 </div>
 </li>
@@ -944,7 +944,7 @@ You can use this plugin in both Jenkins freestyle projects and pipelines.</p>
 <div class="sect2">
 <h3 id="integrate-circle-ci_integrate-with-ci-systems"><a class="anchor" href="#integrate-circle-ci_integrate-with-ci-systems"></a>Using CircleCI</h3>
 <div class="paragraph">
-<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with CircleCI.</p>
+<p>You can integrate {product-title} with CircleCI.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisetes</div>
@@ -977,7 +977,7 @@ You can use this plugin in both Jenkins freestyle projects and pipelines.</p>
 <p><strong>Name</strong>: <strong>STACKROX_CENTRAL_HOST</strong> - The DNS name or IP address of Central.</p>
 </li>
 <li>
-<p><strong>Name</strong>: <strong>ROX_API_TOKEN</strong> - The API token to access Red Hat Advance Cluster Security for Kuberenetes.</p>
+<p><strong>Name</strong>: <strong>ROX_API_TOKEN</strong> - The API token to access {product-title}.</p>
 </li>
 <li>
 <p><strong>Name</strong>: <strong>DOCKERHUB_PASSWORD</strong> - The password for your Docker Hub account.</p>
