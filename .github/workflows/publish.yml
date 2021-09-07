@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Run Antora
-        uses: kameshsampath/antora-site-action@v0.2.4
+        uses:  gaurav-nelson/antora-site-action@9d3f8a4a963e683a2b9aa457685e9c8d32d1d10e
         with:
           antora_playbook: antora-playbook.yml
           antora_generator: 'antora-site-generator-lunr'
