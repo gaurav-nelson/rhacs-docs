@@ -3,6 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: expose-portal-over-http
 
+toc::[]
 
 [role="_abstract"]
 Enable an unencrypted HTTP server to expose the RHACS portal through ingress controllers, Layer 7 load balancers, Istio, or other solutions.

@@ -3,6 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: examine-images-for-vulnerabilities
 
+toc::[]
 
 [role="_abstract"]
 With {product-title} you can analyze images for vulnerabilities.

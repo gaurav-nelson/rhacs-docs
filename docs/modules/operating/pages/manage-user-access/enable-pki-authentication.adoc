@@ -3,6 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: enable-pki-authentication
 
+toc::[]
 
 [role="_abstract"]
 If you use an enterprise certificate authority (CA) for authentication, you can configure {product-title} (RHACS) to authenticate users by using their personal certificates.

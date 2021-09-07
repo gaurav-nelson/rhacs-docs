@@ -3,6 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-with-google-cloud-storage
 
+toc::[]
 
 [role="_abstract"]
 You can integrate with link:https://cloud.google.com/storage/[Google Cloud Storage (GCS)] to enable data backups.

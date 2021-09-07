@@ -3,13 +3,14 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-with-image-registries
 
+toc::[]
 
 [role="_abstract"]
 {product-title} integrates with a variety of image registries so that you can understand your images and apply security policies for image usage.
 
 When you integrate with image registries, you can view important image details, such as image creation date and Dockerfile details (including image layers).
 
-Once you have integrated with your registry, scan images, view image components, and apply security policies either before you deploy images or for the already deployed images in your clusters.
+After you integrate {product-title} with your registry, you can scan images, view image components, or apply security policies before you deploy images or to existing images that are already deployed in your clusters.
 
 [NOTE]
 ====
@@ -43,6 +44,8 @@ include::ROOT:partial$automatic-configuration-image-registry.adoc[leveloffset=+1
 == Manually configuring image registries
 
 If you are using GCR or ECR with node IAM, you must manually create image registry integrations.
+
+include::ROOT:partial$manual-configuration-image-registry-ocp.adoc[leveloffset=+2]
 
 include::ROOT:partial$manual-configuration-image-registry-ecr.adoc[leveloffset=+2]
 
