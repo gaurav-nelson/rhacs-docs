@@ -1,2 +1,4 @@
 = Red Hat Advance Cluster Security for Kubernetes (RHACS) documentation
 This is a repository for testing the RHACS documentation build by using Antora.
+
+For published docs, see https://gaurav-nelson.github.io/rhacs-docs/ 
