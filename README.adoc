@@ -16,9 +16,8 @@ npm i -g @antora/cli @antora/site-generator-default @antora/site-generator-gitbo
 +
 [source,terminal]
 ----
-./sync-docs.sh <1>
+./sync-docs.sh
 ----
-<1> Before running this script, update the RHACS version number (line 101) in the `sync-docs.sh` script.
 . Run the following command to build the stactic site:
 +
 [source,terminal]
@@ -26,3 +25,8 @@ npm i -g @antora/cli @antora/site-generator-default @antora/site-generator-gitbo
 DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" antora --generator antora-site-generator-lunr antora-playbook.yml
 ----
 Site is generated in the `build/site/` directory.
+
+== Caveats
+
+- New assemblies (pages) must be added to the navigation menu using the related `nav.adoc` files.
+- The existing `sync-docs.sh` script does not haandle `xrefs` with `../../` links.

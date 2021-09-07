@@ -61,44 +61,46 @@ rm -rf /tmp/openshift-docs
 
 echo -e "${BLUE}Updating include paths ...${NC}"
 
-grep -rl include::modules\/ . | xargs sed -i "" 's+include::ROOT:partial$+include::ROOT:partial$+g'
+grep -rl --include=\*.adoc include::modules\/ . | xargs sed -i "" 's+include::modules/+include::ROOT:partial$+g'
 
 echo -e "${BLUE}Removing TOC from pages ...${NC}"
 
-grep -rl 'toc::\[\]' . | xargs sed -i "" 's+toc::\[\]++g'
+grep -rl --include=\*.adoc 'toc::\[\]' . | xargs sed -i "" 's+toc::\[\]++g'
 
 echo -e "${BLUE}Updating xrefs ...${NC}"
 # TBD: Use regex to convert the xrefs to the Antora format
 # Doesn't cater for xrefs with ../../ in them
 
-grep -rl xref:architecture: . | xargs sed -i "" 's+xref:architecture:+xref:architecture:+g'
+grep -rl --include=\*.adoc xref:../architecture/ . | xargs sed -i "" 's+xref:../architecture/+xref:architecture:+g'
 
-grep -rl xref:backup_and_restore: . | xargs sed -i "" 's+xref:backup_and_restore:+xref:backup_and_restore:+g'
+grep -rl --include=\*.adoc xref:../backup_and_restore/ . | xargs sed -i "" 's+xref:../backup_and_restore/+xref:backup_and_restore:+g'
 
-grep -rl xref:cli: . | xargs sed -i "" 's+xref:cli:+xref:cli:+g'
+grep -rl --include=\*.adoc xref:../cli/ . | xargs sed -i "" 's+xref:../cli/+xref:cli:+g'
 
-grep -rl xref:configuration: . | xargs sed -i "" 's+xref:configuration:+xref:configuration:+g'
+grep -rl --include=\*.adoc xref:../configuration/ . | xargs sed -i "" 's+xref:../configuration/+xref:configuration:+g'
 
-grep -rl xref:installing: . | xargs sed -i "" 's+xref:installing:+xref:installing:+g'
+grep -rl --include=\*.adoc xref:../installing/ . | xargs sed -i "" 's+xref:../installing/+xref:installing:+g'
 
-grep -rl xref:integration: . | xargs sed -i "" 's+xref:integration:+xref:integration:+g'
+grep -rl --include=\*.adoc xref:../integration/ . | xargs sed -i "" 's+xref:../integration/+xref:integration:+g'
 
-grep -rl xref:operating: . | xargs sed -i "" 's+xref:operating:+xref:operating:+g'
+grep -rl --include=\*.adoc xref:../operating/ . | xargs sed -i "" 's+xref:../operating/+xref:operating:+g'
 
-grep -rl xref:release_notes: . | xargs sed -i "" 's+xref:release_notes:+xref:release_notes:+g'
+grep -rl --include=\*.adoc xref:../release_notes/ . | xargs sed -i "" 's+xref:../release_notes/+xref:release_notes:+g'
 
-grep -rl xref:support: . | xargs sed -i "" 's+xref:support:+xref:support:+g'
+grep -rl --include=\*.adoc xref:../support/ . | xargs sed -i "" 's+xref:../support/+xref:support:+g'
 
-grep -rl xref:upgrading: . | xargs sed -i "" 's+xref:upgrading:+xref:upgrading:+g'
+grep -rl --include=\*.adoc xref:../upgrading/ . | xargs sed -i "" 's+xref:../upgrading/+xref:upgrading:+g'
 
 echo -e "${BLUE}Updating image paths ...${NC}"
 
-grep -rl image::ROOT: . | xargs sed -i "" 's+image::ROOT:+image::ROOT:ROOT:+g'
+grep -rl --include=\*.adoc image:: . | xargs sed -i "" 's+image::+image::ROOT:+g'
 
 echo -e "${BLUE}Adding product name and version ...${NC}"
 
+PROD_VERSION=$(grep ':rhacs-version:' docs/modules/ROOT/partials/common-attributes.adoc | cut -c 17-20)
+
 echo ":product-title: Red Hat Advance Cluster Security for Kuberenetes" >> ./docs/modules/ROOT/partials/common-attributes.adoc
-echo ":product-version: 3.64" >> ./docs/modules/ROOT/partials/common-attributes.adoc
+echo ":product-version: ${PROD_VERSION}" >> ./docs/modules/ROOT/partials/common-attributes.adoc
 echo ":product-title-short: RHACS" >> ./docs/modules/ROOT/partials/common-attributes.adoc
 
 echo -e "${GREEN}Done!${NC}"
