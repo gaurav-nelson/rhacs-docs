@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Managing RBAC in {product-title} 3.0.62 and older :: RHACS Docs</title>
+    <title>Managing RBAC in Red Hat Advance Cluster Security for Kuberenetes 3.0.62 and older :: RHACS Docs</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <script>var uiRootPath = '../../../../_'</script>
@@ -360,11 +360,11 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Managing RBAC in {product-title} 3.0.62 and older</h1>
+<h1 class="page">Managing RBAC in Red Hat Advance Cluster Security for Kuberenetes 3.0.62 and older</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} (RHACS) comes with role-based access control (RBAC) that you can use to configure roles and grant various levels of access to {product-title} for different users.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes (RHACS) comes with role-based access control (RBAC) that you can use to configure roles and grant various levels of access to Red Hat Advance Cluster Security for Kuberenetes for different users.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -374,15 +374,15 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In {product-title} 3.63, a scoped access control feature has been added.
-If you are using {product-title} 3.63 or newer, see <a href="#../../operating/manage-user-access/manage-role-based-access-control-3630.adoc#manage-rbac-3630" class="page unresolved">Managing access control in {product-title} 3.63 and newer</a>.</p>
+<p>In Red Hat Advance Cluster Security for Kuberenetes 3.63, a scoped access control feature has been added.
+If you are using Red Hat Advance Cluster Security for Kuberenetes 3.63 or newer, see <a href="#../../operating/manage-user-access/manage-role-based-access-control-3630.adoc#manage-rbac-3630" class="page unresolved">Managing access control in Red Hat Advance Cluster Security for Kuberenetes 3.63 and newer</a>.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>In {product-title} 3.0.62 and older, different roles govern access to {product-title} resources to prevent unwanted access.</p>
+<p>In Red Hat Advance Cluster Security for Kuberenetes 3.0.62 and older, different roles govern access to Red Hat Advance Cluster Security for Kuberenetes resources to prevent unwanted access.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -390,7 +390,7 @@ If you are using {product-title} 3.63 or newer, see <a href="#../../operating/ma
 <p><em>Roles</em> are a collection of rules, which are a group of <code>read</code> and <code>write</code> permissions that a user can perform on a set of resources.</p>
 </li>
 <li>
-<p><em>Resources</em> are the functionalities of {product-title} for which you can set view (<code>read</code>) and modify (<code>write</code>) permissions.
+<p><em>Resources</em> are the functionalities of Red Hat Advance Cluster Security for Kuberenetes for which you can set view (<code>read</code>) and modify (<code>write</code>) permissions.
 See the Resource definitions section to understand the access level that each permission grants.</p>
 </li>
 </ul>
@@ -401,7 +401,7 @@ See the Resource definitions section to understand the access level that each pe
 <h2 id="rbac-system-roles_manage-role-based-access-control"><a class="anchor" href="#rbac-system-roles_manage-role-based-access-control"></a>System roles</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} includes some default system roles that you can apply on users.
+<p>Red Hat Advance Cluster Security for Kuberenetes includes some default system roles that you can apply on users.
 You can also create custom roles as required.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -437,7 +437,7 @@ You can set this role as the minimum access role for all users.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sensor Creator</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{product-title} uses this role to automate new cluster setups.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Red Hat Advance Cluster Security for Kuberenetes uses this role to automate new cluster setups.
 You require this role to run the command <code>roxctl sensor generate</code> in a new secured cluster.</p></td>
 </tr>
 </tbody>
@@ -482,7 +482,7 @@ You require this role to run the command <code>roxctl sensor generate</code> in 
 <h2 id="rbac-custom-roles_manage-role-based-access-control"><a class="anchor" href="#rbac-custom-roles_manage-role-based-access-control"></a>Custom roles</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>{product-title} also allows you to create custom roles.
+<p>Red Hat Advance Cluster Security for Kuberenetes also allows you to create custom roles.
 You can create a custom role with one or more permissions and then grant that custom role to users.
 Creating custom roles enables you to enforce the principle of least privilege (PoLP).
 You can use these roles to give users or system accounts only those permissions that are essential to performing their intended functions.</p>
@@ -737,7 +737,7 @@ To set a minimum access role, you must first configure an authentication provide
 <h2 id="manage-access-for-specific-users-or-groups_manage-role-based-access-control"><a class="anchor" href="#manage-access-for-specific-users-or-groups_manage-role-based-access-control"></a>Managing access for specific users or groups</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>In addition to setting up a <strong>Minimum access role</strong>, you can create rules that govern access to {product-title} resources.
+<p>In addition to setting up a <strong>Minimum access role</strong>, you can create rules that govern access to Red Hat Advance Cluster Security for Kuberenetes resources.
 You can create and apply these rules based on the metadata keys and values you set up in your authentication provider.</p>
 </div>
 <div class="admonitionblock note">
@@ -849,7 +849,7 @@ You can type in custom values for users who did not log in yet.</p>
 <h2 id="resource-definitions_manage-role-based-access-control"><a class="anchor" href="#resource-definitions_manage-role-based-access-control"></a>Resource definitions</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} includes multiple resources.
+<p>Red Hat Advance Cluster Security for Kuberenetes includes multiple resources.
 The following table lists the resources and describes the actions that users can perform with the <code>read</code> or <code>write</code> permission.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -931,7 +931,7 @@ To add and remove comments or tags, you need a role with <code>write</code> perm
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DebugLogs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View the current logging verbosity level in {product-title} components.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the current logging verbosity level in Red Hat Advance Cluster Security for Kuberenetes components.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Modify the logging level.</p></td>
 </tr>
 <tr>
@@ -946,7 +946,7 @@ To add and remove comments or tags, you need a role with <code>write</code> perm
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Group</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View the existing RBAC rules that match user metadata to {product-title} roles.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the existing RBAC rules that match user metadata to Red Hat Advance Cluster Security for Kuberenetes roles.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create, modify, or delete configured RBAC rules.</p></td>
 </tr>
 <tr>
@@ -991,7 +991,7 @@ To add and remove comments or tags, you need a role with <code>write</code> perm
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Licenses</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View the status of the existing license for {product-title}.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the status of the existing license for Red Hat Advance Cluster Security for Kuberenetes.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Upload a new license key.</p></td>
 </tr>
 <tr>
@@ -1041,7 +1041,7 @@ To add and remove comments or tags, you need a role with <code>write</code> perm
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View existing {product-title} RBAC roles and their permissions.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing Red Hat Advance Cluster Security for Kuberenetes RBAC roles and their permissions.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Add, modify, or delete roles and their permissions.</p></td>
 </tr>
 <tr>
@@ -1071,12 +1071,12 @@ To add and remove comments or tags, you need a role with <code>write</code> perm
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ServiceIdentity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View metadata about {product-title} service-to-service authentication.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View metadata about Red Hat Advance Cluster Security for Kuberenetes service-to-service authentication.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Revoke or reissue service-to-service authentication credentials.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View users that have accessed your {product-title} instance, including the metadata that the authentication provider provides about them.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View users that have accessed your Red Hat Advance Cluster Security for Kuberenetes instance, including the metadata that the authentication provider provides about them.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
 </tr>
 </tbody>

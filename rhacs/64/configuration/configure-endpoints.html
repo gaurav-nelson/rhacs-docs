@@ -363,11 +363,11 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Learn how to configure endpoints for {product-title} (RHACS) by using a YAML configuration file.</p>
+<p>Learn how to configure endpoints for Red Hat Advance Cluster Security for Kuberenetes (RHACS) by using a YAML configuration file.</p>
 </div>
 <div class="paragraph">
 <p>You can use a YAML configuration file to configure exposed endpoints.
-You can use this configuration file to define one or more endpoints for {product-title} and customize the TLS settings for each endpoint, or disable the TLS for specific endpoints.
+You can use this configuration file to define one or more endpoints for Red Hat Advance Cluster Security for Kuberenetes and customize the TLS settings for each endpoint, or disable the TLS for specific endpoints.
 You can also define if client authentication is required, and which client certificates to accept.</p>
 </div>
 </div>
@@ -376,7 +376,7 @@ You can also define if client authentication is required, and which client certi
 <h2 id="custom-yaml-configuration_configure-endpoints"><a class="anchor" href="#custom-yaml-configuration_configure-endpoints"></a>Custom YAML configuration</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} uses the YAML configuration as a <code>ConfigMap</code>, making configurations easier to change and manage.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes uses the YAML configuration as a <code>ConfigMap</code>, making configurations easier to change and manage.</p>
 </div>
 <div class="paragraph">
 <p>When you use the custom YAML configuration file, you can configure the following for each endpoint:</p>
@@ -401,11 +401,11 @@ You can also define if client authentication is required, and which client certi
 </ul>
 </div>
 <div class="paragraph">
-<p>You can use the configuration file to specify endpoints either during the installation or on an existing instance of {product-title}.
+<p>You can use the configuration file to specify endpoints either during the installation or on an existing instance of Red Hat Advance Cluster Security for Kuberenetes.
 However, if you expose any additional ports other than the default port <code>8443</code>, you must create network policies that allow traffic on those additional ports.</p>
 </div>
 <div class="paragraph">
-<p>The following is a sample <code>endpoints.yaml</code> configuration file for {product-title}:</p>
+<p>The following is a sample <code>endpoints.yaml</code> configuration file for Red Hat Advance Cluster Security for Kuberenetes:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -426,7 +426,7 @@ endpoints: <i class="conum" data-value="2"></i><b>(2)</b>
   # Serve HTTP and  gRPC for sensors only on port 8444
   - listen: ":8444" <i class="conum" data-value="3"></i><b>(3)</b>
     tls: <i class="conum" data-value="5"></i><b>(5)</b>
-      # Which TLS certificates to serve, possible values are 'service' (For  service certificates that {product-title} generates)
+      # Which TLS certificates to serve, possible values are 'service' (For  service certificates that Red Hat Advance Cluster Security for Kuberenetes generates)
       # and 'default' (user-configured default TLS certificate). If unset or empty, assume both.
       serverCerts: <i class="conum" data-value="7"></i><b>(7)</b>
         - default
@@ -437,7 +437,7 @@ endpoints: <i class="conum" data-value="2"></i><b>(2)</b>
         # opportunistically.
         required: true <i class="conum" data-value="9"></i><b>(9)</b>
         # Which TLS client CAs to serve, possible values are 'service' (CA for service
-        # certificates that {product-title} generates) and 'user' (CAs for PKI auth providers). If unset or empty, assume both.
+        # certificates that Red Hat Advance Cluster Security for Kuberenetes generates) and 'user' (CAs for PKI auth providers). If unset or empty, assume both.
         certAuthorities: <i class="conum" data-value="10"></i><b>(10)</b>
         # if not set, assume ["user", "service"]
           - service</code></pre>
@@ -481,12 +481,12 @@ If you do not specify a value, Central listens to both HTTP and gRPC traffic on 
 If you want to expose an endpoint exclusively for the RHACS portal, use <code>http</code>.
 However, you will not be able to use the endpoint for service-to-service communication or for the <code>roxctl</code> CLI, because these clients require both gRPC and HTTP.
 Red Hat recommends that you do not specify a value of this key, to enable both HTTP and gRPC protocols for the endpoint.
-If you want to restrict an endpoint to {product-title} services only, use the <strong>clientAuth</strong> option.</td>
+If you want to restrict an endpoint to Red Hat Advance Cluster Security for Kuberenetes services only, use the <strong>clientAuth</strong> option.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
 <td>Use it to specify the TLS settings for the endpoint.
-If you do not specify a value, {product-title} enables TLS with the default settings for all the following nested keys.</td>
+If you do not specify a value, Red Hat Advance Cluster Security for Kuberenetes enables TLS with the default settings for all the following nested keys.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
@@ -506,7 +506,7 @@ Acceptable values are:
 <p><code>default</code>: use the already configured custom TLS certificate if it exists.</p>
 </li>
 <li>
-<p><code>service</code>: use the internal service certificate that  {product-title} generates.</p>
+<p><code>service</code>: use the internal service certificate that  Red Hat Advance Cluster Security for Kuberenetes generates.</p>
 </li>
 </ul>
 </div></td>
@@ -519,7 +519,7 @@ Acceptable values are:
 <td><i class="conum" data-value="9"></i><b>9</b></td>
 <td>Use <code>true</code> to only allow clients with a valid client certificate.
 The default value is <code>false</code>.
-You can use <code>true</code> in conjunction with a the <code>certAuthorities</code> setting of <code>service</code> to only allow {product-title} services to connect to this endpoint.</td>
+You can use <code>true</code> in conjunction with a the <code>certAuthorities</code> setting of <code>service</code> to only allow Red Hat Advance Cluster Security for Kuberenetes services to connect to this endpoint.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="10"></i><b>10</b></td>
@@ -530,7 +530,7 @@ Acceptable values are:
 <div class="ulist">
 <ul>
 <li>
-<p><code>service</code>: CA for service certificates that {product-title} generates.</p>
+<p><code>service</code>: CA for service certificates that Red Hat Advance Cluster Security for Kuberenetes generates.</p>
 </li>
 <li>
 <p><code>user</code>: CAs configured by PKI authentication providers.</p>
@@ -546,7 +546,7 @@ Acceptable values are:
 <h2 id="configure-endpoints-new-install_configure-endpoints"><a class="anchor" href="#configure-endpoints-new-install_configure-endpoints"></a>Configuring endpoints during a new installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When you install {product-title} by using the <code>roxctl</code> CLI, it creates a folder named <code>central-bundle</code>, which contains the necessary YAML manifests and scripts to deploy Central.</p>
+<p>When you install Red Hat Advance Cluster Security for Kuberenetes by using the <code>roxctl</code> CLI, it creates a folder named <code>central-bundle</code>, which contains the necessary YAML manifests and scripts to deploy Central.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -560,7 +560,7 @@ Make sure that you maintain a 4 space indentation for the YAML configuration.</p
 </li>
 <li>
 <p>Continue the installation instructions as usual.
-{product-title} uses the specified configuration.</p>
+Red Hat Advance Cluster Security for Kuberenetes uses the specified configuration.</p>
 </li>
 </ol>
 </div>
@@ -584,7 +584,7 @@ Make sure that you maintain a 4 space indentation for the YAML configuration.</p
 <h2 id="configure-endpoints-existing_configure-endpoints"><a class="anchor" href="#configure-endpoints-existing_configure-endpoints"></a>Configuring endpoints for an existing instance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can configure endpoints for an existing instance of {product-title}.</p>
+<p>You can configure endpoints for an existing instance of Red Hat Advance Cluster Security for Kuberenetes.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>

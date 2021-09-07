@@ -363,15 +363,15 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} works with <a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/">Kubernetes admission controllers</a> and <a href="https://docs.openshift.com/container-platform/4.5/architecture/admission-plug-ins.html">OpenShift Container Platform admission plug-ins</a> to allow you to enforce security policies before Kubernetes or OpenShift Container Platform creates workloads, for example, deployments, daemon sets or jobs.
-The {product-title} admission controller prevents users from creating workloads that violate policies you configure in {product-title}.
-Beginning from the {product-title} version 3.0.41, you can also configure the admission controller to prevent updates to workloads that violate policies.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes works with <a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/">Kubernetes admission controllers</a> and <a href="https://docs.openshift.com/container-platform/4.5/architecture/admission-plug-ins.html">OpenShift Container Platform admission plug-ins</a> to allow you to enforce security policies before Kubernetes or OpenShift Container Platform creates workloads, for example, deployments, daemon sets or jobs.
+The Red Hat Advance Cluster Security for Kuberenetes admission controller prevents users from creating workloads that violate policies you configure in Red Hat Advance Cluster Security for Kuberenetes.
+Beginning from the Red Hat Advance Cluster Security for Kuberenetes version 3.0.41, you can also configure the admission controller to prevent updates to workloads that violate policies.</p>
 </div>
 <div class="paragraph">
-<p>{product-title} uses the <code>ValidatingAdmissionWebhook</code> controller to verify that the resource being provisioned complies with the specified security policies.
-To handle this, {product-title} creates a <code>ValidatingWebhookConfiguration</code> which contains multiple webhook rules.
-When the Kubernetes or OpenShift Container Platform API server receives a request that matches one of the webhook rules, the API server sends an <code>AdmissionReview</code> request to {product-title}.
-{product-title} then accepts or rejects the request based on the configured security policies.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes uses the <code>ValidatingAdmissionWebhook</code> controller to verify that the resource being provisioned complies with the specified security policies.
+To handle this, Red Hat Advance Cluster Security for Kuberenetes creates a <code>ValidatingWebhookConfiguration</code> which contains multiple webhook rules.
+When the Kubernetes or OpenShift Container Platform API server receives a request that matches one of the webhook rules, the API server sends an <code>AdmissionReview</code> request to Red Hat Advance Cluster Security for Kuberenetes.
+Red Hat Advance Cluster Security for Kuberenetes then accepts or rejects the request based on the configured security policies.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -381,7 +381,7 @@ When the Kubernetes or OpenShift Container Platform API server receives a reques
 </td>
 <td class="content">
 <div class="paragraph">
-<p>To use admission controller enforcement on OpenShift Container Platform, you need the {product-title}  version 3.0.49 or newer.</p>
+<p>To use admission controller enforcement on OpenShift Container Platform, you need the Red Hat Advance Cluster Security for Kuberenetes  version 3.0.49 or newer.</p>
 </div>
 </td>
 </tr>
@@ -407,14 +407,14 @@ Also, consider API timeouts in any custom automation you might be using.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If you enable this setting, {product-title} contacts image scanners if scan results are not already available, which adds considerable latency.</p>
+<p>If you enable this setting, Red Hat Advance Cluster Security for Kuberenetes contacts image scanners if scan results are not already available, which adds considerable latency.</p>
 </li>
 <li>
 <p>If you disable this setting, the enforcement decision only considers image scan criteria if cached scan results are available.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>For {product-title} version 3.0.41 and newer, the cached scan results are only available for images referenced by their image digest (<code>@sha256:...</code>).</p>
+<p>For Red Hat Advance Cluster Security for Kuberenetes version 3.0.41 and newer, the cached scan results are only available for images referenced by their image digest (<code>@sha256:...</code>).</p>
 </li>
 </ul>
 </div>
@@ -452,17 +452,17 @@ Also, consider API timeouts in any custom automation you might be using.</p>
 </div>
 </li>
 <li>
-<p>The admission controller might fail if there are connectivity issues between the Kubernetes or OpenShift Container Platform API server and {product-title} Sensor.
+<p>The admission controller might fail if there are connectivity issues between the Kubernetes or OpenShift Container Platform API server and Red Hat Advance Cluster Security for Kuberenetes Sensor.
 To resolve this issue, delete the <code>ValidatingWebhookConfiguration</code> object as described in the disabling admission controller enforcement section.</p>
 </li>
 <li>
-<p>If you have deploy-time enforcement enabled for a policy and you enable the admission controller, {product-title} attempts to block deployments that violate the policy.
-If a noncompliant deployment slips past the admission controller, for example, in case of a timeout, {product-title} still applies other deploy-time enforcement mechanisms, such as scaling to zero replicas.</p>
+<p>If you have deploy-time enforcement enabled for a policy and you enable the admission controller, Red Hat Advance Cluster Security for Kuberenetes attempts to block deployments that violate the policy.
+If a noncompliant deployment slips past the admission controller, for example, in case of a timeout, Red Hat Advance Cluster Security for Kuberenetes still applies other deploy-time enforcement mechanisms, such as scaling to zero replicas.</p>
 </li>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="enable-admission-controller-enforcement-55_use-admission-controller-enforcement"><a class="anchor" href="#enable-admission-controller-enforcement-55_use-admission-controller-enforcement"></a>Enabling admission controller enforcement in {product-title} version 3.0.55 and newer</h3>
+<h3 id="enable-admission-controller-enforcement-55_use-admission-controller-enforcement"><a class="anchor" href="#enable-admission-controller-enforcement-55_use-admission-controller-enforcement"></a>Enabling admission controller enforcement in Red Hat Advance Cluster Security for Kuberenetes version 3.0.55 and newer</h3>
 <div class="paragraph _abstract">
 <p>You can enable admission controller enforcement from the <strong>Clusters</strong> view when you install Sensor or edit an existing cluster configuration.</p>
 </div>
@@ -474,7 +474,7 @@ If a noncompliant deployment slips past the admission controller, for example, i
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Beginning from {product-title} version 3.0.55.0, the admission controller webhook is deployed into the cluster by default.</p>
+<p>Beginning from Red Hat Advance Cluster Security for Kuberenetes version 3.0.55.0, the admission controller webhook is deployed into the cluster by default.</p>
 </div>
 </td>
 </tr>
@@ -537,7 +537,7 @@ You must have the <strong>Configure Admission Controller Webhook to listen on up
 <p><strong>Static Configuration</strong> section, you must download the YAML files and redeploy the Sensor.</p>
 </li>
 <li>
-<p><strong>Dynamic Configuration</strong> section, you can skip downloading the files and deployment, as {product-title} automatically syncs the Sensor and applies the changes.</p>
+<p><strong>Dynamic Configuration</strong> section, you can skip downloading the files and deployment, as Red Hat Advance Cluster Security for Kuberenetes automatically syncs the Sensor and applies the changes.</p>
 </li>
 </ul>
 </div>
@@ -581,7 +581,7 @@ stackrox   2019-09-24T06:07:34Z</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="enable-admission-controller-enforcement-54_use-admission-controller-enforcement"><a class="anchor" href="#enable-admission-controller-enforcement-54_use-admission-controller-enforcement"></a>Enabling admission controller enforcement in {product-title} version 3.0.54 and older</h3>
+<h3 id="enable-admission-controller-enforcement-54_use-admission-controller-enforcement"><a class="anchor" href="#enable-admission-controller-enforcement-54_use-admission-controller-enforcement"></a>Enabling admission controller enforcement in Red Hat Advance Cluster Security for Kuberenetes version 3.0.54 and older</h3>
 <div class="paragraph _abstract">
 <p>You can enable admission controller enforcement from the <strong>Clusters</strong> view when you install Sensor or edit an existing cluster configuration.</p>
 </div>
@@ -599,7 +599,7 @@ stackrox   2019-09-24T06:07:34Z</code></pre>
 </li>
 <li>
 <p>Turn on the <strong>Create Admission Controller Webhook</strong> toggle in the <strong>Static Configuration</strong> section.
-This setting controls whether Kubernetes or OpenShift Container Platform is configured to contact {product-title} with <code>AdmissionReview</code> requests.</p>
+This setting controls whether Kubernetes or OpenShift Container Platform is configured to contact Red Hat Advance Cluster Security for Kuberenetes with <code>AdmissionReview</code> requests.</p>
 </li>
 <li>
 <p>Red Hat recommends that you only turn on the <strong>Configure Admission Controller Webhook to listen on updates</strong> toggle if you are planning to use the admission controller to enforce on updates.</p>
@@ -611,20 +611,20 @@ This setting controls whether Kubernetes or OpenShift Container Platform is conf
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <strong>Configure Admission Controller Webhook to listen on updates</strong> option is only available in {product-title} version 3.0.41 and newer.</p>
+<p>The <strong>Configure Admission Controller Webhook to listen on updates</strong> option is only available in Red Hat Advance Cluster Security for Kuberenetes version 3.0.41 and newer.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>When you keep it turned off, {product-title} creates the <code>ValidatingWebhookConfiguration</code> in a way that causes the Kubernetes or OpenShift Container Platform API server not to send object update events.
+<p>When you keep it turned off, Red Hat Advance Cluster Security for Kuberenetes creates the <code>ValidatingWebhookConfiguration</code> in a way that causes the Kubernetes or OpenShift Container Platform API server not to send object update events.
 Since the volume of object updates is usually higher than the object creates, leaving this turned off limits the load on the admission control service.</p>
 </div>
 </li>
 <li>
 <p>Turn on the <strong>Enable Admission Controller</strong> toggle in the <strong>Dynamic Configuration</strong> section.
-This setting controls whether {product-title} evaluates policies;
+This setting controls whether Red Hat Advance Cluster Security for Kuberenetes evaluates policies;
 if it is disabled, all <code>AdmissionReview</code> requests are automatically accepted.</p>
 </li>
 <li>
@@ -642,7 +642,7 @@ You must have the <strong>Configure Admission Controller Webhook to listen on up
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <strong>Enforce on Updates</strong> option is only available in {product-title} version 3.0.41 and newer.</p>
+<p>The <strong>Enforce on Updates</strong> option is only available in Red Hat Advance Cluster Security for Kuberenetes version 3.0.41 and newer.</p>
 </div>
 </td>
 </tr>
@@ -650,9 +650,9 @@ You must have the <strong>Configure Admission Controller Webhook to listen on up
 </div>
 </li>
 <li>
-<p><strong>Timeout</strong>: The maximum time in seconds, {product-title} should wait while evaluating admission review requests.
+<p><strong>Timeout</strong>: The maximum time in seconds, Red Hat Advance Cluster Security for Kuberenetes should wait while evaluating admission review requests.
 Use it to set request timeouts when you enable image scanning.
-If the image scan runs longer than the specified time, the  {product-title} accepts the request.
+If the image scan runs longer than the specified time, the  Red Hat Advance Cluster Security for Kuberenetes accepts the request.
 Other enforcement options, such as scaling the deployment to zero replicas, are still applied later if the image violates applicable policies.</p>
 </li>
 <li>
@@ -686,7 +686,7 @@ See information about image scanning before you enable this toggle.</p>
 <p><strong>Static Configuration</strong> section, you must download the YAML files and redeploy the Sensor.</p>
 </li>
 <li>
-<p><strong>Dynamic Configuration</strong> section, you can skip downloading the files and deployment, because {product-title} automatically syncs the Sensor and applies the changes.</p>
+<p><strong>Dynamic Configuration</strong> section, you can skip downloading the files and deployment, because Red Hat Advance Cluster Security for Kuberenetes automatically syncs the Sensor and applies the changes.</p>
 </li>
 </ul>
 </div>
@@ -745,7 +745,7 @@ Red Hat recommends providing an issue-tracker link or some other reference as th
 <h2 id="disable-admission-controller-enforcement"><a class="anchor" href="#disable-admission-controller-enforcement"></a>Disabling admission controller enforcement</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="disable-admission-controller-enforcement-55_use-admission-controller-enforcement"><a class="anchor" href="#disable-admission-controller-enforcement-55_use-admission-controller-enforcement"></a>Disabling admission controller enforcement in {product-title} version 3.0.55 and newer</h3>
+<h3 id="disable-admission-controller-enforcement-55_use-admission-controller-enforcement"><a class="anchor" href="#disable-admission-controller-enforcement-55_use-admission-controller-enforcement"></a>Disabling admission controller enforcement in Red Hat Advance Cluster Security for Kuberenetes version 3.0.55 and newer</h3>
 <div class="paragraph _abstract">
 <p>You can disable admission controller enforcement from the <strong>Clusters</strong> view on the RHACS portal.</p>
 </div>
@@ -771,7 +771,7 @@ Red Hat recommends providing an issue-tracker link or some other reference as th
 </div>
 </div>
 <div class="sect2">
-<h3 id="disable-admission-controller-enforcement-54_use-admission-controller-enforcement"><a class="anchor" href="#disable-admission-controller-enforcement-54_use-admission-controller-enforcement"></a>Disabling admission controller enforcement in {product-title} version 3.0.54 and older</h3>
+<h3 id="disable-admission-controller-enforcement-54_use-admission-controller-enforcement"><a class="anchor" href="#disable-admission-controller-enforcement-54_use-admission-controller-enforcement"></a>Disabling admission controller enforcement in Red Hat Advance Cluster Security for Kuberenetes version 3.0.54 and older</h3>
 <div class="paragraph _abstract">
 <p>You can disable admission controller enforcement from the <strong>Clusters</strong> view on the RHACS portal.</p>
 </div>
@@ -933,7 +933,7 @@ If you do not see a green checkmark, use the following command to check for prob
 </td>
 <td class="content">
 <div class="paragraph">
-<p>When you disable the admission controller, {product-title} does not delete the <code>ValidatingWebhookConfiguration</code>.
+<p>When you disable the admission controller, Red Hat Advance Cluster Security for Kuberenetes does not delete the <code>ValidatingWebhookConfiguration</code>.
 However, instead of checking requests for violations, it accepts all <code>AdmissionReview</code> requests.</p>
 </div>
 <div class="paragraph">
@@ -978,7 +978,7 @@ However, instead of checking requests for violations, it accepts all <code>Admis
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This section is only applicable if you are using {product-title} version 3.0.41 or newer.</p>
+<p>This section is only applicable if you are using Red Hat Advance Cluster Security for Kuberenetes version 3.0.41 or newer.</p>
 </div>
 </td>
 </tr>
@@ -988,13 +988,13 @@ However, instead of checking requests for violations, it accepts all <code>Admis
 <ul>
 <li>
 <p>The webhook is not the part of Sensor anymore, and the reference service changed from Sensor to a dedicated admission control service.
-When you upgrade {product-title} to version 3.0.41 or newer, the upgrade instructions handle this change.</p>
+When you upgrade Red Hat Advance Cluster Security for Kuberenetes to version 3.0.41 or newer, the upgrade instructions handle this change.</p>
 </li>
 <li>
 <p>With the new configuration, you can enforce security policies on object updates as well, in addition to enforcing on object creation.</p>
 </li>
 <li>
-<p>Beginning from {product-title} version 3.0.55, you can enforce security policies on pod execution and pod port forward events.</p>
+<p>Beginning from Red Hat Advance Cluster Security for Kuberenetes version 3.0.55, you can enforce security policies on pod execution and pod port forward events.</p>
 </li>
 </ul>
 </div>
@@ -1081,10 +1081,10 @@ To increase reliability, you can increase the replicas by running the following 
 <div class="ulist">
 <ul>
 <li>
-<p><code>--admission-controller-listen-on-updates</code>: If you use this option, {product-title} generates a Sensor bundle with a <code>ValidatingWebhookConfiguration</code> pre-configured to receive update events from the Kubernetes or OpenShift Container Platform API server.</p>
+<p><code>--admission-controller-listen-on-updates</code>: If you use this option, Red Hat Advance Cluster Security for Kuberenetes generates a Sensor bundle with a <code>ValidatingWebhookConfiguration</code> pre-configured to receive update events from the Kubernetes or OpenShift Container Platform API server.</p>
 </li>
 <li>
-<p><code>--admission-controller-enforce-on-updates</code>: If you use this option, {product-title} configures Central such that the admission controller also enforces security policies object updates.</p>
+<p><code>--admission-controller-enforce-on-updates</code>: If you use this option, Red Hat Advance Cluster Security for Kuberenetes configures Central such that the admission controller also enforces security policies object updates.</p>
 </li>
 </ul>
 </div>

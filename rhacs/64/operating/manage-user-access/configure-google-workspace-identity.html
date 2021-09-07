@@ -364,7 +364,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>You can use <a href="https://workspace.google.com/">Google Workspace</a> as a single sign-on (SSO) provider for {product-title}.</p>
+<p>You can use <a href="https://workspace.google.com/">Google Workspace</a> as a single sign-on (SSO) provider for Red Hat Advance Cluster Security for Kuberenetes.</p>
 </div>
 </div>
 </div>
@@ -372,13 +372,13 @@
 <h2 id="set-up-oauth-20-credentials-for-your-gcp-project_configure-google-workspace-identity"><a class="anchor" href="#set-up-oauth-20-credentials-for-your-gcp-project_configure-google-workspace-identity"></a>Setting up OAuth 2.0 credentials for your GCP project</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To configure Google Workspace as an identity provider for {product-title}, you must first configure OAuth 2.0 credentials for your GCP project.</p>
+<p>To configure Google Workspace as an identity provider for Red Hat Advance Cluster Security for Kuberenetes, you must first configure OAuth 2.0 credentials for your GCP project.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must have administrator-level access to your organization&#8217;s Google Workspace account to create a new project, or permissions to create and configure OAuth 2.0 credentials for an existing project. Red Hat recommends that you create a new project for managing access to {product-title}.</p>
+<p>You must have administrator-level access to your organization&#8217;s Google Workspace account to create a new project, or permissions to create and configure OAuth 2.0 credentials for an existing project. Red Hat recommends that you create a new project for managing access to Red Hat Advance Cluster Security for Kuberenetes.</p>
 </li>
 </ul>
 </div>
@@ -440,7 +440,7 @@ You can check this client ID by using the Google API Console.</p>
 <td class="content">
 <div class="paragraph">
 <p>The OAuth consent screen configuration is valid for the entire GCP project, and not only to the application you created in the previous steps.
-If you already have an OAuth consent screen configured in this project and want to apply different settings for {product-title} login, create a new GCP project.</p>
+If you already have an OAuth consent screen configured in this project and want to apply different settings for Red Hat Advance Cluster Security for Kuberenetes login, create a new GCP project.</p>
 </div>
 </td>
 </tr>
@@ -458,7 +458,7 @@ If you select <strong>Public</strong>, anyone with a Google account can sign in.
 <li>
 <p>Enter a descriptive <strong>Application name</strong>.
 This name is shown to users on the consent screen when they sign in.
-For example, use <strong>RHACS</strong> or <strong>&lt;organization_name&gt; SSO for {product-title}</strong>.</p>
+For example, use <strong>RHACS</strong> or <strong>&lt;organization_name&gt; SSO for Red Hat Advance Cluster Security for Kuberenetes</strong>.</p>
 </li>
 <li>
 <p>Verify that the <strong>Scopes for Google APIs</strong> only lists <strong>email</strong>, <strong>profile</strong>, and <strong>openid</strong> scopes.
@@ -476,15 +476,15 @@ If you grant additional scopes it increases the risk of exposing sensitive data.
 <h2 id="specify-a-client-secret_configure-google-workspace-identity"><a class="anchor" href="#specify-a-client-secret_configure-google-workspace-identity"></a>Specifying a client secret</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>{product-title} version 3.0.39 and newer supports the <a href="https://oauth.net/2/grant-types/authorization-code/">OAuth 2.0 Authorization Code Grant</a> authentication flow when you specify a client secret.
-When you use this authentication flow, {product-title} uses a refresh token to keep users logged in beyond the token expiration time configured in your OIDC identity provider.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes version 3.0.39 and newer supports the <a href="https://oauth.net/2/grant-types/authorization-code/">OAuth 2.0 Authorization Code Grant</a> authentication flow when you specify a client secret.
+When you use this authentication flow, Red Hat Advance Cluster Security for Kuberenetes uses a refresh token to keep users logged in beyond the token expiration time configured in your OIDC identity provider.</p>
 </div>
 <div class="paragraph">
-<p>When users log out, {product-title} deletes the refresh token from the client-side.
-Additionally, if your identity provider API supports refresh token revocation, {product-title} also sends a request to your identity provider to revoke the refresh token.</p>
+<p>When users log out, Red Hat Advance Cluster Security for Kuberenetes deletes the refresh token from the client-side.
+Additionally, if your identity provider API supports refresh token revocation, Red Hat Advance Cluster Security for Kuberenetes also sends a request to your identity provider to revoke the refresh token.</p>
 </div>
 <div class="paragraph">
-<p>You can specify a client secret when you configure {product-title} to integrate with an OIDC identity provider.</p>
+<p>You can specify a client secret when you configure Red Hat Advance Cluster Security for Kuberenetes to integrate with an OIDC identity provider.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -502,7 +502,7 @@ Additionally, if your identity provider API supports refresh token revocation, {
 <p>You cannot edit configurations for existing authentication providers.</p>
 </li>
 <li>
-<p>You must create a new OIDC integration in {product-title} if you want to use a <strong>Client Secret</strong>.</p>
+<p>You must create a new OIDC integration in Red Hat Advance Cluster Security for Kuberenetes if you want to use a <strong>Client Secret</strong>.</p>
 </li>
 </ul>
 </div>
@@ -511,16 +511,16 @@ Additionally, if your identity provider API supports refresh token revocation, {
 </table>
 </div>
 <div class="paragraph">
-<p>Red Hats recommends using a client secret when connecting {product-title} with an OIDC identity provider.
+<p>Red Hats recommends using a client secret when connecting Red Hat Advance Cluster Security for Kuberenetes with an OIDC identity provider.
 If you do not want to use a <strong>Client Secret</strong>, you must select the <strong>Do not use Client Secret (not recommended)</strong> option.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="configure-oidc-identity-provider_configure-google-workspace-identity"><a class="anchor" href="#configure-oidc-identity-provider_configure-google-workspace-identity"></a>Configuring an OIDC identity provider in {product-title}</h2>
+<h2 id="configure-oidc-identity-provider_configure-google-workspace-identity"><a class="anchor" href="#configure-oidc-identity-provider_configure-google-workspace-identity"></a>Configuring an OIDC identity provider in Red Hat Advance Cluster Security for Kuberenetes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can configure {product-title} to use your OpenID Connect (OIDC) identity provider.</p>
+<p>You can configure Red Hat Advance Cluster Security for Kuberenetes to use your OpenID Connect (OIDC) identity provider.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -529,7 +529,7 @@ If you do not want to use a <strong>Client Secret</strong>, you must select the 
 <p>You must have already configured an application in your identity provider, such as Google Workspace.</p>
 </li>
 <li>
-<p>You must have permissions to configure identity providers in {product-title}.</p>
+<p>You must have permissions to configure identity providers in Red Hat Advance Cluster Security for Kuberenetes.</p>
 </li>
 </ul>
 </div>
@@ -566,7 +566,7 @@ See your identity provider documentation for more information.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are using {product-title} version 3.0.49 and newer, for <strong>Issuer</strong> you can:</p>
+<p>If you are using Red Hat Advance Cluster Security for Kuberenetes version 3.0.49 and newer, for <strong>Issuer</strong> you can:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -577,7 +577,7 @@ Only use it for testing purposes.</p>
 </li>
 <li>
 <p>Specify query strings, for example, <code>?key1=value1&amp;key2=value2</code> along with the root URL.
-{product-title} appends the value of <strong>Issuer</strong> as is to the authorization endpoint.
+Red Hat Advance Cluster Security for Kuberenetes appends the value of <strong>Issuer</strong> as is to the authorization endpoint.
 You can use it to customize your provider&#8217;s login screen.
 For example, you can optimize the Google Workspace login screen to a specific hosted domain by using the  <a href="https://developers.google.com/identity/protocols/oauth2/openid-connect#hd-param"><code>hd</code> parameter</a>, or pre-select an authentication method in PingFederate by using the <a href="https://docs.pingidentity.com/bundle/pingfederate-93/page/nfr1564003024683.html"><code>pfidpadapterid</code> parameter</a>.</p>
 </li>
@@ -595,7 +595,7 @@ For example, you can optimize the Google Workspace login screen to a specific ho
 </div>
 </li>
 <li>
-<p>Choose a <strong>Minimum access role</strong> for users accessing {product-title} by using the selected identity provider.</p>
+<p>Choose a <strong>Minimum access role</strong> for users accessing Red Hat Advance Cluster Security for Kuberenetes by using the selected identity provider.</p>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -638,10 +638,10 @@ The <strong>Test Login</strong> page opens in a new browser tab.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>On success, {product-title} shows the <code>User ID</code> and <code>User Attributes</code> the identity provider sent for the credentials you have used to log in.</p>
+<p>On success, Red Hat Advance Cluster Security for Kuberenetes shows the <code>User ID</code> and <code>User Attributes</code> the identity provider sent for the credentials you have used to log in.</p>
 </li>
 <li>
-<p>On failure, {product-title} shows a message describing why the identity provider&#8217;s response could not be processed.</p>
+<p>On failure, Red Hat Advance Cluster Security for Kuberenetes shows a message describing why the identity provider&#8217;s response could not be processed.</p>
 </li>
 </ul>
 </div>

@@ -363,7 +363,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} allows you to use out-of-the-box security policies and define custom multi-factor policies for your container environment.
+<p>Red Hat Advance Cluster Security for Kuberenetes allows you to use out-of-the-box security policies and define custom multi-factor policies for your container environment.
 Configuring these policies enables you to automatically prevent high-risk service deployments in your environment and respond to runtime security incidents.</p>
 </div>
 </div>
@@ -372,7 +372,7 @@ Configuring these policies enables you to automatically prevent high-risk servic
 <h2 id="use-default-security-policies_manage-security-policies"><a class="anchor" href="#use-default-security-policies_manage-security-policies"></a>Using default security policies</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} includes a set of default policies that provide broad coverage to identify security issues and ensure best practices for security in your environment.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes includes a set of default policies that provide broad coverage to identify security issues and ensure best practices for security in your environment.</p>
 </div>
 <div class="paragraph">
 <p>To view the default policies:</p>
@@ -450,7 +450,7 @@ When you create your own category, a new widget displays information about that 
 <h2 id="modify-existing-security-policies_manage-security-policies"><a class="anchor" href="#modify-existing-security-policies_manage-security-policies"></a>Modifying existing security policies</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>You can edit the policies you have created and the existing default policies provided by {product-title}.</p>
+<p>You can edit the policies you have created and the existing default policies provided by Red Hat Advance Cluster Security for Kuberenetes.</p>
 </div>
 <div class="ulist">
 <div class="title">Procedure</div>
@@ -500,7 +500,7 @@ When you create your own category, a new widget displays information about that 
 <h2 id="create-custom-policies"><a class="anchor" href="#create-custom-policies"></a>Creating custom policies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In addition to using the default policies, you can also create custom policies in {product-title}.</p>
+<p>In addition to using the default policies, you can also create custom policies in Red Hat Advance Cluster Security for Kuberenetes.</p>
 </div>
 <div class="paragraph">
 <p>To build a new policy, you can clone an existing policy or create a new one from scratch.</p>
@@ -581,7 +581,7 @@ You can select more than one stage.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You must integrate {product-title} with your notification provider, for example, webhooks, Jira, PagerDuty, Splunk, or others before you can forward alerts.</p>
+<p>You must integrate Red Hat Advance Cluster Security for Kuberenetes with your notification provider, for example, webhooks, Jira, PagerDuty, Splunk, or others before you can forward alerts.</p>
 </div>
 </td>
 </tr>
@@ -628,7 +628,7 @@ It will not have any effect if you use this policy to check running deployments 
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are using {product-title} version 3.0.45 or newer, select <strong>Next</strong> to view the <strong>Policy Criteria</strong> section.</p>
+<p>If you are using Red Hat Advance Cluster Security for Kuberenetes version 3.0.45 or newer, select <strong>Next</strong> to view the <strong>Policy Criteria</strong> section.</p>
 </div>
 </td>
 </tr>
@@ -652,15 +652,15 @@ The enforcement behavior is different for each lifecycle stage.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Build</strong> - {product-title} fails your continuous integration (CI) builds when images match the conditions of the policy.</p>
+<p><strong>Build</strong> - Red Hat Advance Cluster Security for Kuberenetes fails your continuous integration (CI) builds when images match the conditions of the policy.</p>
 </li>
 <li>
-<p><strong>Deploy</strong> - {product-title} blocks creation of deployments that match the conditions of the policy.
+<p><strong>Deploy</strong> - Red Hat Advance Cluster Security for Kuberenetes blocks creation of deployments that match the conditions of the policy.
 In clusters with admission controller enforcement, the Kubernetes or OpenShift Container Platform API server blocks all noncompliant deployments.
-In other clusters, {product-title} edits noncompliant deployments to prevent pods from being scheduled.</p>
+In other clusters, Red Hat Advance Cluster Security for Kuberenetes edits noncompliant deployments to prevent pods from being scheduled.</p>
 </li>
 <li>
-<p><strong>Runtime</strong> - {product-title} kills all pods that match the conditions of the policy.</p>
+<p><strong>Runtime</strong> - Red Hat Advance Cluster Security for Kuberenetes kills all pods that match the conditions of the policy.</p>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -730,7 +730,7 @@ Before you enable enforcement options, inform all stakeholders and plan about ho
 </div>
 </li>
 <li>
-<p>The <strong>RHACS version</strong> column indicates the version of {product-title} that you must have to use the attribute.</p>
+<p>The <strong>RHACS version</strong> column indicates the version of Red Hat Advance Cluster Security for Kuberenetes that you must have to use the attribute.</p>
 </li>
 <li>
 <p>You cannot use logical combination operators <code>AND</code> and <code>OR</code> for attributes that have:</p>
@@ -794,7 +794,7 @@ Before you enable enforcement options, inform all stakeholders and plan about ho
 </td>
 <td class="content">
 <div class="paragraph">
-<p>To use logical operators <code>AND</code>, <code>OR</code>, and <code>NOT</code> for creating security policies, you need {product-title} version 3.0.45 or newer.
+<p>To use logical operators <code>AND</code>, <code>OR</code>, and <code>NOT</code> for creating security policies, you need Red Hat Advance Cluster Security for Kuberenetes version 3.0.45 or newer.
 However, on earlier versions you can still use regular expressions for the fields listed in the <strong>Regular expressions</strong> column.</p>
 </div>
 </td>
@@ -1318,7 +1318,7 @@ For example <code>oc</code>, or <code>kubectl</code>.</p></td>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are using {product-title} version 3.0.44 or older, the policy criteria you specify in the <strong>Policy criteria</strong> section are "AND"ed.
+<p>If you are using Red Hat Advance Cluster Security for Kuberenetes version 3.0.44 or older, the policy criteria you specify in the <strong>Policy criteria</strong> section are "AND"ed.
 It means that the violation only triggers if all the specified policy criteria match.</p>
 </div>
 </td>
@@ -1334,7 +1334,7 @@ It means that the violation only triggers if all the specified policy criteria m
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must be using {product-title} version 3.0.45 or newer.</p>
+<p>You must be using Red Hat Advance Cluster Security for Kuberenetes version 3.0.45 or newer.</p>
 </li>
 </ul>
 </div>
@@ -1397,7 +1397,7 @@ After you configure the conditions for the added attributes, click <strong>Next<
 <h2 id="share-security-policies"><a class="anchor" href="#share-security-policies"></a>Sharing security policies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Beginning from {product-title} version 3.0.44,  you can share your security policies between different Central instances, by exporting and importing policies.
+<p>Beginning from Red Hat Advance Cluster Security for Kuberenetes version 3.0.44,  you can share your security policies between different Central instances, by exporting and importing policies.
 It helps you enforce the same standards for all your clusters.
 To share policies, you export them as JSON files, and then import them back into another Central instance.</p>
 </div>
@@ -1454,13 +1454,13 @@ On the RHACS portal, navigate to <strong>Help</strong> &#8594; <strong>API refer
 </ol>
 </div>
 <div class="paragraph">
-<p>Each security policy in {product-title} has a unique ID (UID) and a unique name.
-When you import a policy, {product-title} handles the uploaded policy as follows:</p>
+<p>Each security policy in Red Hat Advance Cluster Security for Kuberenetes has a unique ID (UID) and a unique name.
+When you import a policy, Red Hat Advance Cluster Security for Kuberenetes handles the uploaded policy as follows:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If the imported policy UID and name do not match any existing policy, {product-title} creates a new policy.</p>
+<p>If the imported policy UID and name do not match any existing policy, Red Hat Advance Cluster Security for Kuberenetes creates a new policy.</p>
 </li>
 <li>
 <p>If the imported policy has the same UID as an existing policy, but a different name, you can either:</p>
@@ -1468,7 +1468,7 @@ When you import a policy, {product-title} handles the uploaded policy as follows
 <ul>
 <li>
 <p>Keep both policies.
-{product-title} saves the imported policy with a new UID.</p>
+Red Hat Advance Cluster Security for Kuberenetes saves the imported policy with a new UID.</p>
 </li>
 <li>
 <p>Replace the existing policy with the imported policy.</p>
@@ -1490,8 +1490,8 @@ When you import a policy, {product-title} handles the uploaded policy as follows
 </div>
 </li>
 <li>
-<p>If the imported policy has the same name and UID as an existing policy, the {product-title} checks if the policy criteria match to the existing policy.
-If the policy criteria match, {product-title} keeps the existing policy and shows a success message.
+<p>If the imported policy has the same name and UID as an existing policy, the Red Hat Advance Cluster Security for Kuberenetes checks if the policy criteria match to the existing policy.
+If the policy criteria match, Red Hat Advance Cluster Security for Kuberenetes keeps the existing policy and shows a success message.
 If the policy criteria do not match, you can either:</p>
 <div class="ulist">
 <ul>
@@ -1516,11 +1516,11 @@ If the policy criteria do not match, you can either:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If you import into the same Central instance, {product-title} uses all the exported fields.</p>
+<p>If you import into the same Central instance, Red Hat Advance Cluster Security for Kuberenetes uses all the exported fields.</p>
 </li>
 <li>
-<p>If you import into a different Central instance, {product-title} omits certain fields, such as cluster scopes, cluster exclusions, and notifications.
-{product-title} shows these omitted fields in a message.
+<p>If you import into a different Central instance, Red Hat Advance Cluster Security for Kuberenetes omits certain fields, such as cluster scopes, cluster exclusions, and notifications.
+Red Hat Advance Cluster Security for Kuberenetes shows these omitted fields in a message.
 These fields vary for every installation, and you cannot migrate them from one Central instance to another.</p>
 </li>
 </ul>

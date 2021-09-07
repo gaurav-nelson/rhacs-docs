@@ -363,10 +363,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>If your network configuration restricts outbound traffic through proxies, you can configure proxy settings in {product-title} to route traffic through a proxy.</p>
+<p>If your network configuration restricts outbound traffic through proxies, you can configure proxy settings in Red Hat Advance Cluster Security for Kuberenetes to route traffic through a proxy.</p>
 </div>
 <div class="paragraph">
-<p>When you use a proxy with {product-title}:</p>
+<p>When you use a proxy with Red Hat Advance Cluster Security for Kuberenetes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -377,7 +377,7 @@
 <p>Traffic between Central and Scanner does not go through the proxy.</p>
 </li>
 <li>
-<p>The proxy configuration does not affect the other {product-title} components.</p>
+<p>The proxy configuration does not affect the other Red Hat Advance Cluster Security for Kuberenetes components.</p>
 </li>
 <li>
 <p>When you are not using the offline mode, and a Collector running in a secured cluster needs to download an additional kernel module or eBPF probe at runtime:</p>
@@ -461,7 +461,7 @@
 <h2 id="configure-proxy-during-installation_configure-proxy"><a class="anchor" href="#configure-proxy-during-installation_configure-proxy"></a>Configuring a proxy during installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When you are installing {product-title} by using the <code>roxctl</code> command-line interface (CLI) or Helm, you can specify your proxy configuration during the installation.</p>
+<p>When you are installing Red Hat Advance Cluster Security for Kuberenetes by using the <code>roxctl</code> command-line interface (CLI) or Helm, you can specify your proxy configuration during the installation.</p>
 </div>
 <div class="paragraph">
 <p>When you run the installer by using the <code>roxctl central generate</code> command, the installer generates the secrets and deployment configuration files for your environment. You can configure a proxy by editing the generated configuration secret (YAML) file. Currently, you cannot configure proxies by using the <code>roxctl</code> CLI. The configuration is stored in a Kubernetes secret and it is shared by both Central and Scanner.</p>
@@ -586,7 +586,7 @@ Lines starting with double hash signs <code># #</code> contain explanation of th
 </li>
 <li>
 <p>After editing the configuration file, you can proceed with your usual installation.
-The updated configuration instructs {product-title} to use the proxy running on the provided address and the port number.</p>
+The updated configuration instructs Red Hat Advance Cluster Security for Kuberenetes to use the proxy running on the provided address and the port number.</p>
 </li>
 </ol>
 </div>

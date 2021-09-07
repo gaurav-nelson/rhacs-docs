@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Upgrading from {product-title} 3.0.40 through 3.0.43 :: RHACS Docs</title>
+    <title>Upgrading from Red Hat Advance Cluster Security for Kuberenetes 3.0.40 through 3.0.43 :: RHACS Docs</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <script>var uiRootPath = '../../../../_'</script>
@@ -348,7 +348,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
-    <li><a href="upgrade-from-40-43.html">Upgrading from {product-title} 3.0.40 through 3.0.43</a></li>
+    <li><a href="upgrade-from-40-43.html">Upgrading from Red Hat Advance Cluster Security for Kuberenetes 3.0.40 through 3.0.43</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/upgrading/pages/upgrading_roxctl/upgrade-from-40-43.adoc">Edit this Page</a></div>
@@ -358,14 +358,14 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Upgrading from {product-title} 3.0.40 through 3.0.43</h1>
+<h1 class="page">Upgrading from Red Hat Advance Cluster Security for Kuberenetes 3.0.40 through 3.0.43</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>Upgrade to the latest version of {product-title} from 3.0.40 through 3.0.43.</p>
+<p>Upgrade to the latest version of Red Hat Advance Cluster Security for Kuberenetes from 3.0.40 through 3.0.43.</p>
 </div>
 <div class="paragraph">
-<p>To upgrade {product-title} to the latest version, you must perform the following steps:</p>
+<p>To upgrade Red Hat Advance Cluster Security for Kuberenetes to the latest version, you must perform the following steps:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -392,7 +392,7 @@
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must have an API token with <code>read</code> permission for all resources of {product-title}. The <strong>Analyst</strong> system role has <code>read</code> permissions for all resources.</p>
+<p>You must have an API token with <code>read</code> permission for all resources of Red Hat Advance Cluster Security for Kuberenetes. The <strong>Analyst</strong> system role has <code>read</code> permissions for all resources.</p>
 </li>
 <li>
 <p>You have installed the <code>roxctl</code> CLI.</p>
@@ -410,7 +410,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>For {product-title} 3.0.55 and newer:</p>
+<p>For Red Hat Advance Cluster Security for Kuberenetes 3.0.55 and newer:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$CENTRAL_ADDRESS" central backup</code></pre>
@@ -418,7 +418,7 @@
 </div>
 </li>
 <li>
-<p>For {product-title} 3.0.54 and older:</p>
+<p>For Red Hat Advance Cluster Security for Kuberenetes 3.0.54 and older:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$CENTRAL_ADDRESS" central db backup</code></pre>
@@ -458,7 +458,7 @@
 <p>If you deploy images from a private image registry, first push the new image into your private registry, and then replace your image registry for the commands in this section.</p>
 </li>
 <li>
-<p>If you used Red Hat UBI-based images when you installed {product-title}, replace the image names for the commands in this section with the following UBI-based image names:</p>
+<p>If you used Red Hat UBI-based images when you installed Red Hat Advance Cluster Security for Kuberenetes, replace the image names for the commands in this section with the following UBI-based image names:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -685,7 +685,7 @@ EOF</code></pre>
 <p>If you deploy images from a private image registry, first push the new image into your private registry, and then replace your image registry for the commands in this section.</p>
 </li>
 <li>
-<p>If you used Red Hat UBI-based images when you installed {product-title}, replace the image names for the commands in this section with the following UBI-based image names:</p>
+<p>If you used Red Hat UBI-based images when you installed Red Hat Advance Cluster Security for Kuberenetes, replace the image names for the commands in this section with the following UBI-based image names:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -921,7 +921,7 @@ version: 2019/10/25 17:58:55.189866 ensure.go:49: Info: Version found in the DB 
 <div class="sect2">
 <h3 id="update-admission-controller_upgrade-from-40-43"><a class="anchor" href="#update-admission-controller_upgrade-from-40-43"></a>Updating Admission Controller</h3>
 <div class="paragraph _abstract">
-<p>{product-title} 3.0.55 includes changes that affect admission controller integration. Therefore, if you are using an admission controller or want to take advantage of the admission controller integration’s new features, you must run some additional commands to upgrade the secured cluster.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes 3.0.55 includes changes that affect admission controller integration. Therefore, if you are using an admission controller or want to take advantage of the admission controller integration’s new features, you must run some additional commands to upgrade the secured cluster.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -931,7 +931,7 @@ version: 2019/10/25 17:58:55.189866 ensure.go:49: Info: Version found in the DB 
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are upgrading from a {product-title} version between 3.0.44 and 3.0.54, and you are not using an Admission Controller and automatic upgrades, then you must manually redeploy Sensor on all clusters.</p>
+<p>If you are upgrading from a Red Hat Advance Cluster Security for Kuberenetes version between 3.0.44 and 3.0.54, and you are not using an Admission Controller and automatic upgrades, then you must manually redeploy Sensor on all clusters.</p>
 </div>
 </td>
 </tr>
@@ -941,7 +941,7 @@ version: 2019/10/25 17:58:55.189866 ensure.go:49: Info: Version found in the DB 
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must be using the {product-title} Admission Controller. To check if you are using the Admission Controller, run the following command:</p>
+<p>You must be using the Red Hat Advance Cluster Security for Kuberenetes Admission Controller. To check if you are using the Admission Controller, run the following command:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get validatingwebhookconfiguration stackrox</code></pre>
@@ -1042,13 +1042,13 @@ version: 2019/10/25 17:58:55.189866 ensure.go:49: Info: Version found in the DB 
 <div class="sect2">
 <h3 id="update-other-images-40_upgrade-from-40-43"><a class="anchor" href="#update-other-images-40_upgrade-from-40-43"></a>Updating other images</h3>
 <div class="paragraph _abstract">
-<p>If you are upgrading {product-title} version, you must update the Sensor and Collector images.</p>
+<p>If you are upgrading Red Hat Advance Cluster Security for Kuberenetes version, you must update the Sensor and Collector images.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must be using {product-title} version between 3.0.44 and 3.0.54.</p>
+<p>You must be using Red Hat Advance Cluster Security for Kuberenetes version between 3.0.44 and 3.0.54.</p>
 </li>
 </ul>
 </div>

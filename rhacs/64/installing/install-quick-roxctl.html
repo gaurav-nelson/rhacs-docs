@@ -363,8 +363,8 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} installs a set services on your OpenShift Container Platform cluster.
-This topic describes the installation procedure for installing {product-title} on your OpenShift Container Platform cluster by using the <code>roxctl</code> CLI.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes installs a set services on your OpenShift Container Platform cluster.
+This topic describes the installation procedure for installing Red Hat Advance Cluster Security for Kuberenetes on your OpenShift Container Platform cluster by using the <code>roxctl</code> CLI.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -374,7 +374,7 @@ This topic describes the installation procedure for installing {product-title} o
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For production environments, Red Hat recommends <a href="installing_helm/install-helm-customization.html#installing-with-customizations-using-helm-charts" class="page">Installing {product-title} by using Helm charts</a>.</p>
+<p>For production environments, Red Hat recommends <a href="installing_helm/install-helm-customization.html#installing-with-customizations-using-helm-charts" class="page">Installing Red Hat Advance Cluster Security for Kuberenetes by using Helm charts</a>.</p>
 </div>
 </td>
 </tr>
@@ -402,10 +402,10 @@ This topic describes the installation procedure for installing {product-title} o
 <div class="ulist">
 <ul>
 <li>
-<p>Understand <a href="../architecture/index.html#acs-architecture_acs-architecture" class="page">{product-title} architecture</a>.</p>
+<p>Understand <a href="../architecture/index.html#acs-architecture_acs-architecture" class="page">Red Hat Advance Cluster Security for Kuberenetes architecture</a>.</p>
 </li>
 <li>
-<p>Review the <a href="prerequisites.html#acs-general-requirements_acs-prerequisites" class="page">prerequisites for installing {product-title}</a>.</p>
+<p>Review the <a href="prerequisites.html#acs-general-requirements_acs-prerequisites" class="page">prerequisites for installing Red Hat Advance Cluster Security for Kuberenetes</a>.</p>
 </li>
 </ul>
 </div>
@@ -415,7 +415,7 @@ This topic describes the installation procedure for installing {product-title} o
 <h2 id="installing-roxctl-cli"><a class="anchor" href="#installing-roxctl-cli"></a>Installing the roxctl CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To install {product-title} you must install the <code>roxctl</code> CLI by downloading the binary.
+<p>To install Red Hat Advance Cluster Security for Kuberenetes you must install the <code>roxctl</code> CLI by downloading the binary.
 You can install <code>roxctl</code> on Linux, Windows, or macOS.</p>
 </div>
 <div class="sect2">
@@ -566,7 +566,7 @@ You can install <code>roxctl</code> on Linux, Windows, or macOS.</p>
 <h2 id="installing-central"><a class="anchor" href="#installing-central"></a>Installing Central</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The main component of {product-title} is called Central. You can install Central on OpenShift Container Platform by using the interactive installer. You deploy Central only once and you can monitor multiple separate clusters by using the same installation.</p>
+<p>The main component of Red Hat Advance Cluster Security for Kuberenetes is called Central. You can install Central on OpenShift Container Platform by using the interactive installer. You deploy Central only once and you can monitor multiple separate clusters by using the same installation.</p>
 </div>
 <div class="sect2">
 <h3 id="using-the-interactive-installer_install-quick-roxctl"><a class="anchor" href="#using-the-interactive-installer_install-quick-roxctl"></a>Using the interactive installer</h3>
@@ -620,7 +620,7 @@ Enter storage class name (optional if you have a default StorageClass configured
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>If you plan to install {product-title} on OpenShift Container Platform with a hostPath volume, you must modify the SELinux policy.</td>
+<td>If you plan to install Red Hat Advance Cluster Security for Kuberenetes on OpenShift Container Platform with a hostPath volume, you must modify the SELinux policy.</td>
 </tr>
 </table>
 </div>
@@ -760,10 +760,10 @@ Depending on the exposure method you selected when answering the prompts, use on
 <h2 id="install-scanner-roxctl_install-quick-roxctl"><a class="anchor" href="#install-scanner-roxctl_install-quick-roxctl"></a>Installing Scanner</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>You can configure {product-title} to obtain image data from a variety of open-source and commercial image scanners.</p>
+<p>You can configure Red Hat Advance Cluster Security for Kuberenetes to obtain image data from a variety of open-source and commercial image scanners.</p>
 </div>
 <div class="paragraph">
-<p>However, {product-title} also provides an image vulnerability scanner component, called Scanner. It enriches deployments with image vulnerability information.</p>
+<p>However, Red Hat Advance Cluster Security for Kuberenetes also provides an image vulnerability scanner component, called Scanner. It enriches deployments with image vulnerability information.</p>
 </div>
 <div class="paragraph">
 <p>Red Hat recommends deploying Scanner so that it can scan all images, including the images from public registries, for vulnerabilities.
@@ -773,7 +773,7 @@ You can deploy the Scanner in the same cluster with Central.</p>
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must configure your image registry to allow Scanner to download and scan images. Usually, image registry integrations are created automatically by {product-title}.</p>
+<p>You must configure your image registry to allow Scanner to download and scan images. Usually, image registry integrations are created automatically by Red Hat Advance Cluster Security for Kuberenetes.</p>
 </li>
 </ul>
 </div>
@@ -922,7 +922,7 @@ If you do not see a green checkmark, use the following command to check for prob
 </ol>
 </div>
 <div class="paragraph">
-<p>After installation, Sensor starts reporting security information to {product-title} and the RHACS portal dashboard begins showing deployments, images, and policy violations from the cluster on which you have installed the Sensor.</p>
+<p>After installation, Sensor starts reporting security information to Red Hat Advance Cluster Security for Kuberenetes and the RHACS portal dashboard begins showing deployments, images, and policy violations from the cluster on which you have installed the Sensor.</p>
 </div>
 </div>
 </div>
@@ -940,7 +940,7 @@ If you do not see a green checkmark, use the following command to check for prob
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The sample applications listed in the following section contain critical vulnerabilities and they are specifically designed to verify the build and deploy-time assessment features of {product-title}.</p>
+<p>The sample applications listed in the following section contain critical vulnerabilities and they are specifically designed to verify the build and deploy-time assessment features of Red Hat Advance Cluster Security for Kuberenetes.</p>
 </div>
 </td>
 </tr>
@@ -1012,7 +1012,7 @@ If you do not see a green checkmark, use the following command to check for prob
 </div>
 </div>
 <div class="paragraph">
-<p>{product-title} automatically scans these deployments for security risk and policy violations as soon as they are submitted to the cluster.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes automatically scans these deployments for security risk and policy violations as soon as they are submitted to the cluster.</p>
 </div>
 </li>
 <li>
@@ -1029,7 +1029,7 @@ You can log in to the RHACS portal by using the default username <code>admin</co
 <div class="ulist">
 <ul>
 <li>
-<p><a href="installing_helm/install-helm-customization.html#installing-with-customizations-using-helm-charts" class="page">Installing {product-title} with customizations using Helm charts</a></p>
+<p><a href="installing_helm/install-helm-customization.html#installing-with-customizations-using-helm-charts" class="page">Installing Red Hat Advance Cluster Security for Kuberenetes with customizations using Helm charts</a></p>
 </li>
 </ul>
 </div>

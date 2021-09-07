@@ -363,7 +363,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>You can perform data backups for {product-title}.
+<p>You can perform data backups for Red Hat Advance Cluster Security for Kuberenetes.
 You can use these backups for data restoration in the case of an infrastructure disaster, or corrupt data.</p>
 </div>
 <div class="paragraph">
@@ -371,7 +371,7 @@ You can use these backups for data restoration in the case of an infrastructure 
 Or you can perform on-demand backups by using the <code>roxctl</code> command-line interface (CLI).</p>
 </div>
 <div class="paragraph">
-<p>The backup includes the entire {product-title} database, which includes all configurations, resources, events, and certificates.
+<p>The backup includes the entire Red Hat Advance Cluster Security for Kuberenetes database, which includes all configurations, resources, events, and certificates.
 Make sure that backups are stored securely.</p>
 </div>
 <div class="admonitionblock important">
@@ -382,7 +382,7 @@ Make sure that backups are stored securely.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are using {product-title} 3.0.53 or older, the backup does not include certificates.</p>
+<p>If you are using Red Hat Advance Cluster Security for Kuberenetes 3.0.53 or older, the backup does not include certificates.</p>
 </div>
 </td>
 </tr>
@@ -399,13 +399,13 @@ Make sure that backups are stored securely.</p>
 <div class="sect2">
 <h3 id="on-demand-backups-roxctl-api_backing-up-acs"><a class="anchor" href="#on-demand-backups-roxctl-api_backing-up-acs"></a>On-demand backups by using an API token</h3>
 <div class="paragraph _abstract">
-<p>You can back up the entire database of {product-title} by using an API token.</p>
+<p>You can back up the entire database of Red Hat Advance Cluster Security for Kuberenetes by using an API token.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must have an API token with <code>read</code> permission for all resources of {product-title}.
+<p>You must have an API token with <code>read</code> permission for all resources of Red Hat Advance Cluster Security for Kuberenetes.
 You can assign the <strong>Analyst</strong> system role to grant this level of access. The <strong>Analyst</strong> role has <code>read</code> permissions for all resources.</p>
 </li>
 <li>
@@ -434,7 +434,7 @@ You can assign the <strong>Analyst</strong> system role to grant this level of a
 <div class="ulist">
 <ul>
 <li>
-<p>For {product-title} 3.0.55 or later:</p>
+<p>For Red Hat Advance Cluster Security for Kuberenetes 3.0.55 or later:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$CENTRAL_ADDRESS" central backup</code></pre>
@@ -442,7 +442,7 @@ You can assign the <strong>Analyst</strong> system role to grant this level of a
 </div>
 </li>
 <li>
-<p>For {product-title} 3.0.54 or older:</p>
+<p>For Red Hat Advance Cluster Security for Kuberenetes 3.0.54 or older:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$CENTRAL_ADDRESS" central db backup</code></pre>
@@ -462,7 +462,7 @@ You can use the <code>--output</code> option to specify the backup file location
 <div class="sect2">
 <h3 id="on-demand-backups-roxctl-admin-pass_backing-up-acs"><a class="anchor" href="#on-demand-backups-roxctl-admin-pass_backing-up-acs"></a>On-demand backups by using the administrator password</h3>
 <div class="paragraph _abstract">
-<p>You can back up the entire database of {product-title} by using your administrator password.</p>
+<p>You can back up the entire database of Red Hat Advance Cluster Security for Kuberenetes by using your administrator password.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -491,7 +491,7 @@ You can use the <code>--output</code> option to specify the backup file location
 <div class="ulist">
 <ul>
 <li>
-<p>For {product-title} 3.0.55 or later:</p>
+<p>For Red Hat Advance Cluster Security for Kuberenetes 3.0.55 or later:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -p &lt;admin_password&gt; -e "$CENTRAL_ADDRESS" central backup</code></pre>
@@ -499,7 +499,7 @@ You can use the <code>--output</code> option to specify the backup file location
 </div>
 </li>
 <li>
-<p>For {product-title} 3.0.54 or older:</p>
+<p>For Red Hat Advance Cluster Security for Kuberenetes 3.0.54 or older:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -p &lt;admin_password&gt; -e "$CENTRAL_ADDRESS" central db backup</code></pre>

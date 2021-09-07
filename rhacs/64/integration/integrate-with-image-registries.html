@@ -362,13 +362,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} integrates with a variety of image registries so that you can understand your images and apply security policies for image usage.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes integrates with a variety of image registries so that you can understand your images and apply security policies for image usage.</p>
 </div>
 <div class="paragraph">
 <p>When you integrate with image registries, you can view important image details, such as image creation date and Dockerfile details (including image layers).</p>
 </div>
 <div class="paragraph">
-<p>After you integrate {product-title} with your registry, you can scan images, view image components, or apply security policies before you deploy images or to existing images that are already deployed in your clusters.</p>
+<p>After you integrate Red Hat Advance Cluster Security for Kuberenetes with your registry, you can scan images, view image components, or apply security policies before you deploy images or to existing images that are already deployed in your clusters.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -378,8 +378,8 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>When you integrate with an image registry, {product-title} does not scan all images in your registry.
-{product-title} only scans the images when you:</p>
+<p>When you integrate with an image registry, Red Hat Advance Cluster Security for Kuberenetes does not scan all images in your registry.
+Red Hat Advance Cluster Security for Kuberenetes only scans the images when you:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -399,7 +399,7 @@
 </table>
 </div>
 <div class="paragraph">
-<p>You can integrate {product-title} with several major image registries, including:</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with several major image registries, including:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -450,8 +450,8 @@
 <h2 id="automatic-configuration-image-registry_integrate-with-image-registries"><a class="anchor" href="#automatic-configuration-image-registry_integrate-with-image-registries"></a>Automatic Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>{product-title} includes default integrations with standard registries, such as Docker Hub and others.
-{product-title} also automatically configures integrations based on image pull secrets in the monitored clusters.
+<p>Red Hat Advance Cluster Security for Kuberenetes includes default integrations with standard registries, such as Docker Hub and others.
+Red Hat Advance Cluster Security for Kuberenetes also automatically configures integrations based on image pull secrets in the monitored clusters.
 Usually, you do not need to manually configure registry integrations.</p>
 </div>
 <div class="admonitionblock important">
@@ -462,7 +462,7 @@ Usually, you do not need to manually configure registry integrations.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you use registries like GCR and ECR, and have your clusters set up to pull images using node IAM (Identity and Access Management) instead of image pull secrets, {product-title} does not create a registry integration automatically.
+<p>If you use registries like GCR and ECR, and have your clusters set up to pull images using node IAM (Identity and Access Management) instead of image pull secrets, Red Hat Advance Cluster Security for Kuberenetes does not create a registry integration automatically.
 For such cases you must manually configure your image registries.</p>
 </div>
 </td>
@@ -480,7 +480,7 @@ For such cases you must manually configure your image registries.</p>
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-ocp_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-ocp_integrate-with-image-registries"></a>Manually configuring OpenShift Container Platform registry</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with OpenShift Container Platform built-in container image registry.</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with OpenShift Container Platform built-in container image registry.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -536,7 +536,7 @@ For such cases you must manually configure your image registries.</p>
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-ecr_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-ecr_integrate-with-image-registries"></a>Manually configuring Amazon Elastic Container Registry</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with Amazon Elastic Container Registry (ECR).</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with Amazon Elastic Container Registry (ECR).</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -549,7 +549,7 @@ For such cases you must manually configure your image registries.</p>
 See <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/">How do I create an AWS access key?</a>  for more information.</p>
 </li>
 <li>
-<p>If you are running {product-title} in Amazon Elastic Kubernetes Service (EKS) and want to integrate with an ECR from a separate Amazon account, you must first set a repository policy statement in your ECR.
+<p>If you are running Red Hat Advance Cluster Security for Kuberenetes in Amazon Elastic Kubernetes Service (EKS) and want to integrate with an ECR from a separate Amazon account, you must first set a repository policy statement in your ECR.
 Follow the instructions at <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/set-repository-policy.html">Setting a repository policy statement</a>  and for <strong>Actions</strong>, choose the following scopes of the Amazon ECR API operations:</p>
 <div class="ulist">
 <ul>
@@ -628,7 +628,7 @@ Follow the instructions at <a href="https://docs.aws.amazon.com/AmazonECR/latest
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-gcr_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-gcr_integrate-with-image-registries"></a>Manually configuring Google Container Registry</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with Google Container Registry (GCR).</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with Google Container Registry (GCR).</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -707,7 +707,7 @@ See <a href="https://cloud.google.com/container-registry/docs/access-control">Co
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-gar_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-gar_integrate-with-image-registries"></a>Manually configuring Google Artifact Registry</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with Google Artifact Registry.</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with Google Artifact Registry.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -766,7 +766,7 @@ See <a href="https://cloud.google.com/container-registry/docs/access-control">Co
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-acr_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-acr_integrate-with-image-registries"></a>Manually configuring Microsoft Azure Container Registry</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with Microsoft Azure Container Registry.</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with Microsoft Azure Container Registry.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -822,7 +822,7 @@ See <a href="https://cloud.google.com/container-registry/docs/access-control">Co
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-jfrog_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-jfrog_integrate-with-image-registries"></a>Manually configuring JFrog Artifactory</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with JFrog Artifactory.</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with JFrog Artifactory.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -878,7 +878,7 @@ See <a href="https://cloud.google.com/container-registry/docs/access-control">Co
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-dtr_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-dtr_integrate-with-image-registries"></a>Manually configuring Docker Trusted Registry</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with Docker Trusted Registry.</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with Docker Trusted Registry.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -934,7 +934,7 @@ See <a href="https://cloud.google.com/container-registry/docs/access-control">Co
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-qcr_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-qcr_integrate-with-image-registries"></a>Manually configuring Quay Container Registry</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with Quay Container Registry.</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with Quay Container Registry.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -990,7 +990,7 @@ See <a href="https://cloud.google.com/container-registry/docs/access-control">Co
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-ibm_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-ibm_integrate-with-image-registries"></a>Manually configuring IBM Cloud Container Registry</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with IBM Cloud Container Registry.</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with IBM Cloud Container Registry.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -1046,7 +1046,7 @@ See <a href="https://cloud.google.com/container-registry/docs/access-control">Co
 <div class="sect2">
 <h3 id="manual-configuration-image-registry-redhat_integrate-with-image-registries"><a class="anchor" href="#manual-configuration-image-registry-redhat_integrate-with-image-registries"></a>Manually configuring Red Hat Container Registry</h3>
 <div class="paragraph">
-<p>You can integrate {product-title} with Red Hat Container Registry.</p>
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with Red Hat Container Registry.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>

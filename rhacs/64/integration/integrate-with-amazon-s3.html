@@ -362,12 +362,12 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>You can integrate {product-title} with <a href="https://aws.amazon.com/s3/">Amazon S3</a> to enable data backups.
+<p>You can integrate Red Hat Advance Cluster Security for Kuberenetes with <a href="https://aws.amazon.com/s3/">Amazon S3</a> to enable data backups.
 You can use these backups for data restoration in the case of an infrastructure disaster or corrupt data.
 After you integrate with Amazon S3, you can schedule daily or weekly backups and do manual on-demand backups.</p>
 </div>
 <div class="paragraph">
-<p>The backup includes the entire {product-title} database, which includes all configurations, resources, events, and certificates.
+<p>The backup includes the entire Red Hat Advance Cluster Security for Kuberenetes database, which includes all configurations, resources, events, and certificates.
 Make sure that backups are stored securely.</p>
 </div>
 <div class="admonitionblock important">
@@ -380,10 +380,10 @@ Make sure that backups are stored securely.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If you are using {product-title} version 3.0.53 or older, the backup does not include certificates.</p>
+<p>If you are using Red Hat Advance Cluster Security for Kuberenetes version 3.0.53 or older, the backup does not include certificates.</p>
 </li>
 <li>
-<p>If your Amazon S3 is part of an air-gapped environment, you must add your AWS root CA as a <a href="../configuration/add-trusted-ca.html" class="page">trusted certificate authority</a> in {product-title}.</p>
+<p>If your Amazon S3 is part of an air-gapped environment, you must add your AWS root CA as a <a href="../configuration/add-trusted-ca.html" class="page">trusted certificate authority</a> in Red Hat Advance Cluster Security for Kuberenetes.</p>
 </li>
 </ul>
 </div>
@@ -394,10 +394,10 @@ Make sure that backups are stored securely.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="amazon-s3-configuring-acs_integrate-with-amazon-s3"><a class="anchor" href="#amazon-s3-configuring-acs_integrate-with-amazon-s3"></a>Configuring Amazon S3 integration in {product-title}</h2>
+<h2 id="amazon-s3-configuring-acs_integrate-with-amazon-s3"><a class="anchor" href="#amazon-s3-configuring-acs_integrate-with-amazon-s3"></a>Configuring Amazon S3 integration in Red Hat Advance Cluster Security for Kuberenetes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To configure Amazon S3 backups, create a new integration in {product-title}.</p>
+<p>To configure Amazon S3 backups, create a new integration in Red Hat Advance Cluster Security for Kuberenetes.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -460,7 +460,7 @@ For more details, see the Amazon documentation topic <a href="https://docs.aws.a
 </ol>
 </div>
 <div class="paragraph">
-<p>Once configured, {product-title} automatically backs up all data according to the specified schedule.</p>
+<p>Once configured, Red Hat Advance Cluster Security for Kuberenetes automatically backs up all data according to the specified schedule.</p>
 </div>
 </div>
 </div>
@@ -468,13 +468,13 @@ For more details, see the Amazon documentation topic <a href="https://docs.aws.a
 <h2 id="perform-on-demand-backups-amazon-s3_integrate-with-amazon-s3"><a class="anchor" href="#perform-on-demand-backups-amazon-s3_integrate-with-amazon-s3"></a>Performing on-demand backups on Amazon S3</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Uses the RHACS portal to trigger manual backups of {product-title} on Amazon S3.</p>
+<p>Uses the RHACS portal to trigger manual backups of Red Hat Advance Cluster Security for Kuberenetes on Amazon S3.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must have already integrated {product-title} with Amazon S3.</p>
+<p>You must have already integrated Red Hat Advance Cluster Security for Kuberenetes with Amazon S3.</p>
 </li>
 </ul>
 </div>
@@ -504,7 +504,7 @@ For more details, see the Amazon documentation topic <a href="https://docs.aws.a
 <td class="content">
 <div class="paragraph">
 <p>Currently, when you select the <strong>Trigger Backup</strong> option, there is no notification.
-However, {product-title} begins the backup task in the background.</p>
+However, Red Hat Advance Cluster Security for Kuberenetes begins the backup task in the background.</p>
 </div>
 </td>
 </tr>
@@ -518,7 +518,7 @@ However, {product-title} begins the backup task in the background.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../backup_and_restore/backing-up-acs.html#backing-up-red-hat-advanced-cluster-security-for-kubernetes" class="page">Backing up {product-title}</a></p>
+<p><a href="../backup_and_restore/backing-up-acs.html#backing-up-red-hat-advanced-cluster-security-for-kubernetes" class="page">Backing up Red Hat Advance Cluster Security for Kuberenetes</a></p>
 </li>
 <li>
 <p><a href="../backup_and_restore/restore-acs.html#restoring-from-a-backup" class="page">Restoring from a backup</a></p>

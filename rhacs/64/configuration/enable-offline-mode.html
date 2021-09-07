@@ -363,7 +363,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>You can use {product-title} for clusters that are not connected to the internet by enabling the offline mode. In offline mode, {product-title} components do not connect to addresses or hosts on the internet.</p>
+<p>You can use Red Hat Advance Cluster Security for Kuberenetes for clusters that are not connected to the internet by enabling the offline mode. In offline mode, Red Hat Advance Cluster Security for Kuberenetes components do not connect to addresses or hosts on the internet.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -373,19 +373,19 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>{product-title} does not determine if the user-supplied hostnames, IP addresses, or other resources are on the internet. For example, if you try to integrate with a Docker registry hosted on the internet, {product-title} will not block this request.</p>
+<p>Red Hat Advance Cluster Security for Kuberenetes does not determine if the user-supplied hostnames, IP addresses, or other resources are on the internet. For example, if you try to integrate with a Docker registry hosted on the internet, Red Hat Advance Cluster Security for Kuberenetes will not block this request.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>To deploy and operate {product-title} in offline mode:</p>
+<p>To deploy and operate Red Hat Advance Cluster Security for Kuberenetes in offline mode:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download {product-title} images in a tarball (<code>.tgz</code>) format. These files are easy to transfer across network air gaps or other boundaries.</p>
+<p>Download Red Hat Advance Cluster Security for Kuberenetes images in a tarball (<code>.tgz</code>) format. These files are easy to transfer across network air gaps or other boundaries.</p>
 </li>
 <li>
 <p>Enable offline mode during installation.</p>
@@ -418,12 +418,12 @@
 <h2 id="download-images-for-offline-use"><a class="anchor" href="#download-images-for-offline-use"></a>Downloading images for offline use</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can download {product-title} images by using an offline bundle, or you can download the images directly.</p>
+<p>You can download Red Hat Advance Cluster Security for Kuberenetes images by using an offline bundle, or you can download the images directly.</p>
 </div>
 <div class="sect2">
 <h3 id="download-images-using-offline-bundle_enable-offline-mode"><a class="anchor" href="#download-images-using-offline-bundle_enable-offline-mode"></a>Downloading images using an offline bundle</h3>
 <div class="paragraph">
-<p>You can download {product-title} images by using an offline bundle.</p>
+<p>You can download Red Hat Advance Cluster Security for Kuberenetes images by using an offline bundle.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -433,16 +433,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Images for all {product-title} components (except Collector) and the roxctl CLI: <a href="https://install.stackrox.io/3.64.1/image-bundle.tgz">https://install.stackrox.io/3.64.1/image-bundle.tgz</a></p>
+<p>Images for all Red Hat Advance Cluster Security for Kuberenetes components (except Collector) and the roxctl CLI: <a href="https://install.stackrox.io/3.64.1/image-bundle.tgz">https://install.stackrox.io/3.64.1/image-bundle.tgz</a></p>
 </li>
 <li>
-<p>{product-title} Collector image: <a href="https://install.stackrox.io/3.2.2-latest/image-collector-bundle.tgz">https://install.stackrox.io/3.2.2-latest/image-collector-bundle.tgz</a></p>
+<p>Red Hat Advance Cluster Security for Kuberenetes Collector image: <a href="https://install.stackrox.io/3.2.2-latest/image-collector-bundle.tgz">https://install.stackrox.io/3.2.2-latest/image-collector-bundle.tgz</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Copy the image bundles to the network where you want to deploy {product-title}.</p>
+<p>Copy the image bundles to the network where you want to deploy Red Hat Advance Cluster Security for Kuberenetes.</p>
 </li>
 <li>
 <p>Extract the images and upload them to your registry.</p>
@@ -517,7 +517,7 @@
 <div class="sect2">
 <h3 id="download-images-directly_enable-offline-mode"><a class="anchor" href="#download-images-directly_enable-offline-mode"></a>Downloading images directly</h3>
 <div class="paragraph">
-<p>If you do not want to use an image bundle, you can manually pull, retag, and push {product-title} images to your registry. The images included in the current version of the image bundles are:</p>
+<p>If you do not want to use an image bundle, you can manually pull, retag, and push Red Hat Advance Cluster Security for Kuberenetes images to your registry. The images included in the current version of the image bundles are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -620,12 +620,12 @@
 <h2 id="enable-offline-mode-during-installation"><a class="anchor" href="#enable-offline-mode-during-installation"></a>Enabling offline mode during installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can enable offline mode during the installation of {product-title}.</p>
+<p>You can enable offline mode during the installation of Red Hat Advance Cluster Security for Kuberenetes.</p>
 </div>
 <div class="sect2">
 <h3 id="enable-offline-mode-helm_enable-offline-mode"><a class="anchor" href="#enable-offline-mode-helm_enable-offline-mode"></a>Enabling offline mode by using Helm configuration</h3>
 <div class="paragraph">
-<p>You can enable offline mode during the installation when you are installing {product-title} by using a Helm chart.</p>
+<p>You can enable offline mode during the installation when you are installing Red Hat Advance Cluster Security for Kuberenetes by using a Helm chart.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -653,13 +653,13 @@
 <div class="sect2">
 <h3 id="enable-offline-mode-roxctl_enable-offline-mode"><a class="anchor" href="#enable-offline-mode-roxctl_enable-offline-mode"></a>Enabling offline mode by using the roxctl CLI</h3>
 <div class="paragraph">
-<p>You can enable offline mode when you are installing {product-title} by using the roxctl CLI.</p>
+<p>You can enable offline mode when you are installing Red Hat Advance Cluster Security for Kuberenetes by using the roxctl CLI.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>If you are using a registry other than the default internet-connected registry (<code>stackrox.io</code>), provide the locations where you have pushed the {product-title} images when answering the <code>image to use</code> prompts:</p>
+<p>If you are using a registry other than the default internet-connected registry (<code>stackrox.io</code>), provide the locations where you have pushed the Red Hat Advance Cluster Security for Kuberenetes images when answering the <code>image to use</code> prompts:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">Enter main image to use (default: "registry.redhat.io/rh-acs/main:3.64.1"): &lt;your_registry&gt;/stackrox/main:3.64.1</code></pre>
@@ -696,13 +696,13 @@
 <h2 id="update-scanner-definitions-in-offline-mode"><a class="anchor" href="#update-scanner-definitions-in-offline-mode"></a>Updating Scanner definitions in offline mode</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Scanner contains a local vulnerability definitions database. When {product-title} runs in normal mode (connected to the internet), Scanner fetches new vulnerability definitions from the internet and updates its database.</p>
+<p>Scanner contains a local vulnerability definitions database. When Red Hat Advance Cluster Security for Kuberenetes runs in normal mode (connected to the internet), Scanner fetches new vulnerability definitions from the internet and updates its database.</p>
 </div>
 <div class="paragraph">
-<p>However, when you are using {product-title} in offline mode, you must manually update Scanner definitions by uploading them to Central.</p>
+<p>However, when you are using Red Hat Advance Cluster Security for Kuberenetes in offline mode, you must manually update Scanner definitions by uploading them to Central.</p>
 </div>
 <div class="paragraph">
-<p>When {product-title} runs in offline mode, Scanner checks for new definitions from Central. If new definitions are available, Scanner downloads the new definitions from Central, marks them as default, and then uses the updated definitions for scanning images.</p>
+<p>When Red Hat Advance Cluster Security for Kuberenetes runs in offline mode, Scanner checks for new definitions from Central. If new definitions are available, Scanner downloads the new definitions from Central, marks them as default, and then uses the updated definitions for scanning images.</p>
 </div>
 <div class="paragraph">
 <p>To update the definitions in offline mode:</p>
@@ -723,7 +723,7 @@
 <div class="sect2">
 <h3 id="download-scanner-definitions_enable-offline-mode"><a class="anchor" href="#download-scanner-definitions_enable-offline-mode"></a>Downloading Scanner definitions</h3>
 <div class="paragraph">
-<p>If you are running {product-title} in offline mode, you can download the vulnerability definitions database that Scanner uses and then upload it to Central.</p>
+<p>If you are running Red Hat Advance Cluster Security for Kuberenetes in offline mode, you can download the vulnerability definitions database that Scanner uses and then upload it to Central.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -803,7 +803,7 @@
 <div class="sect3">
 <h4 id="upload-definitions-to-central-admin-pass_enable-offline-mode"><a class="anchor" href="#upload-definitions-to-central-admin-pass_enable-offline-mode"></a>Uploading definitions to Central by using the administrator password</h4>
 <div class="paragraph">
-<p>You can upload the vulnerability definitions database that Scanner uses to Central by using your {product-title} administrator password.</p>
+<p>You can upload the vulnerability definitions database that Scanner uses to Central by using your Red Hat Advance Cluster Security for Kuberenetes administrator password.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -888,7 +888,7 @@ These probes are kernel modules or eBPF programs specific to the Linux kernel ve
 The Collector image contains a set of built-in probes.</p>
 </div>
 <div class="paragraph">
-<p>When {product-title} runs in normal mode (connected to the internet), Collector automatically downloads a new probe if the required probe is not built in.</p>
+<p>When Red Hat Advance Cluster Security for Kuberenetes runs in normal mode (connected to the internet), Collector automatically downloads a new probe if the required probe is not built in.</p>
 </div>
 <div class="paragraph">
 <p>In offline mode, you can manually download packages containing probes for all recent and supported Linux kernel versions and upload them to Central.
@@ -920,14 +920,14 @@ Collector uses Central&#8217;s network connection to check and download the prob
 <div class="sect2">
 <h3 id="download-kernel-support-package_enable-offline-mode"><a class="anchor" href="#download-kernel-support-package_enable-offline-mode"></a>Downloading kernel support packages</h3>
 <div class="paragraph">
-<p>If you are running {product-title} in offline mode, you can download packages containing probes for all recent and supported Linux kernel versions and then upload them to Central.</p>
+<p>If you are running Red Hat Advance Cluster Security for Kuberenetes in offline mode, you can download packages containing probes for all recent and supported Linux kernel versions and then upload them to Central.</p>
 </div>
 <div class="ulist">
 <div class="title">Procedure</div>
 <ul>
 <li>
 <p>View and download available support packages from <a href="https://install.stackrox.io/collector/support-packages/index.html">https://install.stackrox.io/collector/support-packages/index.html</a>.
-The kernel support packages list categorizes support packages based on {product-title} version.</p>
+The kernel support packages list categorizes support packages based on Red Hat Advance Cluster Security for Kuberenetes version.</p>
 </li>
 </ul>
 </div>
