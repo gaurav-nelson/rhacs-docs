@@ -13,6 +13,9 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <div class="navbar-item">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -21,36 +24,6 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="#">Home</a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Products</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Product A</a>
-            <a class="navbar-item" href="#">Product B</a>
-            <a class="navbar-item" href="#">Product C</a>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Services</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Service A</a>
-            <a class="navbar-item" href="#">Service B</a>
-            <a class="navbar-item" href="#">Service C</a>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Resources</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Resource A</a>
-            <a class="navbar-item" href="#">Resource B</a>
-            <a class="navbar-item" href="#">Resource C</a>
-          </div>
-        </div>
-        <div class="navbar-item">
-          <span class="control">
-            <a class="button is-primary" href="#">Download</a>
-          </span>
-        </div>
       </div>
     </div>
   </nav>
@@ -948,10 +921,22 @@ The base operating system is also available under the <strong>Image Summary</str
 </main>
 </div>
 <footer class="footer">
-  <p>This page was built using the Antora default UI.</p>
-  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  <div class="footer-container">
+    <span class="footer-image">
+      <img src="https://assets.openshift.com/hubfs/images/logos/Logo-RedHat-A-Reverse-RGB.svg" class="img-fluid" alt="Red Hat" style="height: 30px;">
+    </span>
+    <span class="footer-text">
+      Copyright © 2021 Red Hat, Inc.
+    </span>
 </footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../../..'
+  window.antora.pagePath = '/rhacs/3.64/operating/examine-images-for-vulnerabilities.html'
+</script>
 <script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/search.js" id="search-script" data-base-path="../../.." data-page-path="/rhacs/3.64/operating/examine-images-for-vulnerabilities.html"></script>
+<script async src="../../../_/../search-index.js"></script>
 <script async src="../../../_/js/vendor/highlight.js"></script>
   </body>
 </html>
