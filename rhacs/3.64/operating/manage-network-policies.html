@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Managing network policies :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="3.64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">3.64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">3.64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Operating</li>
+    <li><a href="manage-network-policies.html">Managing network policies</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/operating/pages/manage-network-policies.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Managing network policies</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>A <a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">Kubernetes network policy</a> is a specification of how groups of pods are allowed to communicate with each other and other network endpoints.
+These network policies are configured as YAML files.
+By looking at these files alone, it is often hard to identify whether the applied network policies achieve the desired network topology.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes gathers all defined network policies from your orchestrator and provides functionality to make these policies easier to use.</p>
+</div>
+<div class="paragraph">
+<p>To support network policy enforcement, Red Hat Advance Cluster Security for Kuberenetes provides:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Network graph</p>
+</li>
+<li>
+<p>Network policy simulator</p>
+</li>
+<li>
+<p>Network policy generator</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="network-graph-view_manage-network-policies"><a class="anchor" href="#network-graph-view_manage-network-policies"></a>Network graph view</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The network graph provides visibility and control over:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The allowed network connections, as defined by the Kubernetes network policies.</p>
+</li>
+<li>
+<p>The active communications paths among namespaces and deployments.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the <strong>Network Graph</strong> view, you can configure the type of connections you want to see.
+In the <strong>Flows</strong> section (upper left), select:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Active</strong> to view only active connections.</p>
+</li>
+<li>
+<p><strong>Allowed</strong> to view only allowed network connections.</p>
+</li>
+<li>
+<p><strong>All</strong> to view both active and allowed network connections.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the network graph, each circle represents a deployment, each surrounding box represents a Kubernetes namespace, and each thick line represents connection between namespaces.
+You can hover over these items to view more details.</p>
+</div>
+<div class="paragraph">
+<p>To understand the meaning of other symbols in the network graph, move you mouse over other symbols in the legend (lower left) to view the tooltip indicating the meaning of those symbols.</p>
+</div>
+<div class="paragraph">
+<p>When you hover over:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a connection, you see information about the network flow, which includes active connections, port numbers and protocols in use.</p>
+</li>
+<li>
+<p>a deployment, you see information about ingress and egress connections, protocols, port numbers in use, and the direction of the network traffic between deployments.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You need Red Hat Advance Cluster Security for Kuberenetes version 3.0.47 or newer to see information about ingress and egress connections, protocols, port numbers, and the direction of the network traffic.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="_allowed_network_connections" class="discrete">Allowed network connections</h3>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes processes all network policies in each secured cluster to show you which deployments can contact each other, and which can reach external networks.</p>
+</div>
+<div class="paragraph">
+<p>The network graph shows possible network connections as dashed lines.</p>
+</div>
+<h3 id="_actual_network_flows" class="discrete">Actual network flows</h3>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes monitors running deployments and tracks traffic between them.
+The network graph shows observed network flows as solid lines.</p>
+</div>
+<h3 id="_network_baseline" class="discrete">Network baseline</h3>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes discovers existing network flows and creates a baseline.</p>
+</div>
+<div class="paragraph">
+<p>To view the network baseline for a deployment, select that deployment in the <strong>Network Graph</strong> view.
+The <strong>Network Flows</strong> details panel show both anomalous and baseline flows.
+From this panel, you can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mark network flows from the baseline as anomalous by selecting <strong>Mark as Anomalous</strong>.</p>
+</li>
+<li>
+<p>Add network flows to baseline from the anomalous flows by selecting <strong>Add to Baseline</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To use the <strong>Network baseline</strong> feature, you must use Red Hat Advance Cluster Security for Kuberenetes version 3.0.54 or newer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="_external_entities_and_connections" class="discrete">External entities and connections</h3>
+<div class="paragraph">
+<p>The <strong>Network Graph</strong> view shows information about network connections between managed clusters and external sources.
+Red Hat Advance Cluster Security for Kuberenetes also automatically discovers and highlights public CIDR (Classless Inter-Domain	Routing) addresses blocks, such as Google Cloud, AWS, Azure, Oracle Cloud, and Cloudflare.
+Using this information, you can identify deployments with active external connections and if they are making or receiving unauthorized connections from outside of your network.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You need Red Hat Advance Cluster Security for Kuberenetes version 3.0.52 or newer to see information about active external connections.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>By default, the external connections point to a common <strong>External Entities</strong> box, and different CIDR addresses blocks in the <strong>Network Graph</strong> view.
+However, you can choose not to show auto-discovered CIDR blocks.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes includes IP ranges for the following cloud providers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Google Cloud</p>
+</li>
+<li>
+<p>AWS</p>
+</li>
+<li>
+<p>Azure</p>
+</li>
+<li>
+<p>Oracle Cloud</p>
+</li>
+<li>
+<p>Cloudflare</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes fetches and updates the cloud providers' IP ranges every 7 days.
+If you are using offline mode,  you can update these ranges by installing new support packages.</p>
+</div>
+<div class="sect2">
+<h3 id="view-network-policies_manage-network-policies"><a class="anchor" href="#view-network-policies_manage-network-policies"></a>Viewing network policies</h3>
+<div class="paragraph _abstract">
+<p>Network policies specify how groups of pods are allowed to communicate with each other and with other network endpoints.
+Kubernetes <code>NetworkPolicy</code> resources use labels to select pods and define rules that specify what traffic is allowed to or from the selected pods.
+Red Hat Advance Cluster Security for Kuberenetes discovers and displays network policy information for all your Kubernetes clusters, namespaces, deployments, and pods, in the <strong>Network Graph</strong> view.</p>
+</div>
+<div class="paragraph">
+<p>To view network policies and other related details for deployments in a namespace, you can select the namespace in <strong>Network Graph</strong> view.</p>
+</div>
+<div class="paragraph">
+<p>The namespace details panel lists all deployments in the selected namespace.
+You can then hover over a deployment in the details panel and select the <strong>Navigate to deployment</strong> (arrow) icon that appears on the right to view deployment details.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can directly select a deployment in the <strong>Network Graph</strong> view to view its details.
+The deployment details panel includes the <strong>Network Flows</strong>, <strong>Details</strong>, and <strong>Network Policies</strong> tabs.</p>
+</div>
+<div class="paragraph">
+<p>You can select each tab to view related information.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Network Flows</strong> tab shows information about ingress and egress connections, protocols, and port numbers in use for that deployment.</p>
+</li>
+<li>
+<p>The <strong>Details</strong> tab shows information about how the service is deployed, including orchestrator labels and annotations.</p>
+</li>
+<li>
+<p>The <strong>Network Policies</strong> tab shows information about every network policy that applies to the deployment.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You need Red Hat Advance Cluster Security for Kuberenetes version 3.0.47 or newer to see information about ingress and egress connections, protocols, port numbers, and the direction of the network traffic.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configure-cidr-blocks_manage-network-policies"><a class="anchor" href="#configure-cidr-blocks_manage-network-policies"></a>Configuring CIDR blocks</h3>
+<div class="paragraph _abstract">
+<p>You can specify custom CIDR blocks or configure displaying auto-discovered CIDR block in the <strong>Network Graph</strong> view.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Network Graph</strong> view, select <strong>Configure CIDR Blocks</strong>.</p>
+</li>
+<li>
+<p>Turn the <strong>Display auto-discovered CIDR blocks in Network Graph</strong> toggle off to hide auto-discovered CIDR blocks.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you hide the auto-discovered CIDR blocks, the auto-discovered CIDR blocks are hidden for all clusters, not only for the selected cluster on the top bar in the <strong>Network Graph</strong> view.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Add custom CIDR addresses by adding <strong>CIDR Block Name</strong> and <strong>CIDR Address</strong>.
+To add more than one, select the <strong>Add</strong> icon.</p>
+</li>
+<li>
+<p>Click <strong>Update Configuration</strong> to save the changes.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="simulate-network-policies_manage-network-policies"><a class="anchor" href="#simulate-network-policies_manage-network-policies"></a>Simulating network policies</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Your current network policies might allow unneeded network communications.
+To simulate the effects of a new set of network policies, use the network policy simulator.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, select <strong>Network Graph</strong> from the left-hand navigation menu.</p>
+</li>
+<li>
+<p>On the <strong>Network Graph</strong> view header, select <strong>Network Policy Simulator</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Upload and simulate network policy YAML</strong> and upload your proposed YAML file.
+The network graph view displays what your proposed network policies would achieve.</p>
+</li>
+<li>
+<p>To share your proposed policies with your team, select <strong>Share YAML</strong>.
+To apply your policy directly, select <strong>Apply Network Policies</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Directly applying network policies might cause problems for running applications.
+Always download and test the network policies in a development environment or test clusters before applying them to production workloads.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-network-policies_manage-network-policies"><a class="anchor" href="#generate-network-policies_manage-network-policies"></a>Generating network policies</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>A Kubernetes network policy controls which pods receive incoming network traffic, and which pods can send outgoing traffic.
+By using network policies to enable and disable traffic to or from pods, you can limit your network attack surface.</p>
+</div>
+<div class="paragraph">
+<p>These network policies are YAML configuration files.
+It is often difficult to gain insights into the network flow and manually create these files.
+Red Hat Advance Cluster Security for Kuberenetes allows you to autogenerate these network policies based on the actual observed network communication flows in your environment.</p>
+</div>
+<div class="paragraph">
+<p>You can generate network policies from the network graph view.</p>
+</div>
+<div class="paragraph">
+<p>The generated policies apply to the deployments shown in the network graph and they allow all network traffic observed during the selected time.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the RHACS portal, select <strong>Network Graph</strong> from the left-hand navigation menu.</p>
+</li>
+<li>
+<p>Select a cluster name from the menu on the top bar, if the right one is not already selected.</p>
+</li>
+<li>
+<p>If you want to generate policies for only some deployments, use the filter box to filter the deployments you want.
+If you do not add a filter, Red Hat Advance Cluster Security for Kuberenetes generates policies for all deployments in the cluster.</p>
+</li>
+<li>
+<p>Select an appropriate time from the menu on the top bar.
+If the selected time is too short it leaves out periodic or infrequent network communications.</p>
+</li>
+<li>
+<p>Select <strong>Network Policy Simulator</strong>.</p>
+</li>
+<li>
+<p>In the panel that opens, select <strong>Exclude ports &amp; protocols</strong> if you do not want ports and protocols to be scoped in Red Hat Advance Cluster Security for Kuberenetes generated policies.</p>
+</li>
+<li>
+<p>Select <strong>Generate and simulate network policies</strong>.
+The generated network policy configuration  YAML opens in the same panel, and the network graph shows the effects of the policies.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="save-generated-policies_manage-network-policies"><a class="anchor" href="#save-generated-policies_manage-network-policies"></a>Saving generated policies</h3>
+<div class="paragraph _abstract">
+<p>You can download and save the generated network policies from Red Hat Advance Cluster Security for Kuberenetes.
+Use this option to commit the policies into a version control system like Git.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Select the <strong>Download YAML</strong> icon on the <strong>Network Policy Simulator</strong> panel.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="test-generated-policies_manage-network-policies"><a class="anchor" href="#test-generated-policies_manage-network-policies"></a>Testing generated policies</h3>
+<div class="paragraph">
+<p>After you download the network policies that Red Hat Advance Cluster Security for Kuberenetes generates, you can test them by applying them to your cluster.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>To create policies using the saved YAML file, use the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc create -f "&lt;generated_file&gt;.yaml" <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Use <code>kubectl</code> instead of <code>oc</code> if you are using Kubernetes.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>If the generated policies cause problems, you can remove them by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc delete -f "StackRox Generated.yaml" <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Use <code>kubectl</code> instead of <code>oc</code> if you are using Kubernetes.</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="apply-generated-policies_manage-network-policies"><a class="anchor" href="#apply-generated-policies_manage-network-policies"></a>Applying generated policies</h3>
+<div class="paragraph _abstract">
+<p>You can apply the generated network policies from the RHACS portal.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>To directly apply the generated policies in the cluster from within Red Hat Advance Cluster Security for Kuberenetes, select <strong>Apply Network Policies</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Directly applying network policies might cause problems for running applications.
+Always download and test the network policies in a development environment or test clusters before applying them to production workloads.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-generated-policies_manage-network-policies"><a class="anchor" href="#delete-generated-policies_manage-network-policies"></a>Deleting generated policies</h3>
+<div class="paragraph _abstract">
+<p>If you have applied generated policies directly and want to remove them, select the <strong>Revert most recently applied YAML</strong> icon on the <strong>Network Policy Simulator</strong> panel.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the RHACS portal, select <strong>Network Graph</strong> from the left-hand navigation menu.</p>
+</li>
+<li>
+<p>Select a cluster name from the menu on the top bar, if the right one is not already selected.</p>
+</li>
+<li>
+<p>Select <strong>Network Policy Simulator</strong>.</p>
+</li>
+<li>
+<p>Select <strong>View active YAMLS</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Revert most recently applied YAML</strong> icon.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-all-autogenerated-policies_manage-network-policies"><a class="anchor" href="#delete-all-autogenerated-policies_manage-network-policies"></a>Deleting all autogenerated policies</h3>
+<div class="paragraph _abstract">
+<p>You can delete all generated policies from your cluster that you have created by using Red Hat Advance Cluster Security for Kuberenetes.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Run the following command:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On OpenShift Container Platform:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get ns -o jsonpath='{.items[*].metadata.name}' | xargs -n 1 oc delete networkpolicies -l 'network-policy-generator.stackrox.io/generated=true' -n</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>On Kubernetes:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ kubectl get ns -o jsonpath='{.items[*].metadata.name}' | xargs -n 1 kubectl delete networkpolicies -l 'network-policy-generator.stackrox.io/generated=true' -n</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="policy-generation-strategy_manage-network-policies"><a class="anchor" href="#policy-generation-strategy_manage-network-policies"></a>Policy generation strategy</h3>
+<div class="paragraph">
+<p>When you autogenerate network policies:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes generates a single network policy for each deployment in the namespace.
+The pod selector for the policy is the pod selector of the deployment.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If a deployment already has a network policy, Red Hat Advance Cluster Security for Kuberenetes does not generate new policies or delete existing policies.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Generated policies only restrict traffic to existing deployments.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Deployments you create later will not have any restrictions unless you create or generate new network policies for them.</p>
+</li>
+<li>
+<p>If a new deployment needs to contact a deployment with a network policy, you might need to edit the network policy to allow access.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Each policy has the same name as the deployment name, prefixed with <code>stackrox-generated-</code>.
+For example, the policy name for the deployment <code>depABC</code> in the generated network policy is <code>stackrox-generated-depABC</code>.
+All generated policies also have an identifying label.</p>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes generates a single rule allowing traffic from any IP address if:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The deployment has an incoming connection from outside the cluster within the selected time, or</p>
+</li>
+<li>
+<p>The deployment is exposed through a node port or load balancer service.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes generates one <code>ingress</code> rule for every deployment from which there is an incoming connection.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For deployments in the same namespace, this rule uses the pod selector labels from the other deployment.</p>
+</li>
+<li>
+<p>For deployments in different namespaces, this rule uses a namespace selector.
+To make this possible, Red Hat Advance Cluster Security for Kuberenetes automatically adds a label, <code>namespace.metadata.stackrox.io/name</code>, to each namespace.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In rare cases, if a standalone pod does not have any labels, the generated policy allows traffic from or to the pod&#8217;s entire namespace.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-network-baselining_manage-network-policies"><a class="anchor" href="#use-network-baselining_manage-network-policies"></a>Using network baselining</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>In Red Hat Advance Cluster Security for Kuberenetes, you can minimize your risks by using network baselining.
+It is a proactive approach to keep your infrastructure secure.
+Red Hat Advance Cluster Security for Kuberenetes first discovers existing network flows and creates a baseline, and then it treats network flows outside of this baseline as anomalous.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>To use the <strong>Network baseline</strong> feature, you must use the Red Hat Advance Cluster Security for Kuberenetes version 3.0.54 or newer.</p>
+</li>
+<li>
+<p>To enable alerts on baseline violations, you must use Red Hat Advance Cluster Security for Kuberenetes version 3.0.56 or newer.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When you install Red Hat Advance Cluster Security for Kuberenetes, there is no default network baseline.
+As Red Hat Advance Cluster Security for Kuberenetes discovers network flows, it creates a baseline and then it adds all discovered network flows to it.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When Red Hat Advance Cluster Security for Kuberenetes discovers new network activity, it adds that network flow to the network baseline.</p>
+</li>
+<li>
+<p>Network flows do not show up as anomalous flows and do not trigger any violations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After the discovery phase:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes stops adding network flows to the network baselines.</p>
+</li>
+<li>
+<p>New network flows (which are not in the network baseline) show up as anomalous flows but they do not trigger any violations.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="view-network-baselines_manage-network-policies"><a class="anchor" href="#view-network-baselines_manage-network-policies"></a>Viewing network baselines</h3>
+<div class="paragraph">
+<p>You can view network baselines from the network graph view.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the <strong>Network Graph</strong> view, select a deployment.</p>
+</li>
+<li>
+<p>The Network Flows details panel show both anomalous and baseline flows.
+From this panel, you can:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mark network flows from the baseline as anomalous by selecting  <strong>Mark as  Anomalous</strong>, or</p>
+</li>
+<li>
+<p>add network flows to baseline from the anomalous flows by selecting  <strong>Add to Baseline</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enable-alert-on-baseline-violations_manage-network-policies"><a class="anchor" href="#enable-alert-on-baseline-violations_manage-network-policies"></a>Enabling alerts on baseline violations</h3>
+<div class="paragraph">
+<p>You can configure Red Hat Advance Cluster Security for Kuberenetes to detect anomalous network flows and trigger violations.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You need Red Hat Advance Cluster Security for Kuberenetes version 3.0.56 or newer to enable alerts on baseline violations.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the <strong>Network Graph</strong> view, select a deployment.</p>
+</li>
+<li>
+<p>In the network flow details panel, select <strong>Baseline Settings</strong>.</p>
+</li>
+<li>
+<p>Turn on the <strong>Alert on baseline violations</strong> toggle.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Once you turn on the <strong>Alert on baseline violations</strong> toggle anomalous network flows trigger violations.</p>
+</li>
+<li>
+<p>You can turn off the <strong>Alert on baseline violations</strong> toggle to stop receiving violations for anomalous network flows.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

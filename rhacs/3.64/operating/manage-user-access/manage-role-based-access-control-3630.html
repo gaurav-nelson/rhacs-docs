@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Managing RBAC in Red Hat Advance Cluster Security for Kuberenetes 3.63 and newer :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="3.64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">3.64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">3.64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Operating</li>
+    <li>Managing user access</li>
+    <li><a href="manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/operating/pages/manage-user-access/manage-role-based-access-control-3630.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Managing RBAC in Red Hat Advance Cluster Security for Kuberenetes 3.63 and newer</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat Advance Cluster Security for Kuberenetes (RHACS) comes with role-based access control (RBAC) that you can use to configure roles and grant various levels of access to Red Hat Advance Cluster Security for Kuberenetes for different users.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are using Red Hat Advance Cluster Security for Kuberenetes 3.0.62 or older, see <a href="#../../operating/manage-user-access/manage-role-based-access-control-3062.adoc#manage-rbac-3062" class="page unresolved">Managing access control in Red Hat Advance Cluster Security for Kuberenetes 3.0.62 and older</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes 3.63 includes a scoped access control feature that enables you to configure fine-grained and specific sets of permissions that define how a given Red Hat Advance Cluster Security for Kuberenetes user or a group of users can interact with Red Hat Advance Cluster Security for Kuberenetes, which resources they can access, and which actions they can perform.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Roles</em> are a collection of permission sets and access scopes. You can assign roles to users and groups by specifying rules. You can configure these rules when you configure an authentication provider.
+There are two types of roles in Red Hat Advance Cluster Security for Kuberenetes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>System roles that are created by Red Hat and cannot be changed.</p>
+</li>
+<li>
+<p>Custom roles, which Red Hat Advance Cluster Security for Kuberenetes administrators can create and change at any time.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If you assign multiple roles for a user, they get access to the combined permissions of the assigned roles.</p>
+</li>
+<li>
+<p>If you have users assigned to a custom role, and you delete that role, all associated users transfer to the minimum access role that you have configured.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Permission sets</em> are a set of permissions that define what actions a role can perform on a given resource. <em>Resources</em> are the functionalities of Red Hat Advance Cluster Security for Kuberenetes for which you can set view (<code>read</code>) and modify (<code>write</code>) permissions. There are two types of permission sets in Red Hat Advance Cluster Security for Kuberenetes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>System permission sets, which are created by Red Hat and cannot be changed.</p>
+</li>
+<li>
+<p>Custom permission sets, which Red Hat Advance Cluster Security for Kuberenetes administrators can create and change at any time.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Access scopes</em> are a set of Kubernetes and OpenShift Container Platform resources that users can access. For example, you can define an access scope that only allows users to access information about pods in a given project. There are two types of access scopes in Red Hat Advance Cluster Security for Kuberenetes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>System access scopes, which are created by Red Hat and cannot be changed.</p>
+</li>
+<li>
+<p>Custom access scopes, which Red Hat Advance Cluster Security for Kuberenetes administrators can create and change at any time.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rbac-system-roles-3630_manage-role-based-access-control"><a class="anchor" href="#rbac-system-roles-3630_manage-role-based-access-control"></a>System roles</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat Advance Cluster Security for Kuberenetes includes some default system roles that you can apply to users when you create rules.
+You can also create custom roles as required.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">System role</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Admin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This role is targeted for administrators. Use it to provide read and write access to all resources.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Analyst</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This role is targeted for a user who cannot make any changes, but can view everything. Use it to provide read-only access for all resources.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Continuous Integration</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This role is targeted for CI (continuous integration) systems and includes the permission set required to enforce deployment policies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>None</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This role has no read and write access to any resource.
+You can set this role as the minimum access role for all users.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sensor Creator</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Red Hat Advance Cluster Security for Kuberenetes uses this role to automate new cluster setups. It includes the permission set to create Sensors in secured clusters.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="view-system-roles-permission-scope_manage-role-based-access-control"><a class="anchor" href="#view-system-roles-permission-scope_manage-role-based-access-control"></a>Viewing the permission set and access scope for a system role</h3>
+<div class="paragraph">
+<p>You can view the permission set and access scope for the default system roles.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Access control</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Roles</strong>.</p>
+</li>
+<li>
+<p>Click on one of the roles to view its details. The details page shows the permission set and access scope for the slected role.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot modify permission set and access scope for the default system roles.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-a-custom-role-3630_manage-role-based-access-control"><a class="anchor" href="#create-a-custom-role-3630_manage-role-based-access-control"></a>Creating a custom role</h3>
+<div class="paragraph _abstract">
+<p>You can create new roles from the <strong>Access Control</strong> view.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have the <strong>Admin</strong> role, or a role with the permission set with read and write permissions for the <code>AuthProvider</code> and <code>Role</code> resources to create, modify, and delete custom roles.</p>
+</li>
+<li>
+<p>You must create a permissions set and an access scope for the custom role before creating the role.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Access control</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Roles</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>Add role</strong>.</p>
+</li>
+<li>
+<p>Enter a <strong>Name</strong> and <strong>Description</strong> for the new role.</p>
+</li>
+<li>
+<p>Select a <strong>Permission set</strong> for the role.</p>
+</li>
+<li>
+<p>Select an <strong>Access scope</strong> for the role.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="ulist additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#../../operating/manage-user-access/manage-role-based-access-control-3630.adoc#create-a-custom-permission-set_manage-role-based-access-control" class="page unresolved">Creating a custom permission set</a></p>
+</li>
+<li>
+<p><a href="#../../operating/manage-user-access/manage-role-based-access-control-3630.adoc#create-a-custom-access-scope_manage-role-based-access-control" class="page unresolved">Creating a custom access scope</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="assign-role-to-user-or-group_manage-role-based-access-control"><a class="anchor" href="#assign-role-to-user-or-group_manage-role-based-access-control"></a>Assigning a role to a user or a group</h3>
+<div class="paragraph">
+<p>You can use the RHACS portal to assign roles to a user or a group.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Access Control</strong>.</p>
+</li>
+<li>
+<p>From the list of authentication providers, select the authentication provider.</p>
+</li>
+<li>
+<p>Click <strong>Edit minimum role and rules</strong>.</p>
+</li>
+<li>
+<p>Under the <strong>Rules</strong> section, click <strong>Add new rule</strong>.</p>
+</li>
+<li>
+<p>For <strong>Key</strong>, select one of the values from <code>userid</code>, <code>name</code>, <code>email</code> or <code>group</code>.</p>
+</li>
+<li>
+<p>For <strong>Value</strong>, enter the value of the user ID, name, email address or group based on the key you selected.</p>
+</li>
+<li>
+<p>Click the <strong>Role</strong> drop-down menu and select the role you want to assign.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can repeat these instructions for each user or group and assign different roles.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rbac-permission-sets_manage-role-based-access-control"><a class="anchor" href="#rbac-permission-sets_manage-role-based-access-control"></a>System permission sets</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat Advance Cluster Security for Kuberenetes includes some default system permission sets that you can apply to roles.
+You can also create custom permission sets as required.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permission set</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Admin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides read and write access to all resources.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Analyst</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides read-only access for all resources.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Continuous Integration</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This permission set is targeted for CI (continuous integration) systems and includes the permissions required to enforce deployment policies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>None</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No read and write permissions are allowed for any resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sensor Creator</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides permissions for resources that are required to create Sensors in secured clusters.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="view-system-permission-set_manage-role-based-access-control"><a class="anchor" href="#view-system-permission-set_manage-role-based-access-control"></a>Viewing the permissions for a system permission set</h3>
+<div class="paragraph">
+<p>You can view the permissions for a system permission set in the RHACS portal.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Access control</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Permission sets</strong>.</p>
+</li>
+<li>
+<p>Click on one of the permission sets to view its details. The details page shows a list of resources and their permissions for the selected permission set.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot modify permissions for a system permission set.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-a-custom-permission-set_manage-role-based-access-control"><a class="anchor" href="#create-a-custom-permission-set_manage-role-based-access-control"></a>Creating a custom permission set</h3>
+<div class="paragraph _abstract">
+<p>You can create new permission sets from the <strong>Access Control</strong> view.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have the <strong>Admin</strong> role, or a role with the permission set with read and write permissions for the <code>AuthProvider</code> and <code>Role</code> resources to create, modify, and delete permission sets.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Access control</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Permission sets</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>Add permission set</strong>.</p>
+</li>
+<li>
+<p>Enter a <strong>Name</strong> and <strong>Description</strong> for the new permission set.</p>
+</li>
+<li>
+<p>For each resource, under the <strong>Access level</strong> column, select one of the permissions from <code>No access</code>, <code>Read access</code>, <code>Read and Write access</code>.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If you are configuring a permission set for users, you must grant read-only permissions for the following resources:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Alert</code></p>
+</li>
+<li>
+<p><code>Cluster</code></p>
+</li>
+<li>
+<p><code>Deployment</code></p>
+</li>
+<li>
+<p><code>Image</code></p>
+</li>
+<li>
+<p><code>NetworkPolicy</code></p>
+</li>
+<li>
+<p><code>NetworkGraph</code></p>
+</li>
+<li>
+<p><code>Policy</code></p>
+</li>
+<li>
+<p><code>Secret</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>These permissions are pre-selected when you create a new permission set.</p>
+</li>
+<li>
+<p>If you do not grant these permissions, users will experience issues with viewing pages in the RHACS portal.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rbac-access-scopes_manage-role-based-access-control"><a class="anchor" href="#rbac-access-scopes_manage-role-based-access-control"></a>System access scopes</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat Advance Cluster Security for Kuberenetes includes some default system access scopes that you can apply on roles.
+You can also create custom access scopes as required.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Acces scope</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Unrestricted</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides access to all clusters and namespaces that Red Hat Advance Cluster Security for Kuberenetes monitors.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deny All</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides no access to any Kubernetes and OpenShift Container Platform resources.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="view-system-access-scopes_manage-role-based-access-control"><a class="anchor" href="#view-system-access-scopes_manage-role-based-access-control"></a>Viewing the details for a system access scope</h3>
+<div class="paragraph">
+<p>You can view the Kubernetes and OpenShift Container Platform resources that are allowed and not allowed for an access scope in the RHACS portal.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Access control</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Access scopes</strong>.</p>
+</li>
+<li>
+<p>Click on one of the access scopes to view its details. The details page shows a list of clusters and namespaces, and which ones are allowed for the selected access scope.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot modify allowed resources for a system access scope.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-a-custom-access-scope_manage-role-based-access-control"><a class="anchor" href="#create-a-custom-access-scope_manage-role-based-access-control"></a>Creating a custom access scope</h3>
+<div class="paragraph _abstract">
+<p>You can create new access scopes from the <strong>Access Control</strong> view.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have the <strong>Admin</strong> role, or a role with the permission set with read and write permissions for the <code>AuthProvider</code> and <code>Role</code> resources to create, modify, and delete permission sets.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Access control</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Access scope</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>Add access scope</strong>.</p>
+</li>
+<li>
+<p>Enter a <strong>Name</strong> and <strong>Description</strong> for the new access scope.</p>
+</li>
+<li>
+<p>Under the <strong>Allowed resources</strong> section:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use the <strong>Cluster filter</strong> and <strong>Namespace filter</strong> boxes to filter the list of clusters and namespaces visible in the list.</p>
+</li>
+<li>
+<p>Expand the <strong>&lt;Cluster_name&gt;</strong> to see the list of namespaces in that cluster.</p>
+</li>
+<li>
+<p>Turn on the toggle under the <strong>Manual selection</strong> column for a cluster to allow access to all namespaces in that cluster.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Access to a specific cluster provides users with access to the following resources within the scope of the cluster:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Container Platform or Kubernetes cluster metadata and security information</p>
+</li>
+<li>
+<p>Compliance information for authorized clusters</p>
+</li>
+<li>
+<p>Node metadata and security information</p>
+</li>
+<li>
+<p>Acess to all namespaces in that cluster and their associated security information</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Turn on the toggle under the <strong>Manual selection</strong> column for a namespace to allow access to that namespace.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Access to a specific namespace gives access to the following information within the scope of the namespace:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alerts and violations for deployments</p>
+</li>
+<li>
+<p>Vulerability data for images</p>
+</li>
+<li>
+<p>Deployment metadata and security information</p>
+</li>
+<li>
+<p>Role and user information</p>
+</li>
+<li>
+<p>Network graph, policy, and baseline information for deployments</p>
+</li>
+<li>
+<p>Process information and process baseline configuration</p>
+</li>
+<li>
+<p>Prioritized risk information for each deployment</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If you want to allow access to clusters and namespaces based on labels, click <strong>Add label selector</strong> under the <strong>Label selection rules</strong> section. Then click <strong>Add rules</strong> to specify <strong>Key</strong> and <strong>Value</strong> pairs for the label selector. You can specify labels for clusters and namespaces.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="resource-definitions_manage-role-based-access-control"><a class="anchor" href="#resource-definitions_manage-role-based-access-control"></a>Resource definitions</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat Advance Cluster Security for Kuberenetes includes multiple resources.
+The following table lists the resources and describes the actions that users can perform with the <code>read</code> or <code>write</code> permission.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Resource</th>
+<th class="tableblock halign-left valign-top">Read permission</th>
+<th class="tableblock halign-left valign-top">Write permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">APIToken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List existing API tokens.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create new API tokens or revoke existing tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing policy violations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resolve or edit policy violations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AllComments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete comments from other users.
+All users can edit and delete their own comments by default.
+To add and remove comments or tags, you need a role with <code>write</code> permission for the resource you are modifying.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AuthPlugin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing Authentication plug-ins</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modify these configurations.
+<em>(Local administrator only.)</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AuthProvider</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing configurations for single sign-on.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modify these configurations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BackupPlugins</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing integrations with automated backup systems such as AWS S3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modify these configurations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Internal use only</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Internal use only</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add new secured clusters and modify or delete existing clusters.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compliance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View compliance standards and results.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ComplianceRunSchedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View scheduled compliance runs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create, modify, or delete scheduled compliance runs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ComplianceRuns</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View recent compliance runs and their completion status.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trigger compliance runs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Config</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View options for data retention, security notices, and other related configurations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modify these configurations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DebugLogs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the current logging verbosity level in Red Hat Advance Cluster Security for Kuberenetes components.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modify the logging level.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deployment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View deployments (workloads) in secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check build-time policies against images or deployment YAML.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the existing RBAC rules that match user metadata to Red Hat Advance Cluster Security for Kuberenetes roles.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create, modify, or delete configured RBAC rules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View images, their components, and their vulnerabilities.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImageComponent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Internal use only</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Internal use only</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImageIntegration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List existing image registry integrations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create, edit, or delete image registry integrations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImbuedLogs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Internal use only</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Internal use only</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View process activity in deployments.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K8sRole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View roles for Kubernetes role-based access control in secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K8sRoleBinding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View role bindings for Kubernetes role-based access control in secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K8sSubject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View users and groups for Kubernetes role-based access control in secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Licenses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the status of the existing license for Red Hat Advance Cluster Security for Kuberenetes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upload a new license key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing Kubernetes namespaces in secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetworkGraph</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View active and allowed network connections in secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetworkPolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing network policies in secured clusters and simulate changes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Apply network policy changes in secured clusters.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing Kubernetes nodes in secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Notifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing integrations for notification systems like email, Jira, or webhooks.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create, modify, or delete these integrations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing system policies.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create, modify, or delete system policies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ProbeUpload</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read manifests for the uploaded probe files.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upload support packages to Central.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ProcessWhitelist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View process baselines.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add or remove processes from baselines.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Risk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View Risk results.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View existing Red Hat Advance Cluster Security for Kuberenetes RBAC roles and their permissions.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add, modify, or delete roles and their permissions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ScannerBundle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Download the scanner bundle.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ScannerDefinitions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List existing image scanner integrations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create, modify, or delete image scanner integrations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View metadata about secrets in secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SensorUpgradeConfig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check the status of automatic upgrades.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disable or enable automatic upgrades for secured clusters.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ServiceAccount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List Kubernetes service accounts in secured clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ServiceIdentity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View metadata about Red Hat Advance Cluster Security for Kuberenetes service-to-service authentication.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Revoke or reissue service-to-service authentication credentials.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View users that have accessed your Red Hat Advance Cluster Security for Kuberenetes instance, including the metadata that the authentication provider provides about them.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

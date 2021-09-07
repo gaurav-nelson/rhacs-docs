@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Installing by using an Operator :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="3.64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">3.64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">3.64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Installing</li>
+    <li><a href="install-ocp-operator.html">Installing by using an Operator</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/installing/pages/install-ocp-operator.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Installing by using an Operator</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat Advance Cluster Security for Kuberenetes (RHACS) installs a set of services on your OpenShift Container Platform cluster. This section describes the installation procedure for installing Red Hat Advance Cluster Security for Kuberenetes on your OpenShift Container Platform cluster by using an Operator.</p>
+</div>
+<div class="paragraph">
+<p>Before you install:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Understand <a href="../architecture/index.html#acs-architecture_acs-architecture" class="page">Red Hat Advance Cluster Security for Kuberenetes architecture</a>.</p>
+</li>
+<li>
+<p>Review the <a href="prerequisites.html#acs-general-requirements_acs-prerequisites" class="page">prerequisites for installing Red Hat Advance Cluster Security for Kuberenetes</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Red Hat Advance Cluster Security for Kuberenetes Operator includes the following two custom resources:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><code>Central</code></strong> - The central resource is a logical grouping of the following services:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Central</strong>: Central is the Red Hat Advance Cluster Security for Kuberenetes application management interface and services. It handles data persistence, API interactions, and user interface (RHACS Portal) access. You can use the same Central instance to secure multiple OpenShift Container Platform or Kubernetes clusters.</p>
+</li>
+<li>
+<p><strong>Scanner</strong>: Scanner is a Red Hat-developed and certified vulnerability scanner for scanning container images and their associated database. It analyzes all image layers to check known vulnerabilities from the Common Vulnerabilities and Exposures (CVEs) list. Scanner also identifies vulnerabilities in packages installed by package managers and in dependencies for multiple programming languages.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong><code>SecuredCluster</code></strong> - The secured cluster resource is a logical grouping of the following services:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sensor</strong>: Sensor is the service responsible for analyzing and monitoring the cluster. It handles interactions with the OpenShift Container Platform or Kubernetes API server for policy detection and enforcement, and it coordinates with Collector.</p>
+</li>
+<li>
+<p><strong>Collector</strong>: Collector analyzes and monitors container activity on cluster nodes. It collects information about container runtime and network activity. It then sends the collected data to Sensor.</p>
+</li>
+<li>
+<p><strong>Admission Control</strong>: The admission controller prevents users from creating workloads that violate security policies in Red Hat Advance Cluster Security for Kuberenetes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following steps represent a high-level workflow for installing Red Hat Advance Cluster Security for Kuberenetes by using an Operator:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install the Red Hat Advance Cluster Security for Kuberenetes Operator from OperatorHub in the cluster where you want to install Central.</p>
+</li>
+<li>
+<p>Configure and deploy the <code>Central</code> custom resource.</p>
+</li>
+<li>
+<p>Generate and apply an init bundle.</p>
+</li>
+<li>
+<p>Install the Red Hat Advance Cluster Security for Kuberenetes Operator in all clusters that you want to monitor.</p>
+</li>
+<li>
+<p>Configure and deploy the <code>SecuredCluster</code> custom resource in all clusters that you want to monitor.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install-acs-operator_install-ocp-operator"><a class="anchor" href="#install-acs-operator_install-ocp-operator"></a>Installing the Red Hat Advance Cluster Security for Kuberenetes Operator</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Using the OperatorHub provided with OpenShift Container Platform is the easiest way to install Red Hat Advance Cluster Security for Kuberenetes.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have access to an OpenShift Container Platform cluster using an account with Operator installation permissions.</p>
+</li>
+<li>
+<p>You must be using OpenShift Container Platform 4.6 or later.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate in the web console to the <strong>Operators</strong> &#8594; <strong>OperatorHub</strong> page.</p>
+</li>
+<li>
+<p>Enter <strong>Advanced Cluster Security</strong> into the <strong>Filter by keyword</strong> box to find the Red Hat Advance Cluster Security for Kuberenetes Operator.</p>
+</li>
+<li>
+<p>Select the <strong>Red Hat Advance Cluster Security for Kuberenetes Operator</strong> to view the details page.</p>
+</li>
+<li>
+<p>Read the information about the Operator and click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Install Operator</strong> page, keep the default values for <strong>Update channel</strong>, <strong>Installation mode</strong>, <strong>Installed namespace</strong>, and <strong>Approval strategy</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Install</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>After the installation completes, navigate to <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> to verify that the Red Hat Advance Cluster Security for Kuberenetes Operator is listed with the status of <strong>Succeeded</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install-central-operator_install-ocp-operator"><a class="anchor" href="#install-central-operator_install-ocp-operator"></a>Installing Central</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The main component of Red Hat Advance Cluster Security for Kuberenetes is called Central. You can install Central on OpenShift Container Platform by using the <code>Central</code> custom resource. You deploy Central only once, and you can monitor multiple separate clusters by using the same Central installation.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you install Red Hat Advance Cluster Security for Kuberenetes for the first time, you must first install the <code>Central</code> custom resource because the <code>SecuredCluster</code> custom resource installation is dependent on certificates that Central generates.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must be using OpenShift Container Platform 4.6 or later.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the OpenShift Container Platform web console, navigate to the <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> page.</p>
+</li>
+<li>
+<p>Select the Red Hat Advance Cluster Security for Kuberenetes Operator from the list of installed Operators.</p>
+</li>
+<li>
+<p>By default, OpenShift Container Platform lists the project as <code>openshift-operator</code>. Select <strong>Project: openshift-operator</strong> &#8594; <strong>Create project</strong>.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must install the Red Hat Advance Cluster Security for Kuberenetes <code>Central</code> custom resource in its own project and not in the default <code>openshift-operators</code> project.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Enter the new project name, for example, <code>stackrox</code>, and click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>Under the <strong>Provided APIs</strong> section, select <strong>Create instance</strong> on the <strong>Central</strong> API.</p>
+</li>
+<li>
+<p>Enter a name for your <code>Central</code> custom resource and add any labels you want to apply. Otherwise, accept the default values for the available options.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verify-central-install-operator_install-ocp-operator"><a class="anchor" href="#verify-central-install-operator_install-ocp-operator"></a>Verifying Central installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After Central finishes installing, log in to the RHACS portal to verify the successful installation of Central.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the OpenShift Container Platform web console, navigate to the <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> page.</p>
+</li>
+<li>
+<p>Select the Red Hat Advance Cluster Security for Kuberenetes Operator from the list of installed Operators.</p>
+</li>
+<li>
+<p>Select the <strong>Central</strong> tab.</p>
+</li>
+<li>
+<p>From the <strong>Centrals</strong> list, select <code>stackrox-central-services</code> to view its details.</p>
+</li>
+<li>
+<p>The <strong>Admin Credentials Info</strong> section lists the command you need to run to get the autogenerated password. Run the command to get your admin password.</p>
+</li>
+<li>
+<p>Navigate to <strong>Networking</strong> &#8594; <strong>Routes</strong>.</p>
+</li>
+<li>
+<p>Find the <strong>central</strong> Route and click on the RHACS portal link under the <strong>Location</strong> column.</p>
+</li>
+<li>
+<p>Log in to the RHACS portal using the username <strong>admin</strong> and the autogenerated password.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="central-configuration-options-operator_install-ocp-operator"><a class="anchor" href="#central-configuration-options-operator_install-ocp-operator"></a>Central configuration options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you create a Central instance, the Operator lists the following configuration options for the <code>Central</code> custom resource.</p>
+</div>
+<div class="sect2">
+<h3 id="central-settings_install-ocp-operator"><a class="anchor" href="#central-settings_install-ocp-operator"></a>Central settings</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.adminPasswordSecret</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify a secret that contains the administrator password in the <code>password</code> data item. If omitted, the operator autogenerates a password and store it in the <code>password</code> item in the <code>central-htpasswd</code> secret.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.defaultTLSSecret</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, Central only serves an internal TLS certificate, which means that you need to handle TLS termination at the ingress or load balancer level. If you want to terminate TLS in Central and serve a custom server certificate, you can specify a secret containing the certificate and private key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.loadBalancer.enabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set this to <code>true</code> to expose Central through a load balancer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.loadBalancer.port</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to specify a custom port for your load balancer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.loadBalancer.ip</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to specify a static IP address reserved for your load balancer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.route.enabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set this to <code>true</code> to expose Central through an OpenShift route. The default value is <code>false</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.nodeport.enabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set this to <code>true</code> to expose Central through a node port. The default value is <code>false</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.exposure.nodeport.port</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this to specify an explicit node port.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.nodeSelector</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want this component to only run on specific nodes, you can configure a node selector by using this parameter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.persistence.hostPath.path</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify a host path to store persistent data in a directory on the host. Red Hat does not recommend using this. If you need to use host path, you must use it with a node selector.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.persistence.persistentVolumeClaim.claimName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the PVC to manage persistent data.
+If no PVC with the given name exists, it will be created. The default value is <code>stackrox-db</code> if not set. To prevent data losses the PVC is not removed automatically with Central`s deletion.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.persistence.persistentVolumeClaim.size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The size of the persistent volume when created through the claim. This is automatically generated by default.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.persistence.persistentVolumeClaim.storageClassName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the storage class to use for the PVC. If your cluster is not configured with a default storage class, you must provide a value for this parameter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.resources.limits</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this paramter to override the default resource limits for the Central.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.resources.requests</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource requests for the Central.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central.imagePullSecrets</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to specify the image pull secrets for the Central image.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="scanner-settings_install-ocp-operator"><a class="anchor" href="#scanner-settings_install-ocp-operator"></a>Scanner settings</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.analyzer.nodeSelector</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want this scanner to only run on specific nodes, you can configure a node selector by using this parameter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.analyzer.resources.limits</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource limits for the scanner.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.analyzer.resources.requests</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource requests for the scanner.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.analyzer.scaling.autoScaling</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When enabled, the number of analyzer replicas is managed dynamically based on the load, within the limits specified.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.analyzer.scaling.maxReplicas</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the maximum replicas to be used the analyzer autoscaling configuration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.analyzer.scaling.minReplicas</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the minimum replicas to be used the analyzer autoscaling configuration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.analyzer.scaling.replicas</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When autoscaling is disabled, the number of replicas will always be configured to match this value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.db.nodeSelector</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want this component to only run on specific nodes, you can configure a node selector by using this parameter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.db.resources.limits</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource limits for the scanner.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.db.resources.requests</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource requests for the scanner.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scanner.scannerComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you do not want to deploy Scanner, you can disable it by using this parameter. If you disable Scanner, all other settings in this section have no effect. Red Hat does not recommend disabling Red Hat Advance Cluster Security for Kuberenetes Scanner.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="general-and-miscellaneous-settings_install-ocp-operator"><a class="anchor" href="#general-and-miscellaneous-settings_install-ocp-operator"></a>General and miscellaneous settings</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tls.additionalCAs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional Trusted CA certificates for the secured cluster to trust.
+This is typically used when integrating with services using a private certificate authority.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>misc.createSCCs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify <code>true</code> to create SCCs for Central.
+It might cause issues in some environments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-init-bundle"><a class="anchor" href="#generate-init-bundle"></a>Generating an init bundle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To create a secured cluster, you must create an init bundle. The secured cluster uses this bundle to authenticate with Central.</p>
+</div>
+<div class="paragraph">
+<p>You can create an init bundle by using the the roxctl CLI or from the RHACS portal.</p>
+</div>
+<div class="sect2">
+<h3 id="portal-generate-init-bundle_install-ocp-operator"><a class="anchor" href="#portal-generate-init-bundle_install-ocp-operator"></a>Generating an init bundle by using the RHACS portal</h3>
+<div class="paragraph">
+<p>You can create an init bundle by using the RHACS portal.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Find the address of the RHACS portal based on your exposure method:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>For a route:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get route central -n stackrox</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>For a load balancer:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get service central-loadbalancer -n stackrox</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>For port forward:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc port-forward svc/central 18443:443 -n stackrox</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Navigate to <code>https://localhost:18443/</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Integrations</strong>.</p>
+</li>
+<li>
+<p>Under the <strong>Authentication Tokens</strong> section, click on <strong>Cluster Init Bundle</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Generate Bundle</strong> (<strong><code>add</code></strong> icon) on the top right.</p>
+</li>
+<li>
+<p>Enter a name for the cluster init bundle and click <strong>Generate</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Download Helm Values File</strong> to download the generated bundle.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Make sure that you store this bundle securely because it contains secrets.
+You can use the same bundle to set up multiple secured clusters.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="roxctl-generate-init-bundle_install-ocp-operator"><a class="anchor" href="#roxctl-generate-init-bundle_install-ocp-operator"></a>Generating an init bundle by using the roxctl CLI</h3>
+<div class="paragraph">
+<p>You can create an init bundle by using the the <code>roxctl</code> CLI.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have configured the <code>ROX_API_TOKEN</code> and the <code>ROX_CENTRAL_ADDRESS</code> environment variables.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Run the following command to generate a cluster init bundle:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" \
+  central init-bundles generate &lt;cluster_init_bundle_name&gt; \
+  --output-secrets cluster_init_bundle.yaml</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Make sure that you store this bundle securely because it contains secrets.
+You can use the same bundle to set up multiple secured clusters.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="../cli/getting-started-cli.html#installing-roxctl-cli" class="page">Installing the roxctl CLI</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-resource-init-bundle_install-ocp-operator"><a class="anchor" href="#create-resource-init-bundle_install-ocp-operator"></a>Creating resources by using the init bundle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you install secured clusters, you must create the required resources.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisities</div>
+<ul>
+<li>
+<p>You must have generated an init bundle.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Run the following command to create the resources:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc create -f &lt;init_bundle&gt;.yaml \ <i class="conum" data-value="1"></i><b>(1)</b>
+  -n &lt;stackrox&gt; <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Specify the init bundle file name.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Specify the name of the project where you installed Central.</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install-secured-cluster-operator_install-ocp-operator"><a class="anchor" href="#install-secured-cluster-operator_install-ocp-operator"></a>Installing secured cluster services</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can install secured cluster services on your clusters by using the <code>SecuredCluster</code> custom resource. You must install the secured cluster services on every cluster in your environment that you want to monitor.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To install Collector on systems configured with Unified Extensible Firmware Interface (UEFI) boot, you must use eBPF probes because kernel modules are unsigned, and the UEFI firmware cannot load unsigned packages.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must be using OpenShift Container Platform 4.6 or later.</p>
+</li>
+<li>
+<p>You must have generated an init bundle and already created the required resources by using the init bundle.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the OpenShift Container Platform web console, navigate to the <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> page.</p>
+</li>
+<li>
+<p>Select the Red Hat Advance Cluster Security for Kuberenetes Operator form the list of installed operators.</p>
+</li>
+<li>
+<p>By default, OpenShift Container Platform lists the project as <code>openshift-operator</code>. Select <strong>Project: openshift-operator</strong> &#8594; <strong>Create project</strong>.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must install Red Hat Advance Cluster Security for Kuberenetes <code>SecuredCluster</code> resource in its own project and not the default <code>openshift-operators</code> project.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Enter the new project name as <strong>stackrox</strong> or some other name, and click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>Under the <strong>Provided APIs</strong> section, select <strong>Create instance</strong> on the <strong>Secured Cluster</strong> API.</p>
+</li>
+<li>
+<p>Enter a name for your <code>SecuredCluster</code> custom resource.</p>
+</li>
+<li>
+<p>For <strong>Central Endpoint</strong>, enter the address and port number of your Central instance.
+For example, if Central is available at <code>https://central.example.com</code>, then specify the central endpoint as <code>central.example.com:443</code>.
+The default value of <code>central.stackrox.svc:443</code> only works when you install secured cluster services and Central in the same cluster.</p>
+</li>
+<li>
+<p>Accept the default values or configure custom values for the avilable options.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="secured-cluster-configuration-options-operator_install-ocp-operator"><a class="anchor" href="#secured-cluster-configuration-options-operator_install-ocp-operator"></a>Secured cluster configuration options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you create a Central instance, the Operator lists the following configuration options for the <code>Central</code> custom resource.</p>
+</div>
+<div class="sect2">
+<h3 id="required-configuration-settings_install-ocp-operator"><a class="anchor" href="#required-configuration-settings_install-ocp-operator"></a>Required Configuration Settings</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>centralEndpoint</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The endpoint of Central instance to connect to, including the port number.
+If using a non-gRPC capable load balancer, use the WebSocket protocol by prefixing the endpoint address with <code>wss://</code>.
+If you do not specify a value for this paramter, Sensor attempts to connect to a Central instance running in the same namespace.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clusterName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The unique name of this cluster, which shows up in the RHACS portal.
+After the name is set by using this parameter, you cannot change it again.
+To change the name, you must delete and recreate the object.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="addmission-controller-settings_install-ocp-operator"><a class="anchor" href="#addmission-controller-settings_install-ocp-operator"></a>Admission controller settings</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.listenOnCreates</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify <code>true</code> to enable preventive policy enforcement for object creations.
+The default value is <code>false</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.listenOnEvents</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify <code>true</code> to enable monitoring and enforcement for Kubernetes events, such as <code>port-forward</code> and <code>exec</code> events.
+It is used to control access to resources through the Kubernetes API.
+The default value is <code>true</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.listenOnUpdates</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify <code>true</code> to enable preventive policy enforcement for object updates.
+It will not have any effect unless <code>Listen On Creates</code> is set to <code>true</code> as well.
+The default value is <code>false</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.nodeSelector</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want this component to only run on specific nodes, you can configure a node selector using this parameter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.resources.limits</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource limits for the admission controller.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admissionControl.resources.requests</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource requests for the admission controller.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="image-configuration-settings_install-ocp-operator"><a class="anchor" href="#image-configuration-settings_install-ocp-operator"></a>Image configuration</h3>
+<div class="paragraph">
+<p>Use image configuration settings when you are using a custom registry.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imagePullSecrets.name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional image pull secrets to be taken into account for pulling images.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="per-node-settings_install-ocp-operator"><a class="anchor" href="#per-node-settings_install-ocp-operator"></a>Per node settings</h3>
+<div class="paragraph">
+<p>Per node settings define the configuration settings for components that run on each node in a cluster to secure the cluster.
+These components are Collector and Compliance.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>perNode.collector.collection</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The method for system-level data collection. The default value is <code>KernelModule</code>. Red Hat recommend using <code>KernelModule</code> as the value for this parameter.
+If you select <code>NoCollection</code>, you will not be able to see any information about network activity and process executions.
+Options include <code>NoCollection</code>, <code>EBPF</code>, and <code>KernelModule</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>perNode.collector.imageFlavor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The image type to use for Collector. You can specify it as <code>Regular</code> or <code>Slim</code>.
+<code>Regular</code> images are bigger in size, but contain kernel modules for most kernels.
+If you use the <code>Slim</code> image type, you must ensure that your Central instance is connected to the internet, or regularly receives Collector support package updates. The default value is <code>Slim</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>perNode.collector.resources.limits</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource limits for Collector.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>perNode.collector.resources.requests</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource requests for Collector.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>perNode.compliance.resources.requests</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource requests for Compliance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>perNode.compliance.resources.limits</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource limits for Compliance.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="taint-tolerations-settings_install-ocp-operator"><a class="anchor" href="#taint-tolerations-settings_install-ocp-operator"></a>Taint Tolerations settings</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>taintToleration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To ensure comprehensive monitoring of your cluster activity, Red Hat Advance Cluster Security for Kuberenetes  runs services on every node in the cluster, including tainted nodes by default.
+If you do not want this behavior, specify <code>AvoidTaints</code> for this parameter.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sensor-configuration-settings_install-ocp-operator"><a class="anchor" href="#sensor-configuration-settings_install-ocp-operator"></a>Sensor configuration</h3>
+<div class="paragraph">
+<p>This configuration defines the settings of the Sensor components, which runs on one node in a cluster.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sensor.nodeSelector</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want Sensor to only run on specific nodes, you can configure a node selector.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sensor.resources.limits</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource limits for Sensor.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sensor.resources.requests</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this parameter to override the default resource requests for Sensor.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="general-and-miscellaneous-settings-secured-cluster_install-ocp-operator"><a class="anchor" href="#general-and-miscellaneous-settings-secured-cluster_install-ocp-operator"></a>General and miscellaneous settings</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tls.additionalCAs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional trusted CA certificates for the secured cluster.
+These certificates are used when integrating with services using a private certificate authority.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>misc.createSCCs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set this to <code>true</code> to create SCCs for Central.
+It may cause issues in some environments.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>customize.annotations</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows specifying custom annotations for the Central deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>customize.envVars</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Advanced settings to configure environment variables.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>egress.connectivityPolicy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configures whether Red Hat Advance Cluster Security for Kuberenetes should run in online or offline mode.
+In offline mode, automatic updates of vulnerability definitions and kernel modules are disabled.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verify-acs-installation_install-ocp-operator"><a class="anchor" href="#verify-acs-installation_install-ocp-operator"></a>Verifying installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you complete the installation, navigate to the RHACS portal and run a few vulnerable applications to evaluate the results of security assessments and policy violations.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The sample applications listed in the following section contain critical vulnerabilities and they are specifically designed to verify the build and deploy-time assessment features of Red Hat Advance Cluster Security for Kuberenetes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Find the address of the RHACS portal based on your exposure method:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>For a route:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get route central -n stackrox</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>For a load balancer:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get service central-loadbalancer -n stackrox</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>For port forward:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc port-forward svc/central 18443:443 -n stackrox</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Navigate to <code>https://localhost:18443/</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Create a new project:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc new-project test</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start some applications with critical vulnerabilities:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc run shell --labels=app=shellshock,team=test-team \
+  --image=vulnerables/cve-2014-6271 -n test</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc run samba --labels=app=rce \
+  --image=vulnerables/cve-2017-7494 -n test</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Red Hat Advance Cluster Security for Kuberenetes automatically scans these deployments for security risk and policy violations as soon as they are submitted to the cluster.</p>
+</div>
+</li>
+<li>
+<p>Navigate to the RHACS portal to view the violations.
+You can log in to the RHACS portal by using the default username <code>admin</code> and the generated password.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Searching and filtering :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="3.64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">3.64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">3.64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Operating</li>
+    <li><a href="search-filter.html">Searching and filtering</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/operating/pages/search-filter.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Searching and filtering</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The ability to instantly find resources is important to safeguard your cluster. Use Red Hat Advance Cluster Security for Kuberenetes search feature to find relevant resources faster. For example, you can use it to find deployments that are exposed to a newly published CVE or find all deployments that have external network exposure.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="search-syntax_search-filter"><a class="anchor" href="#search-syntax_search-filter"></a>Search syntax</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A search query is made up of two parts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An attribute that identifies the resource type you want to search for.</p>
+</li>
+<li>
+<p>A search term that finds the matching resource.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, to find all violations in the <code>visa-processor</code> deployment, the search query is <code>Deployment:visa-processor</code>. In this search query, <code>Deployment</code> is the attribute and <code>visa-processor</code> is the search term.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must select an attribute before you can use search terms. However, in some views, such as the <strong>Risk</strong> view and the <strong>Violations</strong> view, Red Hat Advance Cluster Security for Kuberenetes automatically applies the relevant attribute based on the search term you enter.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can use multiple attributes in your query. When you use more than one attribute, the results only include the items that match all attributes.</p>
+<div class="paragraph">
+<div class="title">Example</div>
+<p>When you search for <code>Namespace:frontend CVE:CVE-2018-11776</code>, it returns only those resources which violate CVE-2018-11776 in the <code>frontend</code> namespace.</p>
+</div>
+</li>
+<li>
+<p>You can use more than one search term with each attribute. When you use more than one search term, the results include all items that match any of the search terms.</p>
+<div class="paragraph">
+<div class="title">Example</div>
+<p>If you use the search query <code>Namespace: frontend backend</code>, it returns matching results from the namespace <code>frontend</code> or <code>backend</code>.</p>
+</div>
+</li>
+<li>
+<p>You can combine multiple attribute and search term pairs.</p>
+<div class="paragraph">
+<div class="title">Example</div>
+<p>The search query <code>Cluster:production Namespace:frontend CVE:CVE-2018-11776</code> returns all resources which violate CVE-2018-11776 in the <code>frontend</code> namespace in the <code>production</code> cluster.</p>
+</div>
+</li>
+<li>
+<p>Search terms can be part of a word, in which case Red Hat Advance Cluster Security for Kuberenetes returns all matching results.</p>
+<div class="paragraph">
+<div class="title">Example</div>
+<p>If you search for <code>Deployment:def</code>, the results include all deployments starting with <code>def</code>.</p>
+</div>
+</li>
+<li>
+<p>To explicitly search for a specific term, use the search terms inside quotes.</p>
+<div class="paragraph">
+<div class="title">Example</div>
+<p>When you search for <code>Deployment:"def"</code>, the results only include the deployment <code>def</code>.</p>
+</div>
+</li>
+<li>
+<p>You can also use regular expressions by using <code>r/</code> before your search term.</p>
+<div class="paragraph">
+<div class="title">Example</div>
+<p>When you search for <code>Namespace:r/st.*x</code>, the results include matches from namespace <code>stackrox</code> and <code>stix</code>.</p>
+</div>
+</li>
+<li>
+<p>Use <code>!</code> to indicate the search terms that you do not want in results.</p>
+<div class="paragraph">
+<div class="title">Example</div>
+<p>If you search for <code>Namespace:!stackrox</code>, the results include matches from all namespaces except the <code>stackrox</code> namespace.</p>
+</div>
+</li>
+<li>
+<p>Use the comparison operators <code>&gt;</code>, <code>&lt;</code>, <code>=</code>, <code>&gt;=</code>, or <code>&lt;=</code> to match a specific value or range of values.</p>
+<div class="paragraph">
+<div class="title">Example</div>
+<p>If you search for <code>CVSS:&gt;=6</code>, the results include all vulnerabilities with Common Vulnerability Scoring System (CVSS) score 6 or higher.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="search-autocomplete_search-filter"><a class="anchor" href="#search-autocomplete_search-filter"></a>Search autocomplete</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As you enter your query, Red Hat Advance Cluster Security for Kuberenetes automatically displays relevant suggestions for the attributes and the search terms.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-global-search_search-filter"><a class="anchor" href="#use-global-search_search-filter"></a>Using global search</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By using global search you can search across all resources in your environment. Based on the resource type you use in your search query, the results are grouped in the following categories:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All (Lists matching results across all categories.)</p>
+</li>
+<li>
+<p>Violations</p>
+</li>
+<li>
+<p>Policies</p>
+</li>
+<li>
+<p>Deployments</p>
+</li>
+<li>
+<p>Images</p>
+</li>
+<li>
+<p>Secrets</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These categories are listed as a table on the RHACS portal global search page and you can click on the category name to identify results belonging to the selected category.</p>
+</div>
+<div class="paragraph">
+<p>To do a global search, in the RHACS portal, select <strong>Search</strong> on the top right side.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-local-page-filtering_search-filter"><a class="anchor" href="#use-local-page-filtering_search-filter"></a>Using local page filtering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use local page filtering from within all views in the RHACS portal. Local page filtering works similar to the global search, but only relevant attributes are available. You can select the search bar to show all available attributes for a specific view.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="common-search-queries_search-filter"><a class="anchor" href="#common-search-queries_search-filter"></a>Common search queries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here are some common search queries you can run with Red Hat Advance Cluster Security for Kuberenetes.</p>
+</div>
+<h3 id="_finding_deployments_that_are_affected_by_a_specific_cve" class="discrete">Finding deployments that are affected by a specific CVE</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CVE:&lt;CVE_number&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CVE:CVE-2018-11776</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_finding_privileged_running_deployments" class="discrete">Finding privileged running deployments</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Privileged:&lt;true_or_false&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Privileged:true</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_finding_deployments_that_have_external_network_exposure" class="discrete">Finding deployments that have external network exposure</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Exposure Level:&lt;level&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Exposure Level:External</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_finding_deployments_that_are_running_specific_processes" class="discrete">Finding deployments that are running specific processes</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Process Name:&lt;process_name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Process Name:bash</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_finding_deployments_that_have_serious_but_fixable_vulnerabilities" class="discrete">Finding deployments that have serious but fixable vulnerabilities</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CVSS:&lt;expression_and_score&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CVSS:&gt;=6</code> <code>Fixable:.*</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_finding_deployments_that_use_passwords_exposed_through_environment_variables" class="discrete">Finding deployments that use passwords exposed through environment variables</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Environment Key:&lt;query&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Environment Key:r/.*pass.*</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_finding_running_deployments_that_have_particular_software_components_in_them" class="discrete">Finding running deployments that have particular software components in them</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Component:&lt;component_name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Component:libgpg-error</code> or <code>Component:sudo</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_finding_users_or_groups" class="discrete">Finding users or groups</h3>
+<div class="paragraph">
+<p>Use Kubernetes <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/">Labels and Selectors</a>, and <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/">Annotations</a> to attach metadata to your deployments.
+You can then query based on the applied annotations and labels to identify individuals or groups.</p>
+</div>
+<h4 id="_finding_who_owns_a_particular_deployment" class="discrete">Finding who owns a particular deployment</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Deployment:&lt;deployment_name&gt;</code> <code>Label:&lt;key_value&gt;</code> or <code>Deployment:&lt;deployment_name&gt;</code> <code>Annotation:&lt;key_value&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Deployment:app-server</code> <code>Label:team=backend</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_finding_who_is_deploying_images_from_public_registries" class="discrete">Finding who is deploying images from public registries</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Image Registry:&lt;registry_name&gt;</code> <code>Label:&lt;key_value&gt;</code> or <code>Image Registry:&lt;registry_name&gt;</code> <code>Annotation:&lt;key_value&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Image Registry:docker.io</code> <code>Label:team=backend</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_finding_who_is_deploying_into_the_default_namespace" class="discrete">Finding who is deploying into the default namespace</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Namespace:default</code> <code>Label:&lt;key_value&gt;</code> or <code>Namespace:default</code> <code>Annotation:&lt;key_value&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Namespace:default</code> <code>Label:team=backend</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="search-attributes_search-filter"><a class="anchor" href="#search-attributes_search-filter"></a>Search attributes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Following is the list of search attributes that you can use while searching and filtering in Red Hat Advance Cluster Security for Kuberenetes.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Attribute</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add Capabilities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides the container with additional Linux capabilities, for instance the ability to modify files or perform network operations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arbitrary non-identifying metadata attached to an orchestrator object.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPU Cores Limit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of cores that a resource is allowed to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPU Cores Request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of cores to be reserved for a given resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Common Vulnerabilities and Exposures, use it with specific CVE numbers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CVSS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Common Vulnerability Scoring System, use it with the CVSS score and greater than ( &gt; ), less than ( &lt; ), or equal to ( = ) symbols.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy categories include DevOps Best Practices, Security Best Practices, Privileges, Vulnerability Management, Multiple, and any custom policy categories that you create.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cert Expiration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Certificate expiration date.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of a Kubernetes or OpenShift Container Platform cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique ID for a Kubernetes or OpenShift Container Platform cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to search for cluster-wide roles and <code>false</code> for namespace-scoped roles.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Software (daemond, docker), objects (images, containers, services), registries (repository for Docker images).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Component Count</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of components in the image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Component version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The version of software, objects, or registries.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Created Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time and date when the secret object was created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deployment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deployment Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of Kubernetes controller on which the deployment is based.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description of the deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dockerfile Instruction Keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keyword in the Dockerfile instructions in an image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dockerfile Instruction Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value in the Dockerfile instructions in an image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Drop Capabilities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linux capabilities that have been dropped from the container.
+For example <code>CAP_SETUID</code> or <code>CAP_NET_RAW</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enforcement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of enforcement assigned to the deployment.
+For example, <code>None</code>, <code>Scale to Zero Replicas</code>, or <code>Add an Unsatisfiable Node Constraint</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Key portion of a label key-value string that is metadata for further identifying and organizing the environment of a container.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value portion of a label key-value string that is metadata for further identifying and organizing the environment of a container.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposed Node Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port number of the exposed node port.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposing Service</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the exposed service.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposing Service Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port number of the exposed service.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposure Level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of exposure for a deployment port, for example <code>external</code> or <code>node</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External Hostname</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The hostname for an external port exposure for a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External IP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The IP address for an external port exposure for a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixable CVE Count</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of fixable CVEs on an image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixed By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The version string of a package that fixes a flagged vulnerability in an image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The command specified in the image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Created Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time and date when the image was created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Entrypoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The entrypoint command specified in the image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Pull Secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the secret to use when pulling the image, as specified in the deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Pull Secret Registry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the registry for an image pull secret.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Registry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the image registry.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Remote</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indication of an image that is remotely accessible.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Scan Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time and date when the image was last scanned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier for an image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Users</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the user or group that a container image is configured to use when it runs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Volumes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Names of the configured volumes in the container image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inactive Deployment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to search for inactive deployments and <code>false</code> for active deployments.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The key portion of a label key-value string that is metadata for further identifying and organizing images, containers, daemons, volumes, networks, and other resources.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lifecycle Stage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of lifecycle stage where this policy is configured or alert was triggered.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max Exposure Level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For a deployment, the maximum level of network exposure for all given ports/services.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memory Limit (MB)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum amount of memory that a resource is allowed to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memory Request (MB)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum amount of memory to be reserved for a given resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the namespace.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namespace ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique ID for the containing namespace object on a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of a node.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique ID for a node.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pod Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single piece of identifying metadata attached to an individual pod.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the security policy.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port numbers exposed by a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port Protocol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP protocol such as TCP or UDP used by exposed port.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Risk priority for a deployment.
+(Only available in <strong>Risks</strong> view.)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Privileged</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to search for privileged running deployments, or <code>false</code> otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Ancestor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of any parent process for a process indicator in a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Arguments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command arguments for a process indicator in a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the process for a process indicator in a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process Path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Path to the binary in the container for a process indicator in a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process UID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unix user ID for the process indicator in a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read Only Root Filesystem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to search for containers running with the root file system configured as read only.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of a Kubernetes RBAC role.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role Binding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of a Kubernetes RBAC role binding.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role ID to which a Kubernetes RBAC role binding is bound.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the secret object that holds the sensitive information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secret Path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Path to the secret object in the file system.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secret Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of the secret, for example, certificate or RSA public key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service account name for a service account or deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Severity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indication of level of importance of a violation: Critical, High, Medium, Low.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name for a subject in Kubernetes RBAC.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject Kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of subject in Kubernetes RBAC, such as <code>SERVICE_ACCOUNT</code>, <code>USER</code> or <code>GROUP</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taint Effect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of taint currently applied to a node.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taint Key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Key for a taint currently applied to a node.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taint Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed value for a taint currently applied to a node.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toleration Key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Key for a toleration applied to a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toleration Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value for a toleration applied to a deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Violation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A notification displayed in the <strong>Violations</strong> page when the conditions specified by a policy have not been met.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Violation State</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use it to search for resolved violations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Violation Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time and date that a violation first occurred.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Destination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mount path of the data volume.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the storage.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume ReadOnly</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>true</code> to search for volumes that are mounted as read only.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the form in which the volume is provisioned (for example, <code>persistentVolumeClaim</code> or <code>hostPath</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of volume.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

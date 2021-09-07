@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting started with the roxctl CLI :: RHACS Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="3.64">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/index.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">3.64</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">3.64</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li><a href="getting-started-cli.html">Getting started with the roxctl CLI</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/cli/pages/getting-started-cli.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Getting started with the roxctl CLI</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p><code>roxctl</code> is a command-line interface (CLI) for running commands on Red Hat Advance Cluster Security for Kuberenetes.
+This topic describes <code>roxctl</code> syntax, operations, and provides some common examples.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-roxctl-cli"><a class="anchor" href="#installing-roxctl-cli"></a>Installing the roxctl CLI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install the <code>roxctl</code> CLI by downloading the binary.
+Or, you can run the <code>roxctl</code> CLI from a container image.</p>
+</div>
+<div class="sect2">
+<h3 id="install-roxctl-cli-binary"><a class="anchor" href="#install-roxctl-cli-binary"></a>Installing the roxctl CLI by downloading the binary</h3>
+<div class="paragraph">
+<p>You can install the <code>roxctl</code> CLI to interact with Red Hat Advance Cluster Security for Kuberenetes from a
+command-line interface. You can install <code>roxctl</code> on Linux, Windows, or macOS.</p>
+</div>
+<div class="sect3">
+<h4 id="installing-cli-on-linux_cli-getting-started"><a class="anchor" href="#installing-cli-on-linux_cli-getting-started"></a>Installing the roxctl CLI on Linux</h4>
+<div class="paragraph">
+<p>You can install the <code>roxctl</code> CLI binary on Linux by using the following procedure.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Download the latest version of the <code>roxctl</code> CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.64.1/bin/Linux/roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make the <code>roxctl</code> binary executable:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ chmod +x roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Place the <code>roxctl</code> binary in a directory that is on your <code>PATH</code>:</p>
+<div class="paragraph">
+<p>To check your <code>PATH</code>, execute the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ echo $PATH</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the roxctl version you have installed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl version</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-cli-on-macos_cli-getting-started"><a class="anchor" href="#installing-cli-on-macos_cli-getting-started"></a>Installing the roxctl CLI on macOS</h4>
+<div class="paragraph">
+<p>You can install the <code>roxctl</code> CLI binary on macOS by using the following procedure.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Download the latest version of the <code>roxctl</code> CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.64.1/bin/Darwin/roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Remove all extended attributes from the binary:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ xattr -c roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make the <code>roxctl</code> binary executable:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ chmod +x roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Place the <code>roxctl</code> binary in a directory that is on your <code>PATH</code>:</p>
+<div class="paragraph">
+<p>To check your <code>PATH</code>, execute the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ echo $PATH</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the roxctl version you have installed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl version</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-cli-on-windows_cli-getting-started"><a class="anchor" href="#installing-cli-on-windows_cli-getting-started"></a>Installing the roxctl CLI on Windows</h4>
+<div class="paragraph">
+<p>You can install the <code>roxctl</code> CLI binary on Windows by using the following procedure.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Download the latest version of the <code>roxctl</code> CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.64.1/bin/Windows/roxctl.exe</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the roxctl version you have installed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl version</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="run-roxctl-from-container_cli-getting-started"><a class="anchor" href="#run-roxctl-from-container_cli-getting-started"></a>Running the roxctl CLI from a container</h3>
+<div class="paragraph">
+<p>The <code>roxctl</code> client is the default entry point in Red Hat Advance Cluster Security for Kuberenetes <code>roxctl</code> image.
+To run the <code>roxctl</code> client in a container image:</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the <code>registry.redhat.io</code> registry.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker login registry.redhat.io</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Pull the latest container image for the <code>roxctl</code> CLI.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker pull registry.redhat.io/rh-acs/roxctl:3.64.1</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After you install the CLI, you can run it by using the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker run -e ROX_API_TOKEN=$ROX_API_TOKEN \
+  -it registry.redhat.io/rh-acs/roxctl:3.64.1 \
+  -e $ROX_CENTRAL_ADDRESS &lt;command&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the roxctl version you have installed.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ docker run -it registry.redhat.io/rh-acs/roxctl:3.64.1 version</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-authentication_cli-getting-started"><a class="anchor" href="#cli-authentication_cli-getting-started"></a>Authenticating using the roxctl CLI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For authentication, you can use an authentication token or your administrator password.
+Red Hat recommends using an authentication token in a production environment because each token is assigned specific access control permissions.</p>
+</div>
+<div class="paragraph">
+<p>Use the following steps to generate an authentication token.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the RHACS portal.</p>
+</li>
+<li>
+<p>Go to <strong>Platform Configuration</strong> &#8594; <strong>Integrations</strong>.</p>
+</li>
+<li>
+<p>Scroll down to the <strong>Authentication Tokens</strong> category, and click <strong>API Token</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Generate Token</strong>.</p>
+</li>
+<li>
+<p>Enter a name for the token and select a role that provides the required level of access (for example, <strong>Continuous Integration</strong> or <strong>Sensor Creator</strong>).</p>
+</li>
+<li>
+<p>Click <strong>Generate</strong>.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Copy the generated token and securely store it.
+You will not be able to view it again.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>After you have generated the authentication token, export it as <code>ROX_API_TOKEN</code> variable:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ export ROX_API_TOKEN=&lt;api_token&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also save the token in a file and use it with the <code>--token-file</code> option.
+For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl central debug dump --token-file &lt;token_file&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You cannot use both the <code>-password</code> (<code>-p</code>) and the <code>--token-file</code> options simultaneously.</p>
+</li>
+<li>
+<p>If you have already set <code>ROX_API_TOKEN</code> variable, and specify the <code>--token-file</code> option, the <code>roxctl</code> CLI uses the specified token file for authentication.</p>
+</li>
+<li>
+<p>If you have already set <code>ROX_API_TOKEN</code> variable, and specify the <code>--password</code> option, the <code>roxctl</code> CLI uses the specified password for authentication.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using-cli_cli-getting-started"><a class="anchor" href="#using-cli_cli-getting-started"></a>Using the roxctl CLI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Review the following sections to learn how to complete common tasks using the CLI.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Export the following variables before using these commands:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ export ROX_API_TOKEN=&lt;api_token&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ export ROX_CENTRAL_ADDRESS=&lt;address&gt;:&lt;port_number&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>You can use the <code>--help</code> option to get more information about the commands.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="manage-central-db_cli-getting-started"><a class="anchor" href="#manage-central-db_cli-getting-started"></a>Managing Central&#8217;s database</h3>
+<div class="paragraph">
+<p>Central stores information about:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Activity observed in your clusters,</p>
+</li>
+<li>
+<p>Information retrieved from integrated image registries  or scanners, and</p>
+</li>
+<li>
+<p>Red Hat Advance Cluster Security for Kuberenetes configuration.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can back up and restore Central&#8217;s database by using the <code>roxctl</code> CLI.</p>
+</div>
+<h4 id="_backing_up_central_database" class="discrete">Backing up Central database</h4>
+<div class="paragraph">
+<p>Run the following command to back up Central&#8217;s database:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" central backup</code></pre>
+</div>
+</div>
+<h4 id="_restoring_central_database" class="discrete">Restoring Central database</h4>
+<div class="paragraph">
+<p>Run the following command to restore Central&#8217;s database:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" central db restore &lt;backup_filename&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="manage-secure-clusters_cli-getting-started"><a class="anchor" href="#manage-secure-clusters_cli-getting-started"></a>Managing secured clusters</h3>
+<div class="paragraph">
+<p>To secure a Kubernetes or an OpenShift Container Platform cluster, you must deploy Red Hat Advance Cluster Security for Kuberenetes services into the cluster.
+You can generate deployment files in the RHACS portal by navigating to the <strong>Platform Configuration</strong> &#8594; <strong>Clusters</strong> view, or you can use the <code>roxctl</code> CLI.</p>
+</div>
+<h4 id="_generating_sensor_deployment_yaml_file" class="discrete">Generating Sensor deployment YAML file</h4>
+<div class="listingblock">
+<div class="title">Kubernetes</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" sensor generate k8s --name &lt;cluster_name&gt; --central "$ROX_CENTRAL_ADDRESS"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">OpenShift Container Platform</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" sensor generate openshift --name &lt;cluster_name&gt; --central "$ROX_CENTRAL_ADDRESS"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Read the <code>--help</code> output to see other options that you might need to use depending on your system architecture.</p>
+</div>
+<div class="paragraph">
+<p>Make sure that the endpoint you provide for <code>--central</code> can be reached from the cluster where you are deploying Red Hat Advance Cluster Security for Kuberenetes services.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are using a non-gRPC capable load balancer, such as HAProxy, AWS Application Load Balancer (ALB), or AWS Elastic Load Balancing (ELB):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use the WebSocket Secure (<code>wss</code>) protocol.
+To use <code>wss</code>, prefix the address with <strong><code>wss://</code></strong>, and</p>
+</li>
+<li>
+<p>Add the port number after the address, for example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl sensor generate k8s --central wss://stackrox-central.example.com:443</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="_downloading_sensor_bundle_for_existing_clusters" class="discrete">Downloading Sensor bundle for existing clusters</h4>
+<div class="paragraph">
+<p>Use the following command to download Sensor bundles for existing clusters by specifying a cluster name or ID.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl sensor get-bundle &lt;cluster_name_or_id&gt;</code></pre>
+</div>
+</div>
+<h4 id="_deleting_cluster_integration" class="discrete">Deleting cluster integration</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" cluster delete --name=&lt;cluster_name&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Deleting cluster integration will not remove Red Hat Advance Cluster Security for Kuberenetes services running in the cluster.
+You can remove them by running the <code>delete-sensor.sh</code> script from the Sensor installation bundle.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="check-policy-compliance_cli-getting-started"><a class="anchor" href="#check-policy-compliance_cli-getting-started"></a>Checking policy compliance</h3>
+<h4 id="_checking_deployment_yaml_files" class="discrete">Checking deployment YAML files</h4>
+<div class="paragraph">
+<p>The following command checks build-time and deploy-time violations of your security policies in YAML deployment files.
+Use this command to validate:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configuration options in a YAML file, such as resource limits or privilege options;
+or</p>
+</li>
+<li>
+<p>Aspects of the images used in a YAML file, such as components or vulnerabilities.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" deployment check --file=&lt;yaml_filename&gt;</code></pre>
+</div>
+</div>
+<h4 id="_checking_images" class="discrete">Checking images</h4>
+<div class="paragraph">
+<p>The following command checks build-time violations of your security policies in images.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" image check --image=&lt;image_name&gt;</code></pre>
+</div>
+</div>
+<h4 id="_checking_image_scan_results" class="discrete">Checking image scan results</h4>
+<div class="paragraph">
+<p>You can also check the scan results for specific images.</p>
+</div>
+<div class="paragraph">
+<p>The following command returns the components and vulnerabilities found in the image in JSON format.
+The format is defined in the API reference.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" image scan --image &lt;image_name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To cause Red Hat Advance Cluster Security for Kuberenetes to re-pull image metadata and image scan results from the associated registry and scanner, add the <code>--force</code> option.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To check specific image scan results, you must have a token with both <code>read</code> and <code>write</code> permissions for the <code>Image</code> resource.
+The default <strong>Continuous Integration</strong> system role already has the required permissions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="debug-issues_cli-getting-started"><a class="anchor" href="#debug-issues_cli-getting-started"></a>Debugging issues</h3>
+<h4 id="_managing_central_log_level" class="discrete">Managing Central log level</h4>
+<div class="paragraph">
+<p>Central saves information to its container logs.</p>
+</div>
+<h5 id="_viewing_the_logs" class="discrete">Viewing the logs</h5>
+<div class="paragraph">
+<p>You can see the container logs for Central by running:</p>
+</div>
+<div class="listingblock">
+<div class="title">Kubernetes</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ kubectl logs -n stackrox &lt;central_pod&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">OpenShift Container Platform</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc logs -n stackrox &lt;central_pod&gt;</code></pre>
+</div>
+</div>
+<h5 id="_viewing_current_log_level" class="discrete">Viewing current log level</h5>
+<div class="paragraph">
+<p>You can change the log level to see more or less information in Central logs.
+Run the following command to view the current log level:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" central debug log</code></pre>
+</div>
+</div>
+<h5 id="_changing_the_log_level" class="discrete">Changing the log level</h5>
+<div class="paragraph">
+<p>Run the following command to change the log level:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" central debug log --level=&lt;log_level&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The acceptable values for <code>&lt;log_level&gt;</code> are <code>Panic</code>, <code>Fatal</code>, <code>Error</code>, <code>Warn</code>, <code>Info</code>, and <code>Debug</code>.</td>
+</tr>
+</table>
+</div>
+<h4 id="_retrieving_debugging_information" class="discrete">Retrieving debugging information</h4>
+<div class="paragraph">
+<p>To gather debugging information for investigating issues, run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$ROX_CENTRAL_ADDRESS" central debug dump</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
