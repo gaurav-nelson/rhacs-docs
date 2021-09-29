@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: acs-architecture
 
-
+:source-highlighter: highlight.js
 
 Discover {product-title} architecture and concepts.
 

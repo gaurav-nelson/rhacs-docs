@@ -18,7 +18,7 @@ npm i -g @antora/cli @antora/site-generator-default @antora/site-generator-gitbo
 ----
 ./sync-docs.sh
 ----
-. Run the following command to build the stactic site:
+. Run the following command to build the static site:
 +
 [source,terminal]
 ----
@@ -29,4 +29,4 @@ Site is generated in the `build/site/` directory.
 == Caveats
 
 - New assemblies (pages) must be added to the navigation menu using the related `nav.adoc` files.
-- The existing `sync-docs.sh` script does not haandle `xrefs` with `../../` links.
+- The existing `sync-docs.sh` script does not handle `xrefs` with `../filename.adoc` links.

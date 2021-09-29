@@ -3,10 +3,9 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: integrate-using-syslog-protocol
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
-
 https://tools.ietf.org/html/rfc5424[Syslog] is an event logging protocol that applications use to send messages to a central location, such as a SIEM or a syslog collector, for data retention and security investigations.
 With {product-title}, you can send alerts and audit events using the syslog protocol.
 

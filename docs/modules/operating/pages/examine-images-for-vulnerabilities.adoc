@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: examine-images-for-vulnerabilities
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
 With {product-title} you can analyze images for vulnerabilities.
@@ -55,7 +55,7 @@ include::ROOT:partial$fetching-vulnerability-definitions.adoc[leveloffset=+1]
 include::ROOT:partial$understanding-vulnerability-scores.adoc[leveloffset=+1]
 
 [role="_additional-resources"]
-.Additional resources
+=== Additional resources
 * xref:operating:examine-images-for-vulnerabilities.adoc#scan-inactive-images_examine-images-for-vulnerabilities[Scanning inactive images]
 * xref:cli:getting-started-cli.adoc#getting-started-with-the-roxctl-cli[Getting started with the roxctl CLI]
 //Add link to integrate image scanners topic

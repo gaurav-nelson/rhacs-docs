@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: cli-getting-started
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
 `roxctl` is a command-line interface (CLI) for running commands on {product-title}.

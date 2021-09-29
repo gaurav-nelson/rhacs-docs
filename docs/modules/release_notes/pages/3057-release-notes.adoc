@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: 3057-release-notes
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
 {product-title} 3.0.57 includes feature enhancements, bug fixes, scale improvements, and other changes.

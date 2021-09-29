@@ -1,4 +1,5 @@
 * Release notes
+** xref:365-release-notes.adoc[Relase notes for RHACS 3.65]
 ** xref:364-release-notes.adoc[Relase notes for RHACS 3.64]
 ** xref:363-release-notes.adoc[Release notes for RHACS 3.63]
 ** xref:3062-release-notes.adoc[Release notes for RHACS 3.0.62]

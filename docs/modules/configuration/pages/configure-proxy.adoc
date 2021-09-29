@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: configure-proxy
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
 If your network configuration restricts outbound traffic through proxies, you can configure proxy settings in {product-title} to route traffic through a proxy.

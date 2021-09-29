@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: manage-network-policies
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
 A https://kubernetes.io/docs/concepts/services-networking/network-policies/[Kubernetes network policy] is a specification of how groups of pods are allowed to communicate with each other and other network endpoints.

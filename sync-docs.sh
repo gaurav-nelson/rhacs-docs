@@ -65,11 +65,13 @@ grep -rl --include=\*.adoc include::modules\/ . | xargs sed -i "" 's+include::mo
 
 echo -e "${BLUE}Removing TOC from pages ...${NC}"
 
-grep -rl --include=\*.adoc 'toc::\[\]' . | xargs sed -i "" 's+toc::\[\]++g'
+grep -rl --include=\*.adoc 'toc::\[\]' . | xargs sed -i "" 's+toc::\[\]+:source-highlighter: highlight.js+g'
 
 echo -e "${BLUE}Updating xrefs ...${NC}"
 # TBD: Use regex to convert the xrefs to the Antora format
-# Doesn't cater for xrefs with ../../ in them
+# Does not handle links in the format ../filename.adoc
+
+grep -rl --include=\*.adoc 'xref:../../' . | xargs sed -i "" 's+xref:../../+xref:../+g'
 
 grep -rl --include=\*.adoc xref:../architecture/ . | xargs sed -i "" 's+xref:../architecture/+xref:architecture:+g'
 
@@ -99,8 +101,6 @@ echo -e "${BLUE}Adding product name and version ...${NC}"
 
 PROD_VERSION=$(grep ':rhacs-version:' docs/modules/ROOT/partials/common-attributes.adoc | cut -c 17-20)
 
-echo ":product-title: Red Hat Advance Cluster Security for Kuberenetes" >> ./docs/modules/ROOT/partials/common-attributes.adoc
-echo ":product-version: ${PROD_VERSION}" >> ./docs/modules/ROOT/partials/common-attributes.adoc
-echo ":product-title-short: RHACS" >> ./docs/modules/ROOT/partials/common-attributes.adoc
+sed -i '' "s/version:.*/version: $PROD_VERSION/" docs/antora.yml
 
 echo -e "${GREEN}Done!${NC}"
