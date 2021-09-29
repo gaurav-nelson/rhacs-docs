@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configuring Okta Identity Cloud as a SAML 2.0 identity provider :: RHACS documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">RHACS documentation</a>
+      <div class="navbar-item">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="3.65">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/365-release-notes.html">Relase notes for RHACS 3.65</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../architecture/acs-architecture.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">3.65</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">3.65</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li>Operating</li>
+    <li>Managing user access</li>
+    <li><a href="configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/operating/pages/manage-user-access/configure-okta-identity-cloud.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can use Okta as a single sign-on (SSO) provider for Red Hat Advanced Cluster Security for Kubernetes (RHACS).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-an-okta-app_configure-okta-identity-cloud"><a class="anchor" href="#create-an-okta-app_configure-okta-identity-cloud"></a>Creating an Okta app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you can use Okta as a SAML 2.0 identity provider for Red Hat Advanced Cluster Security for Kubernetes, you must create an Okta app.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Okta&#8217;s <strong>Developer Console</strong> does not support the creation of custom SAML 2.0 applications.
+If you are using the <strong>Developer Console</strong>, you must first switch to the <strong>Admin Console</strong> (<strong>Classic UI</strong>).
+To switch, click <strong>Developer Console</strong> in the top left of the page and select <strong>Classic UI</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have an account with administrative privileges for the Okta portal.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the Okta portal, select <strong>Applications</strong> from the menu bar.</p>
+</li>
+<li>
+<p>Click <strong>Add Application</strong> and then select <strong>Create New App</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Create a New Application Integration</strong> dialog box, leave <strong>Web</strong> as the platform and select <strong>SAML 2.0</strong> as the protocol that you want to sign in users.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>On the <strong>General Settings</strong> page, enter a name for the app in the <strong>App name</strong> field.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>On the <strong>SAML Settings</strong> page, set values for the following fields:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Single sign on URL</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Specify it as <code>https://&lt;RHACS_portal_hostname&gt;/sso/providers/saml/acs</code>.</p>
+</li>
+<li>
+<p>Leave the <strong>Use this for Recipient URL and Destination URL</strong> option checked.</p>
+</li>
+<li>
+<p>If your RHACS portal is accessible at different URLs, you can add them here by checking the <strong>Allow this app to request other SSO URLs</strong> option and add the alternative URLs using the specified format.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Audience URI (SP Entity ID)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Set the value to <strong>RHACS</strong> or another value of your choice.</p>
+</li>
+<li>
+<p>Remember the value you choose; you will need this value when you configure Red Hat Advanced Cluster Security for Kubernetes.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Attribute Statements</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>You must add at least one attribute statement.</p>
+</li>
+<li>
+<p>Red Hat recommends using the email attribute:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name:</strong> email</p>
+</li>
+<li>
+<p><strong>Format:</strong> Unspecified</p>
+</li>
+<li>
+<p><strong>Value:</strong> user.email</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Verify that you have configured at least one <strong>Attribute Statement</strong> before continuing.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Feedback</strong> page, select an option that applies to you.</p>
+</li>
+<li>
+<p>Select an appropriate <strong>App type</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Finish</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After the configuration is complete, you are redirected to the <strong>Sign On</strong> settings page for the new app.
+A yellow box contains links to the information that you need to configure Red Hat Advanced Cluster Security for Kubernetes.</p>
+</div>
+<div class="paragraph">
+<p>After you have created the app, assign Okta users to this application.
+Go to the <strong>Assignments</strong> tab, and assign the set of individual users or groups that can access Red Hat Advanced Cluster Security for Kubernetes.
+For example, assign the group <strong>Everyone</strong> to allow all users in the organization to access Red Hat Advanced Cluster Security for Kubernetes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-saml-identity-provider_configure-okta-identity-cloud"><a class="anchor" href="#configure-saml-identity-provider_configure-okta-identity-cloud"></a>Configuring a SAML 2.0 identity provider in Red Hat Advanced Cluster Security for Kubernetes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the instructions in this section to integrate a SAML 2.0 identity provider with Red Hat Advanced Cluster Security for Kubernetes.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have permissions to configure identity providers in Red Hat Advanced Cluster Security for Kubernetes.</p>
+</li>
+<li>
+<p>You must have an Okta app configured for Red Hat Advanced Cluster Security for Kubernetes.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Access Control</strong>.</p>
+</li>
+<li>
+<p>Open the <strong>Add an Auth Provider</strong> menu and select <strong>SAML 2.0</strong>.</p>
+</li>
+<li>
+<p>Fill out the details for:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Integration Name:</strong> A name to identify this authentication provider, for example, <strong>Okta</strong> or <strong>Google</strong>. The integration name is shown on the login page to help users select the right sign-in option.</p>
+</li>
+<li>
+<p><strong>ServiceProvider Issuer:</strong> The value you are using as the <code>Audience URI</code> or <code>SP Entity ID</code> in Okta, or a similar value in other providers.</p>
+</li>
+<li>
+<p><strong>IdP Metadata URL:</strong> Use the URL of <strong>Identity Provider metadata</strong> available from your identity provider console.
+If you do not want to use the <strong>IdP Metadata URL</strong>, you can instead copy the required static fields from the <strong>View Setup Instructions</strong> link in the Okta console, or a similar location for other providers.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Choose a <strong>Minimum access role</strong> for users accessing Red Hat Advanced Cluster Security for Kubernetes by using the selected identity provider.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Set the <strong>Minimum access role</strong> to <strong>Admin</strong> while you complete setup.
+Later, you can return to the <strong>Access Control</strong> page to set up more tailored access rules based on user metadata from your identity provider.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If your SAML identity provider&#8217;s authentication response:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Includes a <code>NotValidAfter</code> assertion, the user session remains valid until the time specified in the <code>NotValidAfter</code> field has elapsed.
+After its expiry, users must re-authenticate.</p>
+</li>
+<li>
+<p>Does not include a <code>NotValidAfter</code> assertion, the user session remains valid for 30 days, after which, the users must re-authenticate.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Verification</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Access Control</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Auth Provider Rules</strong> tab.</p>
+</li>
+<li>
+<p>Under the <strong>Auth Providers</strong> section, select the authentication provider that you want to verify the configuration for.</p>
+</li>
+<li>
+<p>Select <strong>Test Login</strong> from the <strong>Auth Provider</strong> section header.
+The <strong>Test Login</strong> page opens in a new browser tab.</p>
+</li>
+<li>
+<p>Sign in with your credentials.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On success, Red Hat Advanced Cluster Security for Kubernetes shows the <code>User ID</code> and <code>User Attributes</code> the identity provider sent for the credentials you have used to log in.</p>
+</li>
+<li>
+<p>On failure, Red Hat Advanced Cluster Security for Kubernetes shows a message describing why the identity provider&#8217;s response could not be processed.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Close the <strong>Test Login</strong> browser tab.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <span class="footer-image">
+      <img src="https://assets.openshift.com/hubfs/images/logos/Logo-RedHat-A-Reverse-RGB.svg" class="img-fluid" alt="Red Hat" style="height: 30px;">
+    </span>
+    <span class="footer-text">
+      Copyright © 2021 Red Hat, Inc.
+    </span>
+</footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../../../..'
+  window.antora.pagePath = '/rhacs/3.65/operating/manage-user-access/configure-okta-identity-cloud.html'
+</script>
+<script src="../../../../_/js/site.js"></script>
+<script src="../../../../_/js/vendor/search.js" id="search-script" data-base-path="../../../.." data-page-path="/rhacs/3.65/operating/manage-user-access/configure-okta-identity-cloud.html"></script>
+<script async src="../../../../_/../search-index.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

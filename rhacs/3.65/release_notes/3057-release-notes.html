@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Red Hat Advanced Cluster Security for Kubernetes 3.0.57 :: RHACS documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">RHACS documentation</a>
+      <div class="navbar-item">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="3.65">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="365-release-notes.html">Relase notes for RHACS 3.65</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/acs-architecture.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../operating/manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../operating/use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrading/upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">3.65</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">3.65</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li><a href="3057-release-notes.html">Red Hat Advanced Cluster Security for Kubernetes 3.0.57</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/release_notes/pages/3057-release-notes.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Red Hat Advanced Cluster Security for Kubernetes 3.0.57</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat Advanced Cluster Security for Kubernetes 3.0.57 includes feature enhancements, bug fixes, scale improvements, and other changes.</p>
+</div>
+<div class="paragraph">
+<p><strong>Release date:</strong> March 18, 2021</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="new-features"><a class="anchor" href="#new-features"></a>New features</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="scan-inactive-images"><a class="anchor" href="#scan-inactive-images"></a>Scan inactive images</h3>
+<div class="paragraph">
+<p>Red Hat Advanced Cluster Security for Kubernetes scans all active (deployed) images every 4 hours and updates the image scan results to reflect the latest vulnerability definitions.
+You can now add inactive (undeployed) images for automatic scanning.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="important-bug-fixes"><a class="anchor" href="#important-bug-fixes"></a>Important bug fixes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>ROX-6085</strong>: Previously, setting Central log level by using the <code>roxctl</code> CLI&#8217;s <code>debug log</code> command would not work sometimes.
+You could also set unacceptable values for log level (for example, <code>Trace</code>), which did not affect the log level.</p>
+</li>
+<li>
+<p><strong>ROX-6302</strong>: Loading too many violations on the <strong>Violations</strong> view would sometimes crash the RHACS portal page.</p>
+</li>
+<li>
+<p><strong>ROX-6627</strong>: Previously, on OpenShift Container Platform, when creating new builds, the OpenShift Container Platform web console would show the error message  <strong>admission webhook "policyeval.stackrox.io" does not support dry run</strong>.
+Red Hat Advanced Cluster Security for Kubernetes now includes dry run support for the admission controller webhook.</p>
+</li>
+<li>
+<p><strong>ROX-6640</strong>: The RHACS portal would not display the full description for RHSA CVEs in the <strong>CVE</strong> details view.</p>
+</li>
+<li>
+<p><strong>ROX-6723</strong>: Previously, if you were using the default CA certificate for Central, and you configured an additional CA certificate for Sensor, Red Hat Advanced Cluster Security for Kubernetes would overwrite Sensor&#8217;s additional certificate.</p>
+</li>
+<li>
+<p><strong>ROX-6736</strong>: Previously, sometimes the RHACS portal did not show allowed connections between Sensor and non-isolated deployments in the <strong>Network Graph</strong>  view.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="resolved-in-version-30571"><a class="anchor" href="#resolved-in-version-30571"></a>Resolved in version 3.0.57.1</h3>
+<div class="paragraph">
+<p>Release date: Mar 24, 2021</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>ROX-6832</strong>: Previously, if you were using the RHEL base image, upgrading Red Hat Advanced Cluster Security for Kubernetes to version 3.0.57.0 would fail.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="resolved-in-version-30572"><a class="anchor" href="#resolved-in-version-30572"></a>Resolved in version 3.0.57.2</h3>
+<div class="paragraph">
+<p>Release date: Mar 25, 2021</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>ROX-6834</strong>:  Previously, in Red Hat Advanced Cluster Security for Kubernetes 3.0.57.0, you could not install Sensor using the RHACS portal because downloading the Sensor bundle would fail.</p>
+</li>
+<li>
+<p><strong>ROX-6805</strong>: Previously, if you were using Red Hat Advanced Cluster Security for Kubernetes on OpenShift Container Platform, the security context constraint <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1824800">conflicted with the Authentication Operator</a>.
+Red Hat Advanced Cluster Security for Kubernetes now includes an updated security context constraint which fixes this issue.
+To upgrade to Red Hat Advanced Cluster Security for Kubernetes 3.0.57.2, you must also update the security context constraint.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="important-system-changes"><a class="anchor" href="#important-system-changes"></a>Important system changes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>You can now declare custom <code>SourceTypes</code> for alert and audit events if you are integrating with Splunk.</p>
+</li>
+<li>
+<p>The published time for CVEs in RHEL and CentOS images is now correctly shown.</p>
+</li>
+<li>
+<p>You can now use cluster init bundles for clusters you have deployed with <code>helmManaged</code> set to <code>false</code>.
+Previously, <code>helmManaged=false</code> only worked with certificates that were specific to an existing cluster.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="roxctl-cli"><a class="anchor" href="#roxctl-cli"></a>roxctl CLI</h3>
+<div class="paragraph">
+<p>The <code>roxctl central generate openshift</code> and <code>roxctl sensor generate openshift</code> commands now accept an <code>--openshift-version</code> option.
+You can set it to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3 if you are deploying on OpenShift Container Platform version <code>3.x</code>, or</p>
+</li>
+<li>
+<p>4 if you are deploying on OpenShift Container Platform version <code>4.x</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you do not specify this option, Red Hat Advanced Cluster Security for Kubernetes generates deployment bundles in a compatibility mode that works on OpenShift Container Platform version <code>3.11</code> and version <code>4.x</code>.
+However, if you are using OpenShift Container Platform version <code>4.x</code>, Red Hat recommends that you specify this options as <code>4</code> to take advantage of additional features that are not available for earlier OpenShift Container Platform versions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="security-updates"><a class="anchor" href="#security-updates"></a>Security updates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Red Hat Advanced Cluster Security for Kubernetes includes an updated Collector image which resolve the following fixable CVEs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-24031">CVE-2021-24031</a></p>
+</li>
+<li>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-24032">CVE-2021-24032</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Collector image version <code>3.1.16-latest</code> includes this update.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="image-versions"><a class="anchor" href="#image-versions"></a>Image versions</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Image</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Current version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Main</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It includes Central, Sensor, Admission Controller, and Compliance.
+It also includes <code>roxctl</code> for use in  CI (continuous integration) systems.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stackrox.io/main:3.0.57.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scanner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scans images.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stackrox.io/scanner:2.11.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scanner DB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stores image scan results and vulnerability definitions.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stackrox.io/scanner-db:2.11.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Collector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Collects runtime activity in Kubernetes or OpenShift Container Platform clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">collector.stackrox.io/collector:3.1.16-latest</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <span class="footer-image">
+      <img src="https://assets.openshift.com/hubfs/images/logos/Logo-RedHat-A-Reverse-RGB.svg" class="img-fluid" alt="Red Hat" style="height: 30px;">
+    </span>
+    <span class="footer-text">
+      Copyright © 2021 Red Hat, Inc.
+    </span>
+</footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../../..'
+  window.antora.pagePath = '/rhacs/3.65/release_notes/3057-release-notes.html'
+</script>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/search.js" id="search-script" data-base-path="../../.." data-page-path="/rhacs/3.65/release_notes/3057-release-notes.html"></script>
+<script async src="../../../_/../search-index.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

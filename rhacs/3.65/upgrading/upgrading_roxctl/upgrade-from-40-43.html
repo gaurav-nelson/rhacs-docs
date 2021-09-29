@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.40 through 3.0.43 :: RHACS documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">RHACS documentation</a>
+      <div class="navbar-item">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhacs" data-version="3.65">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Welcome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release notes</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/365-release-notes.html">Relase notes for RHACS 3.65</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/364-release-notes.html">Relase notes for RHACS 3.64</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/363-release-notes.html">Release notes for RHACS 3.63</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3062-release-notes.html">Release notes for RHACS 3.0.62</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3061-release-notes.html">Release notes for RHACS 3.0.61</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3060-release-notes.html">Release notes for RHACS 3.0.60</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3059-release-notes.html">Release notes for RHACS 3.0.59</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release_notes/3058-release-notes.html">Release notes for RHACS 3.0.58</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../architecture/acs-architecture.html">Product architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/prerequisites.html">Installation prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/install-ocp-operator.html">Installing by using an Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing by using Helm charts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../installing/installing_helm/install-helm-quick.html">Installing quickly</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../installing/installing_helm/install-helm-customization.html">Installing with customizations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/install-quick-roxctl.html">Installing quickly by using the roxctl CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installing/uninstall-acs.html">Uninstalling RHACS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Configuring</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/add-custom-certificates.html">Adding custom certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/add-trusted-ca.html">Adding trusted certificate authorities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/reissue-internal-certificates.html">Reissuing internal certificates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/add-security-notices.html">Adding security notices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/enable-offline-mode.html">Enabling offline mode</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/enable-alert-data-retention.html">Enabling alert data retention</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/expose-portal-over-http.html">Exposing the RHACS portal over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-automatic-upgrades.html">Configuring automatic upgrades for secured clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-proxy.html">Configuring a proxy for external network access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/generate-diagnostic-bundle.html">Generating a diagnostic bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-endpoints.html">Configuring endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/monitor-acs.html">Monitoring with Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../configuration/configure-audit-logging.html">Enabling audit logging</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operating</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/view-dashboard.html">Viewing the dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/manage-compliance.html">Managing compliance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/evaluate-security-risks.html">Evaluating security risks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/use-admission-controller-enforcement.html">Using admission controller enforcement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/manage-security-policies.html">Managing security policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/manage-network-policies.html">Managing network policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/review-cluster-configuration.html">Reviewing cluster configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/examine-images-for-vulnerabilities.html">Examining images for vulnabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/manage-vulnerabilities.html">Managing vulnerabilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/respond-to-violations.html">Responding to violations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/search-filter.html">Searching and filtering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Managing user access</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../operating/manage-user-access/configure-okta-identity-cloud.html">Configuring Okta Identity Cloud as a SAML 2.0 identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../operating/manage-user-access/configure-google-workspace-identity.html">Configuring Google Workspace as an OIDC identity provider</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../operating/manage-user-access/manage-role-based-access-control-3630.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.63 and newer</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../operating/manage-user-access/manage-role-based-access-control-3062.html">Managing RBAC in Red Hat Advanced Cluster Security for Kubernetes 3.0.62 and older</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../operating/manage-user-access/enable-pki-authentication.html">Enabling PKI authentication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../operating/use-system-health-dashboard.html">Using the system health dashboard</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backup_and_restore/backing-up-acs.html">Backing up Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backup_and_restore/restore-acs.html">Restoring from a backup</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../upgrade-helm.html">Upgrading using Helm charts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Upgrading using the roxctl CLI</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#upgrading_roxctl/upgrade-from-44">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.44 or higher</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../cli/getting-started-cli.html">Getting started with the roxctl CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../support/getting-support.html">Getting support for Red Hat Advanced Cluster Security for Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../support/getting-support-stackrox.html">Getting support for the StackRox Kubernetes Security Platform</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat Advance Cluster Security for Kubernetes</span>
+    <span class="version">3.65</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">3.65</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Red Hat Advance Cluster Security for Kubernetes</a></li>
+    <li><a href="upgrade-from-40-43.html">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.40 through 3.0.43</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gaurav-nelson/rhacs-docs/edit/main/docs/modules/upgrading/pages/upgrading_roxctl/upgrade-from-40-43.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Upgrading from Red Hat Advanced Cluster Security for Kubernetes 3.0.40 through 3.0.43</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Upgrade to the latest version of Red Hat Advanced Cluster Security for Kubernetes from 3.0.40 through 3.0.43.</p>
+</div>
+<div class="paragraph">
+<p>To upgrade Red Hat Advanced Cluster Security for Kubernetes to the latest version, you must perform the following steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Backup the Central database</p>
+</li>
+<li>
+<p>Upgrade the Central cluster</p>
+</li>
+<li>
+<p>Upgrade all secured clusters</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="back-up-central-database_upgrade-from-40-43"><a class="anchor" href="#back-up-central-database_upgrade-from-40-43"></a>Backing up the Central database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can back up the Central database and use that backup for rolling back from a failed upgrade or data restoration in the case of an infrastructure disaster.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have an API token with <code>read</code> permission for all resources of Red Hat Advanced Cluster Security for Kubernetes. The <strong>Analyst</strong> system role has <code>read</code> permissions for all resources.</p>
+</li>
+<li>
+<p>You have installed the <code>roxctl</code> CLI.</p>
+</li>
+<li>
+<p>You have configured the <code>ROX_API_TOKEN</code> and the <code>ROX_CENTRAL_ADDRESS</code> environment variables.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Run the backup command:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Red Hat Advanced Cluster Security for Kubernetes 3.0.55 and newer:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$CENTRAL_ADDRESS" central backup</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Red Hat Advanced Cluster Security for Kubernetes 3.0.54 and older:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl -e "$CENTRAL_ADDRESS" central db backup</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="../../cli/getting-started-cli.html#cli-authentication_cli-getting-started" class="page">Authenticating using the roxctl CLI</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="upgrade-central-cluster"><a class="anchor" href="#upgrade-central-cluster"></a>Upgrading the Central cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you have backed up the Central database, the next step is to upgrade Central and Scanner.</p>
+</div>
+<div class="sect2">
+<h3 id="upgrade-central-40_upgrade-from-40-43"><a class="anchor" href="#upgrade-central-40_upgrade-from-40-43"></a>Upgrading Central</h3>
+<div class="paragraph">
+<p>You can update Central to the latest version by downloading and deploying the updated images.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>If you deploy images from a private image registry, first push the new image into your private registry, and then replace your image registry for the commands in this section.</p>
+</li>
+<li>
+<p>If you used Red Hat UBI-based images when you installed Red Hat Advanced Cluster Security for Kubernetes, replace the image names for the commands in this section with the following UBI-based image names:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Central, Sensor, and Compliance, use <code>\registry.redhat.io/rh-acs/main-rhel</code></p>
+</li>
+<li>
+<p>For Scanner, use <code>\registry.redhat.io/rh-acs/scanner-rhel</code> and <code>\registry.redhat.io/rh-acs/scanner-db-rhel</code></p>
+</li>
+<li>
+<p>For Collector, use <code>\registry.redhat.io/rh-acs/collector-rhel</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Run the following commands to upgrade Central:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch deploy/central -p '{"spec":{"template":{"metadata":{"annotations":{"traffic.sidecar.istio.io/excludeInboundPorts":"8443"}}}}}'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch scc central -p '{"priority": 0}'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox set image deploy/central central=registry.redhat.io/rh-acs/main:3.65.1</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optional: If you have installed Istio in your cluster, run the following additional command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc create -f - &lt;&lt;EOF
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: central-internal-no-istio-mtls
+  namespace: stackrox
+  labels:
+    app.kubernetes.io/name: stackrox
+  annotations:
+    stackrox.io/description: "Disable Istio mTLS for port 443, since StackRox services use built-in mTLS."
+spec:
+  host: central.stackrox.svc.cluster.local
+  trafficPolicy:
+    portLevelSettings:
+      - port:
+          number: 443
+        tls:
+          mode: DISABLE
+EOF</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="upgrade-roxctl-cli"><a class="anchor" href="#upgrade-roxctl-cli"></a>Upgrading the <code>roxctl</code> CLI</h3>
+<div class="paragraph">
+<p>To upgrade the <code>roxctl</code> CLI to the latest version, download and install the latest version.</p>
+</div>
+<div class="sect3">
+<h4 id="installing-cli-on-linux_upgrade-from-40-43"><a class="anchor" href="#installing-cli-on-linux_upgrade-from-40-43"></a>Installing the roxctl CLI on Linux</h4>
+<div class="paragraph">
+<p>You can install the <code>roxctl</code> CLI binary on Linux by using the following procedure.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Download the latest version of the <code>roxctl</code> CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.65.1/bin/Linux/roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make the <code>roxctl</code> binary executable:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ chmod +x roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Place the <code>roxctl</code> binary in a directory that is on your <code>PATH</code>:</p>
+<div class="paragraph">
+<p>To check your <code>PATH</code>, execute the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ echo $PATH</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the roxctl version you have installed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl version</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-cli-on-macos_upgrade-from-40-43"><a class="anchor" href="#installing-cli-on-macos_upgrade-from-40-43"></a>Installing the roxctl CLI on macOS</h4>
+<div class="paragraph">
+<p>You can install the <code>roxctl</code> CLI binary on macOS by using the following procedure.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Download the latest version of the <code>roxctl</code> CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.65.1/bin/Darwin/roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Remove all extended attributes from the binary:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ xattr -c roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make the <code>roxctl</code> binary executable:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ chmod +x roxctl</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Place the <code>roxctl</code> binary in a directory that is on your <code>PATH</code>:</p>
+<div class="paragraph">
+<p>To check your <code>PATH</code>, execute the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ echo $PATH</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the roxctl version you have installed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl version</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-cli-on-windows_upgrade-from-40-43"><a class="anchor" href="#installing-cli-on-windows_upgrade-from-40-43"></a>Installing the roxctl CLI on Windows</h4>
+<div class="paragraph">
+<p>You can install the <code>roxctl</code> CLI binary on Windows by using the following procedure.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Download the latest version of the <code>roxctl</code> CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ curl -O https://mirror.openshift.com/pub/rhacs/assets/3.65.1/bin/Windows/roxctl.exe</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the roxctl version you have installed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl version</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="upgrade-scanner-40_upgrade-from-40-43"><a class="anchor" href="#upgrade-scanner-40_upgrade-from-40-43"></a>Upgrading Scanner</h3>
+<div class="paragraph">
+<p>You can update Scanner to the latest version by using the <code>roxctl</code> CLI.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>If you deploy images from a private image registry, first push the new image into your private registry, and then replace your image registry for the commands in this section.</p>
+</li>
+<li>
+<p>If you used Red Hat UBI-based images when you installed Red Hat Advanced Cluster Security for Kubernetes, replace the image names for the commands in this section with the following UBI-based image names:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Central, Sensor, and Compliance, use <code>\registry.redhat.io/rh-acs/main-rhel</code></p>
+</li>
+<li>
+<p>For Scanner, use <code>\registry.redhat.io/rh-acs/scanner-rhel</code> and <code>\registry.redhat.io/rh-acs/scanner-db-rhel</code></p>
+</li>
+<li>
+<p>For Collector, use <code>\registry.redhat.io/rh-acs/collector-rhel</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Apply the patch for Scanner:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch deploy/scanner -p '{"spec":{"template":{"spec":{"containers":[{"name":"scanner","command":["/entrypoint.sh"],"volumeMounts":[{"mountPath":"/etc/ssl","name":"central-etc-ssl-volume"},{"mountPath":"/usr/local/share/ca-certificates/","name":"additional-ca-volume","readOnly":true}]}],"volumes":[{"name":"additional-ca-volume","secret":{"defaultMode":420,"optional":true,"secretName":"additional-ca"}},{"emptyDir":{},"name":"central-etc-ssl-volume"}]}}}}'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch deploy/scanner -p '{"spec":{"template":{"metadata":{"annotations":{"traffic.sidecar.istio.io/excludeInboundPorts":"8080,8443"}}}}}'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the patch for the Scanner database:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch deploy/scanner-db -p '{"spec":{"template":{"metadata":{"annotations":{"traffic.sidecar.istio.io/excludeInboundPorts":"5432"}}}}}'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the patch for the Scanner service:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch svc/scanner -p '{"spec":{"ports":[{"port":8443,"name":"grpcs-scanner"}]}}'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the patch for the Scanner database service:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch svc/scanner-db -p '{"spec":{"ports":[{"port":5432,"name":"db"}]}}'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the patch for the Scanner Horizontal Pod Autoscaler.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch hpa/scanner -p '{"spec":{"minReplicas":2}}'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Update the Scanner image:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox set image deploy/scanner scanner=registry.redhat.io/rh-acs/scanner:2.19.1</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Update the Scanner database image:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox set image deploy/scanner-db db=registry.redhat.io/rh-acs/scanner-db:2.19.1</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox set image deploy/scanner-db init-db=registry.redhat.io/rh-acs/scanner-db:2.19.1</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optional: If you have installed Istio in your cluster, run the following additional command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox create -f - &lt;&lt;EOF
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: scanner-internal-no-istio-mtls
+  namespace: stackrox
+  labels:
+    app.kubernetes.io/name: stackrox
+  annotations:
+    stackrox.io/description: "Disable Istio mTLS for ports 8080 and 8443, since StackRox services use built-in mTLS."
+spec:
+  host: scanner.stackrox.svc.cluster.local
+  trafficPolicy:
+    portLevelSettings:
+      - port:
+          number: 8080
+        tls:
+          mode: DISABLE
+      - port:
+          number: 8443
+        tls:
+          mode: DISABLE
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: scanner-db-internal-no-istio-mtls
+  namespace: stackrox
+  labels:
+    app.kubernetes.io/name: stackrox
+  annotations:
+    stackrox.io/description: "Disable Istio mTLS for port 5432, since StackRox services use built-in mTLS."
+spec:
+  host: scanner-db.stackrox.svc.cluster.local
+  trafficPolicy:
+    portLevelSettings:
+      - port:
+          number: 5432
+        tls:
+          mode: DISABLE
+EOF</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Check that the new pods have deployed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get deploy -n stackrox -o wide</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get pod -n stackrox --watch</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verify-central-cluster-upgrade_upgrade-from-40-43"><a class="anchor" href="#verify-central-cluster-upgrade_upgrade-from-40-43"></a>Verifying Central cluster upgrade</h3>
+<div class="paragraph _abstract">
+<p>After you have upgraded both Central and Scanner, verify that the Central cluster upgrade is complete.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Check the Central logs:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc logs -n stackrox deploy/central -c central</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the upgrade is successful, you will see output similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">No database restore directory found (this is not an error).
+Migrator: 2019/10/25 17:58:54: starting DB compaction
+Migrator: 2019/10/25 17:58:54: Free fraction of 0.0391 (40960/1048576) is &lt; 0.7500. Will not compact
+badger 2019/10/25 17:58:54 INFO: All 1 tables opened in 2ms
+badger 2019/10/25 17:58:55 INFO: Replaying file id: 0 at offset: 846357
+badger 2019/10/25 17:58:55 INFO: Replay took: 50.324µs
+badger 2019/10/25 17:58:55 DEBUG: Value log discard stats empty
+Migrator: 2019/10/25 17:58:55: DB is up to date. Nothing to do here.
+badger 2019/10/25 17:58:55 INFO: Got compaction priority: {level:0 score:1.73 dropPrefix:[]}
+version: 2019/10/25 17:58:55.189866 ensure.go:49: Info: Version found in the DB was current. We’re good to go!</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="upgrade-secured-clusters"><a class="anchor" href="#upgrade-secured-clusters"></a>Upgrading all secured clusters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After upgrading Central services, you must upgrade all secured clusters.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If you are using automatic upgrades:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Update all your secured clusters by using automatic upgrades.</p>
+</li>
+<li>
+<p>Skip the instructions in this section and follow the instructions in the <a href="#verify-last-check-in-time_upgrade-from-40-43">Verifying last check-in time for secured clusters</a> and <a href="#revoke-the-api-token_upgrade-from-40-43">Revoking the API token</a> sections.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If you are not using automatic upgrades, you must run the instructions in this section on all secured clusters including the Central cluster.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To complete manual upgrades of each secured cluster running Sensor, Collector, and Admission Controller, follow the instructions in this section.</p>
+</div>
+<div class="sect2">
+<h3 id="update-admission-controller_upgrade-from-40-43"><a class="anchor" href="#update-admission-controller_upgrade-from-40-43"></a>Updating Admission Controller</h3>
+<div class="paragraph _abstract">
+<p>Red Hat Advanced Cluster Security for Kubernetes 3.0.55 includes changes that affect admission controller integration. Therefore, if you are using an admission controller or want to take advantage of the admission controller integration’s new features, you must run some additional commands to upgrade the secured cluster.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are upgrading from a Red Hat Advanced Cluster Security for Kubernetes version between 3.0.44 and 3.0.54, and you are not using an Admission Controller and automatic upgrades, then you must manually redeploy Sensor on all clusters.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must be using the Red Hat Advanced Cluster Security for Kubernetes Admission Controller. To check if you are using the Admission Controller, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get validatingwebhookconfiguration stackrox</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you get an error, it means that you are not using an admission controller.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Delete the existing validating webhook configuration:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc delete validatingwebhookconfiguration stackrox</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you want to allow any additional admission controller features moving forward, navigate to the <strong>Clusters</strong> configuration view on the RHACS portal, select the cluster you are updating, and enable the appropriate options.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Obtain a new Sensor bundle for the secured cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ roxctl sensor get-bundle &lt;cluster_name&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Unzip the Sensor bundle and open the extracted directory.</p>
+</li>
+<li>
+<p>Create the <code>admission-control</code> deployment and related objects:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox apply -f admission-controller-scc.yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox apply -f admission-controller-secret.yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox apply -f admission-controller-rbac.yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox apply -f admission-controller-netpol.yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox apply -f admission-controller-pod-security.yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox apply -f admission-controller.yaml</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>By default, the <code>--listenOnEvents</code> option is set to <code>false</code> during the upgrade. It controls the deployment of the admission controller webhook, which listens for <code>exec</code> and <code>portforward</code> events. If you are using OpenShift Container Platform version 3.11, do not set the <code>--listenOnEvents</code> option to <code>true</code>. Since these events are not available for OpenShift Container Platform 3.11, enabling them causes errors.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="update-other-images-40_upgrade-from-40-43"><a class="anchor" href="#update-other-images-40_upgrade-from-40-43"></a>Updating other images</h3>
+<div class="paragraph _abstract">
+<p>If you are upgrading Red Hat Advanced Cluster Security for Kubernetes version, you must update the Sensor and Collector images.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must be using Red Hat Advanced Cluster Security for Kubernetes version between 3.0.44 and 3.0.54.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are using Kubernetes, use <code>kubectl</code> instead of <code>oc</code> for the commands listed in this procedure.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Update OpenShift security context constraints, if you are using OpenShift Container Platform:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch scc sensor -p '{"priority": 0}'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch scc collector -p '{"priority": 0}'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the patch for Collector:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch psp/stackrox-collector -p '{"spec":{"allowedHostPaths":[{"pathPrefix":"/","readOnly":true}]}}'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch ds/collector -p '{"spec":{"template":{"spec":{"containers":[{"name":"collector","volumeMounts":[{"mountPath":"/host/var/run/docker.sock","readOnly":true}]},{"name":"compliance","volumeMounts":[{"mountPath":"/host/var/lib","$patch":"delete"},{"mountPath":"/host/var/log/audit","$patch":"delete"},{"mountPath":"/host/usr/sbin","$patch":"delete"},{"mountPath":"/host/run","$patch":"delete"},{"mountPath":"/host/lib","$patch":"delete"},{"mountPath":"/host/usr/lib","$patch":"delete"},{"mountPath":"/host/etc","$patch":"delete"},{"mountPath":"/host/usr/bin","$patch":"delete"},{"mountPath":"/host/proc","$patch":"delete"},{"mountPath":"/host/var/run/docker.sock","$patch":"delete"},{"mountPath":"/host","name":"host-root-ro","readOnly":true}]}],"volumes":[{"name":"var-lib","$patch":"delete"},{"name":"var-log-audit","$patch":"delete"},{"name":"usr-sbin","$patch":"delete"},{"name":"run","$patch":"delete"},{"name":"lib","$patch":"delete"},{"name":"usr-lib","$patch":"delete"},{"hostPath":{"path":"/"},"name":"host-root-ro"}]}}}}'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the patch for Sensor:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch deploy/sensor -p '{"spec":{"template":{"metadata":{"annotations":{"traffic.sidecar.istio.io/excludeInboundPorts":"8443,9443"}}}}}'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch deploy/sensor -p '{"spec":{"template":{"spec":{"containers":[{"name":"sensor","resources":{"limits":{"cpu":"2","memory":"4Gi"},"requests":{"cpu":"1","memory":"1Gi"}}}]}}}}'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox patch deploy/sensor -p '{"spec":{"template":{"spec":{"containers":[{"name":"sensor","env":[{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}}],"volumeMounts":[{"name":"cache","mountPath":"/var/cache/stackrox"}]}],"volumes":[{"name":"cache","emptyDir":{}}]}}}}'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Update the Sensor image:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox set image deploy/sensor sensor=registry.redhat.io/rh-acs/main:3.65.1</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Update the Compliance image:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox set image ds/collector compliance=registry.redhat.io/rh-acs/main:3.65.1</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Update the Collector image:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox set image ds/collector collector=registry.redhat.io/rh-acs/collector:3.3.1-latest</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the following cluster role and cluster role binding:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc -n stackrox apply -f - &lt;&lt;EOF
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+name: stackrox:review-tokens
+labels:
+app.kubernetes.io/name: stackrox
+auto-upgrade.stackrox.io/component: "sensor"
+annotations:
+owner: stackrox
+email: "support@stackrox.com"
+rules:
+- resources:
+- tokenreviews
+apiGroups: ["authentication.k8s.io"]
+verbs:
+- create
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+name: stackrox:review-tokens-binding
+labels:
+app.kubernetes.io/name: stackrox
+auto-upgrade.stackrox.io/component: "sensor"
+annotations:
+owner: stackrox
+email: "support@stackrox.com"
+subjects:
+- kind: ServiceAccount
+name: sensor
+namespace: stackrox
+roleRef:
+kind: ClusterRole
+name: stackrox:review-tokens
+apiGroup: rbac.authorization.k8s.io
+EOF</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optional: If you have installed Istio in your cluster, run the following additional command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc create -f - &lt;&lt;EOF
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: sensor-internal-no-istio-mtls
+  namespace: stackrox
+  labels:
+    app.kubernetes.io/name: stackrox
+  annotations:
+    stackrox.io/description: "Disable Istio mTLS for port 443, since StackRox services use built-in mTLS."
+spec:
+  host: sensor.stackrox.svc.cluster.local
+  trafficPolicy:
+    portLevelSettings:
+      - port:
+          number: 443
+        tls:
+          mode: DISABLE
+EOF</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verify-secured-cluster-upgrade_upgrade-from-40-43"><a class="anchor" href="#verify-secured-cluster-upgrade_upgrade-from-40-43"></a>Verifying secured cluster upgrade</h3>
+<div class="paragraph _abstract">
+<p>After you have upgraded secured clusters, verify that the updated pods are working.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Check that the new pods have deployed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get deploy,ds -n stackrox -o wide</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-terminal hljs" data-lang="terminal">$ oc get pod -n stackrox --watch</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verify-last-check-in-time_upgrade-from-40-43"><a class="anchor" href="#verify-last-check-in-time_upgrade-from-40-43"></a>Verifying last check-in time for secured clusters</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The updated Sensors and Collectors continue to report the latest data from each secured cluster.</p>
+</div>
+<div class="paragraph">
+<p>The last time Sensor contacted Central is visible in the RHACS portal.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Clusters</strong>.</p>
+</li>
+<li>
+<p>The cluster list shows the <strong>Last check-in time</strong> for each cluster.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If any Sensor has not checked in for more than five minutes, check the cluster logs for that Sensor to ensure that it is operating as usual.</p>
+</li>
+<li>
+<p>The displayed check-in time does not update automatically.
+You must reload the page to see the updates.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="revoke-the-api-token_upgrade-from-40-43"><a class="anchor" href="#revoke-the-api-token_upgrade-from-40-43"></a>Revoking the API token</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>For security reasons, Red Hat recommends that you revoke the API token that you have used to complete Central database backup.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>After the upgrade, you must reload the RHACS portal page and re-accept the certificate to continue using the RHACS portal.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On the RHACS portal, navigate to <strong>Platform Configuration</strong> &#8594; <strong>Integrations</strong>.</p>
+</li>
+<li>
+<p>Scroll down to the <strong>Authentication Tokens</strong> category, and click <strong>API Token</strong>.</p>
+</li>
+<li>
+<p>Select the checkbox in front of the token name that you want to revoke.</p>
+</li>
+<li>
+<p>Click <strong>Revoke</strong>.</p>
+</li>
+<li>
+<p>On the confirmation dialog box, click <strong>Confirm</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <span class="footer-image">
+      <img src="https://assets.openshift.com/hubfs/images/logos/Logo-RedHat-A-Reverse-RGB.svg" class="img-fluid" alt="Red Hat" style="height: 30px;">
+    </span>
+    <span class="footer-text">
+      Copyright © 2021 Red Hat, Inc.
+    </span>
+</footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../../../..'
+  window.antora.pagePath = '/rhacs/3.65/upgrading/upgrading_roxctl/upgrade-from-40-43.html'
+</script>
+<script src="../../../../_/js/site.js"></script>
+<script src="../../../../_/js/vendor/search.js" id="search-script" data-base-path="../../../.." data-page-path="/rhacs/3.65/upgrading/upgrading_roxctl/upgrade-from-40-43.html"></script>
+<script async src="../../../../_/../search-index.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
