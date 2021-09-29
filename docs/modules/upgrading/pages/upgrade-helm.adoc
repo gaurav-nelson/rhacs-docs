@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: upgrade-helm
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
 If you have installed {product-title} by using Helm charts, to upgrade to the latest version of {product-title} you must perform the following:
@@ -17,7 +17,7 @@ If you have installed {product-title} by using Helm charts, to upgrade to the la
 include::ROOT:partial$updating-helm-repository.adoc[leveloffset=+1]
 
 [role="_additional-resources"]
-.Additional resources
+== Additional resources
 * xref:installing:installing_helm/install-helm-customization.adoc#configure-central-services-helm-chart[Configuring the central-services Helm chart]
 
 include::ROOT:partial$change-config-options-after-deployment-central-service.adoc[leveloffset=+1]

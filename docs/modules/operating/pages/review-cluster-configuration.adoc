@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: review-cluster-configuration
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
 Learn how to use the *Configuration Management* view and understand the correlation between various entities in your cluster to manage your cluster configuration efficiently.

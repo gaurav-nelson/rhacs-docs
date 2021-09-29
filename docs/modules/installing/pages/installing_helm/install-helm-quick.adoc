@@ -2,8 +2,9 @@
 = Installing quickly using Helm charts
 include::ROOT:partial$common-attributes.adoc[]
 :context: acs-install-helm-quick
+:topic-helm:
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
 {product-title} installs a set services on your {ocp} cluster. This topic describes the installation procedure for installing {product-title} on your {ocp} cluster without any customizations.
@@ -11,13 +12,13 @@ include::ROOT:partial$common-attributes.adoc[]
 The following steps represent the high-level installation flow for quickly installing {product-title}:
 
 . Add the {product-title} Helm chart repository.
-. Install the `central-services` Helm chart to install the xref:../../architecture/index.adoc#centralized-components_acs-architecture[centralized components] (Central and Scanner).
+. Install the `central-services` Helm chart to install the xref:architecture:acs-architecture.adoc#centralized-components_acs-architecture[centralized components] (Central and Scanner).
 . Generate an init bundle.
-. Install the `secured-cluster-services` Helm chart to install the xref:../../architecture/index.adoc#per-cluster-components_acs-architecture[per-cluster] and xref:../../architecture/index.adoc#per-node-components_acs-architecture[per-node] components (Sensor, Admission Controller, and Collector).
+. Install the `secured-cluster-services` Helm chart to install the xref:architecture:acs-architecture.adoc#per-cluster-components_acs-architecture[per-cluster] and xref:architecture:acs-architecture.adoc#per-node-components_acs-architecture[per-node] components (Sensor, Admission Controller, and Collector).
 
 Before you install:
 
-* Understand xref:../../architecture/index.adoc#acs-architecture_acs-architecture[{product-title} architecture].
+* Understand xref:architecture:acs-architecture.adoc#acs-architecture_acs-architecture[{product-title} architecture].
 * Review the xref:../prerequisites.adoc#acs-general-requirements_acs-prerequisites[prerequisites for installing {product-title}].
 
 include::ROOT:partial$adding-helm-repository.adoc[leveloffset=+1]
@@ -34,8 +35,8 @@ include::ROOT:partial$roxctl-generate-init-bundle.adoc[leveloffset=+2]
 
 [role="_additional-resources"]
 .Additional resources
-* xref:../../cli/getting-started-cli.adoc#installing-roxctl-cli[Installing the roxctl CLI]
-* xref:../../installing/installing_helm/install-helm-customization.adoc#portal-generate-init-bundle_acs-install-helm-customization[Generating an init bundle by using the RHACS portal]
+* xref:cli:getting-started-cli.adoc#installing-roxctl-cli[Installing the roxctl CLI]
+* xref:installing:installing_helm/install-helm-customization.adoc#portal-generate-init-bundle_acs-install-helm-customization[Generating an init bundle by using the RHACS portal]
 
 include::ROOT:partial$acs-quick-install-secured-cluster-using-helm.adoc[leveloffset=+1]
 

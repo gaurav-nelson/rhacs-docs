@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: getting-support
 
-
+:source-highlighter: highlight.js
 
 This topic provides information about the technical support for {product-title}.
 

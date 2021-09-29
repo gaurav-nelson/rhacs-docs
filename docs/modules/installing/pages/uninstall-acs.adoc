@@ -3,7 +3,7 @@
 include::ROOT:partial$common-attributes.adoc[]
 :context: uninstall-acs
 
-
+:source-highlighter: highlight.js
 
 [role="_abstract"]
 When you install {product-title}, it creates:
